@@ -1,0 +1,30 @@
+# Arquivos auxiliares de compilacao LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.loq
+*.logr
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+
+# PDF gerado (opcional manter fora do versionamento; remova esta linha
+# se preferir versionar tambem o PDF compilado)
+main.pdf
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
