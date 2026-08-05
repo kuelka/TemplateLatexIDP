@@ -1,40 +1,64 @@
 %% main.tex
 %% ---------------------------------------------------------------------
-%% Documento principal do template nao-oficial de monografia/dissertacao/
-%% tese do IDP. Baseado no arquivo idpthesis.cls.
+%% Dissertação de Mestrado Profissional em Administração Pública - IDP
+%% Autor: Kelsen de Moura Espíndola
 %%
-%% Para compilar (linha de comando):
+%% Para compilar:
 %%   pdflatex main.tex
 %%   biber main
 %%   pdflatex main.tex
 %%   pdflatex main.tex
-%%
-%% Troque a opcao da classe abaixo conforme o seu trabalho:
-%%   monografia | dissertacao | tese
 %% ---------------------------------------------------------------------
-\documentclass[monografia]{idpthesis}
+\documentclass[dissertacao]{idpthesis}
 
-%% ================== METADADOS (edite estes campos) ====================
-\instituicao{Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa -- IDP}
-\curso{Direito}                                  % nome do curso (graduacao)
-% \programapos{Direito Constitucional}           % use p/ dissertacao/tese
-% \areaconcentracao{Direito P\'ublico}           % use p/ dissertacao/tese
+%% Este trabalho usa numeracao romana para os anexos (ANEXO I, II, III, IV),
+%% em vez do padrao A, B, C da classe:
+\renewcommand{\theidpanexo}{\Roman{idpanexo}}
 
-\tituloTrabalho{T\'itulo do Trabalho em Letras Mai\'usculas}
-\subtituloTrabalho{Subt\'itulo, se houver}
-\autorTrabalho{Nome Completo do Autor}
+%% ================== METADADOS ====================
+\instituicao{Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa}
+\curso{Programa de P\'os-Gradua\c{c}\~ao em Administra\c{c}\~ao P\'ublica\\Mestrado Profissional}
+\programapos{Administra\c{c}\~ao P\'ublica}
+\areaconcentracao{Administra\c{c}\~ao P\'ublica}
 
-\orientador{Prof(a). Esp., Ms. (ou Dr.) Nome Completo do Orientador}
-% \coorientador{Nome Completo do Coorientador}
+\tituloTrabalho{Arquitetura de IA Generativa com RAG e C\'alculo Determin\'istico para Democratiza\c{c}\~ao da Assessoria em Renda Fixa no BRB}
+
+\autorTrabalho{Kelsen de Moura Esp\'indola}
+
+\orientador{Prof. Dr. Alex Lopes Pereira}
 
 \localdefesa{Bras\'ilia-DF}
 \anotrabalho{2026}
-\datadefesa{5 de agosto de 2026}
+\datadefesa{[dia] de [m\^es] de [ano]}
+
+%% Texto de natureza do trabalho: reproduz literalmente o texto da folha
+%% de rosto do projeto original (Escola de Administra\c{c}\~ao P\'ublica).
+\naturezatrabalho{Disserta\c{c}\~ao apresentada \`a Escola de Administra\c{c}\~ao
+P\'ublica do Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa (IDP)
+como requisito para obten\c{c}\~ao do t\'itulo de Mestre em Administra\c{c}\~ao
+P\'ublica.}
 
 \membrosbanca{%
-  \examinador{Prof. Nome Completo}{Orientador}
-  \examinador{Prof. Nome Completo}{Examinador}
-  \examinador{Prof. Nome Completo}{Examinador}
+  \examinador{Prof. Dr. Alex Lopes Pereira}{Orientador}
+  \examinador{Prof(a). Dr(a). [xx]}{Avaliador(a)}
+  \examinador{Prof(a). Dr(a). [xx]}{Avaliador(a)}
+}
+
+%% Texto da ficha catalogr\'afica (baseado no rascunho do pr\'oprio autor;
+%% confirme a vers\~ao final com a Biblioteca Ministro Moreira Alves).
+\fichacatalograficatexto{%
+  ESP\'INDOLA, Kelsen de Moura.\\
+  Arquitetura de IA Generativa com RAG e C\'alculo Determin\'istico para
+  Democratiza\c{c}\~ao da Assessoria em Renda Fixa no BRB / Kelsen de Moura
+  Esp\'indola. -- Bras\'ilia, [ANO DE DEP\'OSITO].\\
+  {[XX]} f.\\[0.3\baselineskip]
+  Disserta\c{c}\~ao (Mestrado Profissional em Administra\c{c}\~ao P\'ublica) --
+  Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa, Escola de
+  Administra\c{c}\~ao P\'ublica, [ANO DE DEP\'OSITO].\\
+  Orienta\c{c}\~ao: Prof. Dr. Alex Lopes Pereira.\\[0.3\baselineskip]
+  1. Intelig\^encia Artificial Generativa. 2. Retrieval-Augmented Generation.
+  3. Renda Fixa. 4. Bancos P\'ublicos. 5. Administra\c{c}\~ao P\'ublica.
+  I. Pereira, Alex Lopes. II. T\'itulo.
 }
 
 \addbibresource{referencias.bib}
@@ -42,7 +66,7 @@
 \begin{document}
 
 %% ============================================================
-%% ELEMENTOS PRE-TEXTUAIS (NBR 14724, secao 4.1)
+%% ELEMENTOS PRE-TEXTUAIS
 %% ============================================================
 \capa
 \folioderosto
@@ -50,61 +74,107 @@
 \folhadeaprovacao
 
 \begin{dedicatoria}
-  Dedico este trabalho \`a minha fam\'ilia, por todo apoio,
-  confian\c{c}a e incentivo ao longo desta jornada.
+  [A ser preenchido pelo autor]
 \end{dedicatoria}
 
 \begin{agradecimentos}
-  Agrade\c{c}o a todos que contribu\'iram, direta ou indiretamente,
-  para a realiza\c{c}\~ao deste trabalho: professores, orientador(a),
-  fam\'ilia e amigos.
+  [A ser preenchido pelo autor]
 \end{agradecimentos}
 
-\begin{resumo}{Palavra-chave 1. Palavra-chave 2. Palavra-chave 3.}
-  Texto do resumo em l\'ingua vern\'acula, entre 150 e 500 palavras,
-  contendo objetivo geral, principais conceitos e autores da
-  fundamenta\c{c}\~ao te\'orica, metodologia, resultados alcan\c{c}ados
-  e conclus\~oes. Consulte a NBR 6028 em caso de d\'uvidas.
+\begin{resumo}{Intelig\^encia Artificial Generativa; Retrieval-Augmented Generation; Assessoria Financeira; Bancos P\'ublicos; Renda Fixa; Administra\c{c}\~ao P\'ublica.}
+  \textit{[Vers\~ao preliminar -- atualizar ap\'os a conclus\~ao do
+  backtesting e das avalia\c{c}\~oes emp\'iricas, incluindo os principais
+  resultados obtidos.]}\par\vspace{0.5\baselineskip}
+
+  O mercado de assessoria de investimentos no Brasil apresenta um duplo
+  gargalo de distribui\c{c}\~ao: ferramentas automatizadas tradicionais
+  limitam-se a question\'arios est\'aticos de suitability, enquanto modelos
+  de Intelig\^encia Artificial (IA) Generativa pura apresentam risco de
+  alucina\c{c}\~ao matem\'atica incompat\'ivel com um ambiente regulado.
+  Nesse contexto, bancos p\'ublicos regionais como o Banco de Bras\'ilia
+  (BRB) enfrentam um gargalo de capacidade estatal para escalar assessoria
+  financeira qualificada ao seu p\'ublico de perfil popular, em conson\^ancia
+  com o mandato da Estrat\'egia Nacional de Educa\c{c}\~ao Financeira (ENEF).
+  Esta pesquisa tem como objetivo geral desenvolver e validar uma
+  arquitetura de IA Generativa baseada em agente \'unico com function
+  calling e recupera\c{c}\~ao de conhecimento (Retrieval-Augmented
+  Generation -- RAG), capaz de segregar o c\'alculo quantitativo
+  determin\'istico, em Python, da gera\c{c}\~ao de linguagem natural por
+  Large Language Model (LLM), oferecendo orienta\c{c}\~ao em investimentos
+  de renda fixa a clientes pessoa f\'isica do BRB com precis\~ao num\'erica
+  verific\'avel e conformidade \`a Resolu\c{c}\~ao CVM n\textsuperscript{o}
+  30/2021. A pesquisa adota abordagem multim\'etodos, apoiada na
+  metodologia Design Science Research (DSR), combinando mapeamento
+  qualitativo de demandas do investidor de varejo, desenvolvimento e
+  valida\c{c}\~ao t\'ecnica dos m\'odulos de c\'alculo e da base de
+  conhecimento regulat\'oria, backtesting hist\'orico de 12 meses e
+  avalia\c{c}\~ao emp\'irica por especialistas de mercado e gerentes de
+  front-office. Espera-se demonstrar que a arquitetura proposta \'e capaz
+  de produzir orienta\c{c}\~oes tecnicamente adequadas, contribuindo tanto
+  para a literatura de IA aplicada \`a Administra\c{c}\~ao P\'ublica quanto
+  para a democratiza\c{c}\~ao pr\'atica do acesso \`a assessoria financeira
+  de qualidade no varejo banc\'ario p\'ublico.
 \end{resumo}
 
-\begin{resumoingles}{Keyword 1. Keyword 2. Keyword 3.}
-  Abstract text in English, stating the purpose of the work, key
-  theoretical concepts, methodology, main results and conclusions.
+\begin{resumoingles}{Generative Artificial Intelligence; Retrieval-Augmented Generation; Financial Advisory; Public Banks; Fixed Income; Public Administration.}
+  Brazil's investment advisory market suffers from a twofold distribution
+  gap: traditional automated tools are limited to static suitability
+  questionnaires, while pure Generative Artificial Intelligence (AI) models
+  present a risk of mathematical hallucination that is incompatible with a
+  regulated environment. In this context, regional public banks such as
+  Banco de Bras\'ilia (BRB) face a state-capacity bottleneck in scaling
+  qualified financial advisory services to their retail client base, in
+  line with the mandate of Brazil's National Strategy for Financial
+  Education (ENEF). This research aims to develop and validate a
+  Generative AI architecture based on a single agent with function calling
+  and Retrieval-Augmented Generation (RAG), capable of segregating
+  deterministic quantitative calculation, in Python, from natural-language
+  generation by a Large Language Model (LLM), offering fixed-income
+  investment guidance to BRB retail clients with verifiable numerical
+  accuracy and compliance with CVM Resolution No. 30/2021. The research
+  adopts a mixed-methods approach, grounded in the Design Science Research
+  (DSR) methodology, combining qualitative mapping of retail investor
+  needs, development and technical validation of the calculation modules
+  and the regulatory knowledge base, a 12-month historical backtest, and
+  empirical evaluation by market experts and front-office managers. The
+  study expects to demonstrate that the proposed architecture is capable
+  of producing technically adequate guidance, contributing both to the
+  literature on AI applied to Public Administration and to the practical
+  democratization of access to quality financial advisory services in
+  public retail banking.
 \end{resumoingles}
 
 \listadeilustracoes
 \listadetabelas
-% \listofquadros
-% \listofgraficos
-
-\begin{listadeabreviaturas}
-  \sigla{DPP}{Decanato de Pesquisa e P\'os-Gradua\c{c}\~ao}
-  \sigla{MEC}{Minist\'erio da Educa\c{c}\~ao}
-\end{listadeabreviaturas}
+\listofquadros
+% \listofgraficos % [PENDENTE - preencher quando os gr\'aficos do backtesting forem incluidos]
 
 \sumario
 
 %% ============================================================
-%% ELEMENTOS TEXTUAIS (NBR 14724, secao 4.2)
-%% A partir daqui a numeracao de p\'agina passa a ser exibida.
+%% ELEMENTOS TEXTUAIS
 %% ============================================================
 \idpiniciotextual
 
 \input{capitulos/01-introducao}
 \input{capitulos/02-referencial-teorico}
-\input{capitulos/03-metodologia}
-\input{capitulos/04-resultados}
-\input{capitulos/05-consideracoes-finais}
+\input{capitulos/03-hipoteses}
+\input{capitulos/04-metodologia}
+\input{capitulos/05-resultados}
+\input{capitulos/06-discussao}
+\input{capitulos/07-conclusao}
 
 %% ============================================================
-%% ELEMENTOS POS-TEXTUAIS (NBR 14724, secao 4.3)
+%% ELEMENTOS POS-TEXTUAIS
 %% ============================================================
+\nocite{*} % garante que todas as obras do .bib apare\c{c}am nas Refer\^encias,
+           % mesmo as citadas apenas em prosa (leis/resolu\c{c}\~oes)
 \referencias
 
-\apendices
-\input{apendices/apendice-a}
-
 \anexos
-\input{anexos/anexo-a}
+\input{anexos/anexo-1-cronograma}
+\input{anexos/anexo-2-personas}
+\input{anexos/anexo-3-instrumento-avaliacao}
+\input{anexos/anexo-4-questionario-sus}
 
 \end{document}

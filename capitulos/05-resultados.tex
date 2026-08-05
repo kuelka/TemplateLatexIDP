@@ -1,0 +1,132 @@
+\chapter{Resultados}
+\label{cap:resultados}
+
+Esta se\c{c}\~ao apresenta os resultados preliminares do diagn\'ostico de
+barreiras informacionais e d\'uvidas recorrentes do investidor de perfil
+popular, executado na fase de Diagn\'ostico do cronograma da pesquisa
+(Anexo~\ref{ane:cronograma}, ago.--out.\ 2026). Os achados constituem
+resultados parciais, sujeitos a aprofundamento; as se\c{c}\~oes 5.2 a 5.5
+permanecem pendentes, por dependerem de etapas emp\'iricas futuras
+(engenharia dos m\'odulos Python, constru\c{c}\~ao da base RAG,
+backtesting e valida\c{c}\~ao com especialistas e gerentes).
+
+\section{Mapeamento das Barreiras Informacionais}
+\label{sec:mapeamento-barreiras}
+
+A estrat\'egia de coleta combinou tr\^es camadas de evid\^encia, da mais
+robusta estatisticamente \`a mais ilustrativa, sintetizadas no
+Quadro~\ref{qua:sintese-evidencias}.
+
+\begin{quadro}[htbp]
+  \centering
+  \caption{S\'intese das Evid\^encias sobre Barreiras Informacionais}
+  \label{qua:sintese-evidencias}
+  \small
+  \begin{tabular}{p{2.2cm}p{3.6cm}p{3.6cm}p{4.2cm}}
+    \toprule
+    \textbf{Camada} & \textbf{Fonte} & \textbf{Papel} & \textbf{Tipo de evid\^encia} \\
+    \midrule
+    1 -- Principal & Pesquisa de Letramento Financeiro (BCB/FGC, 2023) & Quantificar a barreira de forma estatisticamente representativa & Survey nacional, N=2.000, IC 95\% \\
+    2 -- Complementar & Raio X do Investidor Brasileiro (ANBIMA, 2025/2026) & Perfis comportamentais e tend\^encias populacionais & Survey anual (Datafolha), N$\approx$5.800 \\
+    3 -- Ilustrativa & Reclame Aqui (7 bancos p\'ublicos, registros filtrados) & Ilustrar a manifesta\c{c}\~ao pr\'atica da barreira & An\'alise de conte\'udo qualitativa \autocite{bardin2011} \\
+    \bottomrule
+  \end{tabular}
+  \fonte{Elaborado pelo autor (2026).}
+\end{quadro}
+
+\subsection{Camada 1 -- Pesquisa de Letramento Financeiro (BCB/FGC, 2023)}
+\label{subsec:camada1}
+
+A evid\^encia quantitativa central do diagn\'ostico prov\'em da Pesquisa
+de Letramento Financeiro, conduzida pelo Banco Central do Brasil (BCB) em
+parceria com o Fundo Garantidor de Cr\'editos (FGC), com metodologia
+padronizada internacionalmente pelo Toolkit OCDE/INFE \autocite{bcbfgc2023}
+(2.000 entrevistas, amostra probabil\'istica estratificada, intervalo de
+confian\c{c}a de 95\%, margem de erro de 2,19\%). Os resultados indicam
+que apenas 48,2\% da popula\c{c}\~ao brasileira j\'a ouviu falar de
+``T\'itulos financeiros (como Tesouro Direto ou CDBs)'' -- a categoria de
+produto financeiro com menor \'indice de conhecimento entre as testadas,
+\`a frente apenas de conta de investimento (31,0\%) e produtos
+classificados como sustent\'aveis (16,6\%). Entre os entrevistados que
+pouparam nos \'ultimos doze meses, apenas 7,1\% aplicaram em Tesouro
+Direto ou CDB, contra 43,0\% que utilizaram caderneta de poupan\c{c}a ou
+conta corrente.
+
+Mais relevante ainda para a arquitetura proposta \'e o resultado da
+dimens\~ao de conhecimento financeiro mensurado -- isto \'e, aferido por
+meio de quest\~oes de c\'alculo, e n\~ao por autodeclara\c{c}\~ao. Embora
+83,9\% dos entrevistados demonstrem compreender a no\c{c}\~ao geral de
+juros, apenas 14,3\% conseguiram calcular corretamente um problema de
+juros simples, e apenas 46,6\% responderam corretamente sobre a
+implica\c{c}\~ao de juros compostos. Esse descolamento entre compreender
+o conceito e conseguir oper\'a-lo numericamente corrobora, com dados
+prim\'arios e representatividade nacional, a justificativa cient\'ifica
+apresentada na Introdu\c{c}\~ao para a segrega\c{c}\~ao entre
+processamento num\'erico determin\'istico e gera\c{c}\~ao de linguagem
+natural.
+
+\subsection{Camada 2 -- Raio X do Investidor Brasileiro (ANBIMA)}
+\label{subsec:camada2}
+
+A 8\textsuperscript{a} edi\c{c}\~ao do Raio X do Investidor Brasileiro
+\autocite{anbima2025} fundamenta a segmenta\c{c}\~ao comportamental em
+quatro perfis j\'a utilizada para calibrar as personas sint\'eticas do
+Anexo~\ref{ane:personas}. A 9\textsuperscript{a} edi\c{c}\~ao
+\autocite{anbima2026} acrescenta um dado relevante ao diagn\'ostico: do
+total de brasileiros que conseguiram poupar em 2025, apenas 12\%
+efetivamente converteram a poupan\c{c}a em investimento, evidenciando o
+funil poupan\c{c}a--investimento como gargalo estrutural que antecede a
+pr\'opria decis\~ao sobre qual produto de renda fixa escolher.
+
+\subsection{Camada 3 -- Reclame Aqui (Bancos P\'ublicos)}
+\label{subsec:camada3}
+
+Como camada ilustrativa, foi conduzida an\'alise de conte\'udo qualitativa
+\autocite{bardin2011} sobre registros p\'ublicos do Reclame Aqui filtrados
+pelo conjunto de sete bancos p\'ublicos comerciais de varejo do Brasil --
+Banco do Brasil, Caixa Econ\^omica Federal, BRB, Banrisul, Banestes,
+Banese e Banpar\'a -- e por vincula\c{c}\~ao a decis\~ao ativa de
+investimento em CDB ou Tesouro Direto, excluindo-se registros relativos a
+produtos de aplica\c{c}\~ao autom\'atica sobre saldo em conta corrente
+(ex.: CDB Sal\'ario no BRB, CDB Autom\'atico no Banrisul), que n\~ao
+configuram decis\~ao de investimento por parte do cliente. O uso do
+Reclame Aqui como fonte de pesquisa acad\^emica encontra precedente
+metodol\'ogico em \textcite{rimolimelo2018}. A amostra resultante,
+reduzida e n\~ao probabil\'istica, n\~ao deve ser lida como
+representativa -- seu papel \'e ilustrar, com casos concretos, como as
+barreiras identificadas nas Camadas 1 e 2 se manifestam na jornada real
+do investidor de perfil popular em bancos p\'ublicos. O conte\'udo
+relevante concentrou-se em tr\^es das sete institui\c{c}\~oes (Banco do
+Brasil, Caixa e BRB); Banestes, Banese e Banpar\'a n\~ao apresentaram
+registros indexados publicamente sobre CDB ou Tesouro Direto no per\'iodo
+consultado, e o Banrisul apresentou majoritariamente registros sobre seu
+produto de aplica\c{c}\~ao autom\'atica, exclu\'idos pelo mesmo crit\'erio
+aplicado ao CDB Sal\'ario. Emergiram cinco categorias recorrentes: (i)
+confus\~ao sobre o processo de cadastro e liquida\c{c}\~ao via CBLC/B3
+para operar Tesouro Direto pelo banco -- a categoria mais saturada,
+presente de forma independente no Banco do Brasil e na Caixa, com relatos
+recorrentes de mensagens como ``aguardando retorno da CBLC'' interpretadas
+como falha do sistema; (ii) fric\c{c}\~ao e custos ocultos ao diversificar
+investimentos por meio de corretora parceira (BRB); (iii) desconhecimento
+sobre a renova\c{c}\~ao autom\'atica (\textit{rollover}) do CDB no
+vencimento (BRB); (iv) falta de transpar\^encia sobre o status do
+investimento no aplicativo (BRB); e (v) desconhecimento sobre janelas
+operacionais de resgate (BRB, Caixa).
+
+N\~ao foi localizado, na literatura revisada, artigo com revis\~ao por
+pares que combine an\'alise de conte\'udo de reclama\c{c}\~oes, renda
+fixa e barreiras do investidor de perfil popular, o que indica uma
+lacuna que esta pesquisa contribui para preencher.
+
+\bigskip
+\textit{As demais se\c{c}\~oes deste cap\'itulo permanecem pendentes, a
+serem redigidas ap\'os a execu\c{c}\~ao emp\'irica prevista no cronograma
+(Anexo~\ref{ane:cronograma}):}
+
+% TODO: preencher apos a execucao empirica.
+\begin{itemize}
+  \item[] \textit{5.2. Arquitetura do agente e m\'odulos Python -- valida\c{c}\~ao t\'ecnica (objetivos b e c) [PENDENTE]}
+  \item[] \textit{5.3. Base de conhecimento regulat\'oria RAG -- recall@k e prioriza\c{c}\~ao de norma vigente (objetivo d) [PENDENTE]}
+  \item[] \textit{5.4. Resultados do backtesting de 12 meses (jun/25--mai/26) [PENDENTE]}
+  \item[] \textit{5.5. Avalia\c{c}\~ao t\'ecnica dos especialistas e resultado do question\'ario SUS (objetivo e) [PENDENTE]}
+\end{itemize}

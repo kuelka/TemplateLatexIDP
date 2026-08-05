@@ -49,6 +49,8 @@
 %% 2. PACOTES BASE E IDIOMA
 %% =======================================================================
 \RequirePackage[T1]{fontenc}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[brazil]{babel}
 \RequirePackage{times}
@@ -76,6 +78,7 @@
 %% 5. NUMERACAO DE PAGINA - NBR 14724, secao 5.3
 %% -----------------------------------------------------------------------
 \RequirePackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
 %% Redefine tambem o estilo "plain" (usado internamente por \chapter em
 %% cada abertura de capitulo) para manter a numeracao sempre no canto
 %% superior direito, conforme a NBR 14724.
@@ -164,6 +167,10 @@
 ]{caption}
 
 \RequirePackage{float}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{adjustbox}
+\RequirePackage{longtable}
 \newfloat{quadro}{tbp}{loq}[chapter]
 \floatname{quadro}{Quadro}
 \newfloat{grafico}{tbp}{logr}[chapter]
@@ -471,6 +478,9 @@
   \addcontentsline{toc}{chapter}{AP\^ENDICE~\theidpapendice~-- #1}
 }
 \newcounter{idpanexo}
+%% Padrao: letras (A, B, C...). Se o seu trabalho usa numeros romanos
+%% (ANEXO I, II, III...), sobrescreva no seu main.tex, apos o \documentclass:
+%%   \renewcommand{\theidpanexo}{\Roman{idpanexo}}
 \renewcommand{\theidpanexo}{\Alph{idpanexo}}
 \newcommand{\anexo}[1]{%
   \refstepcounter{idpanexo}

@@ -1,50 +1,201 @@
 \chapter{Referencial Te\'orico}
 \label{cap:referencial}
 
-Texto introdut\'orio de um par\'agrafo, conforme exigido pela ABNT. Esta
-parte do trabalho demanda o dom\'inio das regras de cita\c{c}\~ao (diretas
-e indiretas). Reveja as regras estabelecidas pela ABNT (NBR 10520) para
-cita\c{c}\~oes diretas e indiretas e indica\c{c}\~ao de fontes de gr\'aficos,
-figuras ou outro recurso ilustrativo utilizado.
+\section{Assimetria de Informa\c{c}\~ao, Capacidade Estatal e a Natureza Dual dos Bancos P\'ublicos}
+\label{sec:assimetria}
 
-\section{T\'itulo representativo do primeiro conceito}
-\label{sec:conceito1}
+A teoria da assimetria de informa\c{c}\~ao, formalizada por
+\textcite{akerlof1970} e \textcite{stiglitzweiss1981}, encontra
+aplica\c{c}\~ao direta no mercado de investimentos quando investidores de
+varejo tomam decis\~oes sem acesso \`as mesmas informa\c{c}\~oes
+dispon\'iveis a intermedi\'arios financeiros profissionais.
 
-Discuss\~ao espec\'ifica sobre a articula\c{c}\~ao das informa\c{c}\~oes com
-foco na delimita\c{c}\~ao proposta.
+No contexto brasileiro, o Raio X do Investidor Brasileiro da ANBIMA
+\autocite{anbima2025} e o Relat\'orio de Cidadania Financeira do Banco
+Central \autocite{bcb2023} documentam que parcela expressiva dos
+investidores pessoa f\'isica mant\'em seus recursos em produtos de baixa
+rentabilidade -- como a caderneta de poupan\c{c}a --, situa\c{c}\~ao
+associada, entre outros fatores, ao desconhecimento das alternativas
+dispon\'iveis no mercado.
 
-\subsection{T\'itulo representativo de um subt\'opico}
+Bancos p\'ublicos como o BRB, o Banco do Brasil e a Caixa Econ\^omica
+Federal atendem segmentos populacionais historicamente exclu\'idos do
+sistema financeiro sofisticado. Segundo \textcite{costa2016}, esses bancos
+operam sob uma tens\~ao estrutural caracter\'istica de sua natureza dual:
+precisam ser comercialmente eficientes e competitivos como os bancos
+privados, mas simultaneamente devem cumprir mandato redistributivo que
+transcende a intermedia\c{c}\~ao financeira, funcionando como vetores de
+inclus\~ao econ\^omica. A arquitetura proposta neste trabalho resolve
+exatamente esse paradoxo: permite ao BRB entregar a pol\'itica p\'ublica
+de inclus\~ao financeira da ENEF em escala massiva no varejo, sem explodir
+os custos operacionais, mantendo a efici\^encia administrativa e a
+conformidade exigidas pelo Banco Central.
 
-Exemplo de cita\c{c}\~ao direta de at\'e 3 linhas, que permanece no corpo do
-texto, entre aspas: de acordo com \textcite{sa1971}, isso acontece ``por meio
-da mesma arte de conversa\c{c}\~ao que abrange t\~ao extensa e significativa
-parte da nossa exist\^encia cotidiana''.
+Essa dimens\~ao conecta-se ao conceito de capacidade estatal -- a
+habilidade do Estado de formular e implementar pol\'iticas p\'ublicas com
+qualidade e escala \autocite{evansrauch1999}. A incapacidade do BRB de
+escalar a assessoria financeira qualificada sem suporte tecnol\'ogico \'e,
+fundamentalmente, um problema de capacidade estatal, n\~ao apenas
+operacional. O artefato desenvolvido nesta pesquisa busca ampliar essa
+capacidade de forma replic\'avel, com potencial de subsidiar diretrizes
+para pol\'iticas de inclus\~ao financeira no \^ambito da ENEF (Decreto
+n\textsuperscript{o} 10.393/2020).
 
-Exemplo de cita\c{c}\~ao direta com mais de 3 linhas (ambiente
-\texttt{citacao}, recuo de 4\,cm, fonte tamanho 10, espa\c{c}amento simples,
-sem aspas), conforme \textcite{nicholls1993}:
+\section{Retrieval-Augmented Generation e Conformidade Regulat\'oria}
+\label{sec:rag}
 
-\begin{citacao}
-A teleconfer\^encia permite ao indiv\'iduo participar de um encontro
-nacional ou regional sem a necessidade de deixar seu local de origem.
-Tipos comuns de teleconfer\^encia incluem o uso da televis\~ao, telefone e
-computador. Atrav\'es de \'audio-confer\^encia, utilizando a companhia
-local de telefone, um sinal de \'audio pode ser emitido em um sal\~ao de
-qualquer dimens\~ao. \parencite[p.~181]{nicholls1993}
-\end{citacao}
+A t\'ecnica de Retrieval-Augmented Generation (RAG), proposta por
+\textcite{lewis2020}, consiste em enriquecer o contexto do LLM com
+documentos recuperados de uma base de conhecimento indexada, reduzindo o
+risco de alucina\c{c}\~oes e atualizando o conhecimento do modelo sem
+re-treinamento. A capacidade de modelos de linguagem de utilizarem
+ferramentas computacionais externas de forma aut\^onoma para resolver
+problemas complexos \autocite{schick2023} fundamenta o acoplamento, via
+function calling, do m\'odulo de c\'alculo quantitativo.
 
-Exemplo de cita\c{c}\~ao indireta: para \textcite{authier1982}, a ironia
-seria assim uma forma impl\'icita de heterogeneidade.
+Para a orquestra\c{c}\~ao de chamadas a ferramentas externas (function
+calling) e para a recupera\c{c}\~ao de conte\'udo indexado, o uso de
+frameworks especializados como LangChain \autocite{chase2023} viabiliza a
+estrutura\c{c}\~ao modular da aplica\c{c}\~ao. A capacidade de um agente
+LLM \'unico invocar de forma aut\^onoma ferramentas determin\'isticas
+externas para resolver subtarefas espec\'ificas -- como c\'alculos
+matem\'aticos -- tende a produzir resultados mais confi\'aveis do que a
+gera\c{c}\~ao da resposta inteiramente dentro do pr\'oprio modelo de
+linguagem \autocite{schick2023}.
 
-Exemplo de inser\c{c}\~ao de figura com fonte obrigat\'oria:
+No dom\'inio financeiro-regulat\'orio brasileiro, a aplica\c{c}\~ao de RAG
+sobre normativos da CVM, resolu\c{c}\~oes do CMN e manuais da ANBIMA
+permite ao agente responder perguntas sobre regras tribut\'arias, prazos
+de car\^encia e crit\'erios de elegibilidade com fundamenta\c{c}\~ao
+documental rastre\'avel -- requisito essencial para conformidade com a
+Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021, que regulamenta o dever
+de verifica\c{c}\~ao da adequa\c{c}\~ao dos produtos, servi\c{c}os e
+opera\c{c}\~oes ao perfil do cliente.
 
-\begin{figure}[htbp]
-  \centering
-  % \includegraphics[width=0.7\textwidth]{figuras/exemplo.png}
-  \fbox{\parbox{0.7\textwidth}{\centering\vspace{2cm}Espa\c{c}o reservado para a figura\vspace{2cm}}}
-  \caption{T\'itulo da figura}
-  \label{fig:exemplo}
-  \fonte{Do autor (2026).}
-\end{figure}
+\section{Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021, Governan\c{c}a Regulat\'oria Banc\'aria e Mitiga\c{c}\~ao do Risco de Modelo}
+\label{sec:cvm30}
 
-Para mais informa\c{c}\~oes sobre cita\c{c}\~ao, consulte a norma NBR 10520:2002.
+A Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021 estabelece o dever de
+verifica\c{c}\~ao da adequa\c{c}\~ao dos produtos, servi\c{c}os e
+opera\c{c}\~oes ao perfil do cliente (\textit{suitability}). Em
+conformidade com o art. 3\textsuperscript{o} deste normativo, as
+institui\c{c}\~oes devem avaliar de forma pormenorizada e independente
+tr\^es dimens\~oes do investidor: (i) os objetivos de investimento; (ii) a
+situa\c{c}\~ao financeira; e (iii) o conhecimento sobre os riscos do
+produto.
+
+No contexto de uma assessoria financeira automatizada por intelig\^encia
+artificial, o cumprimento desses requisitos regulat\'orios e o controle
+dos riscos envolvidos apoiam-se em um conjunto de resolu\c{c}\~oes
+emitidas pelo Conselho Monet\'ario Nacional (CMN) e pelo Banco Central do
+Brasil:
+
+\begin{itemize}
+  \item \textbf{Resolu\c{c}\~ao CMN n\textsuperscript{o} 4.557/2017 --
+  Gerenciamento de Riscos}: esta norma define a obrigatoriedade de
+  estrutura\c{c}\~ao integrada da gest\~ao de riscos banc\'arios, incluindo
+  diretrizes para a governan\c{c}a, integridade e valida\c{c}\~ao de
+  modelos. A segrega\c{c}\~ao t\'ecnica estrita entre o processamento
+  matem\'atico num\'erico (m\'odulo Python acionado via function calling)
+  e a gera\c{c}\~ao lingu\'istica da LLM atua como controle estrutural
+  exigido pela 4.557/2017 para mitigar o risco de modelo.
+
+  \item \textbf{Resolu\c{c}\~ao CMN n\textsuperscript{o} 4.968/2021 --
+  Sistemas de Controles Internos}: os controles internos preventivos de
+  conformidade algor\'itmica s\~ao codificados no agente para atuar como
+  guardrails ativos de suitability, impossibilitando fisicamente que a
+  LLM proponha ativos desalinhados ao perfil de risco declarado do
+  investidor.
+
+  \item \textbf{Resolu\c{c}\~ao CMN n\textsuperscript{o} 4.879/2020 --
+  Auditoria Interna}: regulamenta a auditoria interna como terceira linha
+  de defesa independente, respons\'avel por revisar periodicamente a
+  efetividade operacional de todo o fluxo do sistema. Os logs de XAI
+  gerados pelo agente fornecem a trilha de auditoria necess\'aria para
+  esse escrut\'inio.
+
+  \item \textbf{Resolu\c{c}\~oes CMN n\textsuperscript{o} 4.893/2021 e
+  5.274/2025 -- Seguran\c{c}a Cibern\'etica e Nuvem}: o software de IA no
+  BRB deve incorporar controles t\'ecnicos audit\'aveis exigidos pela
+  Resolu\c{c}\~ao CMN n\textsuperscript{o} 4.893/2021 e detalhados em 14
+  procedimentos e controles m\'inimos pela Resolu\c{c}\~ao CMN
+  n\textsuperscript{o} 5.274/2025, incluindo criptografia em tr\^ansito e
+  repouso, mecanismos de DLP para chamadas de APIs externas de LLM, logs
+  de rastreabilidade imut\'aveis do agente e autentica\c{c}\~ao
+  multifatorial (MFA) para acessos administrativos.
+\end{itemize}
+
+A infraestrutura do agente (LLM) adotar\'a o consumo de modelo via API
+comercial externa. Essa escolha prioriza a agilidade de implementa\c{c}\~ao
+e o acesso a modelos de fronteira mais capazes, compat\'ivel com o
+cronograma do mestrado profissional, e \'e viabilizada pelo uso exclusivo
+de personas sint\'eticas na avalia\c{c}\~ao do sistema (objetivo
+espec\'ifico e; se\c{c}\~ao~\ref{sec:dados-coleta}), o que dispensa
+mecanismos de DLP para dados pessoais em tr\^ansito nesta fase da
+pesquisa. A criptografia em tr\^ansito e os demais controles t\'ecnicos
+exigidos pelas Resolu\c{c}\~oes CMN n\textsuperscript{o} 4.893/2021 e
+5.274/2025 permanecem aplic\'aveis independentemente dessa decis\~ao. A
+eventual migra\c{c}\~ao para hospedagem de modelo de pesos abertos
+on-premise -- hip\'otese a ser considerada caso o sistema venha a
+processar dados reais de clientes em fase posterior -- fica registrada
+como agenda de pesquisa futura, fora do escopo desta disserta\c{c}\~ao.
+
+Sob o prisma da modelagem matem\'atica e financeira, a simula\c{c}\~ao do
+retorno final l\'iquido acumulado (RFL) \'e processada de forma
+determin\'istica pelo m\'odulo Python de c\'alculo, acionado via function
+calling, com dois cen\'arios estruturais condicionados ao prazo de
+aplica\c{c}\~ao $t$:
+
+\begin{equation}
+  \text{RFL} = P_0 \cdot \left[(1+i)^t - 1\right] \cdot (1-\theta) - C_o
+  \qquad \text{(para } t \geq 30 \text{ dias)}
+  \label{eq:rfl1}
+\end{equation}
+
+\begin{equation}
+  \text{RFL} = P_0 \cdot \left[(1+i)^t - 1\right] \cdot (1-\alpha_t) \cdot (1-\theta) - C_o
+  \qquad \text{(para } t < 30 \text{ dias)}
+  \label{eq:rfl2}
+\end{equation}
+
+Em que: RFL \'e o retorno final l\'iquido acumulado; $P_0$ representa o
+principal investido; $i$ \'e a taxa de rendimento nominal acumulada por
+per\'iodo; $t$ \'e o n\'umero de per\'iodos de capitaliza\c{c}\~ao;
+$\alpha_t$ \'e a al\'iquota regressiva do IOF ($\alpha_t = 0$ para
+$t \geq 30$); $\theta$ \'e a al\'iquota regressiva do IR (variando de
+22,5\% a 15\%); e $C_o$ \'e o somat\'orio dos custos operacionais e taxas
+de administra\c{c}\~ao.
+
+A janela de 12 meses (junho/2025 a maio/2026) foi delimitada por
+coincidir com um per\'iodo de relevante volatilidade macroecon\^omica na
+curva de juros brasileira, garantindo disponibilidade integral de dados
+hist\'oricos via APIs do BCB e da ANBIMA para os produtos avaliados (CDB
+e Tesouro Direto).
+
+\section{Explicabilidade Algor\'itmica (XAI) e Responsabilidade Civil}
+\label{sec:xai}
+
+No setor p\'ublico, decis\~oes ou recomenda\c{c}\~oes geradas por
+sistemas de IA que afetam o patrim\^onio do cidad\~ao est\~ao sujeitas ao
+Princ\'ipio da Motiva\c{c}\~ao dos Atos Administrativos (Arts.
+2\textsuperscript{o} e 50 da Lei Federal n\textsuperscript{o}
+9.784/1999), aplic\'avel \`a administra\c{c}\~ao p\'ublica do Distrito
+Federal por for\c{c}a da Lei Distrital n\textsuperscript{o} 2.834/2001.
+Isso imp\~oe que o sistema seja capaz de explicitar, de forma
+rastre\'avel, o fundamento de cada recomenda\c{c}\~ao emitida.
+
+Para atender ao Princ\'ipio da Motiva\c{c}\~ao, o agente gerar\'a, al\'em
+da resposta em linguagem natural ao cliente, um log estruturado de
+justificativa (registro XAI), documentando os par\^ametros utilizados --
+taxa, prazo, al\'iquota tribut\'aria e regra de suitability aplicada --
+que fundamentaram cada orienta\c{c}\~ao.
+
+No plano da responsabilidade civil, eventuais erros do artefato que
+causem dano patrimonial ao cliente atraem a responsabilidade objetiva do
+BRB, nos termos do Art. 14 do C\'odigo de Defesa do Consumidor (CDC) --
+aplic\'avel \`as institui\c{c}\~oes financeiras conforme pacificado pela
+S\'umula 297 do STJ \autocite{stj2004}. A evolu\c{c}\~ao desse quadro de
+responsabilidade, especialmente no que tange \`a gradua\c{c}\~ao de
+riscos de sistemas de IA de alto risco, dever\'a ser acompanhada \`a luz
+da tramita\c{c}\~ao do Projeto de Lei n\textsuperscript{o} 2.338/2023
+(Marco Legal da IA), que constitui agenda de pesquisa futura.

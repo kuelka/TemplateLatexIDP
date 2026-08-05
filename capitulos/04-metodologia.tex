@@ -1,0 +1,147 @@
+\chapter{Metodologia}
+\label{cap:metodologia}
+
+\section{Natureza e Abordagem da Pesquisa}
+\label{sec:natureza-abordagem}
+
+Esta pesquisa adota abordagem multim\'etodos (\textit{mixed methods}),
+combinando dimens\~oes qualitativa e quantitativa em etapas sequenciais e
+complementares, conforme proposto por \textcite{creswell2018} para
+pesquisas aplicadas em Administra\c{c}\~ao P\'ublica. A natureza da
+pesquisa \'e aplicada e de car\'ater explorat\'orio-descritivo.
+
+A estrat\'egia de pesquisa segue a metodologia Design Science Research
+(DSR), proposta por \textcite{hevner2004}, especialmente adequada para
+pesquisas de Sistemas de Informa\c{c}\~ao e Administra\c{c}\~ao P\'ublica
+que envolvem desenvolvimento de artefatos tecnol\'ogicos com impacto
+organizacional, por exigir que o artefato resolva um problema real,
+identificado empiricamente, e seja avaliado por crit\'erios de utilidade
+e rigor cient\'ifico.
+
+\section{Fundamenta\c{c}\~ao Emp\'irica: Dados e T\'ecnicas de Coleta}
+\label{sec:dados-coleta}
+
+A pesquisa utilizar\'a dados prim\'arios e secund\'arios em combina\c{c}\~ao.
+
+\begin{itemize}
+  \item A Pesquisa de Letramento Financeiro (Banco Central do Brasil em
+  parceria com o Fundo Garantidor de Cr\'editos, metodologia OCDE/INFE)
+  \autocite{bcbfgc2023}, que fornece evid\^encia estat\'istica
+  nacionalmente representativa sobre o conhecimento da popula\c{c}\~ao
+  acerca de produtos de renda fixa; o Raio X do Investidor Brasileiro
+  (ANBIMA), como fonte complementar de padr\~oes de comportamento do
+  investidor de varejo; e registros p\'ublicos do Reclame Aqui, filtrados
+  pelo conjunto de bancos p\'ublicos comerciais de varejo do Brasil --
+  Banco do Brasil e Caixa Econ\^omica Federal (federais) e BRB, Banrisul,
+  Banestes, Banese e Banpar\'a (estaduais/distrital, sobreviventes do
+  Programa de Incentivo \`a Redu\c{c}\~ao do Setor P\'ublico Estadual na
+  Atividade Banc\'aria -- PROES) -- e por vincula\c{c}\~ao a decis\~ao
+  ativa de investimento, como evid\^encia ilustrativa da manifesta\c{c}\~ao
+  pr\'atica dessas barreiras. A condi\c{c}\~ao de controle p\'ublico de
+  cada institui\c{c}\~ao foi verificada em agosto de 2026. Os padr\~oes de
+  d\'uvidas identificados nos registros do Reclame Aqui s\~ao analisados
+  via an\'alise de conte\'udo categorial \autocite{bardin2011},
+  complementando a an\'alise estat\'istica descritiva da Pesquisa de
+  Letramento Financeiro, e fortalecendo a validade dos dados sem exigir
+  acesso direto aos clientes.
+
+  \item S\'eries hist\'oricas extra\'idas via API do SGS/Banco Central
+  (taxas de juros, \'indices de infla\c{c}\~ao, expectativas Focus);
+  pre\c{c}os e taxas di\'arios do Tesouro Transparente; taxas de mercado
+  da ANBIMA; normativos e resolu\c{c}\~oes da CVM e do CMN, incluindo o
+  PL n\textsuperscript{o} 2.338/2023 (Marco Legal da IA) como refer\^encia
+  de governan\c{c}a prospectiva. Todos os dados secund\'arios s\~ao de
+  acesso p\'ublico e gratuito.
+\end{itemize}
+
+Para a etapa de avalia\c{c}\~ao (objetivo espec\'ifico e), o sistema ser\'a
+testado com personas sint\'eticas -- perfis de investidor fict\'icios,
+n\~ao vinculados a dados reais de clientes do BRB -- constru\'idas em duas
+camadas. A estrutura segue as tr\^es dimens\~oes de suitability da
+Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021 (objetivos de
+investimento, situa\c{c}\~ao financeira e conhecimento sobre os riscos),
+garantindo cobertura sistem\'atica do espa\c{c}o de teste regulat\'orio.
+Os valores de calibra\c{c}\~ao de cada persona (faixa et\'aria, renda,
+n\'ivel de conhecimento financeiro) s\~ao ancorados nos quatro perfis
+comportamentais publicados na 8\textsuperscript{a} edi\c{c}\~ao do Raio X
+do Investidor Brasileiro \autocite{anbima2025} -- Diversifica, Caderneta,
+Economiza e N\~ao Investe, e Sem Reservas --, preservando a
+representatividade do p\'ublico de perfil popular que \'e o foco do BRB.
+As fontes utilizadas no mapeamento de dores do objetivo espec\'ifico (a) --
+Pesquisa de Letramento Financeiro, Raio X do Investidor e Reclame Aqui --
+n\~ao s\~ao utilizadas na constru\c{c}\~ao das personas, por consistirem
+em dados agregados ou de terceiros, sem perfil individual atribu\'ivel.
+Essa abordagem dispensa o uso de dados reais de clientes em qualquer
+etapa da pesquisa.
+
+\section{T\'ecnicas de An\'alise dos Dados e Matriz de Op\c{c}\~oes Metodol\'ogicas}
+\label{sec:analise-matriz}
+
+As t\'ecnicas de an\'alise variam conforme a etapa da pesquisa. Na Etapa
+1, ser\~ao combinadas an\'alise estat\'istica descritiva sobre a Pesquisa
+de Letramento Financeiro e an\'alise de conte\'udo categorial
+\autocite{bardin2011} sobre registros do Reclame Aqui. Na fase
+quantitativa de backtesting (Etapa 4), ser\~ao calculadas m\'etricas de
+desempenho: retorno l\'iquido acumulado e frequ\^encia de supera\c{c}\~ao
+do CDI em janelas mensais. O c\'alculo do Sharpe ratio ser\'a realizado
+com a devida ressalva metodol\'ogica de que a janela de 12 meses, embora
+necess\'aria para viabilizar o c\'alculo do indicador dentro do per\'iodo
+dispon\'ivel, imp\~oe limita\c{c}\~oes ao poder de generaliza\c{c}\~ao
+estat\'istica dos indicadores de volatilidade -- limita\c{c}\~ao que ser\'a
+explicitamente reconhecida no cap\'itulo de limita\c{c}\~oes do estudo. Na
+fase de avalia\c{c}\~ao (Etapa 5), ser\~ao aplicadas estat\'istica
+descritiva sobre notas da avalia\c{c}\~ao t\'ecnica e an\'alise de
+conte\'udo sobre os coment\'arios qualitativos.
+
+\textbf{Rubrica da avalia\c{c}\~ao t\'ecnica.} Para operacionalizar H1 e
+H2 com maior granularidade, a avalia\c{c}\~ao t\'ecnica adotar\'a rubrica
+de avalia\c{c}\~ao estruturada em tr\^es pilares quantific\'aveis,
+pontuados individualmente por cada especialista em escala Likert de 5
+pontos: (i) fidelidade do Retorno Final L\'iquido (RFL) reportado na
+resposta ao cliente frente ao valor calculado pelo m\'odulo determin\'istico
+-- n\~ao uma reavalia\c{c}\~ao da matem\'atica do m\'odulo, j\'a verificada
+no objetivo espec\'ifico c --, incluindo a correta aplica\c{c}\~ao da
+al\'iquota regressiva do IR ($\theta$) e da al\'iquota do IOF; (ii)
+ader\^encia da recomenda\c{c}\~ao \`as regras de suitability vigentes
+(Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021); e (iii) clareza da
+linguagem da resposta ao cliente. Essa rubrica complementa -- sem
+substituir -- o question\'ario SUS previsto em H2, permitindo
+diagnosticar separadamente falhas de fidelidade na s\'intese lingu\'istica,
+de conformidade regulat\'oria e de usabilidade. Para preservar a
+independ\^encia da avalia\c{c}\~ao t\'ecnica, os especialistas
+respons\'aveis por ela ser\~ao profissionais de mercado n\~ao vinculados
+ao BRB, distintos dos gerentes de front-office que participam da etapa de
+valida\c{c}\~ao de usabilidade, evitando a sobreposi\c{c}\~ao entre
+avalia\c{c}\~ao t\'ecnica independente e aceita\c{c}\~ao organizacional
+interna.
+
+\textbf{Valida\c{c}\~ao da base RAG.} A cobertura e o recall da base de
+conhecimento regulat\'oria (objetivo espec\'ifico d) ser\~ao avaliados por
+meio de um conjunto de teste de 30 a 50 perguntas sobre normativos da
+CVM, do CMN e da ANBIMA, com respostas gabaritadas manualmente, permitindo
+calcular recall@k e precis\~ao da recupera\c{c}\~ao documental antes da
+integra\c{c}\~ao da base ao agente. Adicionalmente, o mecanismo de
+metadados de vig\^encia descrito no objetivo espec\'ifico d ser\'a testado
+com um subconjunto de perguntas envolvendo dispositivos normativos
+revogados ou alterados, verificando se o sistema prioriza corretamente a
+norma vigente.
+
+\begin{quadro}[htbp]
+  \centering
+  \caption{Matriz de Op\c{c}\~oes Metodol\'ogicas}
+  \label{qua:matriz-metodologica}
+  \adjustbox{max width=\textwidth}{%
+  \small
+  \begin{tabular}{p{3.2cm}llllll}
+    \toprule
+    \textbf{Objetivos espec\'ificos} & \textbf{Abordagem} & \textbf{Natureza} & \textbf{Dados} & \textbf{P\'ublico-alvo} & \textbf{Coleta} & \textbf{An\'alise} \\
+    \midrule
+    a) Mapear barreiras informacionais & Qualitativa & Explorat\'oria & Secund\'arios (p\'ublicos online) & Survey BCB/FGC; ANBIMA; Reclame Aqui & Extra\c{c}\~ao de dados p\'ublicos & Estat\'istica descritiva e de conte\'udo \\
+    b) Projetar arquitetura de agente \'unico & Qualitativa & Descritiva & Secund\'arios & Documentos regulat\'orios & An\'alise documental & S\'intese qualitativa \\
+    c) Desenvolver m\'odulos Python & Quantitativa & Aplicada & Secund\'arios & APIs BCB/ANBIMA & Extra\c{c}\~ao via API & Teste de precis\~ao \\
+    d) Construir base RAG & Qualitativa & Descritiva & Secund\'arios & Normativos CVM/CMN & Indexa\c{c}\~ao vetorial & Cobertura e recall \\
+    e) Backtesting e avalia\c{c}\~ao & Multim\'etodos & Descritiva & Prim\'arios e secund\'arios & Especialistas BRB + dados hist\'oricos & Avalia\c{c}\~ao t\'ecnica + simula\c{c}\~ao & Estat\'istica descritiva \\
+    \bottomrule
+  \end{tabular}}
+  \fonte{Elaborado pelo autor (2026).}
+\end{quadro}

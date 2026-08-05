@@ -1,35 +1,175 @@
 \chapter{Introdu\c{c}\~ao}
 \label{cap:introducao}
 
-Na primeira p\'agina da parte textual, apresente o seu trabalho. A
-introdu\c{c}\~ao deve ocupar uma ou, no m\'aximo, duas p\'aginas. Nela,
-dê um panorama da tem\'atica, exponha a quest\~ao-problema que conduzir\'a
-a pesquisa proposta, a hip\'otese e a justificativa.
+\section{Contextualiza\c{c}\~ao Tem\'atica}
+\label{sec:contextualizacao}
 
-Os t\'itulos de cada se\c{c}\~ao (1 INTRODU\c{C}\~AO, 2 REFERENCIAL
-TE\'ORICO etc.) devem ser grafados em letras mai\'usculas e negritadas,
-sem ponto ap\'os a numera\c{c}\~ao (a classe \texttt{idpthesis} j\'a faz
-isso automaticamente para \verb|\chapter|).
+O Brasil atravessa uma transforma\c{c}\~ao estrutural no mercado de
+investimentos. Segundo dados do Tesouro Nacional e do Banco Central do
+Brasil \autocite{bcbtesouro2025}, o n\'umero de investidores pessoa f\'isica
+cadastrados no Tesouro Direto atingiu a marca de 33,25 milh\~oes em agosto
+de 2025, registrando mais de 3,14 milh\~oes de investidores ativos no
+mesmo per\'iodo. Nesse movimento de digitaliza\c{c}\~ao, a 9\textsuperscript{a}
+edi\c{c}\~ao do Raio X do Investidor Brasileiro \autocite{anbima2026}
+identificou, pela primeira vez, o uso de assistentes de intelig\^encia
+artificial como fonte de informa\c{c}\~ao sobre produtos financeiros,
+mencionados por 9\% dos investidores -- \`a frente de canais tradicionais
+como r\'adio e e-mail.
 
-\section{Objetivo geral}
-Descreva aqui o objetivo geral do trabalho.
+No entanto, essa expans\~ao quantitativa n\~ao foi acompanhada por uma
+democratiza\c{c}\~ao qualitativa: a orienta\c{c}\~ao financeira
+personalizada e tecnicamente precisa permanece acess\'ivel
+predominantemente a clientes de alta renda, atendidos por assessores de
+bancos privados e corretoras digitais voltadas ao segmento premium.
+Ademais, modelos baseados exclusivamente em IA Generativa falham em
+tarefas financeiras que exigem precis\~ao num\'erica devido \`a
+propens\~ao a alucina\c{c}\~oes matem\'aticas -- risco inaceit\'avel em
+ambiente regulado --, conforme amplamente documentado na avalia\c{c}\~ao
+multitarefa de modelos de linguagem de larga escala (LLMs) por
+\textcite{bang2023}.
 
-\section{Objetivos espec\'ificos}
-\begin{itemize}
-  \item Objetivo espec\'ifico 1;
-  \item Objetivo espec\'ifico 2.
-\end{itemize}
+A literatura recente documenta que modelos de linguagem de larga escala
+apresentam o fen\^omeno da alucina\c{c}\~ao confiante -- gera\c{c}\~ao de
+outputs factualmente incorretos com alto grau de verossimilhan\c{c}a e tom
+assertivo \autocite{bang2023}. Em dom\'inios regulados como o Sistema
+Financeiro Nacional (SFN), onde a precis\~ao de refer\^encias normativas \'e
+juridicamente exig\'ivel pela Resolu\c{c}\~ao CVM n\textsuperscript{o}
+30/2021, esse comportamento representa risco operacional e legal
+inaceit\'avel. Justifica-se, portanto, a necessidade cient\'ifica e
+pr\'atica de uma arquitetura que segregue o processamento lingu\'istico do
+processamento quantitativo determin\'istico.
 
-\section{Problema}
-Apresente a quest\~ao-problema que conduz a pesquisa.
+Nesse contexto, os bancos p\'ublicos -- em especial os de abrang\^encia
+regional como o Banco de Bras\'ilia (BRB) -- ocupam posi\c{c}\~ao
+estrat\'egica singular. Com mandato social de fomento ao desenvolvimento
+regional e ampla base de correntistas de perfil popular, essas
+institui\c{c}\~oes enfrentam uma tens\~ao estrutural caracter\'istica de
+sua natureza dual: precisam ser comercialmente eficientes e competitivas,
+ao mesmo tempo em que devem entregar o mandato social e de desenvolvimento
+que as distingue dos bancos privados \autocite{costa2016}. A Estrat\'egia
+Nacional de Educa\c{c}\~ao Financeira (ENEF), institu\'ida pelo Decreto
+n\textsuperscript{o} 10.393/2020, refor\c{c}a esse mandato ao situar a
+promo\c{c}\~ao da educa\c{c}\~ao financeira como pol\'itica de Estado
+voltada \`a amplia\c{c}\~ao do acesso \`a orienta\c{c}\~ao financeira de
+qualidade.
 
-\section{Hip\'otese}
-Apresente a hip\'otese de pesquisa.
+A escalabilidade dessa miss\~ao enfrenta um gargalo estrutural de
+capacidade estatal: a impossibilidade pr\'atica de ampliar o quadro de
+especialistas na mesma propor\c{c}\~ao do crescimento da base de clientes.
+A Intelig\^encia Artificial (IA) generativa, apoiada em ferramentas
+externas (function calling) e em bases de conhecimento indexadas (RAG),
+emerge, nesse contexto, como tecnologia capaz de resolver exatamente esse
+paradoxo -- permitindo ao banco p\'ublico entregar a pol\'itica p\'ublica
+de inclus\~ao financeira da ENEF em escala massiva no varejo, sem
+comprometer a efici\^encia administrativa e a conformidade regulat\'oria
+exigidas pelo Banco Central.
 
-\section{Justificativa}
-Justifique a relev\^ancia do trabalho.
+\section{Apresenta\c{c}\~ao da Problem\'atica e da Pergunta de Pesquisa}
+\label{sec:problematica}
 
-Caso haja necessidade de notas explicativas, use notas de rodap\'e\footnote{Texto
-de exemplo para nota de rodap\'e. A nota de rodap\'e apresenta informa\c{c}\~oes
-ou coment\'arios adicionais sobre o conte\'udo.}, que a classe já formata em
-fonte tamanho 10, conforme a norma.
+O mercado de assessoria de investimentos no Brasil sofre com um duplo
+gargalo de distribui\c{c}\~ao. De um lado, as ferramentas automatizadas
+tradicionais -- os chamados rob\^os-investidores -- limitam-se a sugerir
+aloca\c{c}\~oes baseadas em question\'arios est\'aticos de suitability,
+ignorando mudan\c{c}as din\^amicas na curva de juros e as restri\c{c}\~oes
+de liquidez do cidad\~ao comum. De outro lado, a depend\^encia exclusiva
+de LLMs puros acarreta s\'erios riscos de integridade nas estimativas
+patrimoniais, dado o fen\^omeno da alucina\c{c}\~ao confiante documentado
+na literatura.
+
+A lacuna identificada \'e significativa. Embora estudos internacionais
+tenham explorado o uso de LLMs em an\'alise de sentimento financeiro
+\autocite{lopezliratang2023} ou rob\^os-consultores baseados em regras
+\autocite{dacunto2019}, n\~ao foram identificados estudos que proponham e
+avaliem uma arquitetura de IA Generativa que integre c\'alculo
+quantitativo determin\'istico com gera\c{c}\~ao de linguagem natural para
+orienta\c{c}\~ao de investidores de varejo em bancos p\'ublicos
+brasileiros, com plena conformidade ao arcabou\c{c}o regulat\'orio
+nacional.
+
+A contribui\c{c}\~ao desta pesquisa \'e dupla: para a dimens\~ao pr\'atica
+da Administra\c{c}\~ao P\'ublica, ao propor solu\c{c}\~ao escal\'avel para
+democratizar o acesso \`a assessoria financeira; e para a literatura
+especializada, ao desenvolver e avaliar empiricamente uma arquitetura
+original de IA Generativa com c\'alculo determin\'istico e recupera\c{c}\~ao
+de conhecimento regulat\'orio (RAG) no contexto brasileiro.
+
+Diante do exposto, a pergunta de pesquisa que orienta este estudo \'e:
+
+\begin{citacao}
+Uma arquitetura de IA Generativa baseada em agente \'unico que, por meio
+de function calling, separa o c\'alculo quantitativo em Python da
+gera\c{c}\~ao de linguagem por LLM e recupera normativos vigentes de uma
+base de conhecimento regulat\'oria (RAG), \'e capaz de oferecer
+orienta\c{c}\~ao em investimentos de renda fixa para clientes pessoa
+f\'isica do BRB com precis\~ao num\'erica verific\'avel e conformidade \`a
+Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021, sendo avaliada como
+tecnicamente adequada por especialistas de mercado em avalia\c{c}\~ao
+t\'ecnica estruturada?
+\end{citacao}
+
+\section{Enuncia\c{c}\~ao dos Objetivos}
+\label{sec:objetivos}
+
+\subsection{Geral}
+\label{subsec:objetivo-geral}
+
+Desenvolver e validar uma arquitetura de IA Generativa, baseada em agente
+\'unico com function calling e recupera\c{c}\~ao de conhecimento (RAG),
+capaz de automatizar a an\'alise macroecon\^omica, o c\'alculo
+quantitativo de ativos e a orienta\c{c}\~ao em investimentos de renda fixa
+para clientes pessoa f\'isica do BRB, com foco em acessibilidade,
+precis\~ao num\'erica verific\'avel e conformidade regulat\'oria \`a
+Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021, no per\'iodo 2026-2027.
+
+\subsection{Espec\'ificos}
+\label{subsec:objetivos-especificos}
+
+\begin{enumerate}[label=(\alph*)]
+  \item Mapear as principais barreiras informacionais e d\'uvidas
+  recorrentes do investidor de perfil popular a partir de bases p\'ublicas
+  online -- combinando a Pesquisa de Letramento Financeiro do Banco
+  Central do Brasil (metodologia OCDE/INFE) como evid\^encia estat\'istica
+  nacionalmente representativa, o Raio X do Investidor Brasileiro (ANBIMA)
+  como fonte complementar de padr\~oes comportamentais, e registros do
+  Reclame Aqui de bancos p\'ublicos comerciais de varejo (Banco do Brasil,
+  Caixa Econ\^omica Federal, BRB, Banrisul, Banestes, Banese e Banpar\'a)
+  como evid\^encia ilustrativa --, por meio de an\'alise estat\'istica
+  descritiva e de an\'alise de conte\'udo categorial dos registros
+  dispon\'iveis.
+
+  \item Projetar uma arquitetura de agente \'unico baseada em LLM com
+  function calling, integrando (i) um m\'odulo determin\'istico em Python
+  puro para o processamento num\'erico e (ii) uma base de conhecimento
+  regulat\'oria indexada via Retrieval-Augmented Generation (RAG, ``wiki''
+  normativa), separando o processamento num\'erico da gera\c{c}\~ao de
+  linguagem natural e gerando logs estruturados de explicabilidade (XAI)
+  para cumprimento do Princ\'ipio da Motiva\c{c}\~ao.
+
+  \item Desenvolver m\'odulos matem\'aticos em Python para c\'alculo exato
+  de rentabilidade l\'iquida -- parametrizando a ordem de prioridade
+  tribut\'aria de incid\^encia do IOF antes do Imposto de Renda para
+  resgates em prazos inferiores a 30 dias --, duration e compara\c{c}\~ao
+  entre CDB e Tesouro Direto, integrados a APIs p\'ublicas do BCB e
+  ANBIMA, com valida\c{c}\~ao por testes unit\'arios de casos-limite
+  ($t=0$, $t=29$ e $t=30$ dias na fronteira de incid\^encia do IOF, taxa
+  de rendimento nula) e por valida\c{c}\~ao cruzada dos resultados frente
+  a simuladores oficiais (Tesouro Transparente, calculadoras ANBIMA),
+  assegurando que o padr\~ao de refer\^encia (\textit{ground truth})
+  utilizado no backtesting seja independentemente verificado.
+
+  \item Construir base de conhecimento regulat\'oria via
+  Retrieval-Augmented Generation (RAG) com normativos da CVM, CMN, Tesouro
+  Nacional e ANBIMA, com guardrails algor\'itmicos baseados nas
+  resolu\c{c}\~oes vigentes, indexando cada trecho normativo (\textit{chunk})
+  com metadados de vig\^encia -- data de publica\c{c}\~ao, status
+  vigente/revogado e norma revogadora, quando aplic\'avel -- para que o
+  agente priorize automaticamente o dispositivo em vigor e descarte
+  refer\^encias a normas superadas.
+
+  \item Realizar backtesting em janela hist\'orica de 12 meses
+  (junho/2025 a maio/2026) e avaliar a qualidade das respostas -- geradas
+  para um conjunto de personas sint\'eticas de investidor -- por meio de
+  avalia\c{c}\~ao t\'ecnica com especialistas e teste de usabilidade com
+  gerentes de front-office do BRB.
+\end{enumerate}
