@@ -59,6 +59,7 @@
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}
 \RequirePackage{ifthen}
+\RequirePackage{lastpage}
 
 %% -----------------------------------------------------------------------
 %% 3. GEOMETRIA DA PAGINA - NBR 14724, secao 5.1
@@ -210,6 +211,11 @@
 %% =======================================================================
 %% 11. METADADOS DO TRABALHO
 %% =======================================================================
+%% Auxilia a preencher "[XX] f." na ficha catalografica sem precisar
+%% contar paginas manualmente: use \numerodepaginas dentro do texto
+%% passado a \fichacatalograficatexto (requer 2 compilacoes para atualizar).
+\newcommand{\numerodepaginas}{\pageref{LastPage}}
+
 \newcommand{\instituicao}[1]{\def\idpinstituicao{#1}}
 \instituicao{Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa -- IDP}
 
@@ -219,6 +225,14 @@
 \newcommand{\curso}[1]{\def\idpcurso{#1}}
 \newcommand{\programapos}[1]{\def\idpprogramapos{#1}}
 \newcommand{\areaconcentracao}[1]{\def\idpareaconcentracao{#1}}
+\newcommand{\linhapesquisa}[1]{\def\idplinhapesquisa{#1}}
+\let\idplinhapesquisa\@empty
+
+%% Numero de matricula do aluno (opcional; aparece na folha de
+%% aprovacao se preenchido). Comum em dissertacoes/teses de
+%% mestrado/doutorado, dispensavel em monografias de graduacao.
+\newcommand{\matricula}[1]{\def\idpmatricula{#1}}
+\let\idpmatricula\@empty
 
 \newcommand{\tituloTrabalho}[1]{\def\idptitulo{#1}}
 \newcommand{\subtituloTrabalho}[1]{\def\idpsubtitulo{#1}}
@@ -337,7 +351,9 @@
   \clearpage
   \thispagestyle{empty}
   \begin{center}
-    {\bfseries\MakeUppercase{\idpautor}}\\[2\baselineskip]
+    {\bfseries\MakeUppercase{\idpautor}}\\
+    \ifx\idpmatricula\@empty\else Matr\'icula: \idpmatricula\\\fi
+    \vspace{1\baselineskip}
     {\bfseries\MakeUppercase{\idptitulo}}\\
     \ifx\idpsubtitulo\@empty\else \idpsubtitulo\\\fi
     \vspace{1.5cm}

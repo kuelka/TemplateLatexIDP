@@ -16,23 +16,89 @@ a partir do modelo em Word publicado pela biblioteca do IDP:
 ```
 TemplateLatexIDP/
 ├── idpthesis.cls              # classe LaTeX com toda a formatação ABNT/IDP
-├── main.tex                   # documento principal (edite os metadados aqui)
+├── main.tex                   # documento principal (estrutura do trabalho)
+├── metadados.tex              # TODOS os dados do trabalho: título, autor,
+│                               # orientador, banca, ficha catalográfica etc.
+│                               # -- é o único arquivo que você deveria
+│                               # precisar editar para "preencher os campos"
 ├── referencias.bib            # base de referências bibliográficas (BibLaTeX)
 ├── capitulos/
 │   ├── 01-introducao.tex
 │   ├── 02-referencial-teorico.tex
-│   ├── 03-metodologia.tex
-│   ├── 04-resultados.tex
-│   └── 05-consideracoes-finais.tex
-├── apendices/
-│   └── apendice-a.tex
+│   ├── 03-hipoteses.tex
+│   ├── 04-metodologia.tex
+│   ├── 05-resultados.tex
+│   ├── 06-discussao.tex
+│   └── 07-conclusao.tex
 ├── anexos/
-│   └── anexo-a.tex
-├── figuras/                   # coloque aqui suas imagens
+│   ├── anexo-1-cronograma.tex
+│   ├── anexo-2-personas.tex
+│   ├── anexo-3-instrumento-avaliacao.tex
+│   └── anexo-4-questionario-sus.tex
+├── apendices/
+│   └── apendice-a.tex          # exemplo -- este trabalho não usa apêndices
+├── figuras/                    # coloque aqui suas imagens
 ├── .gitignore
 ├── README.md
 └── TUTORIAL.md                 # como usar este template com Claude Code / Codex
 ```
+
+## Como preencher os dados do trabalho (substituindo os "placeholders em vermelho" do template Word)
+
+O template oficial em Word marca em vermelho os trechos que cada aluno deve
+substituir (nome do curso, título, orientador, ano etc.). Aqui isso é
+resolvido de um jeito mais seguro que ficar caçando texto solto no
+documento: **cada dado tem seu próprio comando ("variável"), definido uma
+única vez em `metadados.tex` e usado automaticamente em todos os lugares
+certos** (capa, folha de rosto, ficha catalográfica, folha de aprovação).
+
+Não é necessário (nem recomendado) criar um arquivo de texto solto e um
+parser para lê-lo — o próprio LaTeX já funciona como esse "banco de
+variáveis": `\comando{valor}` É a variável. Colocar todos esses comandos em
+um arquivo `metadados.tex` separado, importado por `\input{metadados}` no
+topo do `main.tex`, dá exatamente o benefício que se busca (um lugar único
+para editar, reaproveitável, fácil de dar diff no git) sem reinventar um
+mecanismo de parsing.
+
+Tabela de referência com todas as variáveis disponíveis na classe:
+
+| Comando | Onde aparece | Obrigatório? |
+|---|---|---|
+| `\instituicao{}` | Capa, folha de rosto | Sim (já vem preenchido com o nome do IDP) |
+| `\curso{}` | Capa (linha abaixo da instituição) | Recomendado |
+| `\programapos{}` | Texto de natureza do trabalho (dissertação/tese) | Para dissertação/tese |
+| `reaconcentracao{}` | Texto de natureza do trabalho (dissertação/tese) | Para dissertação/tese |
+| `\linhapesquisa{}` | Reservado para uso manual (ex.: dentro de `
+aturezatrabalho`) | Opcional |
+| `	ituloTrabalho{}` | Capa, folha de rosto, folha de aprovação, ficha catalográfica | Sim |
+| `\subtituloTrabalho{}` | Capa, folha de rosto, folha de aprovação | Opcional |
+| `utorTrabalho{}` | Capa, folha de rosto, folha de aprovação | Sim |
+| `\matricula{}` | Folha de aprovação (abaixo do nome do autor) | Opcional |
+| `\orientador{}` | Folha de rosto, ficha catalográfica, banca | Sim |
+| `\coorientador{}` | Folha de rosto | Opcional |
+| `\membrosbanca{...}` com `\examinador{Nome}{Papel}` | Folha de aprovação | Sim |
+| `\localdefesa{}` | Capa, folha de rosto, folha de aprovação | Sim (já vem "Brasília-DF") |
+| `notrabalho{}` | Capa, folha de rosto | Sim |
+| `\datadefesa{}` | Folha de aprovação | Sim |
+| `
+aturezatrabalho{}` | Folha de rosto, folha de aprovação | Opcional (senão, é gerado automaticamente a partir do tipo de trabalho + `\programapos`/`reaconcentracao`) |
+| `ichacatalograficatexto{}` | Página da ficha catalográfica | Sim (peça o texto oficial à Biblioteca Ministro Moreira Alves) |
+| `
+umerodepaginas` | Use dentro do texto da ficha catalográfica no lugar de "XX f." | Opcional, mas recomendado (preenche sozinho, via pacote `lastpage`) |
+
+Fluxo recomendado para começar um trabalho novo:
+
+1. Copie `main.tex` e `metadados.tex` como ponto de partida.
+2. Preencha **apenas** o `metadados.tex`.
+3. Troque a opção da classe em `main.tex` (`monografia`, `dissertacao` ou
+   `tese`) conforme o seu caso.
+4. Se seu trabalho usa apêndices/anexos numerados com letras (padrão A, B,
+   C — o default da classe) mantenha como está; se usar números romanos
+   (I, II, III — comum em programas de mestrado/doutorado), adicione logo
+   após o `\documentclass`:
+   ```latex
+   enewcommand{	heidpanexo}{\Roman{idpanexo}}
+   ```
 
 ## O que a classe `idpthesis.cls` já implementa
 

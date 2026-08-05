@@ -19,7 +19,8 @@ são:
 
 | Arquivo | O que é |
 |---|---|
-| `main.tex` | Metadados do trabalho: título, autor, orientador, curso, banca, resumo, abstract, dedicatória, agradecimentos |
+| `metadados.tex` | Metadados do trabalho: título, autor, orientador, curso, banca, ficha catalográfica |
+| `main.tex` | Estrutura do documento (resumo, abstract, dedicatória, agradecimentos, ordem dos capítulos) |
 | `capitulos/01-introducao.tex` … `05-consideracoes-finais.tex` | O corpo do seu trabalho, um arquivo por capítulo |
 | `referencias.bib` | Sua bibliografia (cada livro/artigo é uma entrada) |
 | `apendices/*.tex`, `anexos/*.tex` | Apêndices e anexos, se houver |
@@ -55,9 +56,11 @@ você revise o `git diff` de cada capítulo isoladamente antes de aceitar.
 
 Um fluxo que funciona bem:
 
-1. **Preencha os metadados primeiro.** Peça ao agente para editar `main.tex`
-   com o título, autor, orientador, curso e tipo de trabalho (monografia,
-   dissertação ou tese).
+1. **Preencha os metadados primeiro.** Peça ao agente para editar
+   `metadados.tex` com o título, autor, orientador, curso e demais dados —
+   é o único arquivo que concentra tudo isso, então nunca é preciso caçar
+   texto solto pelo documento. Ajuste também a opção da classe em
+   `main.tex` (`monografia`, `dissertacao` ou `tese`).
 2. **Escreva/dite o conteúdo de um capítulo por vez.** Cole suas anotações,
    rascunhos ou até áudio transcrito, e peça para o agente estruturar aquele
    capítulo específico dentro do `.tex` correspondente.
@@ -76,10 +79,11 @@ Um fluxo que funciona bem:
 
 Preenchendo os metadados:
 
-> "Edite o `main.tex` deste projeto: sou aluno do curso de Direito, o
-> trabalho é uma monografia, título 'A Responsabilidade Civil do Estado por
-> Omissão', autor Fulano de Tal, orientador Prof. Dr. Sicrano de Souza.
-> Depois recompile e me confirme que não há erros."
+> "Edite o `metadados.tex` deste projeto: sou aluno do curso de Direito,
+> o trabalho é uma monografia, título 'A Responsabilidade Civil do Estado
+> por Omissão', autor Fulano de Tal, orientador Prof. Dr. Sicrano de Souza.
+> Troque a opção da classe em `main.tex` para `monografia`. Depois
+> recompile e me confirme que não há erros."
 
 Escrevendo um capítulo a partir de anotações suas:
 
@@ -175,10 +179,11 @@ Toda ilustração exige a fonte (mesmo que seja "Do autor"):
 
 ## 7. Checklist antes de entregar
 
-- [ ] Todos os campos de `main.tex` preenchidos (título, autor, orientador,
-      banca examinadora, resumo, abstract, palavras-chave).
+- [ ] Todos os campos de `metadados.tex` preenchidos (título, autor,
+      orientador, matrícula, banca examinadora) e o resumo/abstract em
+      `main.tex`.
 - [ ] Ficha catalográfica solicitada à Biblioteca Ministro Moreira Alves
-      (biblioteca@idp.edu.br) e colada em `main.tex` via
+      (biblioteca@idp.edu.br) e colada em `metadados.tex` via
       `\fichacatalograficatexto{...}`.
 - [ ] Todas as citações diretas e indiretas têm entrada em `referencias.bib`
       e as referências existem de fato (confira manualmente).
