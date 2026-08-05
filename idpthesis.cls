@@ -29,10 +29,16 @@
 \newif\ifidp@monografia  \idp@monografiafalse
 \newif\ifidp@dissertacao \idp@dissertacaofalse
 \newif\ifidp@tese        \idp@tesefalse
+%% Opcao 'entrega': transforma em erro fatal (interrompe a compilacao) o
+%% aviso de campo obrigatorio nao preenchido em metadados.tex. Use ao gerar
+%% a versao final, para nao correr o risco de entregar um PDF com
+%% "[[ PREENCHER: ... ]]" esquecido no meio do texto.
+\newif\ifidp@entrega     \idp@entregafalse
 
 \DeclareOption{monografia}{\idp@monografiatrue}
 \DeclareOption{dissertacao}{\idp@dissertacaotrue}
 \DeclareOption{tese}{\idp@tesetrue}
+\DeclareOption{entrega}{\idp@entregatrue}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 
@@ -53,6 +59,8 @@
 \RequirePackage{amssymb}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[brazil]{babel}
+\RequirePackage{microtype}               % melhora justificacao/quebra de linha
+\frenchspacing                            % pt-BR: sem espaco extra apos ponto final
 \RequirePackage{times}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
@@ -126,12 +134,34 @@
   {}
 \titlespacing*{\section}{0pt}{\baselineskip}{0.5\baselineskip}
 
+%% NBR 6024 - hierarquia tipografica progressiva (convencao mais usual,
+%% adotada por exemplo pelo abnTeX2): 1o nivel CAIXA ALTA+negrito (chapter,
+%% acima); 2o nivel negrito (section, acima); 3o nivel sem destaque
+%% (subsection); 4o nivel italico (subsubsection); 5o nivel negrito+italico
+%% (paragraph). Nao use mais de 5 niveis de secao.
 \titleformat{\subsection}
-  {\normalfont\itshape\normalsize}
+  {\normalfont\normalsize}
   {\thesubsection}
   {1em}
   {}
 \titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0.25\baselineskip}
+
+\titleformat{\subsubsection}
+  {\normalfont\itshape\normalsize}
+  {\thesubsubsection}
+  {1em}
+  {}
+\titlespacing*{\subsubsection}{0pt}{0.5\baselineskip}{0.25\baselineskip}
+
+\titleformat{\paragraph}
+  {\normalfont\bfseries\itshape\normalsize}
+  {\theparagraph}
+  {1em}
+  {}
+\titlespacing*{\paragraph}{0pt}{0.5\baselineskip}{0.25\baselineskip}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
 
 \newcommand{\idpcapitulosemnumero}[1]{%
   \chapter*{\MakeUppercase{#1}}
@@ -158,13 +188,18 @@
 %% -----------------------------------------------------------------------
 %% 8. LEGENDAS DE FIGURAS/TABELAS/QUADROS/GRAFICOS
 %% -----------------------------------------------------------------------
+%% NBR 14724 (praxe consolidada nos manuais de ilustracoes da ABNT): o
+%% titulo/legenda fica ACIMA da ilustracao, centralizado; a fonte fica
+%% ABAIXO. position=top garante isso para figure/table e para os floats
+%% customizados (quadro/grafico) definidos logo abaixo.
 \RequirePackage[
   format=plain,
   labelsep=endash,
   font=small,
   labelfont=bf,
-  justification=raggedright,
-  singlelinecheck=false
+  justification=centering,
+  singlelinecheck=false,
+  position=top
 ]{caption}
 
 \RequirePackage{float}
@@ -172,10 +207,15 @@
 \RequirePackage{tabularx}
 \RequirePackage{adjustbox}
 \RequirePackage{longtable}
+\floatstyle{plaintop}
 \newfloat{quadro}{tbp}{loq}[chapter]
 \floatname{quadro}{Quadro}
 \newfloat{grafico}{tbp}{logr}[chapter]
 \floatname{grafico}{Gr\'afico}
+\captionsetup[figure]{position=top}
+\captionsetup[table]{position=top}
+\captionsetup[quadro]{position=top}
+\captionsetup[grafico]{position=top}
 
 \newcommand{\listofquadros}{%
   \idpcapitulosemnumero{Lista de Quadros}
@@ -187,7 +227,12 @@
 }
 
 \newcommand{\fonte}[1]{%
-  {\small\raggedright Fonte: #1\par}
+  \par\vspace{2pt}
+  {\centering\small\textbf{Fonte:}~#1\par}
+}
+\newcommand{\nota}[1]{%
+  \par\vspace{2pt}
+  {\centering\small\textbf{Nota:}~#1\par}
 }
 
 %% -----------------------------------------------------------------------
@@ -234,13 +279,31 @@
 \newcommand{\matricula}[1]{\def\idpmatricula{#1}}
 \let\idpmatricula\@empty
 
+%% -----------------------------------------------------------------------
+%% Marcador de campo obrigatorio nao preenchido: aparece em destaque no
+%% PDF (para ser impossivel de ignorar na revisao final) e dispara aviso
+%% na compilacao. Com a opcao de classe 'entrega', vira erro fatal.
+%% -----------------------------------------------------------------------
+\newcommand{\idpcampovazio}[1]{[[ PREENCHER: #1 ]]}
+\newcount\idppendentes
+\newcommand{\idpconfere}[2]{%
+  \def\idptmp{\idpcampovazio{#1}}%
+  \ifx#2\idptmp
+    \global\advance\idppendentes by 1\relax
+    \ClassWarningNoLine{idpthesis}{Campo obrigatorio nao preenchido: #1}%
+  \fi
+}
+
 \newcommand{\tituloTrabalho}[1]{\def\idptitulo{#1}}
+\def\idptitulo{\idpcampovazio{titulo}}
 \newcommand{\subtituloTrabalho}[1]{\def\idpsubtitulo{#1}}
 \let\idpsubtitulo\@empty
 
 \newcommand{\autorTrabalho}[1]{\def\idpautor{#1}}
+\def\idpautor{\idpcampovazio{autor}}
 
 \newcommand{\orientador}[1]{\def\idporientador{#1}}
+\def\idporientador{\idpcampovazio{orientador}}
 \newcommand{\coorientador}[1]{\def\idpcoorientador{#1}}
 \let\idpcoorientador\@empty
 
@@ -251,8 +314,36 @@
 \anotrabalho{\the\year}
 
 \newcommand{\datadefesa}[1]{\def\idpdatadefesa{#1}}
+\def\idpdatadefesa{\idpcampovazio{datadefesa}}
 
 \newcommand{\membrosbanca}[1]{\def\idpbanca{#1}}
+
+%% Verificacao dos campos obrigatorios (roda apos metadados.tex/main.tex
+%% terem sido lidos, ja no inicio do documento).
+\AtBeginDocument{%
+  \idpconfere{titulo}{\idptitulo}%
+  \idpconfere{autor}{\idpautor}%
+  \idpconfere{orientador}{\idporientador}%
+  \idpconfere{datadefesa}{\idpdatadefesa}%
+  \ifnum\idppendentes>0\relax
+    \ifidp@entrega
+      \ClassError{idpthesis}{%
+        \the\idppendentes\space campo(s) obrigatorio(s) nao preenchido(s) em
+        metadados.tex}{%
+        Procure por "[[ PREENCHER" no PDF e pelas linhas "Campo obrigatorio
+        nao preenchido" acima neste log. Preencha metadados.tex ou remova a
+        opcao 'entrega' da classe para gerar um PDF de rascunho mesmo
+        assim.}%
+      \stop
+    \else
+      \ClassWarningNoLine{idpthesis}{%
+        ATENCAO: \the\idppendentes\space campo(s) de metadados.tex ainda
+        nao preenchido(s). Eles aparecem como "[[ PREENCHER: ... ]]" no PDF.
+        Use a opcao de classe 'entrega' para transformar isto em erro antes
+        de gerar a versao final}%
+    \fi
+  \fi
+}
 
 \newcommand{\fichacatalograficatexto}[1]{\def\idpficha{#1}}
 \let\idpficha\@empty

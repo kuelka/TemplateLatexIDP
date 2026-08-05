@@ -1,5 +1,7 @@
 # TemplateLatexIDP
 
+![Compilar o PDF](https://github.com/kuelka/TemplateLatexIDP/actions/workflows/build.yml/badge.svg)
+
 Template **não oficial** em LaTeX para monografias, dissertações e teses do
 **IDP — Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa**, construído
 a partir do modelo em Word publicado pela biblioteca do IDP:
@@ -97,7 +99,8 @@ Fluxo recomendado para começar um trabalho novo:
    (I, II, III — comum em programas de mestrado/doutorado), adicione logo
    após o `\documentclass`:
    ```latex
-   enewcommand{	heidpanexo}{\Roman{idpanexo}}
+   
+enewcommand{	heidpanexo}{\Roman{idpanexo}}
    ```
 
 ## O que a classe `idpthesis.cls` já implementa
@@ -121,6 +124,16 @@ Fluxo recomendado para começar um trabalho novo:
   NBR 6023 e NBR 10520.
 - Suporte a três tipos de trabalho via opção de classe:
   `\documentclass[monografia]{idpthesis}`, `[dissertacao]` ou `[tese]`.
+- Legendas de figuras/tabelas/quadros/gráficos **acima** do elemento e
+  "Fonte:" **abaixo**, centralizadas — conforme a praxe da ABNT.
+- Opção de classe `entrega`: transforma em erro fatal qualquer campo
+  obrigatório de `metadados.tex` deixado em branco (evita gerar a versão
+  final com um `[[ PREENCHER: ... ]]` esquecido no meio do texto).
+- Compilação automática via GitHub Actions a cada push (veja o badge no
+  topo deste README) — o PDF fica disponível como artefato na aba
+  *Actions*, mesmo que você não tenha LaTeX instalado.
+- `AGENTS.md`/`CLAUDE.md`: instruções para agentes de IA (Claude Code,
+  Codex) sobre como editar este repositório com segurança.
 
 ## Dependências
 
@@ -139,13 +152,32 @@ engrenagem → Bibliography → Biber). Em uma instalação local, veja o
 ## Como compilar localmente
 
 ```bash
+latexmk -pdf main.tex
+```
+
+(o `latexmkrc` deste repositório já configura o `biber` e roda as passagens
+necessárias na ordem certa. Sem `latexmk`, o equivalente manual é:)
+
+```bash
 pdflatex main.tex
 biber main
 pdflatex main.tex
 pdflatex main.tex
 ```
 
-(ou, se tiver `latexmk` instalado: `latexmk -pdf -bibtex-cond main.tex`)
+Não tem LaTeX instalado? Não é obrigatório: a cada push para o `main`, o
+GitHub Actions compila o PDF automaticamente (veja a aba *Actions* do
+repositório) e o disponibiliza como artefato para download.
+
+Para gerar a versão final com validação estrita (aborta a compilação
+se algum campo obrigatório de `metadados.tex` ainda estiver em branco),
+adicione `entrega` às opções da classe em `main.tex`:
+
+```latex
+\documentclass[dissertacao,entrega]{idpthesis}
+```
+
+e recompile. Remova a opção para voltar a compilar rascunhos normalmente.
 
 ## Licença
 
