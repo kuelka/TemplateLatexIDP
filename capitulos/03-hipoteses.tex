@@ -13,11 +13,19 @@ vieses comportamentais humanos de tomada de decis\~ao. A segrega\c{c}\~ao
 entre c\'alculo composto determin\'istico (Python) e gera\c{c}\~ao de
 linguagem (LLM) elimina a principal fonte de erro em modelos generativos
 puros -- as alucina\c{c}\~oes matem\'aticas --, conferindo auditabilidade
-integral \`as sa\'idas. A precis\~ao num\'erica \'e aferida frente ao
-padr\~ao de refer\^encia (\textit{ground truth}) independentemente
-verificado nos simuladores oficiais (Tesouro Transparente, calculadoras
-ANBIMA), conforme detalhado no objetivo espec\'ifico c, dispensando a
-necessidade de um comparador externo.
+integral \`as sa\'idas. A precis\~ao num\'erica do m\'odulo determin\'istico \'e aferida
+frente ao padr\~ao de refer\^encia (\textit{ground truth})
+independentemente verificado nos simuladores oficiais (Tesouro
+Transparente, calculadoras ANBIMA), conforme detalhado no objetivo
+espec\'ifico c, dispensando a necessidade de um comparador externo
+para essa valida\c{c}\~ao espec\'ifica. J\'a a necessidade da
+segrega\c{c}\~ao entre c\'alculo e gera\c{c}\~ao de linguagem --
+e n\~ao apenas a corre\c{c}\~ao do m\'odulo isoladamente -- \'e
+testada por meio de uma condi\c{c}\~ao de controle na avalia\c{c}\~ao
+t\'ecnica (objetivo espec\'ifico e, Se\c{c}\~ao~\ref{sec:analise-matriz}),
+na qual o mesmo conjunto de perguntas \'e submetido ao LLM sem
+acesso ao m\'odulo Python, permitindo comparar diretamente a taxa
+de erro da arquitetura completa com a do modelo generativo isolado.
 
 \textbf{H2} -- A avalia\c{c}\~ao das recomenda\c{c}\~oes do agente por
 gerentes de front-office do BRB -- aplicada via question\'ario System

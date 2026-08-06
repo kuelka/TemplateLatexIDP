@@ -115,6 +115,26 @@ valida\c{c}\~ao de usabilidade, evitando a sobreposi\c{c}\~ao entre
 avalia\c{c}\~ao t\'ecnica independente e aceita\c{c}\~ao organizacional
 interna.
 
+\textbf{Condi\c{c}\~ao de controle (LLM sem m\'odulo determin\'istico).}
+Para verificar n\~ao apenas a acur\'acia do sistema completo, mas a
+necessidade da segrega\c{c}\~ao entre c\'alculo e gera\c{c}\~ao de
+linguagem proposta em H1, o mesmo conjunto de perguntas utilizado na
+aferi\c{c}\~ao de fidelidade do RFL (item i da rubrica acima) ser\'a tamb\'em
+submetido ao modelo de linguagem sem acesso ao m\'odulo Python de
+c\'alculo, solicitando que o pr\'oprio LLM realize o c\'alculo de
+rentabilidade l\'iquida -- incluindo a aplica\c{c}\~ao das al\'iquotas
+regressivas de IR e IOF -- a partir dos mesmos dados de entrada. A taxa
+de erro dessa condi\c{c}\~ao de controle ser\'a comparada \`a taxa de
+erro da arquitetura completa, operacionalizando empiricamente a
+alega\c{c}\~ao de H1 de que a segrega\c{c}\~ao entre c\'alculo
+determin\'istico e gera\c{c}\~ao de linguagem elimina a principal fonte
+de erro dos modelos generativos puros. O desenho segue a l\'ogica de
+avalia\c{c}\~ao por remo\c{c}\~ao de componentes (\textit{ablation})
+empregada em arquiteturas agentic recentes sobre RAG financeiro, nas
+quais a adi\c{c}\~ao de um agente com ferramentas de c\'alculo sobre o
+retrieval puro produziu o maior ganho isolado de acur\'acia factual
+observado entre todas as etapas do pipeline \autocite{akinfaderin2025}.
+
 \textbf{Valida\c{c}\~ao da base RAG.} A cobertura e o recall da base de
 conhecimento regulat\'oria (objetivo espec\'ifico d) ser\~ao avaliados por
 meio de um conjunto de teste de 30 a 50 perguntas sobre normativos da
@@ -125,6 +145,19 @@ metadados de vig\^encia descrito no objetivo espec\'ifico d ser\'a testado
 com um subconjunto de perguntas envolvendo dispositivos normativos
 revogados ou alterados, verificando se o sistema prioriza corretamente a
 norma vigente.
+
+A estrat\'egia de recupera\c{c}\~ao adotar\'a busca h\'ibrida (fus\~ao
+ponderada entre recupera\c{c}\~ao densa e esparsa), e n\~ao apenas
+recupera\c{c}\~ao densa, e o corpus normativo ser\'a reestruturado em
+formato markdown antes da indexa\c{c}\~ao. Ambas as decis\~oes seguem
+\textcite{kim2025}, que documenta ganhos de NDCG@10 decorrentes dessas
+duas escolhas de design em corpora financeiros. A busca h\'ibrida \'e
+particularmente relevante para o corpus regulat\'orio deste trabalho, no
+qual normas textualmente pr\'oximas mas normativamente distintas -- por
+exemplo, a Resolu\c{c}\~ao CMN n\textsuperscript{o} 4.557 e a
+Resolu\c{c}\~ao CMN n\textsuperscript{o} 4.879 -- exigem correspond\^encia
+exata de termos (n\'umero da norma) que a recupera\c{c}\~ao puramente
+densa, baseada em similaridade sem\^antica, tende a confundir.
 
 \begin{quadro}[htbp]
   \centering
