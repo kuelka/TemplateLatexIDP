@@ -95,25 +95,61 @@ conte\'udo sobre os coment\'arios qualitativos.
 
 \textbf{Rubrica da avalia\c{c}\~ao t\'ecnica.} Para operacionalizar H1 e
 H2 com maior granularidade, a avalia\c{c}\~ao t\'ecnica adotar\'a rubrica
-de avalia\c{c}\~ao estruturada em tr\^es pilares quantific\'aveis,
-pontuados individualmente por cada especialista em escala Likert de 5
-pontos: (i) fidelidade do Retorno Final L\'iquido (RFL) reportado na
-resposta ao cliente frente ao valor calculado pelo m\'odulo determin\'istico
--- n\~ao uma reavalia\c{c}\~ao da matem\'atica do m\'odulo, j\'a verificada
-no objetivo espec\'ifico c --, incluindo a correta aplica\c{c}\~ao da
-al\'iquota regressiva do IR ($\theta$) e da al\'iquota do IOF; (ii)
-ader\^encia da recomenda\c{c}\~ao \`as regras de suitability vigentes
-(Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021); e (iii) clareza da
-linguagem da resposta ao cliente. Essa rubrica complementa -- sem
-substituir -- o question\'ario SUS previsto em H2, permitindo
+estruturada em tr\^es pilares quantific\'aveis: (i) fidelidade do Retorno
+Final L\'iquido (RFL) reportado na resposta ao cliente frente ao valor
+calculado pelo m\'odulo determin\'istico -- n\~ao uma reavalia\c{c}\~ao
+da matem\'atica do m\'odulo, j\'a verificada no objetivo espec\'ifico c
+--, incluindo a correta aplica\c{c}\~ao da al\'iquota regressiva do IR
+($\theta$) e da al\'iquota do IOF; e (ii) ader\^encia da recomenda\c{c}\~ao
+\`as regras de suitability vigentes (Resolu\c{c}\~ao CVM
+n\textsuperscript{o} 30/2021), ambos pontuados individualmente por cada
+especialista em escala Likert de 5 pontos. A dimens\~ao (iii), clareza da
+linguagem da resposta ao cliente, \'e avaliada separadamente por
+LLM-as-a-judge, conforme detalhado a seguir. Essa rubrica complementa --
+sem substituir -- o question\'ario SUS previsto em H2, permitindo
 diagnosticar separadamente falhas de fidelidade na s\'intese lingu\'istica,
 de conformidade regulat\'oria e de usabilidade. Para preservar a
 independ\^encia da avalia\c{c}\~ao t\'ecnica, os especialistas
-respons\'aveis por ela ser\~ao profissionais de mercado n\~ao vinculados
-ao BRB, distintos dos gerentes de front-office que participam da etapa de
-valida\c{c}\~ao de usabilidade, evitando a sobreposi\c{c}\~ao entre
-avalia\c{c}\~ao t\'ecnica independente e aceita\c{c}\~ao organizacional
-interna.
+respons\'aveis pelos pilares (i) e (ii) ser\~ao profissionais de mercado
+n\~ao vinculados ao BRB, distintos dos gerentes de front-office que
+participam da etapa de valida\c{c}\~ao de usabilidade, evitando a
+sobreposi\c{c}\~ao entre avalia\c{c}\~ao t\'ecnica independente e
+aceita\c{c}\~ao organizacional interna.
+
+\textbf{Avalia\c{c}\~ao de clareza por LLM-as-a-judge.} A valida\c{c}\~ao
+da dimens\~ao de clareza da linguagem \'e realizada por meio de
+LLM-as-a-judge -- uso de um modelo de linguagem para avaliar a qualidade
+comunicativa das respostas geradas --, abordagem com precedente
+metodol\'ogico consolidado na literatura de Processamento de Linguagem
+Natural: \textcite{zheng2023}, no estudo fundador do paradigma, reportam
+que ju\'izes como o GPT-4 atingem mais de 80\% de concord\^ancia com
+prefer\^encia humana em tarefas abertas, patamar equivalente \`a
+concord\^ancia humano-humano, resultado corroborado por \textcite{liu2023geval}
+com a m\'etrica G-Eval. O julgamento \'e complementado por m\'etrica de
+legibilidade validada para o portugu\^es e ancorado nas caracter\'isticas
+do p\'ublico de perfil popular identificadas no diagn\'ostico do
+Cap\'itulo 5 (baixa familiaridade com terminologia de renda fixa), de
+modo que o LLM-juiz avalia a resposta especificamente sob o crit\'erio de
+compreensibilidade para esse perfil de investidor, e n\~ao sob um padr\~ao
+gen\'erico de qualidade textual.
+
+A ado\c{c}\~ao de LLM-as-a-judge exige, contudo, reconhecimento
+expl\'icito de suas limita\c{c}\~oes documentadas na literatura.
+\textcite{li2024llmjudges} sistematizam os principais vieses do
+paradigma: vi\'es de posi\c{c}\~ao, vi\'es de verbosidade (prefer\^encia
+por respostas mais longas independentemente da qualidade) e vi\'es de
+autofavorecimento (tend\^encia do modelo a avaliar mais favoravelmente
+sa\'idas semelhantes \`as que ele mesmo geraria). \textcite{bavaresco2025},
+em estudo de grande escala com onze modelos avaliadores em vinte tarefas
+de PLN, recomendam valida\c{c}\~ao cuidadosa contra julgamento humano
+antes do uso de LLM-as-a-judge como avaliador em produ\c{c}\~ao.
+Reconhece-se essa recomenda\c{c}\~ao como limita\c{c}\~ao do presente
+estudo: a valida\c{c}\~ao da dimens\~ao de clareza \'e realizada
+integralmente por LLM-as-a-judge e m\'etrica de legibilidade, sem
+valida\c{c}\~ao humana complementar dentro do escopo desta disserta\c{c}\~ao;
+a implanta\c{c}\~ao em produ\c{c}\~ao da arquitetura deve, portanto, ser
+precedida de uma etapa adicional de valida\c{c}\~ao humana em escala,
+n\~ao coberta pelo escopo deste trabalho.
 
 \textbf{Condi\c{c}\~ao de controle (LLM sem m\'odulo determin\'istico).}
 Para verificar n\~ao apenas a acur\'acia do sistema completo, mas a
