@@ -93,8 +93,8 @@ fase de avalia\c{c}\~ao (Etapa 5), ser\~ao aplicadas estat\'istica
 descritiva sobre notas da avalia\c{c}\~ao t\'ecnica e an\'alise de
 conte\'udo sobre os coment\'arios qualitativos.
 
-\textbf{Rubrica da avalia\c{c}\~ao t\'ecnica.} Para operacionalizar H1 e
-H2 com maior granularidade, a avalia\c{c}\~ao t\'ecnica adotar\'a rubrica
+\textbf{Rubrica da avalia\c{c}\~ao t\'ecnica.} Para operacionalizar H1
+com maior granularidade, a avalia\c{c}\~ao t\'ecnica adotar\'a rubrica
 estruturada em tr\^es pilares quantific\'aveis: (i) fidelidade do Retorno
 Final L\'iquido (RFL) reportado na resposta ao cliente frente ao valor
 calculado pelo m\'odulo determin\'istico -- n\~ao uma reavalia\c{c}\~ao
@@ -105,16 +105,11 @@ da matem\'atica do m\'odulo, j\'a verificada no objetivo espec\'ifico c
 n\textsuperscript{o} 30/2021), ambos pontuados individualmente por cada
 especialista em escala Likert de 5 pontos. A dimens\~ao (iii), clareza da
 linguagem da resposta ao cliente, \'e avaliada separadamente por
-LLM-as-a-judge, conforme detalhado a seguir. Essa rubrica complementa --
-sem substituir -- o question\'ario SUS previsto em H2, permitindo
-diagnosticar separadamente falhas de fidelidade na s\'intese lingu\'istica,
-de conformidade regulat\'oria e de usabilidade. Para preservar a
-independ\^encia da avalia\c{c}\~ao t\'ecnica, os especialistas
-respons\'aveis pelos pilares (i) e (ii) ser\~ao profissionais de mercado
-n\~ao vinculados ao BRB, distintos dos gerentes de front-office que
-participam da etapa de valida\c{c}\~ao de usabilidade, evitando a
-sobreposi\c{c}\~ao entre avalia\c{c}\~ao t\'ecnica independente e
-aceita\c{c}\~ao organizacional interna.
+LLM-as-a-judge, conforme detalhado a seguir. A rubrica permite
+diagnosticar separadamente falhas de fidelidade, de conformidade
+regulat\'oria e de clareza. Para preservar a independ\^encia da
+avalia\c{c}\~ao t\'ecnica, os especialistas respons\'aveis pelos pilares
+(i) e (ii) ser\~ao profissionais de mercado n\~ao vinculados ao BRB.
 
 \textbf{Avalia\c{c}\~ao de clareza por LLM-as-a-judge.} A valida\c{c}\~ao
 da dimens\~ao de clareza da linguagem \'e realizada por meio de
@@ -195,6 +190,23 @@ Resolu\c{c}\~ao CMN n\textsuperscript{o} 4.879 -- exigem correspond\^encia
 exata de termos (n\'umero da norma) que a recupera\c{c}\~ao puramente
 densa, baseada em similaridade sem\^antica, tende a confundir.
 
+\textbf{Comparabilidade com a literatura.} Para viabilizar compara\c{c}\~ao
+direta com estudos equivalentes, os resultados da condi\c{c}\~ao de
+controle (acur\'acia da arquitetura completa vs. LLM isolado sem m\'odulo
+determin\'istico) ser\~ao reportados no mesmo formato de acur\'acia
+factual utilizado por \textcite{akinfaderin2025} (52,4\%
+$\rightarrow$ 94,7\% no VERAFI), e as m\'etricas de cobertura e recall da
+base RAG ser\~ao reportadas em NDCG@10, formato utilizado por
+\textcite{kim2025} nos sete benchmarks financeiros do FinanceRAG
+Challenge. Caso a dimens\~ao de suitability venha a ser avaliada por
+benchmark de faixas esperadas por perfil de risco derivado de literatura
+acad\^emica, o desenho seguir\'a o modelo de \textcite{oehler2024}, que
+compara recomenda\c{c}\~oes de IA generativa contra um padr\~ao de
+refer\^encia derivado da literatura. Reportar os resultados nesses
+formatos permite situar o desempenho desta pesquisa entre o de sistemas
+equivalentes j\'a publicados, e n\~ao apenas demonstrar viabilidade
+isolada da arquitetura.
+
 \begin{quadro}[htbp]
   \centering
   \caption{Matriz de Op\c{c}\~oes Metodol\'ogicas}
@@ -209,7 +221,7 @@ densa, baseada em similaridade sem\^antica, tende a confundir.
     b) Projetar arquitetura de agente \'unico & Qualitativa & Descritiva & Secund\'arios & Documentos regulat\'orios & An\'alise documental & S\'intese qualitativa \\
     c) Desenvolver m\'odulos Python & Quantitativa & Aplicada & Secund\'arios & APIs BCB/ANBIMA & Extra\c{c}\~ao via API & Teste de precis\~ao \\
     d) Construir base RAG & Qualitativa & Descritiva & Secund\'arios & Normativos CVM/CMN & Indexa\c{c}\~ao h\'ibrida (densa+esparsa) & Cobertura e recall \\
-    e) Backtesting e avalia\c{c}\~ao & Multim\'etodos & Descritiva & Prim\'arios e secund\'arios & Especialistas BRB + dados hist\'oricos & Avalia\c{c}\~ao t\'ecnica + simula\c{c}\~ao & Estat\'istica descritiva \\
+    e) Backtesting e avalia\c{c}\~ao & Multim\'etodos & Descritiva & Prim\'arios e secund\'arios & Especialistas de mercado + dados hist\'oricos & Avalia\c{c}\~ao t\'ecnica + simula\c{c}\~ao & Estat\'istica descritiva \\
     \bottomrule
   \end{tabular}}
   \fonte{Elaborado pelo autor (2026).}
