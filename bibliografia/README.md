@@ -40,3 +40,15 @@ têm citação no corpo do texto estão marcados abaixo.
   across 20 NLP Evaluation Tasks*. Proceedings of the 63rd Annual Meeting of
   the Association for Computational Linguistics (Volume 2: Short Papers), p.
   238–255, 2025. arXiv:2406.18403. (chave: `bavaresco2025`)
+
+## Base legal do módulo de cálculo do RFL (objetivo c, ainda não escrito)
+
+- `base-legal-rfl.md`: levantamento das duas tabelas tributárias regressivas
+  usadas pelo módulo de cálculo (IR e IOF sobre renda fixa), com texto de
+  citação pronto para quando o Capítulo 5.2 for escrito.
+- `normas/decreto-6306-2007-iof-compilado.pdf` — Decreto nº 6.306, de 14 de
+  dezembro de 2007 (regulamenta o IOF), versão compilada oficial
+  (planalto.gov.br). Art. 32 e Anexo fundamentam a tabela regressiva do IOF.
+- `normas/lei-11033-2004-ir-compilado.pdf` — Lei nº 11.033, de 21 de dezembro
+  de 2004, versão compilada oficial (planalto.gov.br). Art. 1º fundamenta a
+  tabela regressiva do IR sobre renda fixa.
