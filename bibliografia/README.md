@@ -52,3 +52,25 @@ têm citação no corpo do texto estão marcados abaixo.
 - `normas/lei-11033-2004-ir-compilado.pdf` — Lei nº 11.033, de 21 de dezembro
   de 2004, versão compilada oficial (planalto.gov.br). Art. 1º fundamenta a
   tabela regressiva do IR sobre renda fixa.
+
+## Corpus normativo da base RAG regulatória (objetivo d, ainda não construída)
+
+- `normas-rag-corpus.md`: levantamento das 6 normas que compõem o corpus
+  regulatório inicial (CVM 30/2021 e CMN 4.557/2017, 4.968/2021, 4.879/2020,
+  4.893/2021, 5.274/2025), com conteúdo verificado diretamente contra o
+  texto oficial e trecho literal do inciso XIV da CMN 5.274/2025 (monitoramento
+  de Deep Web/Dark Web) já transcrito.
+- `normas/resolucao-cvm-30-2021-suitability.pdf` — Resolução CVM nº 30/2021
+  (dever de verificação de adequação ao perfil do cliente).
+- `normas/resolucao-cmn-4968-2021-controles-internos.pdf` — Resolução CMN
+  nº 4.968/2021 (sistemas de controles internos).
+- `normas/resolucao-cmn-4879-2020-auditoria-interna.pdf` — Resolução CMN
+  nº 4.879/2020 (atividade de auditoria interna).
+- `normas/resolucao-cmn-4893-2021-seguranca-cibernetica.pdf` — Resolução CMN
+  nº 4.893/2021 (política de segurança cibernética).
+- `normas/resolucao-cmn-5274-2025-altera-4893.pdf` — Resolução CMN nº
+  5.274/2025 (altera a 4.893/2021; 14 controles mínimos de segurança
+  cibernética).
+- CMN nº 4.557/2017 (gerenciamento de riscos e capital): conteúdo verificado
+  por fetch direto na fonte oficial, PDF ainda não arquivado localmente —
+  link em `normas-rag-corpus.md`.
