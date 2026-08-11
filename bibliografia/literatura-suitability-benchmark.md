@@ -78,6 +78,22 @@
 
 ---
 
+## 7. Decisão de citação — nem todo artigo levantado deve entrar no texto da dissertação
+
+**Registro de decisão (11/08/2026)**. Verificado que nenhum dos três artigos (Jacobs, Foerster, Choi) está, até este ponto, citado no corpo da dissertação nem no `referencias.bib` — toda a discussão até aqui ficou registrada apenas neste memo. Isso levou à pergunta legítima: *o levantamento vale a pena virar citação formal?* Avaliação artigo a artigo, pelo que cada um efetivamente sustenta:
+
+| Artigo | O que sustentaria no texto | Decisão |
+|---|---|---|
+| **Foerster et al. (2017)** | Evidência empírica de que especialista humano não customiza bem por perfil e não supera benchmark, mesmo cobrando taxas altas — sustenta diretamente a decisão já tomada de abandonar especialista ao vivo na dimensão de suitability | ✅ **Citar** — apoio direto a uma decisão metodológica já firmada |
+| **Jacobs et al. (2014)** | "Regras heurísticas simples de alocação têm desempenho comparável a otimização sofisticada" — apoio indireto à defensabilidade de um benchmark simples (matriz de regras) em vez de um modelo complexo | 🔶 **Citável apenas com a ressalva da Seção 4** (mede ações×renda-fixa, dimensão que não existe no escopo da dissertação) — nunca citar sem esse contexto explícito no próprio texto |
+| **Choi (2022)** | Conselho popular diverge do modelo acadêmico, por vezes com razão comportamental legítima | ❌ **Não citar** — o mais tangencial dos três, não sustenta nenhuma escolha específica de desenho desta dissertação |
+
+**Recomendação final**: manter **Oehler & Horn (2024)** como o precedente metodológico principal (já citado no corpo, é o "modelo" que a Metodologia diz seguir) e adicionar **Foerster et al. (2017)** como apoio secundário direto, especificamente na justificativa de abandonar especialista ao vivo. **Jacobs et al. (2014) e Choi (2022) ficam de fora do texto da dissertação** — permanecem registrados neste memo como parte do processo de investigação (rigor e transparência do percurso metodológico), mas sem entrar como referência formal. Motivo: uma citação do Jacobs sem o contexto integral da Seção 4, se um membro da banca for direto à fonte, expõe a mesma inconsistência que a própria pesquisa já identificou e corrigiu — citar só o que sustenta uma afirmação específica é mais defensável do que citar tudo que foi lido.
+
+**O que essa decisão não muda**: o trabalho de conteúdo ainda pendente (construir a matriz produto×perfil combinando CVM 30/2021 art. 3º com a caracterização qualitativa de risco por produto, Seção 4) continua necessário, independentemente de quantos desses três artigos entrarem na lista de referências.
+
+---
+
 ## Nota metodológica
 
 Diferente do estágio anterior — o **Jacobs et al. (2014) já foi lido por completo** e rendeu uma correção importante de entendimento (ver seção 1). Foerster et al. (2017) e Choi (2022) seguem no nível de confirmação bibliográfica robusta (citação exata confirmada em múltiplas fontes independentes), ainda não lidos por completo — ambos têm link de acesso aberto direto, prontos para leitura integral quando for útil.
