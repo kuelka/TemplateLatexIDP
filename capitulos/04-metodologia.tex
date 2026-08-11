@@ -206,13 +206,22 @@ exata de termos (n\'umero da norma) que a recupera\c{c}\~ao puramente
 densa, baseada em similaridade sem\^antica, tende a confundir.
 
 % TODO: quando o benchmark de suitability (objetivo especifico e) for
-% construido, puxar para ca a literatura ja levantada e verificada em
-% bibliografia/literatura-suitability-benchmark.md -- Jacobs, Muller e Weber
-% (2014, lido na integra: NAO da 3 faixas por perfil, e sim uma alocacao de
-% consenso "one-size-fits-all"; as 3 faixas de Oehler & Horn sao sintese
-% deles combinando os 3 artigos, nao extracao direta do Jacobs et al.),
-% Foerster et al. (2017) e Choi (2022, ambos ainda no nivel de confirmacao
-% bibliografica, acesso aberto disponivel).
+% construido, ver bibliografia/literatura-suitability-benchmark.md.
+% ATENCAO -- Jacobs/Foerster/Choi (Oehler & Horn) medem alocacao
+% acoes x renda-fixa, dimensao que NAO existe no escopo desta dissertacao
+% (so renda fixa: Tesouro Selic/Prefixado/IPCA+ e CDB). Servem so como
+% precedente metodologico, NAO como fonte do conteudo numerico. Nao existe
+% matriz oficial produto x perfil (Tesouro Nacional/ANBIMA) -- precisa ser
+% CONSTRUIDA combinando CVM 30/2021 art. 3 com caracterizacao qualitativa
+% de risco por produto (Selic=conservador/liquido; Prefixado=marcacao a
+% mercado; IPCA+=protecao inflacao/duration alta; CDB=risco de credito).
+% Para CDB acima do limite do FGC (R$250mil/CPF/conglomerado): usar
+% indice de Basileia (IF.data, consulta dinamica) + rating de agencias
+% quando disponivel (usar o PIOR sinal disponivel). IMPORTANTE: retirada
+% de rating apos rebaixamento (caso real do BRB, dez/2025) e sinal de
+% risco elevado, nao ausencia de sinal -- o sistema nao deve ter vies de
+% protecao a nenhuma instituicao, inclusive o BRB. Ver Secoes 4-6 do
+% arquivo para detalhe completo.
 
 \textbf{Comparabilidade com a literatura.} Para viabilizar compara\c{c}\~ao
 direta com estudos equivalentes, os resultados da condi\c{c}\~ao de
