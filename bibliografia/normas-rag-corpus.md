@@ -2,7 +2,7 @@
 
 **Data do levantamento:** 09-11/08/2026
 **Uso previsto:** objetivo específico (d) — construção da base RAG regulatória, Capítulo 5.3 (ainda `[PENDENTE]`).
-**Status:** **6 de 6 documentos com conteúdo verificado; 6 de 6 com PDF oficial arquivado em `bibliografia/normas/`** (a CMN 4.557/2017 verificada por fetch direto na fonte, sem cópia local do arquivo — as demais 5 com o PDF efetivamente arquivado). Corpus normativo do objetivo (d) fechado. Ainda não incorporado ao corpo da dissertação.
+**Status:** **6 de 6 documentos com conteúdo verificado; 5 de 6 com PDF oficial arquivado em `bibliografia/normas/`** (a CMN 4.557/2017 verificada por fetch direto na fonte, sem cópia local do arquivo — as demais 5 com o PDF efetivamente arquivado). Corpus normativo do objetivo (d) fechado quanto ao conteúdo; falta só arquivar o PDF da 4.557. Ainda não incorporado ao corpo da dissertação.
 
 ---
 
