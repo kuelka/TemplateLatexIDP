@@ -2,7 +2,7 @@
 
 **Data do levantamento:** 09-11/08/2026
 **Uso previsto:** objetivo específico (d) — construção da base RAG regulatória, Capítulo 5.3 (ainda `[PENDENTE]`).
-**Status:** **6 de 6 documentos com conteúdo verificado; 5 de 6 com PDF oficial arquivado em `bibliografia/normas/`** (a CMN 4.557/2017 verificada por fetch direto na fonte, sem cópia local do arquivo — as demais 5 com o PDF efetivamente arquivado). Corpus normativo do objetivo (d) fechado quanto ao conteúdo; falta só arquivar o PDF da 4.557. Ainda não incorporado ao corpo da dissertação.
+**Status:** **6 de 6 documentos com conteúdo verificado; 6 de 6 com PDF oficial arquivado em `bibliografia/normas/`**. Corpus normativo do objetivo (d) fechado quanto ao conteúdo e à coleção de PDFs. Ainda não incorporado ao corpo da dissertação.
 
 ---
 
@@ -74,4 +74,4 @@ Publicada em conjunto com a Resolução BCB nº 538/2025 (mesmo tema, para insti
 
 ## Nota metodológica sobre profundidade de verificação
 
-**Corpus fechado.** 6 de 6 documentos com conteúdo verificado diretamente contra o próprio texto oficial. 5 com PDF arquivado em `bibliografia/normas/` (CVM 30/2021, CMN 4.968/2021, 4.879/2020, 4.893/2021, 5.274/2025); a CMN 4.557/2017 foi verificada por fetch direto (45 páginas) mas ainda não tem cópia local do arquivo — baixar de https://normativos.bcb.gov.br/Lists/Normativos/Attachments/50344/Res_4557_v4_P.pdf para completar a coleção antes da indexação na base RAG (Capítulo 5.3), embora isso não seja bloqueante.
+**Corpus fechado.** 6 de 6 documentos com conteúdo verificado diretamente contra o próprio texto oficial, e 6 de 6 com PDF arquivado em `bibliografia/normas/` (CVM 30/2021, CMN 4.557/2017, 4.968/2021, 4.879/2020, 4.893/2021, 5.274/2025 -- a CMN 4.557/2017 arquivada em 12/08/2026, versão consolidada com alterações até a Resolução CMN nº 5.194/2024, 46 páginas).
