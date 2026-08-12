@@ -106,10 +106,17 @@ automatizada (desvio percentual entre o valor reportado e o valor
 calculado, com limiar de toler\^ancia pr\'e-definido), sem interven\c{c}\~ao
 humana; e (ii) ader\^encia da recomenda\c{c}\~ao \`as regras de
 suitability vigentes (Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021),
-aferida por compara\c{c}\~ao autom\'atica contra faixas de aloca\c{c}\~ao
-esperadas por perfil de risco, derivadas de literatura acad\^emica --
-mesmo desenho de \textcite{oehler2024}, detalhado a seguir --, e n\~ao
-por julgamento subjetivo de especialista. A dimens\~ao (iii), clareza da
+aferida por compara\c{c}\~ao autom\'atica contra uma matriz de adequa\c{c}\~ao
+produto$\times$perfil, constru\'ida combinando as tr\^es dimens\~oes de
+suitability exigidas pelo art. 3\textordmasculine{} da Resolu\c{c}\~ao CVM
+n\textsuperscript{o} 30/2021 (objetivos de investimento, situa\c{c}\~ao
+financeira, conhecimento de risco) com a caracteriza\c{c}\~ao de risco de
+cada produto do escopo (Tesouro Selic, Prefixado, IPCA+ e CDB) -- seguindo
+como precedente metodol\'ogico o desenho de benchmark de literatura em vez
+de julgamento subjetivo de especialista adotado por \textcite{oehler2024},
+detalhado a seguir, sem extrair diretamente faixas num\'ericas de fontes
+externas que medem aloca\c{c}\~ao a\c{c}\~oes$\times$renda-fixa, dimens\~ao
+fora do escopo deste trabalho. A dimens\~ao (iii), clareza da
 linguagem da resposta ao cliente, \'e avaliada separadamente por
 LLM-as-a-judge, conforme detalhado a seguir. A rubrica permite
 diagnosticar separadamente falhas de fidelidade, de conformidade
@@ -235,11 +242,14 @@ factual utilizado por \textcite{akinfaderin2025} (52,4\%
 $\rightarrow$ 94,7\% no VERAFI), e as m\'etricas de cobertura e recall da
 base RAG ser\~ao reportadas em NDCG@10, formato utilizado por
 \textcite{kim2025} nos sete benchmarks financeiros do FinanceRAG
-Challenge. A dimens\~ao de suitability \'e avaliada por benchmark de
-faixas esperadas por perfil de risco derivado de literatura acad\^emica,
-seguindo o modelo de \textcite{oehler2024}, que compara recomenda\c{c}\~oes
-de IA generativa contra um padr\~ao de refer\^encia derivado da
-literatura. Reportar os resultados nesses
+Challenge. A dimens\~ao de suitability \'e avaliada por benchmark
+pr\'oprio de adequa\c{c}\~ao produto$\times$perfil (detalhado no par\'agrafo
+anterior), seguindo como precedente metodol\'ogico o modelo de
+\textcite{oehler2024} -- comparar recomenda\c{c}\~oes de IA generativa
+contra um padr\~ao de refer\^encia estruturado, em vez de julgamento de
+especialista ao vivo --, sem depender do conte\'udo num\'erico espec\'ifico
+daquele estudo, que mede aloca\c{c}\~ao a\c{c}\~oes$\times$renda-fixa,
+dimens\~ao fora do escopo desta pesquisa. Reportar os resultados nesses
 formatos permite situar o desempenho desta pesquisa entre o de sistemas
 equivalentes j\'a publicados, e n\~ao apenas demonstrar viabilidade
 isolada da arquitetura.
