@@ -20,7 +20,8 @@ têm citação no corpo do texto estão marcados abaixo.
 - `artigos/oehler-horn-2024-chatgpt-vs-robo-advisors.pdf` — OEHLER, A.; HORN, M.
   *Does ChatGPT Provide Better Advice than Robo-Advisors?* Finance Research
   Letters, v. 60, art. 104898, 2024. DOI: 10.1016/j.frl.2023.104898. (chave:
-  `oehler2024`; ainda não citado no corpo do texto)
+  `oehler2024`; citado como precedente metodológico do benchmark de
+  suitability, objetivo e)
 
 ## LLM-as-a-judge (avaliação de clareza da linguagem, objetivo e)
 
@@ -71,6 +72,6 @@ têm citação no corpo do texto estão marcados abaixo.
 - `normas/resolucao-cmn-5274-2025-altera-4893.pdf` — Resolução CMN nº
   5.274/2025 (altera a 4.893/2021; 14 controles mínimos de segurança
   cibernética).
-- CMN nº 4.557/2017 (gerenciamento de riscos e capital): conteúdo verificado
-  por fetch direto na fonte oficial, PDF ainda não arquivado localmente —
-  link em `normas-rag-corpus.md`.
+- `normas/resolucao-cmn-4557-2017-gerenciamento-riscos-capital.pdf` —
+  Resolução CMN nº 4.557/2017 (gerenciamento de riscos e capital), versão
+  consolidada com alterações até a Resolução CMN nº 5.194/2024.

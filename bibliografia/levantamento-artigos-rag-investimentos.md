@@ -1,19 +1,14 @@
 # Levantamento de Artigos — IA/RAG Aplicados a Investimentos
 
-**Data da busca:** 05/08/2026
-**Critério:** priorizados artigos revisados por pares ou em workshops indexados (ICLR, ACM-ICAIF), com métricas de desempenho explícitas e reprodutíveis.
-
-# Levantamento de Artigos — IA/RAG Aplicados a Investimentos
-
 **Data da busca:** 05/08/2026 (atualizado)
 **Critério:** priorizados artigos revisados por pares ou em workshops indexados (ICLR, ACM-ICAIF), com métricas de desempenho explícitas e reprodutíveis, e maior proximidade temática/arquitetural com a proposta da dissertação (segregação cálculo determinístico × geração de linguagem, RAG regulatório, assessoria a investidor de varejo).
 
 **Nota de versão:** esta é a segunda versão do levantamento. O Artigo 1 original (Iaroshev et al., 2024) foi substituído por dois artigos com conexão mais direta: um arquiteturalmente mais próximo (VERAFI) e um tematicamente mais próximo (Oehler & Horn, sobre assessoria de investimento). Ver histórico de decisão na conversa.
 
-**Status de acesso:** os três PDFs completos já foram obtidos e conferidos (identidade confirmada — título, autores e DOI/arXiv ID batem). Arquivos na posse de vocês:
-- `Does_ChatGPT_provide_better_advice_than_robo-advisors.pdf` (Oehler & Horn, 2024 — via CAPES/acesso institucional)
-- `OPTIMIZING_RETRIEVAL_STRATEGIES_FOR_FINANCIAL.pdf` (Kim et al., 2025 — arXiv aberto)
-- `VERAFI_Verified_Agentic_Financial_Intelligence_through_Neurosymbolic_Policy_Generation.pdf` (Akinfaderin & Subramanian, 2025 — arXiv aberto)
+**Status de acesso:** os três PDFs completos foram obtidos, conferidos (identidade confirmada — título, autores e DOI/arXiv ID batem) e arquivados em `bibliografia/artigos/`:
+- `artigos/oehler-horn-2024-chatgpt-vs-robo-advisors.pdf` (via CAPES/acesso institucional)
+- `artigos/kim-et-al-2025-optimizing-retrieval-strategies.pdf` (arXiv aberto)
+- `artigos/akinfaderin-subramanian-2025-verafi.pdf` (arXiv aberto)
 
 ---
 
