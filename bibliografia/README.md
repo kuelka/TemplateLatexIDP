@@ -54,6 +54,23 @@ têm citação no corpo do texto estão marcados abaixo.
   de 2004, versão compilada oficial (planalto.gov.br). Art. 1º fundamenta a
   tabela regressiva do IR sobre renda fixa.
 
+## Personas e benchmark de suitability (objetivo e, ainda não escrito)
+
+- `literatura-suitability-benchmark.md`: investigação sobre a literatura de
+  alocação de ativos por perfil de risco (Jacobs et al. 2014, Foerster et
+  al. 2017, Choi 2022) como precedente metodológico do benchmark de
+  suitability; conclui que a matriz produto×perfil precisa ser construída
+  como contribuição original (não existe fonte pronta para o escopo desta
+  dissertação), e traz o desenho técnico de risco de crédito de CDB acima
+  do FGC (Índice de Basileia via IF.data + rating de agências, caso BRB
+  documentado como validação).
+- `perfis-anbima-personas.md`: dados demográficos e comportamentais dos
+  quatro perfis do Raio X do Investidor Brasileiro 8ª edição (Sem
+  Reservas, Economiza e Não Investe, Caderneta, Diversifica), extraídos da
+  fonte primária, como insumo factual para a construção das fichas de
+  persona do Anexo II — não substitui a decisão de síntese ainda
+  pendente.
+
 ## Corpus normativo da base RAG regulatória (objetivo d, ainda não construída)
 
 - `normas-rag-corpus.md`: levantamento das 6 normas que compõem o corpus
