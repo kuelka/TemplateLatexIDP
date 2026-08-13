@@ -179,6 +179,225 @@ pessoa por domicílio):
 - **Diversifica**: faixa 5 ou 6 -- acima de R$11.499,11, podendo chegar
   a faixa 6 (>R$22.998,22) se quiser representar o extremo do perfil.
 
+## 7. Metodologia oficial para "capacidade de investimento" -- variação patrimonial (POF)
+
+**Pergunta que motivou esta seção**: em vez de assumir um percentual
+arbitrário (ex.: 10% da renda) para o campo "quanto a persona tem
+disponível para investir", existe uma metodologia já publicada que
+meça isso a partir do que sobra do orçamento familiar?
+
+**Resposta: sim.** A POF tem um conceito oficial chamado **variação
+patrimonial**, definido pelo IBGE como: *"vendas de imóveis, carros e
+outros bens, heranças e o saldo positivo da movimentação financeira:
+depósitos e retiradas de aplicações financeiras como, por exemplo,
+poupança e cotas de fundos de investimento"* (POF 2017-2018, Primeiros
+Resultados, p. 22 -- essa definição do conceito **está** confirmada no
+PDF arquivado). Ou seja, **é literalmente o fluxo líquido de poupança e
+investimento da família** -- não uma dedução feita por mim.
+
+**Fontes -- duas, distintas, não confundir:**
+1. IBGE. *Pesquisa de Orçamentos Familiares 2017-2018: Primeiros
+   Resultados*. Rio de Janeiro: IBGE, 2019 (69 p., PDF completo
+   arquivado em `dados/`). Contém a **definição** do conceito de
+   variação patrimonial e a **Tabela 16** (renda média por classe,
+   Seção seguinte) -- mas **não contém** o percentual de participação
+   da variação patrimonial por classe de renda.
+2. IBGE, Agência de Notícias. *"POF 2017-2018: Famílias com até R$1,9
+   mil destinam 61,2% de seus gastos à alimentação e habitação"*.
+   Divulgado 04/10/2019, atualizado 10/10/2019. Disponível em:
+   https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/25598-pof-2017-2018-familias-com-ate-r-1-9-mil-destinam-61-2-de-seus-gastos-a-alimentacao-e-habitacao
+   -- **é aqui, e só aqui, que está o percentual de 1,1%/15,3%**, na
+   seção "Rendimentos não monetários e transferências representam
+   quase 60% dos valores recebidos pelas famílias de menor renda".
+
+**Correção de um erro que eu tinha cometido nesta seção**: eu havia
+escrito "confirmado, após leitura completa da publicação [Primeiros
+Resultados]" para o percentual de 1,1% -- isso estava errado. Reconferi
+o texto extraído do PDF completo (`/tmp/pof_full.txt`) e o número
+**não aparece lá** -- só no release de imprensa (fonte 2 acima), que é
+um documento oficial do IBGE mas **diferente** do "Primeiros
+Resultados". O erro foi meu, na citação, não no dado em si.
+
+**Verificação do dado agora que a fonte está correta**: o parágrafo do
+release traz o detalhamento **completo** (soma 100,0%) para a classe
+até 2 SM -- rendimento de trabalho 41% + transferências 28,8% +
+aluguéis 0,3% + outras rendas 0,6% + não monetário 28,2% + variação
+patrimonial 1,1% = 100,0% exato. O mesmo vale para a classe 25+ SM
+(60% + 12,8% + 3,7% + 0,2% + 7,9% + 15,3% = 100,0%). A soma bater
+exatamente em 100% nas duas classes é evidência de consistência
+interna -- não é uma fonte fragmentada ou parcial, é um recorte
+completo, só que publicado num documento diferente do que eu tinha
+citado.
+
+### Achado direto, por classe de renda (2018)
+
+| Classe de rendimento | Participação da variação patrimonial no total recebido |
+|---|---:|
+| Até 2 salários mínimos (até R$ 1.908,00 em 2018) | **1,1%** |
+| Mais de 25 salários mínimos (acima de R$ 23.850,00 em 2018) | 15,3% |
+
+**Confirmado, após leitura completa da publicação "Primeiros
+Resultados"**: o detalhamento de variação patrimonial por classe **não
+está nessa publicação especificamente** -- está no release de imprensa
+citado acima. Nenhum dos dois documentos traz esse detalhamento para
+as 5 classes intermediárias.
+
+### Renda média real por classe (Tabela 16 da POF -- fonte direta, não reconstituída)
+
+A Tabela 16 da publicação traz o rendimento total e variação
+patrimonial médio **acumulado** por classe, o que permite calcular a
+média real dentro de cada uma das 7 faixas (não só o teto/piso da
+faixa). Isso é mais preciso que usar os tetos do Ipea (Seção 6) para
+calibrar renda de persona, porque reflete o comportamento médio real
+de quem está naquela faixa, não o limite superior dela:
+
+| Classe (POF, valores 2018) | Renda média real dentro da classe |
+|---|---:|
+| Até R$ 1.908 | **R$ 1.243,43** |
+| R$ 1.908 a R$ 2.862 | R$ 2.367,96 |
+| R$ 2.862 a R$ 5.724 | R$ 4.003,57 |
+| R$ 5.724 a R$ 9.540 | R$ 7.028,21 |
+| R$ 9.540 a R$ 14.310 | R$ 11.116,41 |
+| R$ 14.310 a R$ 23.850 | R$ 17.752,05 |
+| Acima de R$ 23.850 | R$ 40.009,63 |
+
+**Convergência entre três fontes independentes para o perfil Sem
+Reservas**: R$1.243,43 (POF, direto da Tabela 16, 2018) ≈ R$1.248,82
+(minha reconstituição indireta anterior, mesma fonte) ≈ R$1.412,00
+(pico de concentração do perfil Sem Reservas, ANBIMA, 2025). As três
+estimativas caem na mesma ordem de grandeza, apesar de métodos e anos
+diferentes -- reforça a robustez da faixa, não só de um número isolado.
+
+Capacidade de investimento do João recalculada com a fonte direta:
+**R$1.243,43 × 1,1% ≈ R$13,68/mês** (praticamente igual ao valor
+anterior de R$13,74, agora com base direta na Tabela 16, sem precisar
+reconstituir a partir de percentuais de imprensa).
+
+### Comparação direta com a premissa inicial do João
+
+A premissa original (10% de R$3.376 = R$330/mês) está **muito acima**
+do que a POF mede como comportamento real de poupança/investimento
+para famílias de baixa renda (1,1%, não 10%). Isso **confirma e
+quantifica** a tensão já registrada na Seção 4: para uma persona
+representando o perfil Sem Reservas (definido pela própria ANBIMA como
+"não consegue economizar nem investir"), 10% de sobra é uma premissa
+otimista, não realista -- 1,1% está muito mais alinhado ao
+comportamento medido.
+
+### Alternativa considerada e descartada: "aumento do ativo"
+
+A POF tem um segundo conceito, do lado da despesa (não da renda):
+**aumento do ativo** -- definido como *"despesas com a aquisição de
+imóvel, a reforma de imóvel e outros investimentos"* (POF 2017-2018,
+p. 19). Para a classe até R$1.908, esse componente é 1,4% da despesa
+total (Tabela 6) -- em reais, ≈ R$20,88/mês, contra R$13,68/mês da
+variação patrimonial.
+
+**Descartado como métrica principal**: o grupo "aumento do ativo" é
+dominado por aquisição/reforma de imóvel, fora do escopo desta
+dissertação (só renda fixa). "Outros investimentos" (títulos de
+capitalização, títulos de clube, terreno de jazigo) é só um resíduo
+menor dentro do grupo, não segregável dos dados publicados. Já
+**variação patrimonial** já isola especificamente movimentação de
+conta financeira -- *"depósitos e retiradas de aplicações financeiras
+como, por exemplo, poupança e cotas de fundos de investimento"* --,
+tratando aplicações financeiras como parte do patrimônio/bens da
+família, o que é conceitualmente coerente com o objetivo desta
+dissertação (aplicação em Tesouro/CDB é, também, um bem).
+
+### Decisão metodológica final (12/08/2026)
+
+**Variação patrimonial é a métrica usada para "capacidade de
+investimento" em todas as 4 personas**, não aumento do ativo. Critério
+explícito: aplicações financeiras (o próprio objeto desta dissertação)
+são tratadas como bem/patrimônio, e é exatamente esse o conceito que
+variação patrimonial isola -- ainda que de forma imperfeita (mistura
+com venda de bens e herança) e com dado completo só disponível para as
+2 classes extremas. É a melhor aproximação disponível nos dados
+públicos até o momento; se a POF 2024-2025 publicar esse detalhamento
+por todas as 7 classes no futuro, vale reconferir.
+
+### Limitações a considerar antes de aplicar
+
+1. **Vintage**: dado de 2018 (POF 2017-2018), mesma edição da Seção 4.
+   O percentual (1,1%) provavelmente é mais estável ao longo do tempo
+   do que o valor em reais, mas não há garantia -- é uma hipótese
+   razoável, não um fato verificado para 2026.
+2. **"Até 2 salários mínimos" não é exatamente "Sem Reservas"**: é um
+   corte por renda, não pelo comportamento declarado de poupança que
+   define os 4 perfis ANBIMA. Provavelmente se sobrepõe bastante ao
+   perfil Sem Reservas (mesma faixa de renda predominante, ver
+   `perfis-anbima-personas.md`), mas não é logicamente idêntico.
+3. **Variação patrimonial pode ser negativa** em famílias individuais
+   (saque de poupança para cobrir despesas) -- o 1,1% é uma média que
+   já teria essa compensação embutida; não sabemos a distribuição
+   dentro da classe.
+4. O valor de R$13,68/mês (fonte direta, Tabela 16) é baixo o bastante
+   para tornar a recomendação de produto quase sem sentido prático
+   (nem cobre o aporte mínimo de muitos produtos) -- pode ser um
+   resultado *desejado* (mostrar que o sistema reconhece a limitação
+   real dessa persona) ou *indesejado* (persona vira caso degenerado,
+   sem uso pedagógico na matriz). Depende do que você decidiu no Ponto
+   6 da rodada anterior (tratar Sem Reservas como consumidora direta
+   do RFL
+   vs. caso de borda/estágio zero).
+
+### Decisão tomada (12/08/2026)
+
+O ponto 4 acima foi resolvido: **usar o valor realista (~1,1%, o
+resultado medido pela POF), não os 10% iniciais**, com a seguinte
+justificativa de desenho, a ser desenvolvida no corpo da dissertação:
+mesmo um aporte simbólico tem função pedagógica -- introduz a persona
+ao produto de investimento, inicia uma trilha de familiarização, e
+constrói conhecimento/confiança progressivos, coerente com o
+diagnóstico de baixo letramento financeiro já registrado no Capítulo
+5.1 (Pesquisa BCB/FGC) e com a motivação central da dissertação
+(agente de IA como via de democratização de acesso à assessoria).
+Isso resolve a tensão do Ponto 6: a persona Sem Reservas deixa de ser
+um caso degenerado e passa a ser o caso que testa exatamente essa
+função do sistema -- recomendar o produto certo mesmo (ou
+principalmente) quando o valor disponível é pequeno.
+
+**Pendência remanescente**: falta decidir a renda-base exata do João
+dentro da Faixa 1 do Ipea (Seção 6) para aplicar o percentual de 1,1%
+e chegar num valor final em R$ -- usar a própria média da classe POF
+"até 2 SM" (~R$1.248,82, ver acima) ou um ponto dentro da Faixa 1 do
+Ipea (< R$2.299,82, ver Seção 6)? Note que são bases diferentes: POF
+"até 2 SM" é mais estreita (teto R$1.908 em valores de 2018, hoje bem
+mais baixo que o teto da Faixa 1 do Ipea). Se a Faixa 1 do Ipea for a
+referência de renda escolhida para o Anexo II (parece ser o caso, por
+ser a mais atual e granular), o mais consistente é aplicar 1,1% sobre
+o valor de renda que for escolhido ali, não sobre a média POF (que é
+só o dado de origem do percentual, não da renda em si).
+
+**Decisão final (12/08/2026)**: renda familiar do João ancorada em
+**R$1.412,00/mês** -- não um ponto arbitrário dentro da Faixa 1, e sim
+o valor específico em que a concentração do próprio perfil Sem
+Reservas atinge o pico (71%, ver `perfis-anbima-personas.md`). Esse
+valor cai dentro da Faixa 1 do Ipea (< R$2.299,82), então as duas
+fontes se confirmam em vez de exigir escolha arbitrária. **Ressalva de
+vintage**: R$1.412 vem da pesquisa ANBIMA (coleta nov/2024, publicação
+jan/2025), sem correção para 2026 -- a preços de jan/2026 (base da
+Faixa 1 do Ipea) o valor real seria um pouco maior, mas a margem é
+pequena o suficiente para não sair da Faixa 1 mesmo corrigido.
+
+Capacidade de investimento resultante: **R$1.412,00 × 1,1% ≈
+R$15,53/mês**. Esse é o valor a constar no campo "Situação financeira"
+(CVM 30/2021, art. 3º, II) da Persona 1, acompanhado da justificativa
+de estratégia de familiarização registrada acima.
+
+**Nota de reconciliação (12/08/2026, após achado da Tabela 16 da
+POF)**: ficou em aberto se a renda do João deveria usar o teto da
+Faixa 1 do Ipea (R$2.299,82) em vez do ponto ANBIMA. Com a Tabela 16 da
+POF, agora há uma terceira opção -- a renda média real de quem está na
+mesma faixa (R$1.243,43) -- que **converge com o ponto ANBIMA
+(R$1.412,00)**, não com o teto do Ipea. Isso é evidência a favor de
+manter a decisão já tomada (R$1.412,00): dois métodos independentes
+(pico de concentração comportamental da ANBIMA e média real medida
+pela POF) apontam para a mesma faixa de valores, enquanto o teto do
+Ipea representa o limite superior da faixa, não o comportamento típico
+de quem está nela.
+
 ## Opções para decisão (não escolhidas aqui)
 
 1. **Manter R$ 3.376/3.367 como referência nacional**, documentando
