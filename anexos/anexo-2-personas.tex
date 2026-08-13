@@ -5,44 +5,58 @@ As quatro personas sint\'eticas a seguir foram calibradas a partir dos
 quatro perfis comportamentais do Raio X do Investidor Brasileiro,
 8\textsuperscript{a} edi\c{c}\~ao \autocite{anbima2025} -- dados
 demogr\'aficos e comportamentais detalhados em
-\url{bibliografia/perfis-anbima-personas.md}. Cada ficha segue as
+\url{bibliografia/perfis-anbima-personas.md}. Cada ficha cobre as
 tr\^es dimens\~oes de suitability exigidas pela Resolu\c{c}\~ao CVM
-n\textsuperscript{o} 30/2021, art. 3\textordmasculine{} (objetivos de
-investimento, situa\c{c}\~ao financeira e conhecimento sobre os riscos),
-garantindo cobertura sistem\'atica do espa\c{c}o de teste regulat\'orio.
-As personas s\~ao fict\'icias e n\~ao correspondem a clientes reais do
-BRB.
+n\textsuperscript{o} 30/2021, art. 3\textordmasculine{} -- objetivos de
+investimento (inciso I), situa\c{c}\~ao financeira (inciso II) e
+conhecimento sobre os riscos (inciso III) --, desdobradas nos
+subcrit\'erios objetivos previstos nos respectivos par\'agrafos da
+norma, garantindo cobertura sistem\'atica e rastre\'avel do espa\c{c}o
+de teste regulat\'orio. As personas s\~ao fict\'icias e n\~ao
+correspondem a clientes reais do BRB.
 
 % TODO: preencher os campos [PREENCHER] de cada quadro abaixo.
-% - Idade/renda/classe social podem ser ancorados diretamente nos dados
-%   agregados de bibliografia/perfis-anbima-personas.md (ex.: idade
-%   media do perfil), com decisao explicita de como transformar uma
-%   media/faixa populacional em um valor pontual de persona.
-% - "Situacao financeira", "Objetivos de investimento" e "Conhecimento
-%   sobre riscos" exigem sintese/decisao do autor -- a pesquisa ANBIMA
-%   nao fornece esses tres eixos diretamente, so traços de
-%   comportamento correlacionados (ver observacao metodologica 2 do
-%   memo). Ancorar cada decisao em um dado especifico do memo sempre
-%   que possivel (ex.: preferencia de canal, autocontrole financeiro).
-% - "Narrativa breve" e o unico campo livre-form; os demais devem ser
-%   objetivos o suficiente para alimentar a matriz do Anexo III.
+% - Idade/classe social podem ser ancorados diretamente nos dados
+%   agregados de bibliografia/perfis-anbima-personas.md.
+% - Renda familiar e "Situacao financeira" dependem de decisao ainda
+%   pendente sobre qual referencia de renda do IBGE usar -- ver
+%   bibliografia/renda-ibge-personas.md, secao "Opcoes para decisao".
+% - Objetivos de investimento (CVM 30/2021, art. 3, I) desdobrado em
+%   3 subcriterios do art. 3, Ss1: (a) horizonte de investimento,
+%   (b) preferencia declarada quanto a risco, (c) finalidade do
+%   investimento.
+% - Conhecimento sobre riscos (CVM 30/2021, art. 3, III) desdobrado em
+%   3 subcriterios do art. 3, Ss3: (a) familiaridade com produtos,
+%   (b) historico de operacoes no mercado, (c) formacao academica /
+%   experiencia profissional. Ver leitura sugerida por perfil em
+%   bibliografia/perfis-anbima-personas.md (educacao) e no proprio
+%   enquadramento ANBIMA (familiaridade/historico correspondem quase
+%   diretamente a definicao de cada um dos 4 perfis).
+% - Campo "Canal preferido" removido deste esqueleto: o modelo da
+%   dissertacao ja pressupoe que a persona usa o agente de IA como
+%   canal de recomendacao, tornando o campo redundante.
 
 \begin{quadro}[htbp]
   \centering
   \caption{Persona 1 -- Perfil Sem Reservas (52\% da popula\c{c}\~ao)}
   \label{qua:persona-semreservas}
-  \begin{tabular}{p{4.5cm}p{8.5cm}}
+  \begin{tabular}{p{5cm}p{8cm}}
     \toprule
     \textbf{Campo} & \textbf{Valor} \\
     \midrule
     Nome fict\'icio & [PREENCHER] \\
     Idade & [PREENCHER -- m\'edia do perfil: 45 anos] \\
-    Renda familiar & [PREENCHER] \\
+    Renda familiar & [PREENCHER -- ver decis\~ao de fonte IBGE] \\
     Classe social & [PREENCHER -- predomin\^ancia C e D/E] \\
-    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, I) & [PREENCHER] \\
-    Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
-    Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III) & [PREENCHER] \\
-    Canal preferido & [PREENCHER] \\
+    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
+    \multicolumn{2}{l}{\textbf{Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, I)}} \\
+    \quad a) Horizonte de investimento (\S\,1\textordmasculine{}, I) & [PREENCHER] \\
+    \quad b) Prefer\^encia declarada quanto a risco (\S\,1\textordmasculine{}, II) & [PREENCHER] \\
+    \quad c) Finalidade do investimento (\S\,1\textordmasculine{}, III) & [PREENCHER] \\
+    \multicolumn{2}{l}{\textbf{Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III)}} \\
+    \quad a) Familiaridade com produtos financeiros (\S\,3\textordmasculine{}, I) & [PREENCHER] \\
+    \quad b) Hist\'orico de opera\c{c}\~oes no mercado (\S\,3\textordmasculine{}, II) & [PREENCHER] \\
+    \quad c) Forma\c{c}\~ao acad\^emica / experi\^encia profissional (\S\,3\textordmasculine{}, III) & [PREENCHER] \\
     Narrativa breve & [PREENCHER] \\
     \bottomrule
   \end{tabular}
@@ -53,18 +67,23 @@ BRB.
   \centering
   \caption{Persona 2 -- Perfil Economiza e N\~ao Investe (12\% da popula\c{c}\~ao)}
   \label{qua:persona-economiza}
-  \begin{tabular}{p{4.5cm}p{8.5cm}}
+  \begin{tabular}{p{5cm}p{8cm}}
     \toprule
     \textbf{Campo} & \textbf{Valor} \\
     \midrule
     Nome fict\'icio & [PREENCHER] \\
     Idade & [PREENCHER -- m\'edia do perfil: 34 anos] \\
-    Renda familiar & [PREENCHER] \\
+    Renda familiar & [PREENCHER -- ver decis\~ao de fonte IBGE] \\
     Classe social & [PREENCHER -- predomin\^ancia C] \\
-    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, I) & [PREENCHER] \\
-    Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
-    Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III) & [PREENCHER] \\
-    Canal preferido & [PREENCHER] \\
+    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
+    \multicolumn{2}{l}{\textbf{Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, I)}} \\
+    \quad a) Horizonte de investimento (\S\,1\textordmasculine{}, I) & [PREENCHER] \\
+    \quad b) Prefer\^encia declarada quanto a risco (\S\,1\textordmasculine{}, II) & [PREENCHER] \\
+    \quad c) Finalidade do investimento (\S\,1\textordmasculine{}, III) & [PREENCHER] \\
+    \multicolumn{2}{l}{\textbf{Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III)}} \\
+    \quad a) Familiaridade com produtos financeiros (\S\,3\textordmasculine{}, I) & [PREENCHER] \\
+    \quad b) Hist\'orico de opera\c{c}\~oes no mercado (\S\,3\textordmasculine{}, II) & [PREENCHER] \\
+    \quad c) Forma\c{c}\~ao acad\^emica / experi\^encia profissional (\S\,3\textordmasculine{}, III) & [PREENCHER] \\
     Narrativa breve & [PREENCHER] \\
     \bottomrule
   \end{tabular}
@@ -75,18 +94,23 @@ BRB.
   \centering
   \caption{Persona 3 -- Perfil Caderneta (20\% da popula\c{c}\~ao)}
   \label{qua:persona-caderneta}
-  \begin{tabular}{p{4.5cm}p{8.5cm}}
+  \begin{tabular}{p{5cm}p{8cm}}
     \toprule
     \textbf{Campo} & \textbf{Valor} \\
     \midrule
     Nome fict\'icio & [PREENCHER] \\
     Idade & [PREENCHER -- m\'edia do perfil: 48 anos] \\
-    Renda familiar & [PREENCHER] \\
-    Classe social & [PREENCHER -- concentra\c{c}\~ao em faixas intermedi\'arias] \\
-    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, I) & [PREENCHER] \\
-    Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
-    Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III) & [PREENCHER] \\
-    Canal preferido & [PREENCHER -- perfil com forte prefer\^encia por agência f\'isica] \\
+    Renda familiar & [PREENCHER -- ver decis\~ao de fonte IBGE] \\
+    Classe social & [PREENCHER -- concentra\c{c}\~ao em faixas interm\'edi\'arias] \\
+    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
+    \multicolumn{2}{l}{\textbf{Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, I)}} \\
+    \quad a) Horizonte de investimento (\S\,1\textordmasculine{}, I) & [PREENCHER] \\
+    \quad b) Prefer\^encia declarada quanto a risco (\S\,1\textordmasculine{}, II) & [PREENCHER] \\
+    \quad c) Finalidade do investimento (\S\,1\textordmasculine{}, III) & [PREENCHER] \\
+    \multicolumn{2}{l}{\textbf{Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III)}} \\
+    \quad a) Familiaridade com produtos financeiros (\S\,3\textordmasculine{}, I) & [PREENCHER] \\
+    \quad b) Hist\'orico de opera\c{c}\~oes no mercado (\S\,3\textordmasculine{}, II) & [PREENCHER] \\
+    \quad c) Forma\c{c}\~ao acad\^emica / experi\^encia profissional (\S\,3\textordmasculine{}, III) & [PREENCHER] \\
     Narrativa breve & [PREENCHER] \\
     \bottomrule
   \end{tabular}
@@ -97,18 +121,23 @@ BRB.
   \centering
   \caption{Persona 4 -- Perfil Diversifica (17\% da popula\c{c}\~ao)}
   \label{qua:persona-diversifica}
-  \begin{tabular}{p{4.5cm}p{8.5cm}}
+  \begin{tabular}{p{5cm}p{8cm}}
     \toprule
     \textbf{Campo} & \textbf{Valor} \\
     \midrule
     Nome fict\'icio & [PREENCHER] \\
     Idade & [PREENCHER -- m\'edia do perfil: 37 anos] \\
-    Renda familiar & [PREENCHER] \\
+    Renda familiar & [PREENCHER -- ver decis\~ao de fonte IBGE] \\
     Classe social & [PREENCHER -- maior concentra\c{c}\~ao relativa em A/B] \\
-    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, I) & [PREENCHER] \\
-    Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
-    Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III) & [PREENCHER] \\
-    Canal preferido & [PREENCHER -- perfil mais digital] \\
+    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
+    \multicolumn{2}{l}{\textbf{Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, I)}} \\
+    \quad a) Horizonte de investimento (\S\,1\textordmasculine{}, I) & [PREENCHER] \\
+    \quad b) Prefer\^encia declarada quanto a risco (\S\,1\textordmasculine{}, II) & [PREENCHER] \\
+    \quad c) Finalidade do investimento (\S\,1\textordmasculine{}, III) & [PREENCHER] \\
+    \multicolumn{2}{l}{\textbf{Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III)}} \\
+    \quad a) Familiaridade com produtos financeiros (\S\,3\textordmasculine{}, I) & [PREENCHER] \\
+    \quad b) Hist\'orico de opera\c{c}\~oes no mercado (\S\,3\textordmasculine{}, II) & [PREENCHER] \\
+    \quad c) Forma\c{c}\~ao acad\^emica / experi\^encia profissional (\S\,3\textordmasculine{}, III) & [PREENCHER] \\
     Narrativa breve & [PREENCHER] \\
     \bottomrule
   \end{tabular}
