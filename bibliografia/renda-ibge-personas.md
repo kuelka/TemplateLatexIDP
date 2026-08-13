@@ -1,11 +1,12 @@
-# Dados de Renda (IBGE) para Calibração das Personas
+# Dados de Renda (IBGE e Ipea) para Calibração das Personas
 
 **Data do levantamento:** 12/08/2026
 **Uso previsto:** insumo factual para o campo "Renda familiar" e para a
 decisão sobre a capacidade de investimento atribuída a cada persona do
 `anexos/anexo-2-personas.tex` (Anexo II). **Este memo não decide o valor
-final** — traz as opções de fonte primária IBGE já verificadas, para que
-a escolha seja feita de forma consciente e rastreável.
+final** — traz as opções de fonte primária (IBGE/PNAD Contínua e Ipea/
+Carta de Conjuntura) já verificadas, para que a escolha seja feita de
+forma consciente e rastreável.
 
 ---
 
@@ -79,6 +80,104 @@ entrar em orçamento doméstico completo -- mas se a banca perguntar "o
 IBGE mostra que famílias nessa faixa de renda mal cobrem o básico,
 como o senhor justifica 10% de sobra para investir?", a resposta
 precisa estar pronta.
+
+## 5. Distribuição por décimos (o que foi pedido nesta rodada)
+
+O índice de Gini (0,511 em 2025, ver Seção 2) é um número único que
+resume o grau de desigualdade -- não traz faixas de renda. Quem traz é
+a distribuição por décimos da PNAD Contínua.
+O IBGE não publicou a tabela completa dos 10 décimos na divulgação de
+08/mai/2026 (só os extremos, abaixo), mas são exatamente os extremos
+que mais importam para calibrar Sem Reservas (base da distribuição) e
+Diversifica (topo):
+
+| Recorte | Rendimento domiciliar per capita (2025) |
+|---|---:|
+| **10% mais pobres (1º decil)** | **R$ 268/mês** |
+| 40% mais pobres (referência agregada) | recebem, no total, 13,8× menos que os 10% mais ricos |
+| 70% mais pobres (referência agregada) | detêm 32,8% de toda a massa de renda |
+| Média nacional (referência) | R$ 2.264/mês |
+| **10% mais ricos (10º decil)** | **R$ 9.117/mês** |
+| 1% mais rico | R$ 24.973/mês |
+
+Não encontrei a tabela oficial 2025 com os 10 décimos completos (2º a
+9º) em divulgação de imprensa -- ela existe no SIDRA (sistema de
+tabelas do IBGE), mas não em formato de release textual. Se for
+importante ter os décimos intermediários (ex.: para Economiza e
+Caderneta, que não estão nem no extremo pobre nem no rico), posso
+tentar acessar o SIDRA diretamente -- avisar se vale a pena.
+
+**Leitura direta para as 4 personas**, cruzando com o que já sabemos
+do perfil comportamental de cada uma (`perfis-anbima-personas.md`):
+- **Sem Reservas** (52% da população, concentrado nas faixas mais
+  baixas): mais próximo do 1º decil -- **R$ 268 a R$ 774** (o teto
+  sendo a média dos domicílios com Bolsa Família) é o intervalo mais
+  defensável, bem mais baixo que os R$ 3.376 usados inicialmente.
+- **Economiza e Não Investe** (distribuição mais equilibrada entre
+  faixas de renda, pelo memo ANBIMA): mais próximo da média
+  nacional, **~R$ 2.264**.
+- **Caderneta** (concentração em faixas intermediárias): também
+  próximo da média nacional ou um pouco acima, **R$ 2.264 a R$ 2.787**
+  (usando o corte "sem programa social" como teto).
+- **Diversifica** (maior concentração em classe A/B, cresce com a
+  renda): mais próximo do topo da distribuição -- **R$ 9.117** (10%
+  mais ricos) é defensável, ou um valor intermediário entre a média e
+  esse teto, dependendo de quão "no topo" você quer que a persona
+  esteja.
+
+## 6. Faixas do IPEA (Indicador Ipea de Inflação por Faixa de Renda) -- fonte definitiva, valor oficial
+
+**Fonte primária:** IPEA. LAMEIRAS, Maria Andreia Parente. *Inflação por
+faixa de renda: junho de 2026*. Carta de Conjuntura, nº 71, Nota de
+Conjuntura 30, 2º trimestre de 2026. Divulgado em 17/07/2026. Tabela 4
+("Faixas de renda mensal domiciliar"), p. 3. PDF conferido e arquivado.
+Metodologia: 6 faixas de renda domiciliar mensal construídas a partir
+da POF 2008/2009, atualizadas pelo IPCA.
+
+**Histórico da investigação**: a versão consultada inicialmente (Nota
+de Conjuntura mais antiga da mesma edição nº 71) trazia essa tabela a
+preços de maio/2020 -- desatualizada, igual ao que já aparecia na
+edição nº 69 (dez/2025). A Nota 30 (divulgada em 17/jul/2026, a mais
+recente da série) **já traz a tabela rebasada a preços de
+janeiro/2026** -- o Ipea atualizou o apêndice metodológico entre uma
+nota e outra. Isso resolve o problema: não é mais necessário estimar a
+correção por IPCA, o valor é oficial e diretamente citável.
+
+Minha estimativa anterior (fator ~1,425 sobre a base maio/2020) ficou
+consistentemente ~2,3% acima do valor oficial agora disponível --
+diferença pequena e na direção esperada (a estimativa mirava jul/2026;
+o oficial é jan/2026, 6 meses antes). **Confirma que o método de
+estimativa por IPCA estava correto**, mas o valor abaixo é o que deve
+ser usado, por ser fonte primária direta, não estimativa.
+
+### Faixas de renda mensal domiciliar -- valor oficial (preços de janeiro/2026)
+
+| Faixa | Renda domiciliar (R$ jan./2009) | Renda domiciliar (R$ jan./2026) |
+|---|---|---:|
+| 1 - Renda muito baixa | Menor que R$ 900,00 | Menor que R$ 2.299,82 |
+| 2 - Renda baixa | Entre R$ 900,00 e R$ 1.350,00 | Entre R$ 2.299,82 e R$ 3.449,73 |
+| 3 - Renda média-baixa | Entre R$ 1.350,00 e R$ 2.250,00 | Entre R$ 3.449,73 e R$ 5.749,55 |
+| 4 - Renda média | Entre R$ 2.250,00 e R$ 4.500,00 | Entre R$ 5.749,55 e R$ 11.499,11 |
+| 5 - Renda média-alta | Entre R$ 4.500,00 e R$ 9.000,00 | Entre R$ 11.499,11 e R$ 22.998,22 |
+| 6 - Renda alta | Maior que R$ 9.000,00 | Maior que R$ 22.998,22 |
+
+### Leitura para as 4 personas
+
+Essas 6 faixas cobrem o espectro completo de forma mais granular que os
+extremos da PNAD Contínua (Seção 5), e são consistentes entre si (a
+faixa 1 do Ipea, abaixo de R$2.299,82 domiciliar, é da mesma ordem de
+grandeza do 1º decil per capita da PNAD, considerando mais de uma
+pessoa por domicílio):
+
+- **Sem Reservas**: faixa 1 ou 2 (renda muito baixa/baixa) -- até
+  R$3.449,73.
+- **Economiza e Não Investe**: faixa 2 ou 3 -- R$2.299,82 a R$5.749,55
+  (perfil com distribuição mais equilibrada entre classes, segundo o
+  memo ANBIMA).
+- **Caderneta**: faixa 3 ou 4 -- R$3.449,73 a R$11.499,11 (concentração
+  em faixas intermediárias).
+- **Diversifica**: faixa 5 ou 6 -- acima de R$11.499,11, podendo chegar
+  a faixa 6 (>R$22.998,22) se quiser representar o extremo do perfil.
 
 ## Opções para decisão (não escolhidas aqui)
 

@@ -70,6 +70,19 @@ têm citação no corpo do texto estão marcados abaixo.
   fonte primária, como insumo factual para a construção das fichas de
   persona do Anexo II — não substitui a decisão de síntese ainda
   pendente.
+- `renda-ibge-personas.md`: faixas de renda para calibrar o campo "Renda
+  familiar" das 4 personas — decis da PNAD Contínua 2025 (extremos:
+  R$268 a R$9.117/mês per capita) e, principalmente, as 6 faixas de
+  renda domiciliar do Indicador Ipea de Inflação por Faixa de Renda
+  (Carta de Conjuntura nº 71, Nota 30, jun/2026), com valor oficial já
+  a preços de jan/2026 — PDF fonte arquivado em `dados/`.
+
+## Dados socioeconômicos de apoio (PDFs de fonte primária, fora do escopo normativo/acadêmico)
+
+- `dados/ipea-cc71-nota30-faixas-renda-jun2026.pdf`: Carta de Conjuntura
+  nº 71, Nota de Conjuntura 30 (Ipea, divulgado 17/jul/2026) — fonte da
+  Tabela 4 (faixas de renda mensal domiciliar) usada em
+  `renda-ibge-personas.md`.
 
 ## Corpus normativo da base RAG regulatória (objetivo d, ainda não construída)
 
