@@ -284,7 +284,7 @@ representando o perfil Sem Reservas (definido pela própria ANBIMA como
 otimista, não realista -- 1,1% está muito mais alinhado ao
 comportamento medido.
 
-### Alternativa considerada e descartada: "aumento do ativo"
+### Primeira comparação entre os dois conceitos (12/08/2026) -- decisão revertida depois, ver adiante
 
 A POF tem um segundo conceito, do lado da despesa (não da renda):
 **aumento do ativo** -- definido como *"despesas com a aquisição de
@@ -293,21 +293,24 @@ p. 19). Para a classe até R$1.908, esse componente é 1,4% da despesa
 total (Tabela 6) -- em reais, ≈ R$20,88/mês, contra R$13,68/mês da
 variação patrimonial.
 
-**Descartado como métrica principal**: o grupo "aumento do ativo" é
-dominado por aquisição/reforma de imóvel, fora do escopo desta
+**Descartado nesta primeira rodada** (decisão revertida depois -- ver
+"Problema de direção encontrado", adiante): o grupo "aumento do ativo"
+é dominado por aquisição/reforma de imóvel, fora do escopo desta
 dissertação (só renda fixa). "Outros investimentos" (títulos de
 capitalização, títulos de clube, terreno de jazigo) é só um resíduo
-menor dentro do grupo, não segregável dos dados publicados. Já
-**variação patrimonial** já isola especificamente movimentação de
-conta financeira -- *"depósitos e retiradas de aplicações financeiras
-como, por exemplo, poupança e cotas de fundos de investimento"* --,
-tratando aplicações financeiras como parte do patrimônio/bens da
-família, o que é conceitualmente coerente com o objetivo desta
-dissertação (aplicação em Tesouro/CDB é, também, um bem).
+menor dentro do grupo, não segregável dos dados publicados. Na época,
+pareceu mais direto usar **variação patrimonial**, que isola
+especificamente movimentação de conta financeira -- *"depósitos e
+retiradas de aplicações financeiras como, por exemplo, poupança e
+cotas de fundos de investimento"* --, tratando aplicações financeiras
+como parte do patrimônio/bens da família, o que parecia coerente com o
+objetivo desta dissertação (aplicação em Tesouro/CDB é, também, um
+bem). **Essa leitura não considerou, nesta primeira rodada, o problema
+de direção (saque vs. depósito) explicado a seguir.**
 
-### Decisão metodológica final (12/08/2026)
+### Decisão metodológica final (12/08/2026) -- REVERTIDA em 13/08/2026, ver abaixo
 
-**Variação patrimonial é a métrica usada para "capacidade de
+~~**Variação patrimonial é a métrica usada para "capacidade de
 investimento" em todas as 4 personas**, não aumento do ativo. Critério
 explícito: aplicações financeiras (o próprio objeto desta dissertação)
 são tratadas como bem/patrimônio, e é exatamente esse o conceito que
@@ -315,7 +318,78 @@ variação patrimonial isola -- ainda que de forma imperfeita (mistura
 com venda de bens e herança) e com dado completo só disponível para as
 2 classes extremas. É a melhor aproximação disponível nos dados
 públicos até o momento; se a POF 2024-2025 publicar esse detalhamento
-por todas as 7 classes no futuro, vale reconferir.
+por todas as 7 classes no futuro, vale reconferir.~~
+
+### Problema de direção encontrado em variação patrimonial (13/08/2026) -- motivo da reversão
+
+Ao reexaminar o release do IBGE que é a fonte do 1,1%/15,3% (Seção
+"Fontes -- duas, distintas" acima), o próprio texto do IBGE ilustra o
+conceito assim: *"O valor médio recebido pelas famílias, relativo ao
+rendimento mensal e à variação patrimonial (**saques de poupança** e
+vendas de imóveis, por exemplo)..."* -- o exemplo escolhido pelo IBGE é
+**saque**, não depósito. **Isso é o fato publicado.**
+
+**A partir daqui, o que segue é argumento metodológico meu, não
+afirmação do IBGE**: variação patrimonial fica do lado da **renda** (o
+que a família recebeu no ano) na contabilidade da POF. Uma família que
+sacou da poupança para cobrir despesas tem esse valor contado como
+"recebido" naquele ano. O IBGE não afirma em lugar nenhum que o
+indicador "mede desacumulação" -- essa é uma leitura que faço a partir
+de (a) o exemplo escolhido pelo próprio IBGE ser "saque", (b) o
+posicionamento contábil do item do lado da renda, e (c) a consistência
+dessa leitura com o que já sabíamos da classe (61,2% do orçamento em
+alimentação+habitação, definição ANBIMA de "não consegue investir"). É
+uma inferência plausível e argumentável, não um dado publicado -- e é
+por isso que decidi tratá-la como suficiente para reverter a
+metodologia, mas ela deveria ser apresentada na dissertação como
+interpretação do autor, com essa ressalva explícita, não como achado
+direto da POF.
+
+**R$15,53/mês (variação patrimonial) fica invalidado como proxy de
+capacidade de investimento, nessa leitura** -- não pela precisão do
+número, mas pelo
+que o número mede.
+
+### Decisão final revisada (13/08/2026): aumento do ativo
+
+Adotado **aumento do ativo** no lugar de variação patrimonial --
+definido pela POF como *"despesas com a aquisição de imóvel, a reforma
+de imóvel e outros investimentos"* (POF 2017-2018, Primeiros
+Resultados, p. 19). Ao contrário de variação patrimonial, este é
+inequivocamente **despesa** (dinheiro saindo para adquirir um bem), sem
+ambiguidade de direção.
+
+**Comparação das duas fragilidades, para registro**:
+- Variação patrimonial: domínio correto (poupança/fundos de
+  investimento), mas direção ambígua/provavelmente invertida.
+- Aumento do ativo: direção inequívoca (aquisição), mas domínio
+  misturado -- dominado por imóvel, com "outros investimentos"
+  (títulos de capitalização, títulos de clube, terreno de jazigo) como
+  resíduo menor, não segregável nos dados públicos.
+
+**Ressalva específica para o perfil Sem Reservas**: é plausível que,
+para famílias de baixa renda, a maior parte desse "aumento do ativo"
+seja construção/reforma informal de casa -- comportamento comum nessa
+faixa no Brasil --, não aplicação financeira. Não há como isolar isso
+nos dados disponíveis. Registrado como limitação conhecida, não
+resolvida.
+
+**Duas opções de base -- decisão pendente, não resolvida aqui**
+(identificada por revisão externa em 13/08/2026): a renda-âncora do
+João já decidida e cross-validada (Seção "Decisão final", mais abaixo)
+é R$1.412,00 -- um número individual, ancorado no pico comportamental
+ANBIMA. R$1.491,42 é a despesa total **média da classe** POF -- um
+número agregado, de fonte e natureza diferentes. Aplicar 1,4% sobre um
+ou outro dá valores próximos, mas não idênticos:
+
+| Base | Origem | Valor |
+|---|---|---:|
+| R$1.491,42 | Despesa total média da classe (Tabela 17) -- mais fiel à definição de "aumento do ativo" (% de despesa, não de renda) | R$20,88/mês |
+| R$1.412,00 | Renda-âncora individual do João (ANBIMA, já decidida para toda a ficha) -- mantém uma única base numérica ao longo da persona | R$19,77/mês |
+
+Ambos os cálculos conferem (verificados de forma independente). A
+escolha entre as duas é uma decisão de desenho, não uma questão de
+precisão aritmética -- fica pendente até confirmação.
 
 ### Limitações a considerar antes de aplicar
 
@@ -331,16 +405,23 @@ por todas as 7 classes no futuro, vale reconferir.
 3. **Variação patrimonial pode ser negativa** em famílias individuais
    (saque de poupança para cobrir despesas) -- o 1,1% é uma média que
    já teria essa compensação embutida; não sabemos a distribuição
-   dentro da classe.
-4. O valor de R$13,68/mês (fonte direta, Tabela 16) é baixo o bastante
-   para tornar a recomendação de produto quase sem sentido prático
-   (nem cobre o aporte mínimo de muitos produtos) -- pode ser um
-   resultado *desejado* (mostrar que o sistema reconhece a limitação
-   real dessa persona) ou *indesejado* (persona vira caso degenerado,
-   sem uso pedagógico na matriz). Depende do que você decidiu no Ponto
-   6 da rodada anterior (tratar Sem Reservas como consumidora direta
-   do RFL
-   vs. caso de borda/estágio zero).
+   dentro da classe. **Nota adicionada em 13/08/2026**: esta limitação,
+   registrada aqui na primeira rodada mas não aprofundada, acabou sendo
+   exatamente o motivo da reversão de metodologia registrada mais acima
+   ("Problema de direção encontrado") -- o sinal escolhido pelo próprio
+   IBGE para ilustrar o conceito é "saque", não depósito.
+4. O valor de R$13,68/mês (fonte direta, Tabela 16), calculado com
+   variação patrimonial, está **superado** -- ver reversão de
+   metodologia acima. O valor atual é aumento do ativo, ~R$19,77 a
+   R$20,88/mês conforme a base escolhida (decisão pendente, ver
+   abaixo). O ponto sobre o valor ser baixo o bastante para tornar a
+   recomendação quase sem sentido prático permanece válido nessa faixa,
+   só em menor grau -- pode ser um resultado *desejado*
+   (mostrar que o sistema reconhece a limitação real dessa persona) ou
+   *indesejado* (persona vira caso degenerado, sem uso pedagógico na
+   matriz). Depende do que você decidiu no Ponto 6 da rodada anterior
+   (tratar Sem Reservas como consumidora direta do RFL vs. caso de
+   borda/estágio zero).
 
 ### Decisão tomada (12/08/2026)
 
@@ -381,10 +462,13 @@ jan/2025), sem correção para 2026 -- a preços de jan/2026 (base da
 Faixa 1 do Ipea) o valor real seria um pouco maior, mas a margem é
 pequena o suficiente para não sair da Faixa 1 mesmo corrigido.
 
-Capacidade de investimento resultante: **R$1.412,00 × 1,1% ≈
-R$15,53/mês**. Esse é o valor a constar no campo "Situação financeira"
-(CVM 30/2021, art. 3º, II) da Persona 1, acompanhado da justificativa
-de estratégia de familiarização registrada acima.
+Capacidade de investimento resultante: ~~**R$1.412,00 × 1,1% ≈
+R$15,53/mês**~~ **SUPERSEDIDO em 13/08/2026** -- ver seção "Decisão
+final revisada: aumento do ativo", acima. Metodologia trocada para
+aumento do ativo; valor final entre **R$19,77 e R$20,88/mês**,
+dependendo de qual base for escolhida (renda-âncora do João vs. média
+de despesa da classe POF -- ver comparação e decisão pendente na seção
+anterior). **Este valor ainda não está fechado.**
 
 **Nota de reconciliação (12/08/2026, após achado da Tabela 16 da
 POF)**: ficou em aberto se a renda do João deveria usar o teto da
