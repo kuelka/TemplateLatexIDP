@@ -204,17 +204,54 @@ revogados ou alterados, verificando se o sistema prioriza corretamente a
 norma vigente.
 
 A estrat\'egia de recupera\c{c}\~ao adotar\'a busca h\'ibrida (fus\~ao
-ponderada entre recupera\c{c}\~ao densa e esparsa), e n\~ao apenas
-recupera\c{c}\~ao densa, e o corpus normativo ser\'a reestruturado em
-formato markdown antes da indexa\c{c}\~ao. Ambas as decis\~oes seguem
-\textcite{kim2025}, que documenta ganhos de NDCG@10 decorrentes dessas
-duas escolhas de design em corpora financeiros. A busca h\'ibrida \'e
+ponderada entre recupera\c{c}\~ao densa e esparsa) seguida de reranking
+em duas etapas, e o corpus normativo ser\'a reestruturado em formato
+markdown antes da indexa\c{c}\~ao. A busca h\'ibrida e a
+reestrutura\c{c}\~ao em markdown seguem \textcite{kim2025}, que
+documenta ganhos de NDCG@10 decorrentes dessas duas escolhas de design
+em corpora financeiros. Essas decis\~oes s\~ao refor\c{c}adas por
+evid\^encia recorrente em estudos mais recentes de RAG financeiro:
+\textcite{akarsu2026} mostra que a recupera\c{c}\~ao lexical (BM25)
+supera a recupera\c{c}\~ao puramente densa quando o dom\'inio exige
+correspond\^encia precisa de terminologia, e que a combina\c{c}\~ao
+h\'ibrida seguida de reranking supera todos os m\'etodos de est\'agio
+\'unico testados. O desenho espec\'ifico de reranking em duas etapas
+(um reranker leve de primeira passagem seguido por um reranker de maior
+capacidade sobre os candidatos filtrados) segue \textcite{lee2026}, que
+reporta ganho de 6,5\% em NDCG@20 sobre uma linha de base com reranker
+\'unico; \textcite{dadopoulos2025} chega a uma conclus\~ao convergente
+em corpus financeiro distinto, embora com reranking de uma \'unica etapa
+e outra m\'etrica (ganho de F1-score, n\~ao NDCG), refor\c{c}ando a
+utilidade geral do reranking sem validar especificamente o desenho em
+duas etapas. A busca h\'ibrida \'e
 particularmente relevante para o corpus regulat\'orio deste trabalho, no
 qual normas textualmente pr\'oximas mas normativamente distintas -- por
 exemplo, a Resolu\c{c}\~ao CMN n\textsuperscript{o} 4.557 e a
 Resolu\c{c}\~ao CMN n\textsuperscript{o} 4.879 -- exigem correspond\^encia
 exata de termos (n\'umero da norma) que a recupera\c{c}\~ao puramente
 densa, baseada em similaridade sem\^antica, tende a confundir.
+
+Por decis\~ao de desenho, a arquitetura de recupera\c{c}\~ao n\~ao
+empregar\'a expans\~ao de consulta via documento hipot\'etico (HyDE) --
+t\'ecnica que, em dois estudos independentes de RAG financeiro, piorou
+a qualidade de recupera\c{c}\~ao em rela\c{c}\~ao \`a busca densa
+direta, atribu\'ido \`a introdu\c{c}\~ao de ru\'ido num\'erico/factual
+no documento hipot\'etico gerado pelo LLM \autocite{akarsu2026,lee2026}.
+Essa evid\^encia n\~ao \'e un\^anime na literatura arquivada nesta
+disserta\c{c}\~ao -- \textcite{kobeissi2026}, em benchmark distinto
+(FinanceBench), reporta ganhos expressivos de recall com HyDE e
+Multi-HyDE --, mas optou-se pela leitura mais conservadora dado o risco
+espec\'ifico de alucina\c{c}\~ao num\'erica em conte\'udo regulat\'orio,
+onde precis\~ao factual \'e requisito, n\~ao apenas m\'etrica de
+desempenho.
+
+A unidade de indexa\c{c}\~ao seguir\'a a hierarquia estrutural do
+pr\'oprio normativo (artigo, inciso, par\'agrafo), e n\~ao apenas
+segmenta\c{c}\~ao por tamanho fixo de bloco -- abordagem an\'aloga \`a
+indexa\c{c}\~ao hier\'arquica por se\c{c}\~ao/p\'agina adotada em
+sistemas de RAG financeiro recentes para reduzir confus\~ao entre
+trechos estruturalmente semelhantes, como normas distintas que tratam
+de temas pr\'oximos \autocite{li2025fingear,choe2025hirec,kobeissi2026}.
 
 % TODO: quando o benchmark de suitability (objetivo especifico e) for
 % construido, ver bibliografia/literatura-suitability-benchmark.md.

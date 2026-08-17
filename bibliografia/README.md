@@ -32,28 +32,28 @@ Nenhum tem citação no corpo do texto ainda.
 
 - `artigos/li-et-al-2025-fingear.pdf` — LI, Y. et al. *FinGEAR: Financial
   Mapping-Guided Enhanced Answer Retrieval*. University of Edinburgh et al.,
-  arXiv:2509.12042, 2025. (chave: `li2025fingear`; ainda não citado)
+  arXiv:2509.12042, 2025. (chave: `li2025fingear`; citado em 04-metodologia.tex, indexação hierárquica)
 - `artigos/akarsu-et-al-2026-bm25-to-corrective-rag.pdf` — AKARSU, M.;
   KARAMAN, R. K.; MIERBACH, C. *From BM25 to Corrective RAG: Benchmarking
   Retrieval Strategies for Text-and-Table Documents*. arXiv:2604.01733,
-  2026. (chave: `akarsu2026`; ainda não citado)
+  2026. (chave: `akarsu2026`; citado em 04-metodologia.tex, busca híbrida + evitar HyDE)
 - `artigos/dadopoulos-et-al-2025-metadata-driven-rag.pdf` — DADOPOULOS, M.;
   LADAS, A.; MOSCHIDIS, S.; NEGKAKIS, I. *Metadata-Driven Retrieval-Augmented
   Generation for Financial Question Answering*. arXiv:2510.24402, 2025.
-  (chave: `dadopoulos2025`; ainda não citado)
+  (chave: `dadopoulos2025`; citado em 04-metodologia.tex, ganho de reranking (F1-score, uma etapa) como evidência convergente)
 - `artigos/lee-hong-2026-hierarchical-reranking.pdf` — LEE, J.; HONG, S.
   *Hierarchical Reranking for Scalable Financial RAG System*. Financial
   Security Institute; Hanyang University, arXiv:2607.27523, 2026. (chave:
-  `lee2026`; ainda não citado)
+  `lee2026`; citado em 04-metodologia.tex, reranking + evitar HyDE)
 - `artigos/choe-et-al-2025-hirec-hierarchical-retrieval.pdf` — CHOE, J.;
   KIM, J.; JUNG, W. *Hierarchical Retrieval with Evidence Curation for
   Open-Domain Financial Question Answering on Standardized Documents*
   (HiREC). Hanyang University, arXiv:2505.20368, 2025. (chave:
-  `choe2025hirec`; ainda não citado)
+  `choe2025hirec`; citado em 04-metodologia.tex, indexação hierárquica)
 - `artigos/kobeissi-langlais-2026-decomposing-retrieval-failures.pdf` —
   KOBEISSI, A.; LANGLAIS, P. *Decomposing Retrieval Failures in RAG for
   Long-Document Financial Question Answering*. Université de Montréal/RALI,
-  arXiv:2602.17981, 2026. (chave: `kobeissi2026`; ainda não citado)
+  arXiv:2602.17981, 2026. (chave: `kobeissi2026`; citado em 04-metodologia.tex, indexação hierárquica e como contraponto ao HyDE)
 
 ## LLM-as-a-judge (avaliação de clareza da linguagem, objetivo e)
 
