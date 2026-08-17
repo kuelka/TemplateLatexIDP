@@ -23,6 +23,38 @@ têm citação no corpo do texto estão marcados abaixo.
   `oehler2024`; citado como precedente metodológico do benchmark de
   suitability, objetivo e)
 
+## Literatura adicional de RAG financeiro (levantamento 17/08/2026, ainda não citada no corpo)
+
+Seis artigos recentes sobre retrieval-augmented generation aplicado a
+question answering financeiro, levantados para aprofundar a fundamentação
+da arquitetura de RAG (objetivo d) além dos três artigos da seção anterior.
+Nenhum tem citação no corpo do texto ainda.
+
+- `artigos/li-et-al-2025-fingear.pdf` — LI, Y. et al. *FinGEAR: Financial
+  Mapping-Guided Enhanced Answer Retrieval*. University of Edinburgh et al.,
+  arXiv:2509.12042, 2025. (chave: `li2025fingear`; ainda não citado)
+- `artigos/akarsu-et-al-2026-bm25-to-corrective-rag.pdf` — AKARSU, M.;
+  KARAMAN, R. K.; MIERBACH, C. *From BM25 to Corrective RAG: Benchmarking
+  Retrieval Strategies for Text-and-Table Documents*. arXiv:2604.01733,
+  2026. (chave: `akarsu2026`; ainda não citado)
+- `artigos/dadopoulos-et-al-2025-metadata-driven-rag.pdf` — DADOPOULOS, M.;
+  LADAS, A.; MOSCHIDIS, S.; NEGKAKIS, I. *Metadata-Driven Retrieval-Augmented
+  Generation for Financial Question Answering*. arXiv:2510.24402, 2025.
+  (chave: `dadopoulos2025`; ainda não citado)
+- `artigos/lee-hong-2026-hierarchical-reranking.pdf` — LEE, J.; HONG, S.
+  *Hierarchical Reranking for Scalable Financial RAG System*. Financial
+  Security Institute; Hanyang University, arXiv:2607.27523, 2026. (chave:
+  `lee2026`; ainda não citado)
+- `artigos/choe-et-al-2025-hirec-hierarchical-retrieval.pdf` — CHOE, J.;
+  KIM, J.; JUNG, W. *Hierarchical Retrieval with Evidence Curation for
+  Open-Domain Financial Question Answering on Standardized Documents*
+  (HiREC). Hanyang University, arXiv:2505.20368, 2025. (chave:
+  `choe2025hirec`; ainda não citado)
+- `artigos/kobeissi-langlais-2026-decomposing-retrieval-failures.pdf` —
+  KOBEISSI, A.; LANGLAIS, P. *Decomposing Retrieval Failures in RAG for
+  Long-Document Financial Question Answering*. Université de Montréal/RALI,
+  arXiv:2602.17981, 2026. (chave: `kobeissi2026`; ainda não citado)
+
 ## LLM-as-a-judge (avaliação de clareza da linguagem, objetivo e)
 
 - `artigos/zheng-et-al-2023-judging-llm-as-a-judge.pdf` — ZHENG, L. et al.
