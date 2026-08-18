@@ -107,14 +107,18 @@ Nenhum tem citação no corpo do texto ainda.
   R$268 a R$9.117/mês per capita), as 6 faixas de renda domiciliar do
   Indicador Ipea de Inflação por Faixa de Renda (Carta de Conjuntura
   nº 71, Nota 30, jun/2026, valor oficial a preços de jan/2026; chave:
-  `ipea2026rendafaixa`), e a metodologia de "aumento do ativo" da POF
-  2017-2018 (conceito oficial de despesa com aquisição de bens/
-  investimentos por classe de renda, usado para calibrar o campo
-  "Situação financeira" — adotado em substituição a "variação
-  patrimonial", revertido em 13/08/2026 por ambiguidade de direção,
-  ver histórico no próprio arquivo; chave: `ibge2019pof`). Ambas as
-  chaves citadas em 04-metodologia.tex, subseção "Calibração numérica
-  das personas" — PDFs fonte arquivados em `dados/`.
+  `ipea2026rendafaixa`), e a metodologia final de "superávit
+  financeiro" (renda média menos despesa média por classe, Tabelas 16
+  e 17 da POF 2017-2018 — adotada em substituição a "variação
+  patrimonial" e "aumento do ativo", ambas descartadas por limitações
+  documentadas no histórico do próprio arquivo; chave: `ibge2019pof`).
+  Traz também (18/08/2026) a calibração de renda da Persona 2
+  (Economiza e Não Investe): R$3.456,13/mês, ancorada na Classe C
+  ponderada do Critério Brasil (ABEP/CCEB 2026, ver abaixo), com
+  convergência confirmada contra a faixa de renda de leve concentração
+  modal do próprio perfil na ANBIMA (8ª edição, p. 31). Chaves citadas
+  em 04-metodologia.tex, subseção "Calibração numérica das personas"
+  — PDFs fonte arquivados em `dados/`.
 - `artigos/nogami-senra-2025-como-criar-persona.pdf` — NOGAMI, V.;
   SENRA, K. B. *Como criar uma Persona: proposta de um modelo a partir
   do uso de métodos científicos de pesquisa em um projeto de
@@ -134,6 +138,12 @@ Nenhum tem citação no corpo do texto ainda.
   Orçamentos Familiares 2017-2018, Primeiros Resultados (69 p.) — fonte
   do conceito de "variação patrimonial" e da Tabela 16 (rendimento
   médio real por classe), usados em `renda-ibge-personas.md`.
+- `dados/abep-ccb-2026-alteracoes.pdf`: ABEP, *Critério de Classificação
+  Econômica Brasil (CCEB) — Alterações válidas a partir de 05/02/2026*
+  (base PNADC 2025) — fonte da renda média domiciliar por estrato
+  socioeconômico (A a D/E) e da distribuição populacional por classe,
+  usados em `renda-ibge-personas.md` para calibrar a renda da Persona 2
+  (chave: `abep2026`). Conferido linha a linha nesta rodada (19/08/2026).
 - `dados/anbima-datafolha-2026-raio-x-9a-edicao.pdf`: ANBIMA/Datafolha,
   *Raio X do Investidor Brasileiro — 9ª edição*, abr. 2026 (81 p.) —
   fonte do dado sobre uso de assistentes de IA como canal de

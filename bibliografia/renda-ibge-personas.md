@@ -605,3 +605,136 @@ de quem está nela.
 
 Qualquer uma dessas é defensável — a diferença é o que cada uma
 sinaliza sobre o rigor da calibração perante a banca.
+
+---
+
+# Persona 2 — Economiza e Não Investe: calibração de renda (18/08/2026)
+
+## 1. Por que a técnica do João não se aplica direto
+
+A mesma técnica usada para o João (achar o ponto de renda onde a
+concentração comportamental do perfil atinge um pico claro) **não
+funciona para este perfil**. O gráfico "Perfis por faixas de renda
+média familiar" (ANBIMA, 8ª edição, p. 31) mostra explicitamente que o
+Economiza e Não Investe tem distribuição **quase uniforme** entre
+todas as 6 faixas de renda:
+
+| Faixa de renda | % do perfil Economiza e Não Investe |
+|---|---:|
+| Até R$1.412 | 10% |
+| R$1.413–2.824 | 11% |
+| R$2.825–4.236 | 13% |
+| R$4.237–7.060 | 13% |
+| R$7.061–14.120 | 12% |
+| +R$14.121 | 10% |
+
+O próprio texto do relatório confirma: *"O Perfil Economiza e Não
+Investe é o que apresenta a distribuição mais equilibrada entre todas
+as rendas, com fatias variando entre 10% e 13% dos grupos"*
+(ANBIMA, 2025). Isso descarta a técnica de pico usada no João.
+
+## 2. Tentativa alternativa: classe social (ABEP) — ressalva da própria ABEP
+
+A ficha do perfil (ANBIMA, p. 26) traz a distribuição de classe social:
+Classe A/B 26%, Classe C 52% (majoritária), Classe D/E 22%. A ANBIMA
+usa o critério ABEP 2021/2024 pra essa classificação (nota
+metodológica, p. 65).
+
+Fonte primária consultada: ABEP. *Critério de Classificação Econômica
+Brasil (CCEB)*, versão 2026 (válida a partir de 05/02/2026), base
+PNADC 2025 (ABEP, 2026). A própria ABEP adverte no documento:
+*"a pergunta de renda não é um estimador eficiente de nível
+socioeconômico"* — a classificação real é por sistema de pontos
+(bens duráveis, escolaridade do chefe de família, acesso a serviço
+público), não por renda direta; a correspondência renda↔classe tem
+"sobreposições importantes" entre classes.
+
+Renda média domiciliar por estrato, ABEP 2026 (PNADC 2025):
+
+| Estrato | Renda média | % da população (Brasil) |
+|---|---:|---:|
+| A | R$28.331,26 | 3,6% |
+| B1 | R$13.636,18 | 4,9% |
+| B2 | R$7.874,72 | 15,1% |
+| C1 | R$4.526,88 | 21,2% |
+| C2 | R$2.648,30 | 28,1% |
+| D/E | R$1.177,55 | 27,1% |
+
+Classe C, no esquema tripartite da ANBIMA (A/B, C, D/E), corresponde a
+C1+C2 combinados. Média ponderada pelo peso populacional de cada
+subclasse:
+
+**Classe C ponderada = (21,2×4.526,88 + 28,1×2.648,30) / (21,2+28,1)
+= R$3.456,13/mês.**
+
+## 3. Checagem de convergência no João -- tentativa que NÃO confirmou (registrada como achado, não descartada)
+
+Antes de aplicar esse método ao Economiza, foi feita uma checagem de
+consistência: aplicar a mesma lógica de classe social ponderada ao
+perfil Sem Reservas (João), cuja distribuição de classe já é conhecida
+(A/B 13%, C 46%, D/E 41%, ficha ANBIMA p. 25 -- corrigido nesta
+rodada de verificação, a citação original apontava p. 30, que na
+verdade traz a tabela "Perfis por classes econômicas" (dados
+diferentes); os 13/46/41% estão no cartão do próprio Perfil Sem
+Reservas, p. 25), e comparar com a
+renda-âncora já fechada (R$1.412,00).
+
+Resultado: **R$3.657,50/mês** (bloco A/B ponderado R$12.191,44,
+23,6% da população nacional; bloco C R$3.456,13; bloco D/E
+R$1.177,55). **Não convergiu** -- é 2,6× o valor já fechado. Mesmo
+excluindo a fatia de 13% em classe A/B (que sozinha explica parte da
+distância), o resultado só com C+D/E ainda dá R$2.382,32 -- quase 70%
+mais alto que R$1.412,00.
+
+**Interpretação, não descartada como erro**: os dois métodos medem
+coisas diferentes. O gráfico de faixas de renda mede diretamente
+"nessa renda específica, qual fração é desse perfil?" -- medição
+direta de comportamento por renda corrente. A classe social (ABEP)
+mede capacidade de consumo/patrimônio acumulado (bens duráveis,
+escolaridade do chefe de família), não renda corrente -- e a própria
+ABEP já adverte sobre a alta variância dessa correspondência. Alguém
+pode ter pontuação de classe mais alta por patrimônio acumulado no
+passado e, ainda assim, estar sem capacidade de investir agora --
+consistente com o próprio quadro de estresse financeiro/endividamento
+do perfil Sem Reservas já documentado. **Essa não-convergência reforça
+a decisão de manter a técnica de pico de concentração para o João**,
+em vez de trocar por uniformidade de método entre as quatro personas.
+
+## 4. Segunda convergência -- desta vez confirmada
+
+Voltando à tabela da Seção 1: as duas faixas de renda com a fatia mais
+alta do perfil Economiza e Não Investe (13%, empatadas) são
+exatamente **R$2.825 a R$7.060**. O valor calculado via classe social
+(R$3.456,13) **cai dentro dessa faixa** -- convergência entre duas
+fontes independentes (classificação de classe da ANBIMA/ABEP e a
+distribuição de renda direta da própria ANBIMA), ainda que o sinal de
+concentração modal seja fraco (13% vs. 10-12% nas demais faixas, uma
+diferença pequena, perto da margem de erro de 1 p.p. da pesquisa).
+
+## 5. Decisão final (18/08/2026)
+
+**Renda familiar do Economiza e Não Investe: R$3.456,13/mês**,
+ancorada na classe social predominante do perfil (Classe C, ABEP
+2026/PNADC 2025), com convergência confirmada contra a distribuição de
+renda direta da própria ANBIMA (faixa de leve concentração modal,
+R$2.825-7.060). PDF fonte (ABEP CCEB 2026) arquivado em
+`bibliografia/dados/abep-ccb-2026-alteracoes.pdf` nesta rodada
+(19/08/2026) -- `abep.org` está fora da lista de domínios com acesso
+de rede liberado para busca automatizada, mesmo procedimento já usado
+para `ipea.gov.br`: usuário enviou o arquivo manualmente.
+
+### Capacidade de investimento (superávit financeiro)
+
+R$3.456,13 cai na Classe 3 da POF (R$2.862 a R$5.724). Da tabela de
+superávit já calculada (Seção "Metodologia final: superávit
+financeiro"):
+
+**Classe 3 -- Renda média R$4.003,57, Despesa média R$3.668,39,
+Superávit R$335,18/mês.**
+
+**Capacidade de investimento do Economiza e Não Investe: R$335,18/mês**
+(superávit positivo, ao contrário do João) -- mesma metodologia,
+aplicada de forma consistente: usa-se o superávit da classe POF
+correspondente à renda-âncora da persona, não uma média de despesa
+recalculada individualmente.
+
