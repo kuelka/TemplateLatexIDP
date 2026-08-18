@@ -399,34 +399,81 @@ em 17/08/2026, mas o arquivo correspondente não chegou a ser
 commitado -- refeita aqui, no mesmo teor, durante auditoria geral do
 projeto.
 
-**Valor final da capacidade de investimento do João: R$1.412,00 × 1,4%
-≈ R$19,77/mês.**
+**Valor da capacidade de investimento do João por esta metodologia
+(aumento do ativo): R$1.412,00 × 1,4% ≈ R$19,77/mês.** **SUPERADO em
+18/08/2026** -- ver seção "Metodologia final: superávit financeiro",
+abaixo, que substitui aumento do ativo por completo.
 
-### Lacuna de cobertura -- percentual de "aumento do ativo" só existe para os extremos (18/08/2026)
+### Lacuna de cobertura -- percentual de "aumento do ativo" só existe para os extremos (18/08/2026) -- RESOLVIDA, ver seção seguinte
 
-**Achado da auditoria geral**: o percentual de aumento do ativo está
-confirmado, na Tabela 6 da POF, **apenas para as 2 classes extremas**:
+~~**Achado da auditoria geral**: o percentual de aumento do ativo está
+confirmado, na Tabela 6 da POF, **apenas para as 2 classes extremas**~~
+-- ver "Metodologia final: superávit financeiro", abaixo, que resolve
+essa lacuna por caminho diferente (não tentou completar o dado de
+"aumento do ativo" que faltava; trocou de indicador para um que já
+cobre as 7 classes).
 
-| Classe | % aumento do ativo | Base de despesa (Tabela 17) | Valor em R$ |
+### Metodologia final: superávit financeiro (renda menos despesa) -- 18/08/2026
+
+**Proposta do usuário, superior às duas tentativas anteriores**: em vez
+de depender de um percentual pré-calculado pela POF (variação
+patrimonial ou aumento do ativo, ambos só publicados para as classes
+extremas), calcular diretamente o **superávit financeiro** de cada
+classe -- renda média menos despesa média --, usando a mesma técnica
+de acumulação marginal já aplicada às Tabelas 16 (renda) e 17
+(despesa) da POF. Como as duas tabelas cobrem as 7 classes completas,
+essa abordagem **resolve a lacuna de cobertura por completo**, sem
+precisar buscar mais dados nem interpolar.
+
+| Classe | Renda média (Tabela 16) | Despesa média (Tabela 17) | Superávit (renda − despesa) |
 |---|---:|---:|---:|
-| Até R$ 1.908 (classe 1 -- João) | 1,4% | R$1.491,42 (média) / R$1.412,00 (âncora ANBIMA) | R$19,77-20,88/mês |
-| Acima de R$ 23.850 (classe 7) | 9,6% | R$40.009,63 (média da classe, Seção "Renda média real por classe") | ≈R$3.840,92/mês (sobre a média da classe) |
+| 1 - Até R$ 1.908 | R$1.243,43 | R$1.491,42 | **-R$247,99** |
+| 2 - R$ 1.908-2.862 | R$2.367,96 | R$2.325,00 | R$42,96 |
+| 3 - R$ 2.862-5.724 | R$4.003,57 | R$3.668,39 | R$335,18 |
+| 4 - R$ 5.724-9.540 | R$7.028,21 | R$6.146,57 | R$881,64 |
+| 5 - R$ 9.540-14.310 | R$11.116,41 | R$9.162,19 | R$1.954,22 |
+| 6 - R$ 14.310-23.850 | R$17.752,05 | R$14.545,90 | R$3.206,15 |
+| 7 - Acima de R$ 23.850 | R$40.009,63 | R$26.928,89 | R$13.080,74 |
 
-**Não temos o percentual para nenhuma das 5 classes intermediárias**
-(2 a 6) -- a mesma limitação que já afetava variação patrimonial antes
-da reversão. Isso é um bloqueio real para calibrar Economiza e Não
-Investe, Caderneta e Diversifica, nenhuma das quais cai nos extremos
-pelo mapeamento já feito na Seção 6 (Economiza → Faixa 2-3 do Ipea;
-Caderneta → Faixa 3-4; Diversifica → Faixa 5-6). Opções, nenhuma
-escolhida aqui:
-1. Buscar de novo, especificamente pelas 5 classes do meio (tentativa
-   anterior de achar isso pra variação patrimonial não teve sucesso;
-   pode ser diferente para aumento do ativo, que não foi buscado com o
-   mesmo esforço).
-2. Interpolar entre 1,4% e 9,6% (linear ou outra curva), com a
-   limitação claramente marcada como estimativa não publicada.
-3. Usar um critério qualitativo diferente para as personas do meio,
-   não baseado em percentual preciso da POF.
+**Decisão do usuário (18/08/2026), aplicada às 4 personas**: o
+superávit financeiro por classe é a métrica final de capacidade de
+investimento, substituindo tanto variação patrimonial quanto aumento
+do ativo. **Personas cuja classe apresenta superávit negativo não têm
+condição de fazer nenhuma aplicação** -- não se atribui um valor
+simbólico mínimo; a capacidade de investimento é tratada como
+inexistente nesse caso, e não R$0 arredondado de um cálculo, mas o
+reconhecimento explícito de que a classe, em média, gasta mais do que
+recebe.
+
+**Consequência direta para o João (persona 1, Sem Reservas, classe
+1)**: capacidade de investimento revisada de R$19,77/mês
+(aumento do ativo, decisão anterior) para **sem capacidade de
+investir** -- déficit médio de R$247,99/mês na classe. Isso é
+coerente com a própria definição ANBIMA do perfil ("não consegue
+economizar nem investir") e com todos os indicadores já levantados
+para essa classe (61,2% do orçamento em alimentação+habitação, maior
+estresse financeiro entre os 4 perfis, maior taxa de endividamento).
+
+**Impacto na narrativa já registrada**: a justificativa de "estratégia
+de familiarização" (persona investe um valor pequeno para se
+familiarizar com produtos, mesmo sem sobra real) **não se sustenta
+mais** nesses termos -- não há valor a aplicar. Se a dissertação
+quiser manter alguma leitura pedagógica para essa persona no sistema
+(ex.: o agente reconhecer a ausência de capacidade e orientar
+educação financeira/formação de reserva em vez de recomendar produto),
+isso precisa ser reformulado como uma decisão de desenho explícita,
+não decorrer implicitamente de um valor pequeno mas positivo que não
+existe mais.
+
+**Ressalva metodológica, para registro**: renda (Tabela 16) e despesa
+(Tabela 17) são levantadas em módulos diferentes da POF e não fecham
+perfeitamente entre si a nível de classe -- o superávit calculado é
+uma estimativa por diferença de duas médias agregadas, não a média de
+um superávit individual medido diretamente family a family. É a melhor
+aproximação disponível nos dados públicos, mas carrega essa limitação,
+a ser mencionada no texto da dissertação.
+
+
 
 ### Limitações a considerar antes de aplicar
 
@@ -449,16 +496,18 @@ escolhida aqui:
    IBGE para ilustrar o conceito é "saque", não depósito.
 4. O valor de R$13,68/mês (fonte direta, Tabela 16), calculado com
    variação patrimonial, está **superado** -- ver reversão de
-   metodologia acima. O valor final é aumento do ativo sobre a
-   renda-âncora ANBIMA: R$19,77/mês (decisão fechada). O ponto sobre o
-   valor ser baixo o bastante para tornar a
-   recomendação quase sem sentido prático permanece válido nessa faixa,
-   só em menor grau -- pode ser um resultado *desejado*
-   (mostrar que o sistema reconhece a limitação real dessa persona) ou
-   *indesejado* (persona vira caso degenerado, sem uso pedagógico na
-   matriz). Depende do que você decidiu no Ponto 6 da rodada anterior
-   (tratar Sem Reservas como consumidora direta do RFL vs. caso de
-   borda/estágio zero).
+   metodologia acima. ~~O valor final é aumento do ativo sobre a
+   renda-âncora ANBIMA: R$19,77/mês (decisão fechada).~~ **SUPERSEDIDO
+   novamente em 18/08/2026** -- ver seção "Metodologia final: superávit
+   financeiro": a classe do João tem superávit médio negativo
+   (-R$247,99/mês), logo a persona não tem capacidade de investimento,
+   não um valor pequeno positivo. Toda a discussão abaixo sobre "o
+   valor ser baixo o bastante para tornar a recomendação quase sem
+   sentido prático" fica superada por essa mesma razão -- não é mais
+   uma questão de o valor ser pequeno, é a ausência de valor. Ver
+   "Impacto na narrativa já registrada", na seção "Metodologia final",
+   para a implicação sobre o Ponto 6 (tratar Sem Reservas como
+   consumidora direta do RFL vs. caso de borda/estágio zero).
 
 ### Decisão tomada (12/08/2026)
 
@@ -504,11 +553,19 @@ R$15,53/mês**~~ **SUPERSEDIDO em 13/08/2026** -- ver seção "Decisão
 final revisada: aumento do ativo", acima. Metodologia trocada para
 aumento do ativo sobre a renda-âncora ANBIMA (R$1.412,00 × 1,4%):
 
-**R$19,77/mês -- valor final, fechado em 17/08/2026.**
+~~**R$19,77/mês**~~ -- **SUPERSEDIDO novamente em 18/08/2026** -- ver
+seção "Metodologia final: superávit financeiro". A classe do João
+(até R$1.908) tem superávit médio **negativo** (-R$247,99/mês), logo
+a persona **não tem capacidade de investimento** por essa metodologia
+-- valor final substitui qualquer capacidade de investimento numérica
+positiva.
 
 Esse é o valor a constar no campo "Situação financeira" (CVM 30/2021,
-art. 3º, II) da Persona 1, acompanhado da justificativa de estratégia
-de familiarização já registrada acima.
+art. 3º, II) da Persona 1: **sem capacidade de investimento**. A
+justificativa de estratégia de familiarização registrada abaixo **não
+se aplica mais** nesses termos -- ver "Impacto na narrativa já
+registrada", na seção "Metodologia final: superávit financeiro",
+acima, para a implicação e o que precisa ser decidido.
 
 **Nota de reconciliação (12/08/2026, após achado da Tabela 16 da
 POF)**: ficou em aberto se a renda do João deveria usar o teto da
