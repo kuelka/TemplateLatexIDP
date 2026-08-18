@@ -26,12 +26,20 @@ social, estresse financeiro, endividamento, intenção de investir,
 estrutura familiar) e contra o gráfico "Perfis por faixas de renda
 média familiar", que confirma a cifra usada como âncora de renda do
 João: **71% das pessoas com renda familiar até R$1.412/mês são do
-Perfil Sem Reservas**. Dois erros de transcrição foram encontrados e
-corrigidos nesta rodada: a etnia parda do Perfil Sem Reservas estava
-como 46% (correto: 45%) e a do Perfil Economiza e Não Investe estava
-como 52% (correto: 46%) — em ambos os casos, o número errado coincidia
-com o percentual de "Classe C" do mesmo cartão, sugerindo troca de
-linha na transcrição original. Nenhum outro dado divergiu do PDF.
+Perfil Sem Reservas**. **Atualização (18/08/2026)**: um terceiro erro do mesmo tipo foi
+encontrado ao preencher a ficha da Persona 1 -- a escolaridade
+"fundamental" do Perfil Sem Reservas estava como 41% (correto: 42%),
+coincidindo com o percentual de "Classe D/E" do mesmo cartão. Corrigido.
+Três erros de transcrição foram encontrados e corrigidos ao todo: a
+etnia parda do Perfil Sem Reservas estava como 46% (correto: 45%), a
+do Perfil Economiza e Não Investe estava como 52% (correto: 46%), e a
+escolaridade fundamental do Perfil Sem Reservas estava como 41%
+(correto: 42%) — em todos os casos, o número errado coincidia com o
+percentual de "Classe C" ou "Classe D/E" do mesmo cartão, sugerindo
+troca de linha sistemática na transcrição original. Recomenda-se
+reconferir os campos de "Classe social" e valores adjacentes dos
+demais perfis se algum outro dado dessa área vier a ser citado no
+corpo da dissertação.
 
 A pesquisa segmenta a população entrevistada em quatro perfis
 comportamentais, mutuamente exclusivos, com base em hábitos declarados de
@@ -49,7 +57,7 @@ Não conseguem economizar nem investir.
 | Gênero | 58% feminino / 42% masculino |
 | Etnia (predominante) | parda (45%), branca (29%) |
 | Classe social | maioria C e D/E — concentração cresce quanto menor a renda familiar; é o perfil mais frequente em **todas** as faixas de renda até ~R$ 7 mil, chegando a 71% entre quem ganha até R$ 1.412/mês |
-| Escolaridade | maioria ensino médio (46%), 41% fundamental |
+| Escolaridade | maioria ensino médio (46%), 42% fundamental |
 | Região | concentração em Sudeste (38%) e Nordeste (31%) |
 | Situação ocupacional | maioria de pessoas sem ocupação formal ou aposentadas nas faixas mais baixas de renda |
 | Estresse financeiro | o mais alto entre os quatro perfis — 59% em nível alto (vs. 51% média da população) |
