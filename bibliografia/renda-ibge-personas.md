@@ -374,22 +374,59 @@ faixa no Brasil --, não aplicação financeira. Não há como isolar isso
 nos dados disponíveis. Registrado como limitação conhecida, não
 resolvida.
 
-**Duas opções de base -- decisão pendente, não resolvida aqui**
-(identificada por revisão externa em 13/08/2026): a renda-âncora do
-João já decidida e cross-validada (Seção "Decisão final", mais abaixo)
-é R$1.412,00 -- um número individual, ancorado no pico comportamental
-ANBIMA. R$1.491,42 é a despesa total **média da classe** POF -- um
-número agregado, de fonte e natureza diferentes. Aplicar 1,4% sobre um
-ou outro dá valores próximos, mas não idênticos:
+**Duas opções de base -- decisão fechada em 17/08/2026** (identificada
+por revisão externa em 13/08/2026): a renda-âncora do João já decidida
+e cross-validada (Seção "Decisão final", mais abaixo) é R$1.412,00 --
+um número individual, ancorado no pico comportamental ANBIMA.
+R$1.491,42 é a despesa total **média da classe** POF -- um número
+agregado, de fonte e natureza diferentes. Aplicar 1,4% sobre um ou
+outro dá valores próximos, mas não idênticos:
 
 | Base | Origem | Valor |
 |---|---|---:|
 | R$1.491,42 | Despesa total média da classe (Tabela 17) -- mais fiel à definição de "aumento do ativo" (% de despesa, não de renda) | R$20,88/mês |
-| R$1.412,00 | Renda-âncora individual do João (ANBIMA, já decidida para toda a ficha) -- mantém uma única base numérica ao longo da persona | R$19,77/mês |
+| **R$1.412,00** | **Renda-âncora individual do João (ANBIMA, já decidida para toda a ficha) -- mantém uma única base numérica ao longo da persona** | **R$19,77/mês (escolhido)** |
 
-Ambos os cálculos conferem (verificados de forma independente). A
-escolha entre as duas é uma decisão de desenho, não uma questão de
-precisão aritmética -- fica pendente até confirmação.
+Ambos os cálculos conferem (verificados de forma independente).
+**Decisão final: R$1.412,00 (ANBIMA)**, não R$1.491,42 (POF). Critério
+explícito do usuário: o POF é usado só para extrair o **percentual**
+(1,4%, aumento do ativo) a aplicar -- a **base de renda** continua
+sendo a âncora ANBIMA já fechada para toda a ficha, evitando misturar
+dentro do mesmo cálculo uma fonte de 2024/2025 (ANBIMA, a renda do
+João) com uma fonte de 2018 (POF, a despesa média da classe). **Nota
+de rastreabilidade (18/08/2026)**: essa decisão já havia sido fechada
+em 17/08/2026, mas o arquivo correspondente não chegou a ser
+commitado -- refeita aqui, no mesmo teor, durante auditoria geral do
+projeto.
+
+**Valor final da capacidade de investimento do João: R$1.412,00 × 1,4%
+≈ R$19,77/mês.**
+
+### Lacuna de cobertura -- percentual de "aumento do ativo" só existe para os extremos (18/08/2026)
+
+**Achado da auditoria geral**: o percentual de aumento do ativo está
+confirmado, na Tabela 6 da POF, **apenas para as 2 classes extremas**:
+
+| Classe | % aumento do ativo | Base de despesa (Tabela 17) | Valor em R$ |
+|---|---:|---:|---:|
+| Até R$ 1.908 (classe 1 -- João) | 1,4% | R$1.491,42 (média) / R$1.412,00 (âncora ANBIMA) | R$19,77-20,88/mês |
+| Acima de R$ 23.850 (classe 7) | 9,6% | R$40.009,63 (média da classe, Seção "Renda média real por classe") | ≈R$3.840,92/mês (sobre a média da classe) |
+
+**Não temos o percentual para nenhuma das 5 classes intermediárias**
+(2 a 6) -- a mesma limitação que já afetava variação patrimonial antes
+da reversão. Isso é um bloqueio real para calibrar Economiza e Não
+Investe, Caderneta e Diversifica, nenhuma das quais cai nos extremos
+pelo mapeamento já feito na Seção 6 (Economiza → Faixa 2-3 do Ipea;
+Caderneta → Faixa 3-4; Diversifica → Faixa 5-6). Opções, nenhuma
+escolhida aqui:
+1. Buscar de novo, especificamente pelas 5 classes do meio (tentativa
+   anterior de achar isso pra variação patrimonial não teve sucesso;
+   pode ser diferente para aumento do ativo, que não foi buscado com o
+   mesmo esforço).
+2. Interpolar entre 1,4% e 9,6% (linear ou outra curva), com a
+   limitação claramente marcada como estimativa não publicada.
+3. Usar um critério qualitativo diferente para as personas do meio,
+   não baseado em percentual preciso da POF.
 
 ### Limitações a considerar antes de aplicar
 
@@ -412,9 +449,9 @@ precisão aritmética -- fica pendente até confirmação.
    IBGE para ilustrar o conceito é "saque", não depósito.
 4. O valor de R$13,68/mês (fonte direta, Tabela 16), calculado com
    variação patrimonial, está **superado** -- ver reversão de
-   metodologia acima. O valor atual é aumento do ativo, ~R$19,77 a
-   R$20,88/mês conforme a base escolhida (decisão pendente, ver
-   abaixo). O ponto sobre o valor ser baixo o bastante para tornar a
+   metodologia acima. O valor final é aumento do ativo sobre a
+   renda-âncora ANBIMA: R$19,77/mês (decisão fechada). O ponto sobre o
+   valor ser baixo o bastante para tornar a
    recomendação quase sem sentido prático permanece válido nessa faixa,
    só em menor grau -- pode ser um resultado *desejado*
    (mostrar que o sistema reconhece a limitação real dessa persona) ou
@@ -465,10 +502,13 @@ pequena o suficiente para não sair da Faixa 1 mesmo corrigido.
 Capacidade de investimento resultante: ~~**R$1.412,00 × 1,1% ≈
 R$15,53/mês**~~ **SUPERSEDIDO em 13/08/2026** -- ver seção "Decisão
 final revisada: aumento do ativo", acima. Metodologia trocada para
-aumento do ativo; valor final entre **R$19,77 e R$20,88/mês**,
-dependendo de qual base for escolhida (renda-âncora do João vs. média
-de despesa da classe POF -- ver comparação e decisão pendente na seção
-anterior). **Este valor ainda não está fechado.**
+aumento do ativo sobre a renda-âncora ANBIMA (R$1.412,00 × 1,4%):
+
+**R$19,77/mês -- valor final, fechado em 17/08/2026.**
+
+Esse é o valor a constar no campo "Situação financeira" (CVM 30/2021,
+art. 3º, II) da Persona 1, acompanhado da justificativa de estratégia
+de familiarização já registrada acima.
 
 **Nota de reconciliação (12/08/2026, após achado da Tabela 16 da
 POF)**: ficou em aberto se a renda do João deveria usar o teto da
