@@ -15,8 +15,9 @@ norma, garantindo cobertura sistem\'atica e rastre\'avel do espa\c{c}o
 de teste regulat\'orio. As personas s\~ao fict\'icias e n\~ao
 correspondem a clientes reais de nenhum banco p\'ublico.
 
-% TODO: preencher os campos [PREENCHER] das personas 2-4 (Persona 1 --
-% Joao, Sem Reservas -- ja fechada em 18/08/2026).
+% TODO: preencher os campos [PREENCHER] das personas 3-4 (Persona 1 --
+% Joao, Sem Reservas -- fechada em 18/08/2026; Persona 2 -- Marina,
+% Economiza e Nao Investe -- fechada em 19/08/2026).
 % - Idade/classe social podem ser ancorados diretamente nos dados
 %   agregados de bibliografia/perfis-anbima-personas.md.
 % - Renda familiar: ancorada no pico de concentracao comportamental de
@@ -72,29 +73,30 @@ correspondem a clientes reais de nenhum banco p\'ublico.
 
 \begin{quadro}[htbp]
   \centering
+  \small
   \caption{Persona 2 -- Perfil Economiza e N\~ao Investe (12\% da popula\c{c}\~ao)}
   \label{qua:persona-economiza}
   \begin{tabular}{p{5cm}p{8cm}}
     \toprule
     \textbf{Campo} & \textbf{Valor} \\
     \midrule
-    Nome fict\'icio & [PREENCHER] \\
-    Idade & [PREENCHER -- m\'edia do perfil: 34 anos] \\
-    Renda familiar & [PREENCHER -- ver decis\~ao de fonte IBGE] \\
-    Classe social & [PREENCHER -- predomin\^ancia C] \\
-    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
+    Nome fict\'icio & Marina \\
+    Idade & 34 anos (m\'edia do perfil, o mais jovem entre os quatro) \\
+    Renda familiar & R\$3.456,13/m\^es (Classe C ponderada, Crit\'erio Brasil -- ABEP, 2026, convergente com a faixa de leve concentra\c{c}\~ao modal do perfil na pr\'opria pesquisa ANBIMA, R\$2.825 a R\$7.060) \\
+    Classe social & C (predomin\^ancia no perfil, 52\%) \\
+    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, II) & Capacidade de investimento de R\$335,18/m\^es -- superavit financeiro positivo na classe de rendimento correspondente (POF 2017-2018), ao contr\'ario do perfil Sem Reservas \\
     \multicolumn{2}{l}{\textbf{Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, I)}} \\
-    \quad a) Horizonte de investimento (\S\,1\textordmasculine{}, I) & [PREENCHER] \\
-    \quad b) Prefer\^encia declarada quanto a risco (\S\,1\textordmasculine{}, II) & [PREENCHER] \\
-    \quad c) Finalidade do investimento (\S\,1\textordmasculine{}, III) & [PREENCHER] \\
+    \quad a) Horizonte de investimento (\S\,1\textordmasculine{}, I) & Curto a m\'edio prazo, priorizando liquidez -- perfil ainda n\~ao decidiu investir (58\% n\~ao pretendem investir em 2025), mas \'e o mais convert\'ivel entre os quatro (ANBIMA, 2025) \\
+    \quad b) Prefer\^encia declarada quanto a risco (\S\,1\textordmasculine{}, II) & Conservadora -- a pr\'opria defini\c{c}\~ao do perfil (mant\'em dinheiro em casa/conta-corrente em vez de qualquer aplica\c{c}\~ao) j\'a evidencia forte prefer\^encia por seguran\c{c}a/liquidez sobre retorno \\
+    \quad c) Finalidade do investimento (\S\,1\textordmasculine{}, III) & Primeira experi\^encia com produto de investimento / forma\c{c}\~ao de reserva -- perfil descrito pela pr\'opria ANBIMA como "p\'ublico com potencial n\~ao explorado" \\
     \multicolumn{2}{l}{\textbf{Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III)}} \\
-    \quad a) Familiaridade com produtos financeiros (\S\,3\textordmasculine{}, I) & [PREENCHER] \\
-    \quad b) Hist\'orico de opera\c{c}\~oes no mercado (\S\,3\textordmasculine{}, II) & [PREENCHER] \\
-    \quad c) Forma\c{c}\~ao acad\^emica / experi\^encia profissional (\S\,3\textordmasculine{}, III) & [PREENCHER] \\
-    Narrativa breve & [PREENCHER] \\
+    \quad a) Familiaridade com produtos financeiros (\S\,3\textordmasculine{}, I) & Baixa, mas superior ao perfil Sem Reservas -- 6 em cada 10 j\'a buscam informa\c{c}\~ao sobre investimentos, e cerca de 1 em cada 5 j\'a participou de atividade de educa\c{c}\~ao financeira (ANBIMA, 8\textordmasculine{} e 9\textordmasculine{} edi\c{c}\~oes) \\
+    \quad b) Hist\'orico de opera\c{c}\~oes no mercado (\S\,3\textordmasculine{}, II) & Nenhum -- por defini\c{c}\~ao do perfil, n\~ao aplica em produtos financeiros \\
+    \quad c) Forma\c{c}\~ao acad\^emica / experi\^encia profissional (\S\,3\textordmasculine{}, III) & Ensino m\'edio completo (58\% do perfil) -- ANBIMA, 2025 \\
+    Narrativa breve & Marina, 34 anos, integra o perfil Economiza e N\~ao Investe -- 12\% da popula\c{c}\~ao, o mais jovem entre os quatro perfis. J\'a consegue guardar dinheiro, mas mant\'em parado em casa ou conta-corrente, sem rendimento. Ao contr\'ario do Jo\~ao, sua classe de rendimento apresenta super\'avit financeiro positivo -- ela tem capacidade real de investir, mas ainda n\~ao deu esse passo. O sistema testa se o agente reconhece esse perfil como candidato natural a uma primeira recomenda\c{c}\~ao de entrada, de baixa complexidade e alta liquidez, coerente com seu conhecimento ainda limitado sobre produtos financeiros. \\
     \bottomrule
   \end{tabular}
-  \fonte{Elaborado pelo autor (2026), com base em \autocite{anbima2025}.}
+  \fonte{Elaborado pelo autor (2026), com base em \autocite{anbima2025}, \autocite{abep2026} e \autocite{ibge2019pof}.}
 \end{quadro}
 
 \begin{quadro}[htbp]
