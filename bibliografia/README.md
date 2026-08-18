@@ -107,10 +107,20 @@ Nenhum tem citação no corpo do texto ainda.
   R$268 a R$9.117/mês per capita), as 6 faixas de renda domiciliar do
   Indicador Ipea de Inflação por Faixa de Renda (Carta de Conjuntura
   nº 71, Nota 30, jun/2026, valor oficial a preços de jan/2026), e a
-  metodologia de "variação patrimonial" da POF 2017-2018 (conceito
-  oficial de capacidade de poupança/investimento por classe de renda,
-  usado para calibrar o campo "Situação financeira") — PDFs fonte
-  arquivados em `dados/`.
+  metodologia de "aumento do ativo" da POF 2017-2018 (conceito oficial
+  de despesa com aquisição de bens/investimentos por classe de renda,
+  usado para calibrar o campo "Situação financeira" — adotado em
+  substituição a "variação patrimonial", revertido em 13/08/2026 por
+  ambiguidade de direção, ver histórico no próprio arquivo) — PDFs
+  fonte arquivados em `dados/`.
+- `artigos/nogami-senra-2025-como-criar-persona.pdf` — NOGAMI, V.;
+  SENRA, K. B. *Como criar uma Persona: proposta de um modelo a partir
+  do uso de métodos científicos de pesquisa em um projeto de
+  consultoria*. Revista de Ciências da Administração, v. 27, n. 67,
+  p. 1–26, 2025. DOI: 10.5007/2175-8077.2025.e98286. (chave:
+  `nogamisenra2025`; citado em 04-metodologia.tex, contraste entre o
+  padrão de rigor com coleta primária e a opção desta dissertação por
+  triangulação de fontes públicas secundárias)
 
 ## Dados socioeconômicos de apoio (PDFs de fonte primária, fora do escopo normativo/acadêmico)
 
