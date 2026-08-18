@@ -106,13 +106,15 @@ Nenhum tem citação no corpo do texto ainda.
   familiar" das 4 personas — decis da PNAD Contínua 2025 (extremos:
   R$268 a R$9.117/mês per capita), as 6 faixas de renda domiciliar do
   Indicador Ipea de Inflação por Faixa de Renda (Carta de Conjuntura
-  nº 71, Nota 30, jun/2026, valor oficial a preços de jan/2026), e a
-  metodologia de "aumento do ativo" da POF 2017-2018 (conceito oficial
-  de despesa com aquisição de bens/investimentos por classe de renda,
-  usado para calibrar o campo "Situação financeira" — adotado em
-  substituição a "variação patrimonial", revertido em 13/08/2026 por
-  ambiguidade de direção, ver histórico no próprio arquivo) — PDFs
-  fonte arquivados em `dados/`.
+  nº 71, Nota 30, jun/2026, valor oficial a preços de jan/2026; chave:
+  `ipea2026rendafaixa`), e a metodologia de "aumento do ativo" da POF
+  2017-2018 (conceito oficial de despesa com aquisição de bens/
+  investimentos por classe de renda, usado para calibrar o campo
+  "Situação financeira" — adotado em substituição a "variação
+  patrimonial", revertido em 13/08/2026 por ambiguidade de direção,
+  ver histórico no próprio arquivo; chave: `ibge2019pof`). Ambas as
+  chaves citadas em 04-metodologia.tex, subseção "Calibração numérica
+  das personas" — PDFs fonte arquivados em `dados/`.
 - `artigos/nogami-senra-2025-como-criar-persona.pdf` — NOGAMI, V.;
   SENRA, K. B. *Como criar uma Persona: proposta de um modelo a partir
   do uso de métodos científicos de pesquisa em um projeto de
