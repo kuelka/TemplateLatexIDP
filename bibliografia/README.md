@@ -142,11 +142,16 @@ Nenhum tem citação no corpo do texto ainda.
   (chave: `anbima2026`). Confirma também que os 4 perfis
   comportamentais (Sem Reservas 52%, Economiza 12%, Caderneta ~19%,
   Diversifica 17%) permanecem estáveis em relação à 8ª edição — mesma
-  distribuição usada em `perfis-anbima-personas.md`. **Nota**: a 8ª
-  edição (chave `anbima2025`), fonte primária de todo o restante do
-  memo de personas — incluindo o ponto de concentração de R$1.412/mês
-  usado como âncora de renda do João —, continua sem PDF arquivado
-  aqui; só a 9ª foi enviada para arquivamento até o momento.
+  distribuição usada em `perfis-anbima-personas.md`.
+- `dados/anbima-datafolha-2025-raio-x-8a-edicao.pdf`: ANBIMA/Datafolha,
+  *Raio X do Investidor Brasileiro — 8ª edição*, jan. 2025 — fonte
+  primária de todo o `perfis-anbima-personas.md` (chave: `anbima2025`).
+  Reconferido linha a linha nesta rodada (18/08/2026): confirma
+  exatamente a cifra usada como âncora de renda do João (71% das
+  pessoas com renda familiar até R$1.412/mês pertencem ao Perfil Sem
+  Reservas) e a quase totalidade dos demais dados dos 4 perfis. Dois
+  erros de transcrição de etnia foram encontrados e corrigidos (ver
+  nota de verificação no próprio arquivo).
 
 ## Corpus normativo da base RAG regulatória (objetivo d, ainda não construída)
 

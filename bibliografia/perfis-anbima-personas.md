@@ -18,6 +18,21 @@ entrevistas presenciais, 4–22/nov/2024, pessoas com 16 anos ou mais,
 margem de erro de 1 p.p., nível de confiança de 95%. Ponderação por
 Censo 2022 (IBGE), ABEP 2021 (classe) e Datafolha (escolaridade).
 
+**Nota de verificação (18/08/2026)**: PDF oficial agora arquivado em
+`dados/anbima-datafolha-2025-raio-x-8a-edicao.pdf`. Todos os dados dos
+4 perfis abaixo foram reconferidos diretamente contra os cartões de
+perfil do PDF (idade, gênero, etnia, escolaridade, região, classe
+social, estresse financeiro, endividamento, intenção de investir,
+estrutura familiar) e contra o gráfico "Perfis por faixas de renda
+média familiar", que confirma a cifra usada como âncora de renda do
+João: **71% das pessoas com renda familiar até R$1.412/mês são do
+Perfil Sem Reservas**. Dois erros de transcrição foram encontrados e
+corrigidos nesta rodada: a etnia parda do Perfil Sem Reservas estava
+como 46% (correto: 45%) e a do Perfil Economiza e Não Investe estava
+como 52% (correto: 46%) — em ambos os casos, o número errado coincidia
+com o percentual de "Classe C" do mesmo cartão, sugerindo troca de
+linha na transcrição original. Nenhum outro dado divergiu do PDF.
+
 A pesquisa segmenta a população entrevistada em quatro perfis
 comportamentais, mutuamente exclusivos, com base em hábitos declarados de
 poupar e investir (páginas 24–41 do PDF).
@@ -32,7 +47,7 @@ Não conseguem economizar nem investir.
 |---|---|
 | Idade média | 45 anos |
 | Gênero | 58% feminino / 42% masculino |
-| Etnia (predominante) | parda (46%), branca (29%) |
+| Etnia (predominante) | parda (45%), branca (29%) |
 | Classe social | maioria C e D/E — concentração cresce quanto menor a renda familiar; é o perfil mais frequente em **todas** as faixas de renda até ~R$ 7 mil, chegando a 71% entre quem ganha até R$ 1.412/mês |
 | Escolaridade | maioria ensino médio (46%), 41% fundamental |
 | Região | concentração em Sudeste (38%) e Nordeste (31%) |
@@ -60,7 +75,7 @@ rendimento — não aplicam em produtos financeiros.
 |---|---|
 | Idade média | 34 anos (perfil mais jovem) |
 | Gênero | 62% masculino / 38% feminino |
-| Etnia (predominante) | parda (52%), branca (29%) |
+| Etnia (predominante) | parda (46%), branca (29%) |
 | Classe social | majoritariamente classe C; é o perfil com distribuição **mais equilibrada** entre faixas de renda (10-13% em cada faixa) |
 | Escolaridade | maioria ensino médio (58%) |
 | Região | concentração em Sudeste (38%) e Nordeste (28%) |
