@@ -134,6 +134,19 @@ Nenhum tem citação no corpo do texto ainda.
   Orçamentos Familiares 2017-2018, Primeiros Resultados (69 p.) — fonte
   do conceito de "variação patrimonial" e da Tabela 16 (rendimento
   médio real por classe), usados em `renda-ibge-personas.md`.
+- `dados/anbima-datafolha-2026-raio-x-9a-edicao.pdf`: ANBIMA/Datafolha,
+  *Raio X do Investidor Brasileiro — 9ª edição*, abr. 2026 (81 p.) —
+  fonte do dado sobre uso de assistentes de IA como canal de
+  informação sobre investimentos (9% dos investidores, à frente de
+  Facebook, e-mail, TikTok e rádio), citado em `01-introducao.tex`
+  (chave: `anbima2026`). Confirma também que os 4 perfis
+  comportamentais (Sem Reservas 52%, Economiza 12%, Caderneta ~19%,
+  Diversifica 17%) permanecem estáveis em relação à 8ª edição — mesma
+  distribuição usada em `perfis-anbima-personas.md`. **Nota**: a 8ª
+  edição (chave `anbima2025`), fonte primária de todo o restante do
+  memo de personas — incluindo o ponto de concentração de R$1.412/mês
+  usado como âncora de renda do João —, continua sem PDF arquivado
+  aqui; só a 9ª foi enviada para arquivamento até o momento.
 
 ## Corpus normativo da base RAG regulatória (objetivo d, ainda não construída)
 
