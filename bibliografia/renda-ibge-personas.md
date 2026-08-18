@@ -454,16 +454,21 @@ economizar nem investir") e com todos os indicadores já levantados
 para essa classe (61,2% do orçamento em alimentação+habitação, maior
 estresse financeiro entre os 4 perfis, maior taxa de endividamento).
 
-**Impacto na narrativa já registrada**: a justificativa de "estratégia
-de familiarização" (persona investe um valor pequeno para se
-familiarizar com produtos, mesmo sem sobra real) **não se sustenta
-mais** nesses termos -- não há valor a aplicar. Se a dissertação
-quiser manter alguma leitura pedagógica para essa persona no sistema
-(ex.: o agente reconhecer a ausência de capacidade e orientar
-educação financeira/formação de reserva em vez de recomendar produto),
-isso precisa ser reformulado como uma decisão de desenho explícita,
-não decorrer implicitamente de um valor pequeno mas positivo que não
-existe mais.
+**Impacto na narrativa -- decisão fechada (18/08/2026)**: a
+justificativa de "estratégia de familiarização" (persona investe um
+valor pequeno para se familiarizar com produtos, mesmo sem sobra real)
+foi **descartada, não reformulada**. Decisão do usuário: encarar o
+achado como leitura direta dos dados -- famílias na classe de renda
+até R$1.908 têm, em média, superávit financeiro negativo no Brasil, e
+são interpretadas como **impossibilitadas de investir em razão da
+condição financeira real dessa classe**, não por uma limitação
+específica ou arbitrária da persona. Não se propõe eufemismo
+pedagógico (ex.: "aporte simbólico de familiarização") nem redesenho
+de comportamento do sistema (ex.: agente redirecionar para educação
+financeira) como decorrência automática deste achado -- se o sistema
+vier a ter esse tipo de resposta, é decisão de desenho à parte, a
+justificar independentemente, não uma tentativa de suavizar o
+resultado numérico.
 
 **Ressalva metodológica, para registro**: renda (Tabela 16) e despesa
 (Tabela 17) são levantadas em módulos diferentes da POF e não fecham
@@ -505,8 +510,8 @@ a ser mencionada no texto da dissertação.
    valor ser baixo o bastante para tornar a recomendação quase sem
    sentido prático" fica superada por essa mesma razão -- não é mais
    uma questão de o valor ser pequeno, é a ausência de valor. Ver
-   "Impacto na narrativa já registrada", na seção "Metodologia final",
-   para a implicação sobre o Ponto 6 (tratar Sem Reservas como
+   "Impacto na narrativa -- decisão fechada", na seção "Metodologia
+   final", para a implicação sobre o Ponto 6 (tratar Sem Reservas como
    consumidora direta do RFL vs. caso de borda/estágio zero).
 
 ### Decisão tomada (12/08/2026)
@@ -562,10 +567,9 @@ positiva.
 
 Esse é o valor a constar no campo "Situação financeira" (CVM 30/2021,
 art. 3º, II) da Persona 1: **sem capacidade de investimento**. A
-justificativa de estratégia de familiarização registrada abaixo **não
-se aplica mais** nesses termos -- ver "Impacto na narrativa já
-registrada", na seção "Metodologia final: superávit financeiro",
-acima, para a implicação e o que precisa ser decidido.
+justificativa de estratégia de familiarização registrada abaixo foi
+**descartada** -- ver "Impacto na narrativa -- decisão fechada", na
+seção "Metodologia final: superávit financeiro", acima.
 
 **Nota de reconciliação (12/08/2026, após achado da Tabela 16 da
 POF)**: ficou em aberto se a renda do João deveria usar o teto da
