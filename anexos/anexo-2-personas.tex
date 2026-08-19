@@ -15,35 +15,16 @@ norma, garantindo cobertura sistem\'atica e rastre\'avel do espa\c{c}o
 de teste regulat\'orio. As personas s\~ao fict\'icias e n\~ao
 correspondem a clientes reais de nenhum banco p\'ublico.
 
-% TODO: preencher os campos [PREENCHER] da persona 4 (Persona 1 --
-% Joao, Sem Reservas -- fechada em 18/08/2026; Persona 2 -- Marina,
-% Economiza e Nao Investe -- fechada em 19/08/2026; Persona 3 -- Antonio,
-% Caderneta -- fechada em 19/08/2026).
-% - Idade/classe social podem ser ancorados diretamente nos dados
-%   agregados de bibliografia/perfis-anbima-personas.md.
-% - Renda familiar: ancorada no pico de concentracao comportamental de
-%   cada perfil na pesquisa ANBIMA, cross-validada contra Ipea/POF -- ver
-%   bibliografia/renda-ibge-personas.md, secao "Decisao final".
-% - "Situacao financeira": capacidade de investimento = superavit
-%   financeiro (renda menos despesa media) da classe de rendimento
-%   correspondente, metodologia final -- ver bibliografia/renda-ibge-
-%   personas.md, secao "Metodologia final: superavit financeiro".
-%   Personas cuja classe apresenta superavit negativo nao tem capacidade
-%   de investimento (nao um valor residual simbolico).
-% - Objetivos de investimento (CVM 30/2021, art. 3, I) desdobrado em
-%   3 subcriterios do art. 3, Ss1: (a) horizonte de investimento,
-%   (b) preferencia declarada quanto a risco, (c) finalidade do
-%   investimento.
-% - Conhecimento sobre riscos (CVM 30/2021, art. 3, III) desdobrado em
-%   3 subcriterios do art. 3, Ss3: (a) familiaridade com produtos,
-%   (b) historico de operacoes no mercado, (c) formacao academica /
-%   experiencia profissional. Ver leitura sugerida por perfil em
-%   bibliografia/perfis-anbima-personas.md (educacao) e no proprio
-%   enquadramento ANBIMA (familiaridade/historico correspondem quase
-%   diretamente a definicao de cada um dos 4 perfis).
-% - Campo "Canal preferido" removido deste esqueleto: o modelo da
-%   dissertacao ja pressupoe que a persona usa o agente de IA como
-%   canal de recomendacao, tornando o campo redundante.
+% NOTA: as quatro personas foram fechadas nas seguintes datas -- Persona 1
+% (Joao, Sem Reservas): 18/08/2026; Persona 2 (Marina, Economiza e Nao
+% Investe): 19/08/2026; Persona 3 (Antonio, Caderneta): 19/08/2026;
+% Persona 4 (Rafael, Diversifica): 19/08/2026. Metodologia completa de
+% calibracao (renda, capacidade de investimento, subcriterios de
+% suitability) documentada em bibliografia/renda-ibge-personas.md e na
+% secao "Calibracao numerica das personas" de capitulos/04-metodologia.tex.
+% Campo "Canal preferido" removido deste esqueleto: o modelo da
+% dissertacao ja pressupoe que a persona usa o agente de IA como canal de
+% recomendacao, tornando o campo redundante.
 
 \begin{quadro}[htbp]
   \centering
@@ -130,27 +111,28 @@ correspondem a clientes reais de nenhum banco p\'ublico.
 
 \begin{quadro}[htbp]
   \centering
+  \small
   \caption{Persona 4 -- Perfil Diversifica (17\% da popula\c{c}\~ao)}
   \label{qua:persona-diversifica}
   \begin{tabular}{p{5cm}p{8cm}}
     \toprule
     \textbf{Campo} & \textbf{Valor} \\
     \midrule
-    Nome fict\'icio & [PREENCHER] \\
-    Idade & [PREENCHER -- m\'edia do perfil: 37 anos] \\
-    Renda familiar & [PREENCHER -- ver decis\~ao de fonte IBGE] \\
-    Classe social & [PREENCHER -- maior concentra\c{c}\~ao relativa em A/B] \\
-    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, II) & [PREENCHER] \\
+    Nome fict\'icio & Rafael \\
+    Idade & 37 anos (m\'edia do perfil, o segundo mais jovem entre os quatro, atr\'as apenas de Marina) \\
+    Renda familiar & R\$14.121,00/m\^es (piso da faixa aberta de pico de concentra\c{c}\~ao do perfil Diversifica, +R\$14.121, 57\% do perfil -- ANBIMA, 2025; faixa sem limite superior, sem ponto m\'edio calcul\'avel, por isso ancorada no piso) \\
+    Classe social & A/B (predomin\^ancia no perfil, 52\%) \\
+    Situa\c{c}\~ao financeira (CVM 30/2021, art.\ 3\textordmasculine{}, II) & Capacidade de investimento de R\$1.954,22/m\^es -- superavit financeiro positivo na classe de rendimento correspondente (POF 2017-2018), a maior entre as quatro personas \\
     \multicolumn{2}{l}{\textbf{Objetivos de investimento (CVM 30/2021, art.\ 3\textordmasculine{}, I)}} \\
-    \quad a) Horizonte de investimento (\S\,1\textordmasculine{}, I) & [PREENCHER] \\
-    \quad b) Prefer\^encia declarada quanto a risco (\S\,1\textordmasculine{}, II) & [PREENCHER] \\
-    \quad c) Finalidade do investimento (\S\,1\textordmasculine{}, III) & [PREENCHER] \\
+    \quad a) Horizonte de investimento (\S\,1\textordmasculine{}, I) & M\'edio a longo prazo -- o perfil j\'a diversifica em produtos de maior sofistica\c{c}\~ao (a\c{c}\~oes, fundos, previd\^encia privada), e a pr\'opria ANBIMA descreve o grupo como pronto para explorar estrat\'egias mais avan\c{c}adas e personalizadas (ANBIMA, 2025) \\
+    \quad b) Prefer\^encia declarada quanto a risco (\S\,1\textordmasculine{}, II) & Moderada a arrojada -- a mais tolerante a risco entre os quatro perfis: \'unico que j\'a opera produtos com maior volatilidade (a\c{c}\~oes, fundos); nenhum dos demais tr\^es opera esse tipo de produto \\
+    \quad c) Finalidade do investimento (\S\,1\textordmasculine{}, III) & Crescimento e diversifica\c{c}\~ao patrimonial, n\~ao apenas preserva\c{c}\~ao -- decorre da aloca\c{c}\~ao j\'a existente em produtos de maior potencial de retorno \\
     \multicolumn{2}{l}{\textbf{Conhecimento sobre riscos (CVM 30/2021, art.\ 3\textordmasculine{}, III)}} \\
-    \quad a) Familiaridade com produtos financeiros (\S\,3\textordmasculine{}, I) & [PREENCHER] \\
-    \quad b) Hist\'orico de opera\c{c}\~oes no mercado (\S\,3\textordmasculine{}, II) & [PREENCHER] \\
-    \quad c) Forma\c{c}\~ao acad\^emica / experi\^encia profissional (\S\,3\textordmasculine{}, III) & [PREENCHER] \\
-    Narrativa breve & [PREENCHER] \\
+    \quad a) Familiaridade com produtos financeiros (\S\,3\textordmasculine{}, I) & Alta -- a maior entre os quatro perfis: j\'a opera m\'ultiplas classes de produto (a\c{c}\~oes, fundos, previd\^encia privada, t\'itulos p\'ublicos, poupan\c{c}a); maior concentra\c{c}\~ao de ensino superior completo (50\%) \\
+    \quad b) Hist\'orico de opera\c{c}\~oes no mercado (\S\,3\textordmasculine{}, II) & Diversificado -- a\c{c}\~oes, fundos, previd\^encia privada, t\'itulos p\'ublicos e poupan\c{c}a (descri\c{c}\~ao pr\'opria do cart\~ao ANBIMA) \\
+    \quad c) Forma\c{c}\~ao acad\^emica / experi\^encia profissional (\S\,3\textordmasculine{}, III) & Ensino superior completo (50\% do perfil, categoria modal) -- ANBIMA, 2025 \\
+    Narrativa breve & Rafael, 37 anos, integra o perfil Diversifica -- 17\% da popula\c{c}\~ao, com a maior renda e a maior concentra\c{c}\~ao de ensino superior completo entre os quatro perfis. Diferente das demais personas, j\'a opera uma carteira diversificada -- a\c{c}\~oes, fundos, previd\^encia privada e t\'itulos p\'ublicos, al\'em da poupan\c{c}a. O sistema testa se o agente reconhece esse n\'ivel de sofistica\c{c}\~ao e evita recomenda\c{c}\~oes gen\'ericas ou excessivamente conservadoras, adequando a oferta de renda fixa a um perfil que j\'a tolera risco em outras classes de ativo. \\
     \bottomrule
   \end{tabular}
-  \fonte{Elaborado pelo autor (2026), com base em \autocite{anbima2025}.}
+  \fonte{Elaborado pelo autor (2026), com base em \autocite{anbima2025} e \autocite{ibge2019pof}.}
 \end{quadro}
