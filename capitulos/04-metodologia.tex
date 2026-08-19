@@ -229,6 +229,12 @@ sa\'idas semelhantes \`as que ele mesmo geraria). \textcite{bavaresco2025},
 em estudo de grande escala com onze modelos avaliadores em vinte tarefas
 de PLN, recomendam valida\c{c}\~ao cuidadosa contra julgamento humano
 antes do uso de LLM-as-a-judge como avaliador em produ\c{c}\~ao.
+Pr\'atica convergente aparece em \textcite{wang2025omnieval}, cujo
+framework de avalia\c{c}\~ao autom\'atica de RAG financeiro combina
+m\'etricas baseadas em LLM com anota\c{c}\~ao humana e ajuste fino do
+modelo avaliador especificamente para garantir a confiabilidade do
+julgamento autom\'atico -- refor\c{c}ando, por via emp\'irica distinta, a
+mesma cautela recomendada por \textcite{bavaresco2025}.
 Reconhece-se essa recomenda\c{c}\~ao como limita\c{c}\~ao do presente
 estudo: a valida\c{c}\~ao da dimens\~ao de clareza \'e realizada
 integralmente por LLM-as-a-judge e m\'etrica de legibilidade, sem
@@ -256,6 +262,14 @@ empregada em arquiteturas agentic recentes sobre RAG financeiro, nas
 quais a adi\c{c}\~ao de um agente com ferramentas de c\'alculo sobre o
 retrieval puro produziu o maior ganho isolado de acur\'acia factual
 observado entre todas as etapas do pipeline \autocite{akinfaderin2025}.
+Reconhece-se, contudo, evid\^encia em dire\c{c}\~ao distinta:
+\textcite{zhu2025}, em QA educacional financeiro com RAG, reporta que o
+ganho de acur\'acia obtido por um agente de cr\'itica (Expert Reviewer)
+superou o ganho da etapa de recupera\c{c}\~ao de evid\^encia isolada --
+achado que n\~ao invalida a segrega\c{c}\~ao c\'alculo/gera\c{c}\~ao
+proposta em H1, mas sugere que a adi\c{c}\~ao de uma etapa de revis\~ao
+multiagente \'e uma dire\c{c}\~ao de aprimoramento n\~ao explorada no
+escopo desta disserta\c{c}\~ao.
 
 % TODO: quando a base RAG regulatoria (objetivo especifico d) for construida,
 % puxar para ca o corpus normativo ja levantado e verificado em
@@ -277,6 +291,15 @@ metadados de vig\^encia descrito no objetivo espec\'ifico d ser\'a testado
 com um subconjunto de perguntas envolvendo dispositivos normativos
 revogados ou alterados, verificando se o sistema prioriza corretamente a
 norma vigente.
+
+Complementarmente, a avalia\c{c}\~ao da etapa de gera\c{c}\~ao seguir\'a o
+desenho multidimensional proposto por \textcite{wang2025omnieval} para RAG
+financeiro, combinando m\'etricas rule-based (Rouge-L, F1) com m\'etricas
+baseadas em LLM voltadas especificamente \`a detec\c{c}\~ao de
+alucina\c{c}\~ao e \`a acur\'acia num\'erica -- dimens\~ao diretamente
+aplic\'avel \`a condi\c{c}\~ao de controle desta pesquisa (LLM sem m\'odulo
+determin\'istico), na qual o erro de c\'alculo tribut\'ario \'e o risco
+central a ser medido.
 
 A estrat\'egia de recupera\c{c}\~ao adotar\'a busca h\'ibrida (fus\~ao
 ponderada entre recupera\c{c}\~ao densa e esparsa) seguida de reranking
