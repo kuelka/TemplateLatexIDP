@@ -157,10 +157,14 @@ Nenhum tem citação no corpo do texto ainda.
   Revista de Estudos do Discurso, Imagem e Som, Rio de Janeiro, v. 8, n. 1,
   p. 91–128, jan./abr. 2023. (chave: `moreno2023alt`) — apresenta o
   software ALT (Análise de Legibilidade Textual, disponível em
-  legibilidade.com), que adapta ao português cinco métricas (Flesch
-  Reading Ease, Gunning Fog, Flesch-Kincaid, ARI, Coleman-Liau) e calcula
-  um índice final pela média aritmética das quatro métricas de nível de
-  escolaridade. Ferramenta candidata para operacionalizar a métrica de
+  legibilidade.com), que adapta ao português **seis** índices (Flesch
+  Reading Ease, Gunning Fog, Automated Readability Index, Flesch-Kincaid
+  grade level, Coleman-Liau e Índice Gulpease) e calcula um índice final
+  pela média aritmética de **quatro** deles -- Gunning Fog, ARI,
+  Flesch-Kincaid grade level e Coleman-Liau, todos na escala de nível de
+  escolaridade. Flesch Reading Ease e Gulpease ficam de fora da média
+  final (operam em escala 0-100 distinta, "centígrada") e são reportados
+  separadamente. Ferramenta candidata para operacionalizar a métrica de
   legibilidade validada para o português mencionada em
   04-metodologia.tex, seção de avaliação de clareza por LLM-as-a-judge.
 - `artigos/martins-et-al-2025-fisica-moderna-ia-legibilidade.pdf` — MARTINS,
