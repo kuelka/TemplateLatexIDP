@@ -49,7 +49,22 @@ excedente como automaticamente fora de cobertura -- o sistema deve
 considerar a possibilidade de distribuir o valor excedente em CDB de
 outro conglomerado financeiro n\~ao relacionado, preservando a
 cobertura integral do FGC sobre o total investido, antes de classificar
-qualquer parcela como exposta a risco de cr\'edito do emissor.
+qualquer parcela como exposta a risco de cr\'edito do emissor. A
+identifica\c{c}\~ao de quais institui\c{c}\~oes pertencem a um mesmo
+conglomerado financeiro para fins de FGC deve ser feita por consulta
+din\^amica \`a lista de conglomerados mantida pelo pr\'oprio FGC
+(fgc.org.br/associadas/conglomerados-financeiros), n\~ao por valor
+fixo no sistema -- mesma l\'ogica j\'a adotada para o \'Indice de
+Basileia e o rating de ag\^encias. Essa estrat\'egia de diversifica\c{c}\~ao
+entre conglomerados, no entanto, tem um limite pr\'oprio: al\'em do teto
+de R\$250 mil por conglomerado, o FGC imp\~oe um \textbf{teto global de
+R\$1.000.000,00 (um milh\~ao de reais) por CPF a cada per\'iodo de
+quatro anos consecutivos}, somando as garantias pagas ao credor em
+todas as institui\c{c}\~oes associadas, independentemente do
+conglomerado \autocite{resolucaocmn4222}. A partir desse teto global, a
+distribui\c{c}\~ao entre conglomerados deixa de eliminar o risco de
+cr\'edito do emissor sobre o valor excedente, e o sistema deve
+reconhecer esse limite como intranspon\'ivel por diversifica\c{c}\~ao.
 
 % NOTA: matriz preenchida em 19/08/2026 -- proposta inicial construida
 % cruzando as tres dimensoes de suitability de cada persona (Anexo II)

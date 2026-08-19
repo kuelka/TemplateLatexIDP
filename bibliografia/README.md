@@ -241,3 +241,21 @@ escopo da dissertação), três incorporados ao corpo do texto.
 - `normas/resolucao-cmn-4557-2017-gerenciamento-riscos-capital.pdf` —
   Resolução CMN nº 4.557/2017 (gerenciamento de riscos e capital), versão
   consolidada com alterações até a Resolução CMN nº 5.194/2024.
+
+## Norma de apoio ao Anexo III (fora do corpus RAG do objetivo d)
+
+- `normas/resolucao-cmn-4222-2013-regulamento-fgc.pdf` — Resolução CMN nº
+  4.222/2013 (estatuto e regulamento do Fundo Garantidor de Créditos —
+  FGC), **versão vigente consolidada** (enviada pelo usuário em
+  19/08/2026; PDF sem camada de texto, conteúdo conferido via OCR nas 39
+  páginas). Usada na observação sobre CDB acima do limite do FGC, Anexo
+  III (`anexo-3-instrumento-avaliacao.tex`) — não faz parte do corpus
+  RAG do objetivo (d), que permanece fechado com os 6 documentos acima.
+  **Achado da conferência**: o limite de R$250 mil por CPF/conglomerado
+  financeiro está confirmado, inalterado. A numeração do parágrafo mudou
+  desde o texto de 2013 originalmente publicado (era §3º, hoje é §2º,
+  Anexo II com redação dada pela Resolução nº 4.688/2018) — sem impacto
+  no texto da dissertação, que cita a resolução sem apontar parágrafo
+  específico. A versão vigente também expõe, no mesmo artigo (§3º atual),
+  o teto global de R$1.000.000,00 por CPF a cada 4 anos consecutivos, não
+  mencionado na observação do Anexo III até o momento.
