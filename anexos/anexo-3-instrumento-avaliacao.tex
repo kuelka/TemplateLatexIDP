@@ -37,34 +37,111 @@ Garantidor de Cr\'editos (FGC), a classifica\c{c}\~ao considera ainda o
 ag\^encias vigente no momento da consulta, prevalecendo o pior sinal
 dispon\'ivel entre os indicadores.
 
-% TODO: preencher as celulas [PREENCHER] da matriz abaixo com a
-% classificacao de adequacao de cada combinacao persona x produto,
-% fundamentada nas tres dimensoes de suitability de cada persona
-% (Anexo II) e na caracterizacao de risco por produto ja levantada em
-% bibliografia/literatura-suitability-benchmark.md, secao 4. A legenda
-% (A/AR/I) abaixo e uma sugestao de estrutura, nao uma decisao final --
-% confirmar ou ajustar com o orientador antes de preencher a matriz.
+\textbf{Observa\c{c}\~ao sobre CDB acima do limite do FGC.} A cobertura
+do FGC \'e apurada por CPF \textbf{por conglomerado financeiro}, n\~ao
+por institui\c{c}\~ao isolada nem de forma global -- o cr\'edito de uma
+mesma pessoa \'e somado contra todas as institui\c{c}\~oes associadas de
+um mesmo conglomerado, at\'e R\$250 mil \autocite{resolucaocmn4222}.
+Isso implica que, ao identificar que uma aloca\c{c}\~ao em CDB de um
+\'unico conglomerado financeiro ultrapassaria esse limite, a
+recomenda\c{c}\~ao apropriada n\~ao \'e necessariamente classificar o
+excedente como automaticamente fora de cobertura -- o sistema deve
+considerar a possibilidade de distribuir o valor excedente em CDB de
+outro conglomerado financeiro n\~ao relacionado, preservando a
+cobertura integral do FGC sobre o total investido, antes de classificar
+qualquer parcela como exposta a risco de cr\'edito do emissor.
+
+% NOTA: matriz preenchida em 19/08/2026 -- proposta inicial construida
+% cruzando as tres dimensoes de suitability de cada persona (Anexo II)
+% com a caracterizacao de risco por produto (bibliografia/literatura-
+% suitability-benchmark.md, secao 4), ajustada e confirmada pelo
+% usuario ao longo de varias rodadas. Ainda sujeita a confirmacao do
+% orientador -- ver nota na legenda abaixo.
 
 \begin{quadro}[htbp]
   \centering
-  \caption{Matriz de Adequa\c{c}\~ao Produto \texorpdfstring{$\times$}{x} Perfil (esqueleto)}
+  \caption{Matriz de Adequa\c{c}\~ao Produto \texorpdfstring{$\times$}{x} Perfil}
   \label{qua:matriz-suitability}
   \adjustbox{max width=\textwidth}{%
   \begin{tabular}{lccccc}
     \toprule
      & \textbf{Tesouro Selic} & \textbf{Tesouro Prefixado} & \textbf{Tesouro IPCA+} & \textbf{CDB (at\'e limite FGC)} & \textbf{CDB (acima do FGC)} \\
     \midrule
-    Persona 1 -- Sem Reservas & [PREENCHER] & [PREENCHER] & [PREENCHER] & [PREENCHER] & [PREENCHER] \\
-    Persona 2 -- Economiza e N\~ao Investe & [PREENCHER] & [PREENCHER] & [PREENCHER] & [PREENCHER] & [PREENCHER] \\
-    Persona 3 -- Caderneta & [PREENCHER] & [PREENCHER] & [PREENCHER] & [PREENCHER] & [PREENCHER] \\
-    Persona 4 -- Diversifica & [PREENCHER] & [PREENCHER] & [PREENCHER] & [PREENCHER] & [PREENCHER] \\
+    Persona 1 -- Sem Reservas & N/A & N/A & N/A & N/A & N/A \\
+    Persona 2 -- Economiza e N\~ao Investe & A & AR & I & A & I \\
+    Persona 3 -- Caderneta & A & I & I & A & I \\
+    Persona 4 -- Diversifica & A & A & A & A & AR \\
     \bottomrule
   \end{tabular}}
   \fonte{Elaborado pelo autor (2026).}
 \end{quadro}
 
-\textit{Legenda sugerida (a confirmar com o orientador): A = Adequado;
-AR = Adequado com ressalva; I = Inadequado.}
+\textit{Legenda (a confirmar com o orientador): A = Adequado; AR =
+Adequado com ressalva; I = Inadequado; N/A = N\~ao aplic\'avel
+(aus\^encia de capacidade de investimento).}
+
+\subsection{Justificativa da classifica\c{c}\~ao por persona}
+\label{sec:justificativa-matriz}
+
+\textbf{Persona 1 -- Sem Reservas (Jo\~ao).} N/A em todos os produtos.
+Capacidade de investimento nula (super\'avit financeiro negativo,
+Anexo~\ref{ane:personas}): a classifica\c{c}\~ao reflete aus\^encia de
+qualquer decis\~ao de aloca\c{c}\~ao a fazer, n\~ao a inadequa\c{c}\~ao
+de um produto espec\'ifico. O sistema deve reconhecer essa
+condi\c{c}\~ao e n\~ao recomendar produto algum, independentemente de
+risco ou conhecimento.
+
+\textbf{Persona 2 -- Economiza e N\~ao Investe (Marina).}
+\begin{itemize}
+  \item \textit{Tesouro Selic (A)}: liquidez di\'aria e baixa
+    complexidade, coerentes com o perfil de primeira experi\^encia j\'a
+    registrado.
+  \item \textit{Tesouro Prefixado (AR)}: risco de marca\c{c}\~ao a
+    mercado em caso de resgate antecipado exige explica\c{c}\~ao
+    pr\'evia, dada a baixa familiaridade da persona -- a ressalva
+    condiciona a recomenda\c{c}\~ao a essa explica\c{c}\~ao.
+  \item \textit{Tesouro IPCA+ (I)}: maior \textit{duration} do produto
+    o torna mais sens\'ivel a oscila\c{c}\~oes de juros no curto prazo,
+    incompat\'ivel com o horizonte de liquidez j\'a declarado.
+  \item \textit{CDB at\'e o limite do FGC (A)}: mesma l\'ogica do
+    Selic, com a prote\c{c}\~ao do fundo eliminando o risco de
+    cr\'edito do emissor.
+  \item \textit{CDB acima do limite do FGC (I)}: exposi\c{c}\~ao ao
+    risco de cr\'edito do emissor n\~ao \'e sustentada por um perfil
+    conservador sem hist\'orico de opera\c{c}\~ao em produto financeiro
+    algum, mesmo em classifica\c{c}\~ao hipot\'etica.
+\end{itemize}
+
+\textbf{Persona 3 -- Caderneta (Ant\^onio).}
+\begin{itemize}
+  \item \textit{Tesouro Selic (A)}: equivalente de maior rendimento ao
+    produto que a persona j\'a opera (poupan\c{c}a), com risco e
+    liquidez compar\'aveis.
+  \item \textit{Tesouro Prefixado (I)} e \textit{Tesouro IPCA+ (I)}:
+    evid\^encia mais forte de avers\~ao a risco entre as quatro
+    personas, sem hist\'orico de opera\c{c}\~ao al\'em da poupan\c{c}a.
+  \item \textit{CDB at\'e o limite do FGC (A)}: protegido pelo fundo
+    garantidor, elimina o risco de cr\'edito que seria a principal
+    barreira dada a familiaridade concentrada s\'o em poupan\c{c}a.
+  \item \textit{CDB acima do limite do FGC (I)}: mesma l\'ogica da
+    Marina, ainda mais acentuada.
+\end{itemize}
+
+\textbf{Persona 4 -- Diversifica (Rafael).}
+\begin{itemize}
+  \item \textit{Tesouro Selic (A)}, \textit{Tesouro Prefixado (A)},
+    \textit{Tesouro IPCA+ (A)} e \textit{CDB at\'e o limite do FGC
+    (A)}: maior capacidade de investimento e maior toler\^ancia a
+    risco entre as quatro personas, com hist\'orico de opera\c{c}\~ao
+    em produtos de maior sofistica\c{c}\~ao e volatilidade do que
+    qualquer op\c{c}\~ao do escopo.
+  \item \textit{CDB acima do limite do FGC (AR)}: \'unico perfil para
+    quem esse cen\'ario \'e financeiramente relevante no horizonte
+    declarado; a ressalva condiciona a recomenda\c{c}\~ao \`a consulta
+    din\^amica ao \'Indice de Basileia e ao rating de ag\^encias
+    vigente, prevalecendo o pior sinal dispon\'ivel -- j\'a
+    estabelecido na introdu\c{c}\~ao desta se\c{c}\~ao.
+\end{itemize}
 
 \section{Instrumento de avalia\c{c}\~ao de clareza -- LLM-as-a-judge}
 \label{sec:instrumento-clareza}
