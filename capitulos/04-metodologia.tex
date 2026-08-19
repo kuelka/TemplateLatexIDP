@@ -351,27 +351,18 @@ sistemas de RAG financeiro recentes para reduzir confus\~ao entre
 trechos estruturalmente semelhantes, como normas distintas que tratam
 de temas pr\'oximos \autocite{li2025fingear,choe2025hirec,kobeissi2026}.
 
-% TODO: quando o benchmark de suitability (objetivo especifico e) for
-% construido, ver bibliografia/literatura-suitability-benchmark.md.
-% ATENCAO -- Jacobs/Foerster/Choi (Oehler & Horn) medem alocacao
-% acoes x renda-fixa, dimensao que NAO existe no escopo desta dissertacao
-% (so renda fixa: Tesouro Selic/Prefixado/IPCA+ e CDB). Servem so como
-% precedente metodologico, NAO como fonte do conteudo numerico. Nao existe
-% matriz oficial produto x perfil (Tesouro Nacional/ANBIMA) -- precisa ser
-% CONSTRUIDA combinando CVM 30/2021 art. 3 com caracterizacao qualitativa
-% de risco por produto (Selic=conservador/liquido; Prefixado=marcacao a
-% mercado; IPCA+=protecao inflacao/duration alta; CDB=risco de credito).
-% Para CDB acima do limite do FGC (R$250mil/CPF/conglomerado): usar
-% indice de Basileia (IF.data, consulta dinamica) + rating de agencias
-% quando disponivel (usar o PIOR sinal disponivel). IMPORTANTE: retirada
-% de rating apos rebaixamento (caso real do BRB, dez/2025) e sinal de
-% risco elevado, nao ausencia de sinal -- o sistema nao deve ter vies de
-% protecao a nenhuma instituicao, inclusive o BRB. Ver Secoes 4-6 do
-% arquivo para detalhe completo.
-% DECISAO DE CITACAO (Secao 7 do arquivo): citar Foerster et al. (2017)
-% como apoio direto ao abandono do especialista ao vivo; Jacobs et al.
-% (2014) so citavel com a ressalva da Secao 4; Choi (2022) NAO citar
-% (tangencial demais, nao sustenta nenhuma escolha especifica de desenho).
+% NOTA: a matriz de adequacao produto x perfil (CVM 30/2021 art. 3 +
+% caracterizacao qualitativa de risco por produto) foi construida e
+% fechada no Anexo III (anexo-3-instrumento-avaliacao.tex, secao
+% "Matriz de adequacao produto x perfil"), incluindo a logica de CDB
+% acima do limite do FGC (Indice de Basileia + rating de agencias, pior
+% sinal disponivel, com retirada de rating tratada como sinal de risco
+% elevado). As decisoes de citacao ja foram executadas: Foerster et al.
+% (2017) citado como apoio ao abandono do especialista ao vivo; Jacobs
+% et al. e Choi (2022) nao citados (seguem so como precedente
+% metodologico registrado em bibliografia/literatura-suitability-
+% benchmark.md, sem sustentar conteudo numerico especifico desta
+% dissertacao, que mede apenas renda fixa).
 
 \textbf{Comparabilidade com a literatura.} Para viabilizar compara\c{c}\~ao
 direta com estudos equivalentes, os resultados da condi\c{c}\~ao de
