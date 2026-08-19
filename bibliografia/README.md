@@ -131,6 +131,73 @@ escopo da dissertação), três incorporados ao corpo do texto.
   the Association for Computational Linguistics (Volume 2: Short Papers), p.
   238–255, 2025. arXiv:2406.18403. (chave: `bavaresco2025`)
 
+## Legibilidade textual em português (métrica de clareza, objetivo e, levantamento 19/08/2026, ainda não citada no corpo)
+
+Cinco artigos levantados para fundamentar a métrica de legibilidade em
+português que complementa o LLM-as-a-judge na dimensão de clareza
+(seção "Instrumento de avaliação de clareza -- LLM-as-a-judge" do
+Anexo III, `anexo-3-instrumento-avaliacao.tex`, ainda pendente).
+Nenhum tem citação no corpo do texto ainda.
+
+- `artigos/martins-et-al-1996-readability-formulas-textbooks.pdf` — MARTINS,
+  T. B. F.; GHIRALDELO, C. M.; NUNES, M. G. V.; OLIVEIRA JR., O. N.
+  *Readability Formulas Applied to Textbooks in Brazilian Portuguese*. Notas
+  do ICMSC, Série Computação, n. 28. São Carlos: Instituto de Ciências
+  Matemáticas de São Carlos, USP, 1996. (chave: `martins1996readability`) —
+  artigo seminal da adaptação do índice de Flesch para o português
+  brasileiro: aplica a fórmula original a 120 trechos de livros didáticos
+  (1ª série ao ensino superior) e propõe um deslocamento de +42 pontos na
+  escala de Flesch para compensar a maior média de sílabas por palavra do
+  português frente ao inglês (confirmado por comparação direta entre textos
+  de física introdutória em inglês e sua tradução). Base histórica direta
+  das adaptações usadas pelos demais artigos deste levantamento.
+- `artigos/moreno-et-al-2023-alt-software-legibilidade.pdf` — MORENO, G. C.
+  de L.; SOUZA, M. P. M. de; HEIN, N.; HEIN, A. K. *ALT: um software para
+  análise de legibilidade de textos em língua portuguesa*. Policromias —
+  Revista de Estudos do Discurso, Imagem e Som, Rio de Janeiro, v. 8, n. 1,
+  p. 91–128, jan./abr. 2023. (chave: `moreno2023alt`) — apresenta o
+  software ALT (Análise de Legibilidade Textual, disponível em
+  legibilidade.com), que adapta ao português cinco métricas (Flesch
+  Reading Ease, Gunning Fog, Flesch-Kincaid, ARI, Coleman-Liau) e calcula
+  um índice final pela média aritmética das quatro métricas de nível de
+  escolaridade. Ferramenta candidata para operacionalizar a métrica de
+  legibilidade validada para o português mencionada em
+  04-metodologia.tex, seção de avaliação de clareza por LLM-as-a-judge.
+- `artigos/martins-et-al-2025-fisica-moderna-ia-legibilidade.pdf` — MARTINS,
+  Q. da S.; CADILLO, R. V. F.; SILVA, L. G. F. da. *Conceitos de Física
+  Moderna a partir de Inteligência Artificial: uma verificação da
+  legibilidade*. Revista do Professor de Física, v. 9, n. 1, p. 1–18,
+  Brasília, 2025. (chave: `martins2025fisica`) — aplica o software ALT a
+  respostas de ChatGPT e Copilot sobre conceitos de física moderna;
+  relevante como precedente metodológico de uso do ALT para medir
+  legibilidade de texto gerado por LLM (não de documento humano),
+  paralelo direto ao caso de uso desta dissertação, ainda que em domínio
+  de conteúdo distinto (física, não renda fixa).
+- `artigos/albuquerque-santos-2025-chatgpt-readability-lisbon.pdf` —
+  ALBUQUERQUE, F.; GOMES DOS SANTOS, P. *Can ChatGPT improve the
+  readability of financial reporting by the public sector entities? The
+  case of Lisbon municipality*. Cogent Social Sciences, v. 11, n. 1,
+  2524004, 2025. DOI: 10.1080/23311886.2025.2524004. (chave:
+  `albuquerque2025`) — estudo quase-experimental que usa ChatGPT (GPT-4)
+  para reescrever trechos do relatório financeiro anual do município de
+  Lisboa e testa a legibilidade percebida por especialistas em finanças
+  do setor público; paralelo direto ao contexto de banco público desta
+  dissertação, embora meça legibilidade por avaliação humana estruturada
+  (survey com especialistas), não por métrica automática de português.
+- `artigos/cunha-et-al-2026-linguagem-importa-legibilidade-fundos.pdf` —
+  CUNHA, E. S. C. da; GALDI, F. C.; DANTAS, J. A. *A Linguagem Importa:
+  Evidências da Relação entre Legibilidade e Captação de Recursos em
+  Fundos de Investimento*. Anais do 26º USP International Conference on
+  Accounting, São Paulo, 2026. (chave: `cunha2026`) — estudo empírico com
+  214 fundos de investimento brasileiros (jan/2020–jun/2024) que mede a
+  legibilidade dos regulamentos dos fundos pelos índices FOG (Gunning),
+  Flesch Reading Ease e Flesch-Kincaid (estes dois últimos adaptados ao
+  português com o software ALT de Moreno et al. 2023) e encontra
+  associação entre regulamentos mais complexos e menor captação líquida.
+  Evidência de mercado financeiro brasileiro mais próxima ao domínio
+  desta dissertação (renda fixa, investidor de perfil popular) entre os
+  cinco artigos deste levantamento.
+
 ## Base legal do módulo de cálculo do RFL (objetivo c, ainda não escrito)
 
 - `base-legal-rfl.md`: levantamento das duas tabelas tributárias regressivas
