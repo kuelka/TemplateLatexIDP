@@ -55,6 +55,55 @@ Nenhum tem citação no corpo do texto ainda.
   Long-Document Financial Question Answering*. Université de Montréal/RALI,
   arXiv:2602.17981, 2026. (chave: `kobeissi2026`; citado em 04-metodologia.tex, indexação hierárquica e como contraponto ao HyDE)
 
+## Segundo levantamento de RAG financeiro (19/08/2026, ainda não citada no corpo)
+
+Cinco artigos adicionais sobre RAG e LLMs aplicados ao domínio financeiro,
+enviados pelo usuário nesta rodada. Abrangem aplicações mais diversas que o
+levantamento de 17/08/2026 (QA sobre documentos financeiros): predição de
+mercado a partir de opiniões de especialistas, busca de similaridade entre
+títulos de renda fixa, estruturação de contratos derivativos, QA multiagente
+para educação financeira, e um benchmark de avaliação de RAG no domínio
+financeiro. Nenhum tem citação no corpo do texto ainda — decisão de onde
+(e se) encaixar cada um permanece em aberto.
+
+- `artigos/gimmelberg-et-al-2025-market-moves-rag-social-media.pdf` —
+  GIMMELBERG, D.; BELINSKIY, A.; GŁOWACKA, M.; KOROTKII, S.; ARTAMONOV, V.;
+  LUDVIGA, I. *Market Moves Predictions Using Retrieval-Augmented Generation
+  (RAG) Analysis of Capital Market Expert Opinions in Social Media*.
+  Entrepreneurship and Sustainability Issues, v. 13, n. 1, p. 175–188, 2025.
+  DOI: 10.9770/w9365778559. (chave: `gimmelberg2025`; RAG + LLM aplicado a
+  predição de movimento de mercado a partir de opiniões extraídas de vídeos
+  do YouTube — possível referência para a discussão de casos de uso de RAG
+  em finanças além de QA regulatório)
+- `artigos/haeri-et-al-2026-financial-bond-similarity-search.pdf` — HAERI,
+  A.; GHELICHI, M.; AGRAWAL, N.; LI, D.; GOMEZ SANCHEZ, C. *Financial Bond
+  Similarity Search Using Representation Learning*. TD Bank, Model
+  Development/Risk Management, arXiv:2602.07020, 2026. (chave: `haeri2026`;
+  embeddings de atributos categóricos para busca de similaridade entre
+  títulos de renda fixa — não é RAG stricto sensu, mas tangencia o domínio
+  de renda fixa da dissertação; relevância a confirmar)
+- `artigos/mridul-et-al-2025-ai4contracts.pdf` — MRIDUL, M. A.; SLOYAN, I.;
+  GUPTA, A.; SENEVIRATNE, O. *AI4Contracts: LLM & RAG-Powered Encoding of
+  Financial Derivative Contracts*. Rensselaer Polytechnic Institute/South
+  Cardinal, arXiv:2506.01063, 2025. (chave: `mridul2025`; RAG aplicado à
+  estruturação de contratos de derivativos em formato machine-readable —
+  caso de uso distinto de QA/suitability)
+- `artigos/zhu-du-2025-role-aware-multiagent-financial-education-qa.pdf` —
+  ZHU, A.; DU, Y. *A Role-Aware Multi-Agent Framework for Financial
+  Education Question Answering with LLMs*. Rensselaer Polytechnic
+  Institute/University of Amsterdam, arXiv:2509.09727, 2025. (chave:
+  `zhu2025`; framework multiagente com RAG — Evidence Agent, Generator
+  Agent, Expert Reviewer Agent — para QA financeiro educacional; ganho de
+  6,6–8,3% sobre baseline Chain-of-Thought)
+- `artigos/wang-et-al-2025-omnieval.pdf` — WANG, S.; TAN, J.; DOU, Z.; WEN,
+  J.-R. *OmniEval: An Omnidirectional and Automatic RAG Evaluation
+  Benchmark in Financial Domain*. Renmin University of China, Proceedings
+  of the 2025 Conference on Empirical Methods in Natural Language
+  Processing (EMNLP), p. 5726–5751, 2025. (chave: `wang2025omnieval`;
+  benchmark de avaliação de sistemas RAG no domínio financeiro combinando
+  métricas rule-based e LLM-based — possível referência metodológica para
+  a avaliação da arquitetura RAG da dissertação, objetivo d/e)
+
 ## LLM-as-a-judge (avaliação de clareza da linguagem, objetivo e)
 
 - `artigos/zheng-et-al-2023-judging-llm-as-a-judge.pdf` — ZHENG, L. et al.
