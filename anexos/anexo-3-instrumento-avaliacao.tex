@@ -168,11 +168,48 @@ risco ou conhecimento.
 \section{Instrumento de avalia\c{c}\~ao de clareza -- LLM-as-a-judge}
 \label{sec:instrumento-clareza}
 
-% TODO: pendente -- instrumento de avaliacao da dimensao de clareza da
-% linguagem, aplicado por LLM-as-a-judge combinado a metrica de
-% legibilidade em portugues, fundamentado em Zheng et al. (2023), Liu
-% et al. (2023, G-Eval), Li et al. (2024) e Bavaresco et al. (2025).
+A avalia\c{c}\~ao da dimens\~ao de clareza (terceiro pilar da rubrica
+t\'ecnica, Se\c{c}\~ao~\ref{sec:analise-matriz}) combina uma m\'etrica
+de legibilidade autom\'atizada com julgamento por LLM-as-a-judge.
 
-\textit{[Pendente -- instrumento de avalia\c{c}\~ao da dimens\~ao de
-clareza da linguagem, aplicado por LLM-as-a-judge combinado a
-m\'etrica de legibilidade em portugu\^es.]}
+\textbf{M\'etrica de legibilidade.} A resposta gerada \'e submetida ao
+software ALT \autocite{moreno2023alt}, que adapta ao portugu\^es seis
+\'indices de legibilidade, na mesma tradi\c{c}\~ao inaugurada pela
+adapta\c{c}\~ao seminal do \'Indice de Flesch para o portugu\^es
+brasileiro \autocite{martins1996readability} -- com coeficientes
+obtidos por regress\~ao linear independente, n\~ao derivados
+diretamente daquela adapta\c{c}\~ao. O \'indice composto final \'e a
+m\'edia aritm\'etica dos quatro \'indices que operam em escala de
+n\'ivel de escolaridade (Gunning Fog, Automated Readability Index,
+Flesch-Kincaid grade level e Coleman-Liau); o Flesch Reading Ease e o
+\'Indice Gulpease, que operam em escala 0-100 distinta, s\~ao
+reportados separadamente como m\'etricas complementares.
+
+\textbf{Precedente de aplica\c{c}\~ao a texto gerado por LLM.} A
+combina\c{c}\~ao de m\'etricas de legibilidade em portugu\^es com
+avalia\c{c}\~ao de texto gerado por modelo de linguagem j\'a conta com
+precedente direto na literatura. \textcite{martins2025fisica} aplicam
+o mesmo software ALT a respostas do ChatGPT e do Copilot sobre
+conceitos de f\'isica moderna. \textcite{albuquerque2025}, em desenho
+quase-experimental com avalia\c{c}\~ao humana cega, demonstram que o
+GPT-4 aumenta significativamente a legibilidade Flesch de trechos de
+relat\'orio financeiro anual de um ente p\'ublico -- contexto de setor
+p\'ublico an\'alogo ao desta disserta\c{c}\~ao, ainda que em l\'ingua
+portuguesa europeia. No mercado financeiro brasileiro especificamente,
+\textcite{cunha2026} associam a legibilidade de documentos
+regulat\'orios (medida por \'indices adaptados ao portugu\^es pelo
+mesmo software ALT -- Gunning Fog e Flesch, ainda que n\~ao id\^enticos
+aos quatro que comp\~oem o \'indice final desta se\c{c}\~ao) a
+desfechos relevantes de capta\c{c}\~ao l\'iquida de recursos em fundos
+de investimento, refor\c{c}ando a validade externa da m\'etrica no
+dom\'inio financeiro nacional.
+
+\textbf{LLM-as-a-judge.} \textit{[Pendente -- rubrica/prompt
+espec\'ifico que o modelo avaliador seguir\'a, incluindo crit\'erios de
+pontua\c{c}\~ao e escala, fundamentado em \textcite{zheng2023},
+\textcite{liu2023geval}, \textcite{li2024llmjudges} e
+\textcite{bavaresco2025}.]}
+
+\textbf{Limiar de aceita\c{c}\~ao.} \textit{[Pendente -- valor de corte
+na m\'etrica de legibilidade e/ou na pontua\c{c}\~ao do LLM-juiz para
+considerar a resposta suficientemente clara para o perfil popular.]}
