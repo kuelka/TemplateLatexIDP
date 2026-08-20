@@ -314,7 +314,7 @@ citação no corpo do texto do Anexo III.
   Resolução CMN nº 4.557/2017 (gerenciamento de riscos e capital), versão
   consolidada com alterações até a Resolução CMN nº 5.194/2024.
 
-## Norma de apoio ao Anexo III (fora do corpus RAG do objetivo d)
+## Normas de apoio ao Anexo III (fora do corpus RAG do objetivo d)
 
 - `normas/resolucao-cmn-4222-2013-regulamento-fgc.pdf` — Resolução CMN nº
   4.222/2013 (estatuto e regulamento do Fundo Garantidor de Créditos —
@@ -331,3 +331,18 @@ citação no corpo do texto do Anexo III.
   específico. A versão vigente também expõe, no mesmo artigo (§3º atual),
   o teto global de R$1.000.000,00 por CPF a cada 4 anos consecutivos, não
   mencionado na observação do Anexo III até o momento.
+- `normas/lei-15263-2025-linguagem-simples.pdf` — Lei nº 15.263, de 14 de
+  novembro de 2025. Institui a Política Nacional de Linguagem Simples nos
+  órgãos e entidades da administração pública direta e indireta de todos
+  os Poderes da União, dos Estados, do Distrito Federal e dos Municípios
+  (chave: `lei15263`; enviada pelo usuário em 20/08/2026; PDF sem camada
+  de texto -- "Print To PDF" --, conteúdo conferido via OCR nas 3
+  páginas, confere com a citação já usada). Usada no limiar de aceitação
+  da métrica de legibilidade, Anexo III (`anexo-3-instrumento-
+  avaliacao.tex`, seção "Instrumento de avaliação de clareza") -- fonte
+  do respaldo jurídico do critério, vinculante para bancos públicos como
+  entidades da administração pública indireta; não estabelece valor
+  numérico específico, apenas princípios e técnicas qualitativas (art.
+  5º: frases em ordem direta, frases curtas, uma ideia por parágrafo,
+  explicação de jargões, entre outras). Não faz parte do corpus RAG do
+  objetivo (d), que permanece fechado com os 6 documentos acima.
