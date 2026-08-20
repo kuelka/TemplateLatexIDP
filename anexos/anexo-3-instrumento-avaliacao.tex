@@ -239,6 +239,33 @@ salvaguarda pr\'atica, instru\c{c}\~ao expl\'icita contra esse vi\'es
 posi\c{c}\~ao n\~ao se aplica a este desenho, j\'a que n\~ao h\'a duas
 respostas para comparar.
 
-\textbf{Limiar de aceita\c{c}\~ao.} \textit{[Pendente -- valor de corte
-na m\'etrica de legibilidade e/ou na pontua\c{c}\~ao do LLM-juiz para
-considerar a resposta suficientemente clara para o perfil popular.]}
+\textbf{Limiar de aceita\c{c}\~ao.} Para a m\'etrica de legibilidade, o
+limiar \'e fixado em n\'ivel de escolaridade $\leq$ 12 (equivalente ao
+ensino m\'edio completo no sistema brasileiro), ancorado em tr\^es
+achados convergentes: (i) esse \'e o n\'ivel educacional modal das
+personas que efetivamente recebem recomenda\c{c}\~ao de produto --
+ensino m\'edio completo em 58\% do perfil de Marina e 45\% do perfil
+de Ant\^onio (Anexo~\ref{ane:personas}); (ii) \textcite{martins2025fisica}
+medem o pr\'oprio ChatGPT e Copilot, sem qualquer instru\c{c}\~ao de
+simplifica\c{c}\~ao, na faixa de 9 a 12 pontos na mesma escala
+composta, classificando o resultado como alta legibilidade mesmo em
+tema tecnicamente denso (f\'isica moderna); e (iii) documentos
+financeiros reais do mercado brasileiro \autocite{cunha2026}
+apresentam m\'edias de 15,32 (FOG-AP) e 14,99 (Flesch-Kincaid-AP),
+exigindo n\'ivel superior para compreens\~ao -- um limiar de 12 j\'a
+representa melhora substancial sobre a pr\'atica de mercado vigente. A
+Lei n\textsuperscript{o} 15.263/2025 \autocite{lei15263}, que instituiu
+a Pol\'itica Nacional de Linguagem Simples e \'e vinculante para toda a
+administra\c{c}\~ao p\'ublica, incluindo bancos p\'ublicos, refor\c{c}a
+a relev\^ancia jur\'idica do crit\'erio, ainda que n\~ao estabele\c{c}a
+valor num\'erico espec\'ifico.
+
+Para a pontua\c{c}\~ao do LLM-juiz, n\~ao se fixa um valor de corte a
+priori: seguindo a recomenda\c{c}\~ao expl\'icita de
+\textcite{bavaresco2025} de valida\c{c}\~ao e calibra\c{c}\~ao de LLMs
+contra julgamentos humanos espec\'ificos da tarefa antes de seu uso
+como avaliadores, o limiar ser\'a calibrado empiricamente contra uma
+subamostra anotada por avaliadores humanos do pr\'oprio conjunto de
+teste do backtesting -- calibra\c{c}\~ao pontual, distinta da
+valida\c{c}\~ao humana em escala j\'a reconhecida como fora do escopo
+deste trabalho (Se\c{c}\~ao~\ref{sec:analise-matriz}).
