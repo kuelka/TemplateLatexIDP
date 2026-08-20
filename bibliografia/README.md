@@ -131,13 +131,13 @@ escopo da dissertação), três incorporados ao corpo do texto.
   the Association for Computational Linguistics (Volume 2: Short Papers), p.
   238–255, 2025. arXiv:2406.18403. (chave: `bavaresco2025`)
 
-## Legibilidade textual em português (métrica de clareza, objetivo e, levantamento 19/08/2026, ainda não citada no corpo)
+## Legibilidade textual em português (métrica de clareza, objetivo e)
 
 Cinco artigos levantados para fundamentar a métrica de legibilidade em
 português que complementa o LLM-as-a-judge na dimensão de clareza
 (seção "Instrumento de avaliação de clareza -- LLM-as-a-judge" do
-Anexo III, `anexo-3-instrumento-avaliacao.tex`, ainda pendente).
-Nenhum tem citação no corpo do texto ainda.
+Anexo III, `anexo-3-instrumento-avaliacao.tex`). Todos os cinco têm
+citação no corpo do texto do Anexo III.
 
 - `artigos/martins-et-al-1996-readability-formulas-textbooks.pdf` — MARTINS,
   T. B. F.; GHIRALDELO, C. M.; NUNES, M. G. V.; OLIVEIRA JR., O. N.
@@ -164,9 +164,10 @@ Nenhum tem citação no corpo do texto ainda.
   Flesch-Kincaid grade level e Coleman-Liau, todos na escala de nível de
   escolaridade. Flesch Reading Ease e Gulpease ficam de fora da média
   final (operam em escala 0-100 distinta, "centígrada") e são reportados
-  separadamente. Ferramenta candidata para operacionalizar a métrica de
+  separadamente. Ferramenta adotada para operacionalizar a métrica de
   legibilidade validada para o português mencionada em
-  04-metodologia.tex, seção de avaliação de clareza por LLM-as-a-judge.
+  04-metodologia.tex e detalhada no Anexo III, seção de avaliação de
+  clareza por LLM-as-a-judge.
 - `artigos/martins-et-al-2025-fisica-moderna-ia-legibilidade.pdf` — MARTINS,
   Q. da S.; CADILLO, R. V. F.; SILVA, L. G. F. da. *Conceitos de Física
   Moderna a partir de Inteligência Artificial: uma verificação da
