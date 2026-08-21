@@ -15,6 +15,10 @@
 %% em vez do padrao A, B, C da classe:
 \renewcommand{\theidpanexo}{\Roman{idpanexo}}
 
+%% TikZ -- usado no diagrama da arquitetura (Figura 2.1)
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, fit, backgrounds}
+
 %% ================== METADADOS ====================
 %% Todos os dados especificos deste trabalho (titulo, autor, orientador,
 %% banca, ficha catalografica etc.) ficam em metadados.tex. Para uma nova
@@ -52,8 +56,9 @@
   limitam-se a question\'arios est\'aticos de suitability, enquanto modelos
   de Intelig\^encia Artificial (IA) Generativa pura apresentam risco de
   alucina\c{c}\~ao matem\'atica incompat\'ivel com um ambiente regulado.
-  Nesse contexto, bancos p\'ublicos regionais como o Banco de Bras\'ilia
-  (BRB) enfrentam um gargalo de capacidade estatal para escalar assessoria
+  Nesse contexto, bancos p\'ublicos brasileiros -- federais e regionais,
+  como o Banco de Bras\'ilia (BRB) -- enfrentam um gargalo de capacidade
+  estatal para escalar assessoria
   financeira qualificada ao seu p\'ublico de perfil popular, em conson\^ancia
   com o mandato da Estrat\'egia Nacional de Educa\c{c}\~ao Financeira (ENEF).
   Esta pesquisa tem como objetivo geral desenvolver e validar uma
@@ -82,8 +87,9 @@
   gap: traditional automated tools are limited to static suitability
   questionnaires, while pure Generative Artificial Intelligence (AI) models
   present a risk of mathematical hallucination that is incompatible with a
-  regulated environment. In this context, regional public banks such as
-  Banco de Bras\'ilia (BRB) face a state-capacity bottleneck in scaling
+  regulated environment. In this context, Brazilian public banks -- both
+  federal and regional, such as Banco de Bras\'ilia (BRB) -- face a
+  state-capacity bottleneck in scaling
   qualified financial advisory services to their retail client base, in
   line with the mandate of Brazil's National Strategy for Financial
   Education (ENEF). This research aims to develop and validate a
@@ -106,7 +112,8 @@
 \end{resumoingles}
 
 \listadeilustracoes
-\listadetabelas
+% \listadetabelas    % [comentada -- o documento nao possui tabelas; todo o
+%                     % conteudo tabular esta em quadros, que tem lista propria]
 \listofquadros
 % \listofgraficos % [PENDENTE - preencher quando os gr\'aficos do backtesting forem incluidos]
 
@@ -131,6 +138,17 @@
 \referencias
 
 \anexos
+%% Seções e quadros dentro dos anexos passam a numerar pelo próprio anexo
+%% (III.1, III.2...) em vez de herdar o contador do último capítulo
+%% numerado (Conclusão, cap. 7), o que gerava ambiguidade entre
+%% "Seção 7.2" da Conclusão e "Seção 7.2" do Anexo III.
+\renewcommand{\thesection}{\theidpanexo.\arabic{section}}
+\renewcommand{\thesubsection}{\theidpanexo.\arabic{section}.\arabic{subsection}}
+\renewcommand{\thequadro}{\theidpanexo.\arabic{quadro}}
+\makeatletter
+\@addtoreset{section}{idpanexo}
+\@addtoreset{quadro}{idpanexo}
+\makeatother
 \input{anexos/anexo-1-cronograma}
 \input{anexos/anexo-2-personas}
 \input{anexos/anexo-3-instrumento-avaliacao}

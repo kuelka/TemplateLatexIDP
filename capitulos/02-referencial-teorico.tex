@@ -79,6 +79,50 @@ de RAG orientado por template garante ader\^encia sint\'atica integral a
 esquema em dom\'inio de estrutura\c{c}\~ao de contratos financeiros, ainda
 que aplicado a caso de uso distinto do desta pesquisa.
 
+A Figura~\ref{fig:arquitetura} sintetiza a arquitetura proposta,
+explicitando a segrega\c{c}\~ao entre o processamento num\'erico
+determin\'istico e a gera\c{c}\~ao de linguagem natural que constitui o
+n\'ucleo de H1.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Arquitetura de agente \'unico com segrega\c{c}\~ao entre c\'alculo determin\'istico e gera\c{c}\~ao de linguagem}
+  \label{fig:arquitetura}
+  \footnotesize
+  \begin{tikzpicture}[
+    node distance=6mm,
+    box/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum height=8mm},
+    ext/.style={box, dashed, minimum width=30mm},
+    core/.style={box, thick, minimum width=34mm},
+    io/.style={box, minimum width=30mm},
+    arrow/.style={-{Latex[length=2mm]}, thick},
+    feed/.style={-{Latex[length=2mm]}, dashed}
+  ]
+    \node[io] (cliente) {Cliente pessoa f\'isica\\{\scriptsize (pergunta em linguagem natural)}};
+    \node[core, below=of cliente] (agente) {\textbf{Agente LLM \'unico}\\{\scriptsize orquestra\c{c}\~ao via \textit{function calling}}};
+
+    \node[core, below left=10mm and 2mm of agente] (python) {M\'odulo determin\'istico\\Python\\{\scriptsize RFL, IR/IOF, \textit{duration}}};
+    \node[core, below right=10mm and 2mm of agente] (rag) {Base RAG normativa\\{\scriptsize CVM, CMN, Tesouro, ANBIMA}};
+
+    \node[ext, below=9mm of python] (apis) {APIs p\'ublicas\\{\scriptsize BCB e ANBIMA}};
+    \node[ext, below=9mm of rag] (normas) {Normativos vigentes\\{\scriptsize com metadados de vig\^encia}};
+
+    \node[io, above right=6mm and 4mm of cliente] (xai) {Log estruturado XAI\\{\scriptsize trilha de auditoria}};
+
+    \draw[arrow] (cliente) -- node[midway, left, xshift=-1mm] {\scriptsize pergunta} (agente);
+    \draw[arrow] (agente) -- (python) node[midway, left, xshift=-1mm] {\scriptsize c\'alculo};
+    \draw[arrow] (agente) -- (rag) node[midway, right, xshift=1mm] {\scriptsize consulta};
+    \draw[arrow] (python) -- (agente);
+    \draw[arrow] (rag) -- (agente);
+    \draw[feed] (apis) -- (python);
+    \draw[feed] (normas) -- (rag);
+    \draw[arrow] (agente.west) to[out=180, in=180] node[midway, left, align=right] {\scriptsize resposta em\\\scriptsize linguagem natural} (cliente.west);
+    \draw[arrow] (agente.east) to[out=0, in=-90] node[midway, right, yshift=-2mm] {\scriptsize log} (xai.south);
+  \end{tikzpicture}
+
+  \fonte{Elaborado pelo autor (2026).}
+\end{figure}
+
 No dom\'inio financeiro-regulat\'orio brasileiro, a aplica\c{c}\~ao de RAG
 sobre normativos da CVM, resolu\c{c}\~oes do CMN e manuais da ANBIMA
 permite ao agente responder perguntas sobre regras tribut\'arias, prazos
