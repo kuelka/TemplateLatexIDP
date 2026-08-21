@@ -75,9 +75,31 @@ ignorando mudan\c{c}as din\^amicas na curva de juros e as restri\c{c}\~oes
 de liquidez do cidad\~ao comum. De outro lado, a depend\^encia exclusiva
 de LLMs puros acarreta s\'erios riscos de integridade nas estimativas
 patrimoniais, dado o fen\^omeno da alucina\c{c}\~ao confiante documentado
-na literatura.
+na literatura. Esse risco n\~ao se limita \`a integridade computacional:
+evid\^encia recente mostra que usu\'arios tendem a confiar mais e a
+seguir com maior disposi\c{c}\~ao as recomenda\c{c}\~oes de agentes
+conversacionais com tra\c{c}os de personalidade extrovertida, mesmo
+quando o conselho subjacente \'e objetivamente pior -- risco
+comportamental de sobreconfian\c{c}a que refor\c{c}a a necessidade de
+mecanismos de verifica\c{c}\~ao independentes do estilo de intera\c{c}\~ao
+do agente \autocite{takayanagi2025}.
 
-A lacuna identificada \'e significativa. Embora estudos internacionais
+A lacuna identificada \'e significativa e confirmada por m\'ultiplas
+fontes independentes. \textcite{zibriczky2016}, em revis\~ao da
+literatura sobre sistemas de recomenda\c{c}\~ao aplicados a finan\c{c}as,
+j\'a apontava a aus\^encia de tratamento dedicado a produtos de renda
+fixa nesse campo. O \textit{dataset} p\'ublico mais recente e abrangente
+para recomenda\c{c}\~ao de ativos financeiros, o FAR-Trans
+\autocite{sanzcruzado2024}, trata renda fixa como classe secund\'aria
+dentro de um universo geral de ativos, n\~ao como problema de
+recomenda\c{c}\~ao dedicado. No contexto brasileiro e de l\'ingua
+portuguesa, o precedente mais pr\'oximo -- o sistema multi-bot
+``finch'' \autocite{pinhanez2018}, voltado a poupan\c{c}a, Tesouro Direto e CDB
+para clientes de banco de renda m\'edia-baixa -- antecede a tecnologia
+de LLMs generativos, opera por classifica\c{c}\~ao de inten\c{c}\~ao com
+respostas pr\'e-escritas, n\~ao avalia conformidade de \textit{suitability}
+e antecede em tr\^es anos a pr\'opria Resolu\c{c}\~ao CVM
+n\textsuperscript{o} 30/2021. Embora estudos internacionais
 tenham explorado o uso de LLMs em an\'alise de sentimento financeiro
 \autocite{lopezliratang2023} ou rob\^os-consultores baseados em regras
 \autocite{dacunto2019}, n\~ao foram identificados estudos que proponham e

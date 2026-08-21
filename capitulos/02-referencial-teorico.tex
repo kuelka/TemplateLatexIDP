@@ -10,6 +10,17 @@ aplica\c{c}\~ao direta no mercado de investimentos quando investidores de
 varejo tomam decis\~oes sem acesso \`as mesmas informa\c{c}\~oes
 dispon\'iveis a intermedi\'arios financeiros profissionais.
 
+Nesse cen\'ario, os \textit{robo-advisors} -- plataformas automatizadas
+de aconselhamento financeiro -- emergem como resposta tecnol\'ogica
+recorrente na literatura internacional. Revis\~ao sistem\'atica recente
+do campo identifica quatro correntes de pesquisa consolidadas
+(classifica\c{c}\~ao/tipologia, determinantes comportamentais, desempenho
+e modelagem algor\'itmica) e prop\~oe o impacto socioecon\^omico --
+particularmente a inclus\~ao financeira -- como quinta corrente ainda
+in\'edita e pouco explorada \autocite{cardillo2024}, lacuna que dialoga
+diretamente com o eixo de democratiza\c{c}\~ao de acesso perseguido por
+esta disserta\c{c}\~ao.
+
 No contexto brasileiro, o Raio X do Investidor Brasileiro da ANBIMA
 \autocite{anbima2025} e o Relat\'orio de Cidadania Financeira do Banco
 Central \autocite{bcb2023} documentam que parcela expressiva dos
@@ -88,6 +99,23 @@ institui\c{c}\~oes devem avaliar de forma pormenorizada e independente
 tr\^es dimens\~oes do investidor: (i) os objetivos de investimento; (ii) a
 situa\c{c}\~ao financeira; e (iii) o conhecimento sobre os riscos do
 produto.
+
+\'E importante distinguir a Resolu\c{c}\~ao CVM n\textsuperscript{o}
+30/2021 de outros normativos aplic\'aveis a \textit{robo-advisors} no
+mercado brasileiro, frequentemente confundidos na literatura jur\'idica:
+as Resolu\c{c}\~oes CVM n\textsuperscript{o} 19/2021 e n\textsuperscript{o}
+21/2021 disciplinam, respectivamente, a atividade de consultoria e a
+administra\c{c}\~ao de carteira de valores mobili\'arios -- categorias
+profissionais que um \textit{robo-advisor} pode assumir --, enquanto a
+Resolu\c{c}\~ao CVM n\textsuperscript{o} 30/2021 trata especificamente do
+dever de verifica\c{c}\~ao de adequa\c{c}\~ao (\textit{suitability}),
+aplic\'avel independentemente de qual dessas categorias a institui\c{c}\~ao
+ocupe \autocite{pagan2023}. O ambiente regulat\'orio brasileiro para
+essas tecnologias, contudo, permanece em desenvolvimento: an\'alise do
+\textit{sandbox} regulat\'orio da CVM conclui que sua estrutura atual
+n\~ao comportaria, na forma como estabelecida hoje, a experimenta\c{c}\~ao
+formal de modelos de neg\'ocio baseados em \textit{robo-advisors}
+\autocite{muniz2025}.
 
 No contexto de uma assessoria financeira automatizada por intelig\^encia
 artificial, o cumprimento desses requisitos regulat\'orios e o controle
@@ -191,7 +219,16 @@ n\textsuperscript{o} 2.834/2001 \autocite{leidistrital2834}, aplic\'avel
 caso do BRB usado como refer\^encia de valida\c{c}\~ao emp\'irica neste
 trabalho.
 Isso imp\~oe que o sistema seja capaz de explicitar, de forma
-rastre\'avel, o fundamento de cada recomenda\c{c}\~ao emitida.
+rastre\'avel, o fundamento de cada recomenda\c{c}\~ao emitida. Essa
+exig\^encia n\~ao \'e meramente formal: estudo que testou o ChatGPT 4 e
+o Gemini 1.0 Pro contra sete quest\~oes de conformidade legal extra\'idas
+do MiFID II/ESMA para aconselhamento financeiro automatizado encontrou
+que apenas 28\% das quest\~oes (2 de 7) foram adequadamente respondidas
+por padr\~ao, com as exig\^encias mais rigorosas -- transpar\^encia
+sobre as fontes de informa\c{c}\~ao utilizadas e evid\^encia de
+interven\c{c}\~ao humana -- nunca atendidas sem adapta\c{c}\~ao
+espec\'ifica \autocite{vilone2024}, resultado que refor\c{c}a
+empiricamente a necessidade do log estruturado a seguir.
 
 Para atender ao Princ\'ipio da Motiva\c{c}\~ao, o agente gerar\'a, al\'em
 da resposta em linguagem natural ao cliente, um log estruturado de

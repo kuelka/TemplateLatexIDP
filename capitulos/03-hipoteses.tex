@@ -13,7 +13,30 @@ vieses comportamentais humanos de tomada de decis\~ao. A segrega\c{c}\~ao
 entre c\'alculo composto determin\'istico (Python) e gera\c{c}\~ao de
 linguagem (LLM) elimina a principal fonte de erro em modelos generativos
 puros -- as alucina\c{c}\~oes matem\'aticas --, conferindo auditabilidade
-integral \`as sa\'idas. A precis\~ao num\'erica do m\'odulo determin\'istico \'e aferida
+integral \`as sa\'idas. Essa segrega\c{c}\~ao \'e particularmente
+relevante para renda fixa: evid\^encia emp\'irica recente mostra que a
+decis\~ao de aloca\c{c}\~ao de LLMs entre classes de ativo tende a ser
+dominada por um pequeno n\'umero de heur\'isticas -- destacadamente a
+toler\^ancia a risco autodeclarada, que responde por 57\% a 88\% do
+peso preditivo na maioria dos modelos avaliados, com integra\c{c}\~ao
+m\'inima de idade, renda e horizonte de investimento --, fen\^omeno que
+os autores denominam \textit{colapso heur\'istico}
+\autocite{ross2026}. Notavelmente, \textcite{fieberg2025}, ao testar 32
+LLMs em 64 perfis de investidor, documentam o mesmo padr\~ao de
+domin\^ancia da toler\^ancia a risco declarada sobre a exposi\c{c}\~ao
+de portf\'olio, mas o interpretam como evid\^encia de ader\^encia \`as
+prescri\c{c}\~oes da moderna teoria de portf\'olio, e n\~ao como falha
+-- os pr\'oprios \textcite{ross2026} reconhecem que esse achado \'e
+consistente com o de Fieberg et al. (2025). A diverg\^encia entre as
+duas leituras -- a mesma domin\^ancia emp\'irica interpretada como
+conselho adequado (Fieberg et al.) ou como colapso heur\'istico
+preocupante (Ross \& Lo) -- refor\c{c}a a necessidade de testar
+empiricamente, no contexto desta disserta\c{c}\~ao, se a segrega\c{c}\~ao
+entre c\'alculo determin\'istico e gera\c{c}\~ao de linguagem produz
+aloca\c{c}\~oes em renda fixa que integrem m\'ultiplas dimens\~oes de
+suitability -- e n\~ao apenas toler\^ancia a risco --, em vez de assumir
+a priori que a domin\^ancia de um \'unico fator \'e adequada ou
+inadequada para o caso brasileiro. A precis\~ao num\'erica do m\'odulo determin\'istico \'e aferida
 frente ao padr\~ao de refer\^encia (\textit{ground truth})
 independentemente verificado nos simuladores oficiais (Tesouro
 Transparente, calculadoras ANBIMA), conforme detalhado no objetivo
