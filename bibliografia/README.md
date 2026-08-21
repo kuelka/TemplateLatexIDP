@@ -112,6 +112,172 @@ escopo da dissertação), três incorporados ao corpo do texto.
   (4 produtos fixos, não busca de similaridade). PDF e entrada `.bib`
   removidos em 19/08/2026.
 
+## Terceiro levantamento: robo-advisors, LLMs como consultores financeiros e sistemas de recomendação (levantamento 20/08/2026, ainda não citado no corpo)
+
+Oito artigos enviados pelo usuário nesta rodada, material de contextualização
+sobre roboadvisors, uso de LLMs/agentes generativos como consultores
+financeiros e sistemas de recomendação em finanças — candidatos a
+fundamentar o referencial teórico (Capítulo 2) e a discussão de resultados
+(Capítulo 6). Nenhum tem citação no corpo do texto ainda.
+
+### Regulação e crítica de robo-advisors no Brasil
+
+- `artigos/muniz-2025-sandbox-regulatorio-roboadvisors.pdf` — MUNIZ, José
+  Matheus. *Sandbox regulatório e roboadvisors: desafios para o mercado de
+  capitais*. Dissertação (Mestrado em Direito) — Faculdade de Direito de
+  Ribeirão Preto, Universidade de São Paulo (FDRP/USP), Ribeirão Preto,
+  2025. 133 f. Orientadora: Cristina Godoy Bernardo de Oliveira. (chave:
+  `muniz2025`) — investiga se o sandbox regulatório estruturado pela CVM
+  (Resolução CVM nº 29/2021) pode ser usado para regular roboadvisors no
+  mercado de capitais brasileiro. Conclui que, formalmente, o sandbox atual
+  não comporta roboadvisors (já operam no Brasil há anos sem vedação, não
+  se qualificando como "modelo de negócio inovador"), mas que os objetivos
+  e princípios do sandbox regulatório (aproximação regulador-regulado,
+  proteção ao investidor, integridade de mercado, inclusão financeira,
+  fomento à concorrência) justificariam a própria CVM criar um regime
+  dedicado. Cita as Resoluções CVM nº 19/2021 e 21/2021 (consultoria e
+  administração de carteiras) e nº 30/2021 (suitability) como o arcabouço
+  regulatório vigente para roboadvisors, e reporta que roboadvisors
+  brasileiros somavam quase R$1 bilhão em ativos sob gestão, com
+  consolidação do setor via aquisições por grandes bancos entre 2021-2023
+  (ex.: BTG-Magnetis, Nubank-Vérios/Easynvest, Santander-Toro/Monetus).
+- `artigos/pagan-2023-analise-critica-roboadvisors-brasil.pdf` — PAGAN,
+  João Walter Gomes. *Uma análise crítica e prática dos robo-advisors no
+  mercado financeiro e de capitais brasileiro*. Dissertação (Mestrado
+  Profissional em Direito dos Negócios) — Fundação Getulio Vargas, Escola
+  de Direito de São Paulo (FGV-EDESP), São Paulo, 2023. 75 f. Orientador:
+  Alexandre Pacheco da Silva. (chave: `pagan2023`) — pesquisa exploratória
+  (revisão bibliográfica, legislativa e regulatória) sobre a estrutura,
+  aspectos legais e riscos de roboadvisors no mercado brasileiro, com
+  avaliação prática de plataformas nacionais anonimizadas. Desenvolve
+  tipologia de sofisticação Robo-Advisor 1.0 a 4.0 e conclui que as
+  plataformas brasileiras avaliadas atingem no máximo o nível 3.0 --
+  ferramentas essencialmente baseadas em questionário que recomendam
+  fundos proprietários da própria instituição, configurando "claro
+  conflito de interesse", com deficiências de transparência (divulgação de
+  código-fonte, contratos, responsabilidade civil, proteção de dados),
+  embora sem evidência clara de dano ao investidor.
+
+### LLMs e agentes generativos como consultores financeiros
+
+- `artigos/takayanagi-et-al-2025-generative-ai-financial-advisors.pdf` —
+  TAKAYANAGI, Takehiro; IZUMI, Kiyoshi; SANZ-CRUZADO, Javier; McCREADIE,
+  Richard; OUNIS, Iadh. *Are Generative AI Agents Effective Personalized
+  Financial Advisors?* Proceedings of the 48th International ACM SIGIR
+  Conference on Research and Development in Information Retrieval (SIGIR
+  2025), Padua, Italy, 2025. arXiv:2504.05862. (chave: `takayanagi2025`) —
+  estudo com 64 participantes que interagiram com um LLM-consultor
+  (Llama-3.1 8B) em cenários de elicitação de preferências e discussão de
+  investimentos, avaliado contra preferências e rankings de referência
+  definidos por especialista humano. Acurácia de elicitação de 0,70-0,85
+  para dois de três perfis testados (próxima à de um consultor humano
+  especialista), mas caindo a nível quase aleatório para um perfil
+  "investidor de valor tolerante a risco", por "alucinação de
+  preferências" (*preference hallucination*). Personalização
+  bem-sucedida elevou a correlação de ranking investidor-especialista de
+  0,11 para 0,31, mas quando a elicitação falhava, a personalização
+  piorava ativamente os resultados (correlação negativa, até -0,286).
+  Achado de risco relevante: participantes não conseguiam distinguir
+  consistentemente conselho bom de ruim, e um consultor com "persona" mais
+  extrovertida recebeu mais confiança/satisfação apesar de dar conselhos
+  objetivamente piores.
+- `artigos/fieberg-et-al-2025-llms-financial-advice.pdf` — FIEBERG,
+  Christian; HORNUF, Lars; MEILER, Maximilian; STREICH, David J. *Using
+  Large Language Models for Financial Advice*. CESifo Working Paper No.
+  11666, Munich, jan. 2025. (chave: `fieberg2025`) — audita 32 LLMs
+  (fundação vs. *fine-tuned*, por tamanho e licença) gerando
+  recomendações de portfólio para 64 perfis hipotéticos de investidor
+  (variando tolerância a risco, país, preferências de sustentabilidade,
+  gênero, experiência), totalizando 2.048 recomendações, comparadas a 20
+  dos maiores roboadvisors alemães e americanos. Acha que carteiras de LLM
+  são majoritariamente implementáveis, com exposição a risco alinhada ao
+  perfil declarado, e desempenho ajustado a risco comparável a
+  roboadvisors (Sharpe ratio e retorno em excesso maiores, mas alfas de
+  seis fatores menores -- desempenho explicado por exposição a fatores,
+  não "habilidade"). Identifica viés doméstico significativo (ex.: 21 p.p.
+  de sobre-alocação a ativos domésticos para investidores chineses)
+  ausente nos roboadvisors de referência, mas nenhuma evidência de
+  discriminação de gênero -- ao contrário da literatura sobre consultores
+  humanos. Cogita explicitamente RAG como caminho promissor para injetar
+  conhecimento financeiro específico sem os riscos do *fine-tuning*.
+- `artigos/ross-lo-2026-heuristic-collapse-llm-investment-advice.pdf` —
+  ROSS, Jillian; LO, Andrew W. *One Size Fits None: Heuristic Collapse in
+  LLM Investment Advice*. Preprint, Massachusetts Institute of Technology,
+  2026. arXiv:2604.23837. (chave: `ross2026`) — gera 1.000 perfis
+  sintéticos de cliente (amostragem hipercubo latino) e consulta quatro
+  LLMs (GPT-4o, GPT-5.4, GPT-5.4 Mini, GPT-5.4 Nano) para alocação de
+  portfólio entre 20 produtos, ajustando modelos substitutos
+  interpretáveis (Random Forest/Ridge) às entradas-saídas de cada modelo.
+  Encontra que a tolerância a risco autodeclarada domina 57-88% do peso
+  preditivo na maioria dos modelos, com idade, renda, horizonte de
+  investimento e necessidade de liquidez contribuindo minimamente --
+  fenômeno que os autores chamam de "colapso heurístico": conselho
+  "superficialmente responsivo ao contexto, mas substantivamente
+  insensível à maior parte dele". Conclui que LLMs de uso geral "não são
+  consultores financeiros adequados", sendo "mais bem compreendidos como
+  geradores de conselho plausível do que como fontes de recomendação
+  adequada" -- forte motivação empírica para uma matriz de suitability
+  determinística e calibrada por múltiplas dimensões de perfil, em vez de
+  confiar a um LLM a ponderação implícita dessas dimensões.
+
+### Sistemas de recomendação em finanças
+
+- `artigos/zibriczky-2016-recommender-systems-meet-finance.pdf` —
+  ZIBRICZKY, Dávid. *Recommender Systems meet Finance: A literature
+  review*. Proceedings of the 2nd International Workshop on
+  Personalization & Recommender Systems in Financial Services (FINREC
+  2016), Bari, Italy, jun. 2016. CEUR Workshop Proceedings, v. 1606.
+  (chave: `zibriczky2016`) — revisão de literatura (últimos 15 anos até a
+  publicação) sobre sistemas de recomendação aplicados a domínios
+  financeiros (banking, empréstimos, seguros, imóveis, ações, alocação de
+  portfólio, venture capital, fundos), categorizando por domínio e por
+  técnica (*collaborative filtering*, *content-based*,
+  baseada em conhecimento, baseada em casos, métodos híbridos). Conclui
+  que *collaborative*/*content-based filtering* têm
+  desvantagens para domínios financeiros complexos (dificuldade de
+  explicação, esparsidade de dados), enquanto métodos baseados em
+  conhecimento e em casos (*case-based reasoning*) têm vantagem por
+  lidarem melhor com preferências de usuário complexas e produzirem
+  recomendações explicáveis -- relevante como pano de fundo teórico para
+  por que a arquitetura desta dissertação prefere uma matriz de regras
+  (baseada em conhecimento) a filtragem colaborativa pura.
+- `artigos/sanz-cruzado-et-al-2024-fartrans-dataset.pdf` — SANZ-CRUZADO,
+  Javier; DROUKAS, Nikolaos; McCREADIE, Richard. *FAR-Trans: An Investment
+  Dataset for Financial Asset Recommendation*. arXiv:2407.08692, 2024.
+  (chave: `sanzcruzado2024`) — dataset de uma grande instituição
+  financeira europeia (clientes de varejo gregos, jan/2018-nov/2022): 806
+  ativos únicos (ações, títulos e fundos, ≥200 por categoria), 703.303
+  pontos de preço em 38 mercados, 29.090 clientes e 388.049 transações.
+  Inclui segmento de cliente e perfil de risco MiFID II
+  (Conservador/Renda/Balanceado/Agressivo). Benchmark de 11 algoritmos
+  (baseados em preço, em transação/*collaborative filtering*,
+  híbridos) para ranquear ativos ainda não detidos pelo cliente.
+  Estruturalmente distinto da abordagem desta dissertação: é um benchmark
+  de aprendizado de máquina sobre centenas de títulos individuais com
+  preços variáveis e contínuos, não uma matriz de regras sobre um catálogo
+  pequeno e fixo de produtos; a categoria "títulos" (*bonds*) é
+  indiferenciada, sem taxonomia própria de renda fixa.
+
+### Colaboração usuário-IA: assistente único vs. equipe de agentes especializados
+
+- `artigos/pinhanez-et-al-2018-different-but-equal.pdf` — PINHANEZ,
+  Claudio S.; CANDELLO, Heloisa; PICHILIANI, Mauro C.; VASCONCELOS,
+  Marisa; GUERRA, Melina; DE BAYSER, Maíra G.; CAVALIN, Paulo. *Different
+  but Equal: Comparing User Collaboration with Digital Personal Assistants
+  vs. Teams of Expert Agents*. IBM Research Brazil, arXiv:1808.08157,
+  2018. (chave: `pinhanez2018`) — dois estudos com usuários (69
+  participantes online + 16 em laboratório) comparando um chatbot único
+  ("InvestmentGuru") a uma equipe de chatbots especialistas, ambos sobre o
+  mesmo sistema real "finch" de aconselhamento de investimentos de baixo
+  risco em português (poupança, CDB, Tesouro). Não encontra diferença
+  estatisticamente significativa em desfechos de tarefa (produto
+  escolhido, confiança, competência percebida), mas encontra que a equipe
+  multiagente foi mais previsível para os usuários (melhor compreensão do
+  escopo de cada bot) sem custo adicional de coordenação -- nuance
+  relevante para ponderar contra a opção desta dissertação por arquitetura
+  de agente único, mesmo não sendo a mesma comparação (agente único +
+  módulo determinístico vs. LLM sem essa segregação).
+
 ## LLM-as-a-judge (avaliação de clareza da linguagem, objetivo e)
 
 - `artigos/zheng-et-al-2023-judging-llm-as-a-judge.pdf` — ZHENG, L. et al.
