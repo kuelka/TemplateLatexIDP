@@ -112,13 +112,14 @@ escopo da dissertação), três incorporados ao corpo do texto.
   (4 produtos fixos, não busca de similaridade). PDF e entrada `.bib`
   removidos em 19/08/2026.
 
-## Terceiro levantamento: robo-advisors, LLMs como consultores financeiros e sistemas de recomendação (levantamento 20/08/2026, ainda não citado no corpo)
+## Terceiro levantamento: robo-advisors, LLMs como consultores financeiros e sistemas de recomendação (levantamento 20-21/08/2026, ainda não citado no corpo)
 
-Oito artigos enviados pelo usuário nesta rodada, material de contextualização
-sobre roboadvisors, uso de LLMs/agentes generativos como consultores
-financeiros e sistemas de recomendação em finanças — candidatos a
-fundamentar o referencial teórico (Capítulo 2) e a discussão de resultados
-(Capítulo 6). Nenhum tem citação no corpo do texto ainda.
+Nove artigos enviados pelo usuário nesta rodada (oito em 20/08/2026, mais um
+em 21/08/2026), material de contextualização sobre roboadvisors, uso de
+LLMs/agentes generativos como consultores financeiros e sistemas de
+recomendação em finanças — candidatos a fundamentar o referencial teórico
+(Capítulo 2) e a discussão de resultados (Capítulo 6). Nenhum tem citação no
+corpo do texto ainda.
 
 ### Regulação e crítica de robo-advisors no Brasil
 
@@ -219,6 +220,37 @@ fundamentar o referencial teórico (Capítulo 2) e a discussão de resultados
   adequada" -- forte motivação empírica para uma matriz de suitability
   determinística e calibrada por múltiplas dimensões de perfil, em vez de
   confiar a um LLM a ponderação implícita dessas dimensões.
+- `artigos/vilone-et-al-2024-explainability-financial-roboadvice.pdf` —
+  VILONE, Giulia; SOVRANO, Francesco; LOGNOUL, Michaël. *On the
+  Explainability of Financial Robo-Advice Systems*. In: LONGO, L.;
+  LAPUSCHKIN, S.; SEIFERT, C. (Eds.). Explainable Artificial
+  Intelligence. Communications in Computer and Information Science, v.
+  2156. Springer, 2024. p. 219-242. DOI:
+  10.1007/978-3-031-63803-9_12. (chave: `vilone2024`) — extrai da
+  Diretiva MiFID II e das Diretrizes ESMA sete "questões de conformidade
+  legal" que uma explicação de aconselhamento financeiro automatizado
+  deve responder (fontes de informação usadas, alinhamento com objetivos
+  e perfil do cliente, medidas pós-hoc de adequação, grau de intervenção
+  humana, ausência de conteúdo enganoso, entre outras). Testa ChatGPT 4 e
+  Gemini 1.0 Pro (ferramentas de uso geral, não vinculadas legalmente ao
+  MiFID II) com três personas sintéticas de investidor, verificando
+  quantas das sete questões cada resposta responde. Resultado: apenas
+  28% das questões foram adequadamente respondidas -- só as duas
+  questões mais básicas (informação usada para o perfil do cliente e
+  alinhamento geral com suas características); as três questões mais
+  exigentes (fontes de informação usadas para gerar o conselho, grau de
+  intervenção humana, autoavaliação de justiça/clareza/ausência de
+  conteúdo enganoso) nunca foram respondidas por nenhum dos dois
+  sistemas. Usa também o Flesch Reading Ease Score como métrica
+  complementar de legibilidade (todas as respostas pontuaram acima de
+  60, legibilidade padrão ou superior). Conclui que LLMs de uso geral têm
+  potencial para gerar conselho compreensível, mas apresentam lacunas de
+  transparência importantes antes de poderem ser usados em conformidade
+  com o MiFID II -- evidência empírica direta, em jurisdição diferente
+  (UE, não Brasil), para o mesmo tipo de risco que motiva a arquitetura
+  desta dissertação (matriz de suitability determinística e módulo de
+  cálculo segregado, em vez de depender do raciocínio implícito de um
+  LLM).
 
 ### Sistemas de recomendação em finanças
 
