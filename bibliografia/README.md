@@ -114,12 +114,40 @@ escopo da dissertação), três incorporados ao corpo do texto.
 
 ## Terceiro levantamento: robo-advisors, LLMs como consultores financeiros e sistemas de recomendação (levantamento 20-21/08/2026, ainda não citado no corpo)
 
-Nove artigos enviados pelo usuário nesta rodada (oito em 20/08/2026, mais um
+Dez artigos enviados pelo usuário nesta rodada (oito em 20/08/2026, mais dois
 em 21/08/2026), material de contextualização sobre roboadvisors, uso de
 LLMs/agentes generativos como consultores financeiros e sistemas de
 recomendação em finanças — candidatos a fundamentar o referencial teórico
 (Capítulo 2) e a discussão de resultados (Capítulo 6). Nenhum tem citação no
 corpo do texto ainda.
+
+### Revisão sistemática de literatura sobre robo-advisors (panorama internacional)
+
+- `artigos/cardillo-chiappini-2024-robo-advisors-systematic-review.pdf` —
+  CARDILLO, Giovanni; CHIAPPINI, Helen. *Robo-advisors: a systematic
+  literature review*. Finance Research Letters, v. 62, Part A, p. 1-8,
+  2024. DOI: 10.1016/j.frl.2024.105119. (chave: `cardillo2024`) — revisão
+  sistemática (protocolo Scopus + Web of Science, 199 artigos
+  identificados, 103 retidos após deduplicação/exclusão, período
+  2017-2022, mais de 80 periódicos) que mapeia quatro correntes de
+  pesquisa sobre roboadvisors: (i) classificação/tipologia -- inclui a
+  tipologia de sofisticação Robo-Advisor 1.0 a 4.0 e o modelo de quatro
+  tipos de Garvía (2018) (*stand-alone*, segregado, integrado,
+  robo-for-advice), bem como a distinção D2C/B2B/híbrido de Phoon & Koh
+  (2017); (ii) determinantes comportamentais de adoção; (iii) desempenho
+  -- roboadvisors superam consultores humanos mas não batem os índices de
+  mercado, com benefícios documentados para investidores
+  subdiversificados, de baixa renda e baixa escolaridade, e para bancos de
+  pequeno/médio porte; (iv) modelagem de algoritmo. Os autores propõem
+  como agenda de pesquisa inédita uma quinta corrente -- "impacto
+  socioeconômico" (inclusão financeira e efeitos sobre emprego) --
+  explicitamente identificada como pouco estudada na literatura revisada.
+  Relevante como referencial teórico geral para o Capítulo 2 (a tipologia
+  Robo-Advisor 1.0-4.0 aqui documentada é a mesma usada por Pagan (2023,
+  ver abaixo) para classificar plataformas brasileiras) e para a discussão
+  do Capítulo 6: a proposta explícita dos autores de "inclusão financeira"
+  como questão de pesquisa em aberto dialoga diretamente com o eixo de
+  democratização da assessoria em renda fixa que motiva esta dissertação.
 
 ### Regulação e crítica de robo-advisors no Brasil
 
