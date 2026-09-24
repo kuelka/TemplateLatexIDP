@@ -68,6 +68,15 @@ RFL, **independente do módulo Python sob teste**, conferida por amostragem cont
 simuladores oficiais. O gabarito não pode ser produzido pelo próprio módulo que o
 experimento avalia — seria circular.
 
+## Decisão sobre o horizonte (23/09/2026) — Rota A
+
+O Tesouro não oferta títulos com prazo arbitrário, e quase nunca há vencimento
+coincidente com os horizontes de 15, 180, 360, 720 e 1.080 dias. Optou-se por **manter
+os prazos** e usar a taxa do vencimento mais próximo como aproximação, sob premissa
+declarada de curva plana. Consequência a registrar na metodologia: o RFL do Prefixado
+deixa de ser exato e passa a depender dessa premissa, porque o resgate ocorre antes do
+vencimento. Ver `COMO-EXTRAIR-TESOURO.md`, seção 3.
+
 ## Nota sobre o horizonte dos prazos
 
 Os prazos de 720 e 1.080 dias, a partir das datas finais da janela, terminam em 2028 e
