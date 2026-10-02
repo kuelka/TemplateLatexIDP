@@ -5,6 +5,7 @@ Tesouro Direto (https://www.tesourodireto.com.br/simuladores/calculadora-avancad
 
 Entradas (nesta pasta):
   api-requisicoes.json  corpo enviado a POST /o/calculadora-avancada, por caso
+                        (purchsDt = data_aplicacao; redDt = data_resgate do D1)
   api-resultados.json   resposta da calculadora, por caso (ver CONFERENCIA.md)
 
 Saida:
@@ -26,7 +27,7 @@ from pathlib import Path
 AQUI = Path(__file__).parent
 D1 = AQUI.parent
 sys.path.insert(0, str(D1))
-from rfl_referencia import calcular_rfl, eh_dia_util  # noqa: E402
+from rfl_referencia import calcular_rfl, eh_dia_util, proximo_dia_util  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location("fg", D1 / "fechar-gabarito.py")
 fg = importlib.util.module_from_spec(_spec)
@@ -46,23 +47,20 @@ def resumo(nome, xs):
     )
 
 
-def du_liquidacao(inicio, fim, sem_20_11=False):
-    """Dias uteis no intervalo [D+1 util da aplicacao, D+1 util do resgate),
-    a convencao que reproduz a calculadora (ver CONFERENCIA.md)."""
+def du_calculadora(inicio, resgate):
+    """Dias uteis no intervalo [inicio, D+1 util do resgate), com 20/11 tratado
+    como dia util: a convencao que reproduz a calculadora (ver CONFERENCIA.md).
+    A referencia conta [inicio, resgate), com o resgate liquidando no proprio dia."""
 
     def util(d):
-        if sem_20_11 and d.month == 11 and d.day == 20 and d.weekday() < 5:
+        if d.month == 11 and d.day == 20 and d.weekday() < 5:
             return True
         return eh_dia_util(d)
 
-    def proximo(d):
-        d += dt.timedelta(days=1)
-        while not util(d):
-            d += dt.timedelta(days=1)
-        return d
-
-    a, b = proximo(inicio), proximo(fim)
-    return sum(1 for k in range((b - a).days) if util(a + dt.timedelta(days=k)))
+    fim = proximo_dia_util(resgate)
+    return sum(
+        1 for k in range((fim - inicio).days) if util(inicio + dt.timedelta(days=k))
+    )
 
 
 linhas = []
@@ -70,25 +68,33 @@ for id_, dc, du, bruto, cust, aliq, ir, liq, status, _ in api:
     assert status == "0", id_
     c = casos[id_]
     v = float(c["valor_aplicado_brl"])
-    d0 = dt.date.fromisoformat(c["data_aplicacao"])
-    n = int(c["prazo_dias"])
+    inicio = dt.date.fromisoformat(c["data_inicio"])
+    resgate = dt.date.fromisoformat(c["data_resgate"])
+    dias = int(c["dias_corridos"])
     taxa, cust_aa, isento, _o = fg.taxa_e_origem(
         c, series[c["data_aplicacao"]], tesouro
     )
     r = calcular_rfl(
-        v, taxa, d0, n, "252", taxa_custodia_aa=cust_aa, valor_isento_custodia=isento
+        v,
+        taxa,
+        inicio,
+        dias,
+        "252",
+        taxa_custodia_aa=cust_aa,
+        valor_isento_custodia=isento,
     )
     assert f"{r.rfl:.2f}" == c["gab_rfl_brl"], id_
     linhas.append(
         dict(
             id=id_,
             produto=c["produto_id"],
-            prazo=n,
+            prazo=int(c["prazo_dias"]),
             valor=v,
+            dias_corridos_ref=dias,
+            dias_corridos_api=dc,
             du_ref=r.dias_uteis,
             du_api=du,
-            dc_api=dc,
-            du_hipotese=du_liquidacao(d0, d0 + dt.timedelta(days=n), sem_20_11=True),
+            du_convencao_api=du_calculadora(inicio, resgate),
             bruto_ref=r.montante_bruto,
             bruto_api=bruto,
             bruto_ref_com_du_api=v * (1 + taxa) ** (du / 252),
@@ -107,6 +113,12 @@ for id_, dc, du, bruto, cust, aliq, ir, liq, status, _ in api:
 
 print(f"casos comparados: {len(linhas)}")
 print(
+    "dias corridos (prazo do IR) iguais:",
+    sum(l["dias_corridos_ref"] == l["dias_corridos_api"] for l in linhas),
+    "de",
+    len(linhas),
+)
+print(
     "aliquota de IR igual em todos:",
     all(abs(l["aliquota_ref"] - l["aliquota_api"]) < 1e-9 for l in linhas),
 )
@@ -120,8 +132,8 @@ print(
     {k: ddu.count(k) for k in sorted(set(ddu))},
 )
 print(
-    "dias uteis explicados por [D+1 da aplicacao, D+1 do resgate) com 20/11 util:",
-    sum(l["du_hipotese"] == l["du_api"] for l in linhas),
+    "dias uteis explicados por [inicio, D+1 do resgate) com 20/11 util:",
+    sum(l["du_convencao_api"] == l["du_api"] for l in linhas),
     "de",
     len(linhas),
 )

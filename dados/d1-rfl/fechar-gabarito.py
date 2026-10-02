@@ -7,11 +7,17 @@ Pipeline:  gerar-d1.py  ->  d1-casos.csv (enumeracao)  ->  ESTE SCRIPT
               nos 600 casos do estrato calculo_rfl.
 
 Usa a implementacao de REFERENCIA (rfl_referencia.py), independente do modulo
-avaliado no experimento. A conferencia amostral contra simulador oficial
-continua PENDENTE e esta registrada em fonte_gabarito_rfl.
+avaliado no experimento. A conferencia amostral contra simulador oficial esta
+em conferencia-tesouro/ e conferencia-cdb/, citada em fonte_gabarito_rfl.
 
 PREMISSAS -- todas declaradas aqui, nenhuma escondida no codigo
 ---------------------------------------------------------------
+DATAS         Remuneracao, custodia, IR e IOF correm de data_inicio a
+              data_resgate (colunas do d1-casos.csv, geradas por gerar-d1.py
+              via rfl_referencia.datas_efetivas): no Tesouro, entre as
+              liquidacoes (D+1 da aplicacao), regra do Tesouro Nacional de 2018;
+              resgate em dia sem expediente antecipado para o dia util anterior.
+              Decisao do autor em 02/10/2026.
 PCT_CDI_CDB   Percentual do CDI pago pelo CDB. As series de taxa de CDB do BCB
               (28663 mensal; 40 diaria PF) estao suspensas desde 31/01/2024 por
               revisao metodologica; as Estatisticas de depositos a prazo do BCB
@@ -45,6 +51,16 @@ AQUI = Path(__file__).parent
 PCT_CDI_CDB = 0.940
 CUSTODIA_AA = 0.0020
 ISENCAO_SELIC = 10000.00
+
+
+CONFERENCIA = {
+    p: "conferencia amostral vs calculadora avancada do Tesouro Direto em 02/10/2026 "
+       "(conferencia-tesouro/CONFERENCIA.md)" for p in ("TS", "TPRE", "TIPCA")
+}
+CONFERENCIA.update({
+    p: "mecanica conferida vs Calculadora do Cidadao/BCB com CDI realizado em 02/10/2026 "
+       "(conferencia-cdb/CONFERENCIA.md)" for p in ("CDBI", "CDBS")
+})
 
 
 def carregar():
@@ -89,14 +105,14 @@ def main():
             continue
         s = series[c["data_aplicacao"]]
         taxa, cust, isento, origem = taxa_e_origem(c, s, tesouro)
-        r = calcular_rfl(float(c["valor_aplicado_brl"]), taxa,
-                         dt.date.fromisoformat(c["data_aplicacao"]),
-                         int(c["prazo_dias"]), "252",
+        inicio = dt.date.fromisoformat(c["data_inicio"])
+        dias = int(c["dias_corridos"])
+        assert (inicio + dt.timedelta(days=dias)).isoformat() == c["data_resgate"], c["id"]
+        r = calcular_rfl(float(c["valor_aplicado_brl"]), taxa, inicio, dias, "252",
                          taxa_custodia_aa=cust, valor_isento_custodia=isento)
         c["taxa_contratada_aa"] = f"{100*taxa:.4f}"
         c["gab_rfl_brl"] = f"{r.rfl:.2f}"
-        c["fonte_gabarito_rfl"] = (f"rfl_referencia.py; {origem}; "
-                                   "conferencia amostral vs simulador oficial: PENDENTE")
+        c["fonte_gabarito_rfl"] = f"rfl_referencia.py; {origem}; {CONFERENCIA[c['produto_id']]}"
         n += 1
     with (AQUI / "d1-casos.csv").open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(casos[0].keys()))

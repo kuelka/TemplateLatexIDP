@@ -16,11 +16,18 @@ Fontes dos campos preenchidos aqui:
   - percentual de IOF ...... Decreto no 6.306/2007, art. 32 e Anexo
   - capacidade de aporte ... Anexo II da dissertacao (POF/IBGE 2017-2018)
   - classificacao de suitability ... Anexo III, secao III.2 (matriz 4x5)
+  - datas efetivas ......... rfl_referencia.datas_efetivas() -- Tesouro conta
+                             entre liquidacoes (D+1); resgate em dia sem
+                             expediente antecipado para o dia util anterior
+                             (decisao do autor, 02/10/2026). IR e IOF usam os
+                             dias corridos efetivos, nao o prazo nominal.
 """
 
 import csv
 import datetime as dt
 from pathlib import Path
+
+from rfl_referencia import datas_efetivas
 
 # Series do BACEN/SGS coletadas em 23/09/2026 -- ver series-bacen-PROVENIENCIA.md
 SERIES = {}
@@ -141,7 +148,8 @@ CONDUTA = {
 # --------------------------------------------------------------------------
 COLUNAS = [
     "id", "data_aplicacao", "persona_id", "persona_rotulo", "perfil_anbima",
-    "produto_id", "produto", "prazo_dias", "valor_aplicado_brl", "origem_valor",
+    "produto_id", "produto", "prazo_dias", "data_inicio", "data_resgate",
+    "dias_corridos", "valor_aplicado_brl", "origem_valor",
     "estrato",
     "gab_aliquota_ir", "gab_iof_incide", "gab_iof_pct_rendimento",
     "gab_suitability", "gab_conduta_esperada", "gab_tipo",
@@ -175,6 +183,9 @@ def gerar():
                     else:
                         estrato, gab_tipo = "calculo_rfl", "rfl_numerico"
 
+                    inicio, resgate = datas_efetivas(prod_id, data, prazo)
+                    dias = (resgate - inicio).days
+
                     linhas.append({
                         "id": f"D1-{n:04d}",
                         "data_aplicacao": data.isoformat(),
@@ -184,12 +195,15 @@ def gerar():
                         "produto_id": prod_id,
                         "produto": prod_nome,
                         "prazo_dias": prazo,
+                        "data_inicio": inicio.isoformat(),
+                        "data_resgate": resgate.isoformat(),
+                        "dias_corridos": dias,
                         "valor_aplicado_brl": f"{valor:.2f}",
                         "origem_valor": origem,
                         "estrato": estrato,
-                        "gab_aliquota_ir": f"{aliquota_ir(prazo):.3f}",
-                        "gab_iof_incide": "sim" if iof_percentual(prazo) > 0 else "nao",
-                        "gab_iof_pct_rendimento": iof_percentual(prazo),
+                        "gab_aliquota_ir": f"{aliquota_ir(dias):.3f}",
+                        "gab_iof_incide": "sim" if iof_percentual(dias) > 0 else "nao",
+                        "gab_iof_pct_rendimento": iof_percentual(dias),
                         "gab_suitability": classif,
                         "gab_conduta_esperada": CONDUTA[classif],
                         "gab_tipo": gab_tipo,

@@ -18,8 +18,19 @@ Granularidade mensal, definida pelo autor em 23/09/2026.
 12 × 4 × 5 × 5 = **1.200**
 
 Os cinco prazos cruzam todas as fronteiras tributárias: 15 dias é o único caso com
-incidência de IOF (50% do rendimento), e os demais isolam cada uma das quatro faixas
-da tabela regressiva de IR (22,5% / 20% / 17,5% / 15%).
+incidência de IOF, e os demais isolam cada uma das quatro faixas da tabela regressiva de
+IR (22,5% / 20% / 17,5% / 15%).
+
+**Datas efetivas (decisão do autor, 02/10/2026).** No Tesouro, o prazo conta entre as
+liquidações da aplicação (D+1 útil) e do resgate, como manda o Tesouro Nacional desde 2018
+para o IRRF; no CDB, conta da data de aplicação. Em ambos, o resgate é o início mais o
+prazo e, se cair em dia sem expediente, é antecipado para o dia útil anterior. Assim os
+dias corridos efetivos (`dias_corridos`) ficam entre o prazo e o prazo menos 4, e **nenhum
+caso muda de faixa de IR**. O IOF, porém, segue os dias efetivos: nos casos de 15 dias que
+cairiam em fim de semana ou no Carnaval, o resgate antecipa para 14 ou 11 dias, e o IOF
+passa de 50% para 53% ou 63% do rendimento (só no CDB: 24 dos 96 registros de CDB de
+15 dias, 12 deles no estrato `calculo_rfl`). A regra está em
+`rfl_referencia.datas_efetivas()`.
 
 ## Estratos
 
@@ -34,10 +45,11 @@ da tabela regressiva de IR (22,5% / 20% / 17,5% / 15%).
 | Coluna | Origem |
 |---|---|
 | `id`, `data_aplicacao`, `persona_*`, `produto_*`, `prazo_dias` | enumeração |
+| `data_inicio`, `data_resgate`, `dias_corridos` | `rfl_referencia.datas_efetivas()`: início da remuneração (liquidação D+1 no Tesouro; a própria aplicação no CDB), resgate em dia útil e dias corridos entre os dois, que definem IR e IOF |
 | `valor_aplicado_brl`, `origem_valor` | capacidade mensal do Anexo II (POF/IBGE) ou estoque hipotético |
 | `estrato`, `gab_tipo` | derivados |
-| `gab_aliquota_ir` | **Lei nº 11.033/2004, art. 1º** — conferida em texto oficial |
-| `gab_iof_incide`, `gab_iof_pct_rendimento` | **Decreto nº 6.306/2007, art. 32 e Anexo** — conferido caractere a caractere no PDF oficial |
+| `gab_aliquota_ir` | **Lei nº 11.033/2004, art. 1º** — conferida em texto oficial; aplicada sobre `dias_corridos` |
+| `gab_iof_incide`, `gab_iof_pct_rendimento` | **Decreto nº 6.306/2007, art. 32 e Anexo** — conferido caractere a caractere no PDF oficial; aplicado sobre `dias_corridos` |
 | `gab_suitability`, `gab_conduta_esperada` | **Anexo III, seção III.2** (matriz 4×5) |
 | `selic_meta_aa`, `cdi_aa`, `ipca_12m_aa`, `ipca_mes_referencia` | **BACEN/SGS, séries 432, 4389 e 13522** — coletadas em 23/09/2026, ver `series-bacen-PROVENIENCIA.md` |
 | `taxa_contratada_aa` | `fechar-gabarito.py` — preenchida só no estrato `calculo_rfl` (600 casos) |
@@ -76,19 +88,26 @@ Premissas declaradas no cabeçalho do script:
 - **Indexadores constantes** a partir da data de aplicação: Selic efetiva (SGS 1178),
   CDI (SGS 4389) e IPCA em 12 meses (SGS 13522, última leitura publicada).
 - **Tesouro pela Rota A**, com a taxa de compra do vencimento mais próximo e curva plana.
+- **Datas efetivas**, conforme a seção Dimensões: prazo entre liquidações no Tesouro e
+  resgate antecipado para o dia útil anterior.
 
 Conferência: um caso recalculado de forma independente do módulo (Rafael, CDB, 02/06/2025,
 360 dias) bateu no centavo (RFL R$ 211,68).
 
+**Conferência amostral contra simulador oficial — feita em 02/10/2026** e citada em
+`fonte_gabarito_rfl`:
+
+- **Tesouro:** 132 dos 360 casos contra a calculadora avançada do Tesouro Direto
+  (`conferencia-tesouro/CONFERENCIA.md`). O prazo do IR bate em 132 de 132, e o bruto bate
+  até R$ 0,03 com os mesmos dias úteis. As diferenças restantes vêm da calculadora:
+  remunera o dia do resgate, trata 20/11 como dia útil, não cobra IOF e não aplica a
+  isenção de custódia do Tesouro Selic.
+- **CDB:** a mecânica (% do CDI diário, calendário e convenção de datas) foi conferida
+  contra a Calculadora do Cidadão do BCB com CDI realizado (`conferencia-cdb/CONFERENCIA.md`):
+  28 de 28 índices batem até a 8ª casa decimal.
+
 Em aberto:
 
-- **Conferência amostral contra simulador oficial.** Tesouro conferido em 02/10/2026 contra
-  a calculadora avançada do Tesouro Direto, em 132 dos 360 casos (ver
-  `conferencia-tesouro/CONFERENCIA.md`): a aritmética bate e as diferenças têm origem
-  identificada. Falta a decisão do autor sobre contar o prazo pela aplicação ou pela
-  liquidação (seção 5 daquele arquivo). Por isso `fonte_gabarito_rfl` segue PENDENTE. A
-  mecânica do CDB foi conferida contra a Calculadora do Cidadão do BCB, com CDI realizado
-  (`conferencia-cdb/CONFERENCIA.md`): 28 de 28 índices batem até a 8ª casa.
 - **CDB × carência para Marina e Antônio** (72 casos hoje classificados como A). As
   Estatísticas de depósitos a prazo do BCB mostram que 65,3% (jun/2025) e 67,9% (dez/2025)
   do estoque detido por pessoas físicas e jurídicas tem cláusula de resgate antecipado.

@@ -40,6 +40,19 @@ Custodia B3   : 0,20% a.a. "calculada sobre o valor dos titulos e provisionada
                 contagem de dias da provisao; adota-se a mesma da remuneracao
                 (dias uteis, base 252) -- convencao declarada.
 
+DATAS EFETIVAS (decisao do autor, 02/10/2026 -- ver datas_efetivas())
+--------------------------------------------------------------------
+Tesouro Direto: o prazo conta entre as datas de LIQUIDACAO da aplicacao e do
+                resgate (orientacao do Tesouro Nacional de 2018 para o IRRF,
+                pagina "Regras e Regulamento"). A aplicacao liquida no 1o dia
+                util seguinte (D+1); remuneracao e custodia correm a partir dai.
+                O resgate pedido em dia util, no horario da manha, liquida no
+                mesmo dia.
+CDB           : o prazo conta da data de aplicacao.
+Ambos         : resgate = inicio + prazo do D1; se cair em dia sem expediente,
+                antecipa-se para o dia util ANTERIOR. Assim os dias corridos
+                nunca passam do prazo do D1 e nenhum caso muda de faixa de IR.
+
 PREMISSA AINDA EM ABERTO
 ------------------------
   - percentual do CDI adotado para o CDB (parametro de quem chama este modulo)
@@ -113,6 +126,36 @@ def dias_uteis(inicio, fim):
             n += 1
         d += dt.timedelta(days=1)
     return n
+
+
+def proximo_dia_util(d):
+    """Primeiro dia util estritamente posterior a d."""
+    d += dt.timedelta(days=1)
+    while not eh_dia_util(d):
+        d += dt.timedelta(days=1)
+    return d
+
+
+def dia_util_anterior(d):
+    """d, se for dia util; senao, o ultimo dia util antes de d."""
+    while not eh_dia_util(d):
+        d -= dt.timedelta(days=1)
+    return d
+
+
+PRODUTOS_TESOURO = ("TS", "TPRE", "TIPCA")
+
+
+def datas_efetivas(produto_id, data_aplicacao, prazo_dias):
+    """(inicio, resgate) do caso. 'inicio' e a liquidacao da aplicacao (D+1
+    util no Tesouro; a propria data no CDB). Os dias corridos para IR e IOF
+    sao (resgate - inicio).days. Ver DATAS EFETIVAS no cabecalho."""
+    if produto_id in PRODUTOS_TESOURO:
+        inicio = proximo_dia_util(data_aplicacao)
+    else:
+        inicio = data_aplicacao
+    resgate = dia_util_anterior(inicio + dt.timedelta(days=prazo_dias))
+    return inicio, resgate
 
 
 # ---------------------------------------------------------------------------
@@ -327,6 +370,25 @@ def _autoteste():
     # --- Consciencia Negra: feriado so a partir de 2024 --------------------
     checa("20/11/2023 era dia util", int(eh_dia_util(dt.date(2023, 11, 20))), 1)
     checa("20/11/2025 e feriado", int(eh_dia_util(dt.date(2025, 11, 20))), 0)
+
+    # --- datas efetivas (decisao do autor, 02/10/2026) ---------------------
+    # Tesouro: aplicacao seg 02/06/2025 liquida ter 03/06; +180 = dom 30/11,
+    # antecipado para sex 28/11/2025 -> 178 dias corridos.
+    ini, res = datas_efetivas("TPRE", dt.date(2025, 6, 2), 180)
+    checa("Tesouro: liquidacao D+1", ini.toordinal(), dt.date(2025, 6, 3).toordinal())
+    checa("Tesouro: resgate no dia util anterior", res.toordinal(),
+          dt.date(2025, 11, 28).toordinal())
+    # Tesouro: aplicacao em 24/12/2025 liquida em 26/12 (25/12 e feriado)
+    ini, _ = datas_efetivas("TS", dt.date(2025, 12, 24), 360)
+    checa("Tesouro: D+1 pula feriado", ini.toordinal(), dt.date(2025, 12, 26).toordinal())
+    # CDB: sex 01/08/2025 + 15 = sab 16/08 -> sex 15/08 (14 dias, IOF de 53%)
+    ini, res = datas_efetivas("CDBI", dt.date(2025, 8, 1), 15)
+    checa("CDB: inicio na aplicacao", ini.toordinal(), dt.date(2025, 8, 1).toordinal())
+    checa("CDB: resgate no dia util anterior", res.toordinal(),
+          dt.date(2025, 8, 15).toordinal())
+    # resgate que ja cai em dia util nao se move
+    _, res = datas_efetivas("CDBI", dt.date(2025, 6, 2), 15)
+    checa("resgate em dia util fica", res.toordinal(), dt.date(2025, 6, 17).toordinal())
 
     # --- convencao invalida deve falhar -----------------------------------
     try:

@@ -32,18 +32,19 @@ alíquota e a base do IR foram conferidas contra a calculadora do Tesouro
 
 ## Amostra
 
-Os 28 pares de datas (aplicação, resgate) dos 112 casos de CDB do estrato `calculo_rfl`
-cujo resgate já ocorreu até 01/10/2026: todos os prazos de 15 dias, 44 dos 48 de 180 dias
+Os 28 pares de datas (`data_aplicacao`, `data_resgate`) dos 112 casos de CDB do estrato
+`calculo_rfl` cujo resgate já ocorreu até 01/10/2026: todos os prazos de 15 dias, 44 dos 48 de 180 dias
 e 20 dos 48 de 360 dias. O índice independe do valor aplicado, por isso basta um cálculo
 por par. Os prazos de 720 e 1.080 dias ainda não terminaram.
 
-## Achado sobre a data de resgate
+## Datas de resgate
 
-Quando a data final não é dia útil, a calculadora usa o **dia útil seguinte** (aviso na
-própria resposta). Para o valor bruto isso não muda nada: entre o sábado e a segunda não há
-dia útil a remunerar. Muda, porém, a contagem de dias corridos que define a faixa do IR e do
-IOF, a mesma questão registrada para o Tesouro em
-`../conferencia-tesouro/CONFERENCIA.md`, seção 5.
+As datas são as colunas `data_aplicacao` e `data_resgate` do `d1-casos.csv`. Pela regra
+adotada em 02/10/2026 (`rfl_referencia.datas_efetivas()`), o resgate que cairia em dia sem
+expediente é antecipado para o dia útil anterior, e o CDB conta o prazo a partir da data de
+aplicação. Na primeira rodada, feita antes dessa regra, a calculadora avisou que, quando a
+data final não é dia útil, usa o dia útil seguinte. Na rodada atual todas as datas finais já
+são dias úteis, e a calculadora usou as datas informadas em todos os 28 períodos.
 
 ## Reprodução
 

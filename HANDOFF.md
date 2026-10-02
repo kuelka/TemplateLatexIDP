@@ -83,7 +83,7 @@ ordinária e 12 de vigência (D2b). Pendente de revisão item a item pelo autor.
 
 ### Implementação de referência (`dados/d1-rfl/rfl_referencia.py`)
 Calcula o RFL a partir de tabelas tributárias verificadas, com contagem de dias úteis a
-partir de feriados calculados (Páscoa por Meeus). 36 verificações no autoteste
+partir de feriados calculados (Páscoa por Meeus). 42 verificações no autoteste
 (`python3 rfl_referencia.py`).
 
 ---
@@ -121,6 +121,12 @@ implícito à mesma taxa (limitação declarada; ver seção 5 e o README do D1)
 - Prazo × vencimento do Tesouro: Rota A (seção 4), **mantida** em 02/10/2026 mesmo
   sabendo que em 135 dos 360 casos de Tesouro o título vence antes do resgate (limitação
   declarada no README do D1). Não troque a regra de seleção sem decisão do autor.
+- Datas efetivas (02/10/2026): no Tesouro, o prazo conta entre as **liquidações** (aplicação
+  em D+1 útil), regra do Tesouro Nacional de 2018 para o IRRF; no CDB, da data de
+  aplicação. Resgate que cairia em dia sem expediente é **antecipado para o dia útil
+  anterior**, para nenhum caso mudar de faixa de IR. IR e IOF usam `dias_corridos`. Regra
+  em `rfl_referencia.datas_efetivas()`; colunas `data_inicio`, `data_resgate` e
+  `dias_corridos` no `d1-casos.csv`.
 
 **Em aberto — não decida pelo autor:**
 
@@ -137,12 +143,11 @@ implícito à mesma taxa (limitação declarada; ver seção 5 e o README do D1)
 real (176.390 linhas; tamanho e SHA-256 em `tesouro-PROVENIENCIA.txt`). Ver
 `dados/d1-rfl/COMO-EXTRAIR-TESOURO.md`.
 
-**(b) Fechar o gabarito do D1. FEITO em 02/10/2026** pelo `fechar-gabarito.py`. Conferência
-do Tesouro contra a calculadora avançada do Tesouro Direto feita em 02/10/2026 (132 casos,
-`dados/d1-rfl/conferencia-tesouro/CONFERENCIA.md`); falta a decisão do autor sobre o prazo
-pela aplicação ou pela liquidação (seção 5 daquele arquivo). *Critério de aceite*: uma amostra conferida contra
-simulador oficial (Tesouro Direto, calculadora ANBIMA), com o resultado da conferência
-registrado em `fonte_gabarito_rfl`.
+**(b) Fechar o gabarito do D1. FEITO em 02/10/2026**, inclusive a conferência amostral. Gabarito
+pelo `fechar-gabarito.py`. Tesouro conferido contra a calculadora avançada do Tesouro
+Direto (132 casos; `dados/d1-rfl/conferencia-tesouro/CONFERENCIA.md`); mecânica do CDB
+conferida contra a Calculadora do Cidadão do BCB com CDI realizado (28 períodos;
+`dados/d1-rfl/conferencia-cdb/CONFERENCIA.md`). Resultado citado em `fonte_gabarito_rfl`.
 
 **(c) Escrever o módulo Python do RFL** — objetivo específico (c), o que o agente chama
 por *function calling*. *Critério de aceite*: reproduz o gabarito dentro do limiar de
