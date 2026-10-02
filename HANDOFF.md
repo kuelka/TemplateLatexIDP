@@ -137,8 +137,10 @@ implícito à mesma taxa (limitação declarada; ver seção 5 e o README do D1)
 real (176.390 linhas; tamanho e SHA-256 em `tesouro-PROVENIENCIA.txt`). Ver
 `dados/d1-rfl/COMO-EXTRAIR-TESOURO.md`.
 
-**(b) Fechar o gabarito do D1. FEITO em 02/10/2026** pelo `fechar-gabarito.py`. Falta só
-a conferência amostral contra simulador oficial. *Critério de aceite*: uma amostra conferida contra
+**(b) Fechar o gabarito do D1. FEITO em 02/10/2026** pelo `fechar-gabarito.py`. Conferência
+do Tesouro contra a calculadora avançada do Tesouro Direto feita em 02/10/2026 (132 casos,
+`dados/d1-rfl/conferencia-tesouro/CONFERENCIA.md`); falta a decisão do autor sobre o prazo
+pela aplicação ou pela liquidação (seção 5 daquele arquivo). *Critério de aceite*: uma amostra conferida contra
 simulador oficial (Tesouro Direto, calculadora ANBIMA), com o resultado da conferência
 registrado em `fonte_gabarito_rfl`.
 
