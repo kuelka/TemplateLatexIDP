@@ -25,6 +25,7 @@ direto. "Data do servidor" é o cabeçalho HTTP `Date` da resposta (UTC).
 | `in-rfb-1585-2015-receita-api.json` | IN RFB nº 1.585/2015 | texto em segmentos, cada um com os marcadores `tachado`, `original` e `compilado`; vigente; publicada no DOU de 02/09/2015 | `https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/67494/visao/multivigente` | 02/10/2026 23:30:14 | 522239 | `c46bb0274f3f10a606163e9ab8ca418b4a7c5be3c6e5176e58bfbe0aae39dd22` |
 | `ato-declaratorio-cn-67-2025-mpv-1303.htm` | Ato Declaratório do Presidente da Mesa do Congresso Nacional nº 67/2025 | declara encerrado em 08/10/2025 o prazo de vigência da MP nº 1.303/2025 (DOU de 15/10/2025) | `https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/congresso/adc-67-mpv1.303.htm` | 02/10/2026 23:29:06 | 4595 | `f25cbd46fdfe5c02c9fffd14f5a7c3d7f69c94bedc308d6f89be7dac2222dc21` |
 | `tesouro-direto-regras-e-regulamento-texto.txt` | Tesouro Direto, página "Regras e Regulamento" | **texto extraído**, não o arquivo original (ver observação) | `https://www.tesourodireto.com.br/sobre-o-tesouro/regras-e-regulamento` | 02/10/2026 23:28:59 | 25646 | `94b4a293909c3a365c9e6c56b1fbc3e89266bbded16ad545ebba0fa42beceea4` |
+| `regulamento-tesouro-direto-2024-10-11.pdf` | Regulamento do Tesouro Direto (versão de 11/10/2024) | PDF com camada de texto, 45 páginas; itens 137 a 139 tratam da taxa de custódia e da isenção do Tesouro Selic até R$ 10.000,00 | `https://www.tesourodireto.com.br/documents/20117/0/REGULAMENTO_DO_TESOURO_DIRETO___11.10.2024.pdf/cb59ae6b-4c6a-f9ba-16c9-dd4ab44c12d5?version=1.0&t=1752002939555&download=true` | 02/10/2026 23:28:59 (leitura no navegador); baixado pelo autor às 23:39:59 | 500605 | `9a192368200466ff1c5198e6ee89d34dfe51088e6d6c69209a3f1116d21270eb` |
 
 ## Observações
 
@@ -49,8 +50,7 @@ direto. "Data do servidor" é o cabeçalho HTTP `Date` da resposta (UTC).
   foi calculado no navegador e conferido na cópia local, que inclui 47 espaços não separáveis (U+00A0).
   O texto da página contém duas imprecisões: diz "15% para aplicações com prazo acima de 721 dias" (a Lei nº
   11.033/2004 e a IN nº 1.585/2015 dizem acima de 720) e cita a "Instrução Normativa RFB nº 1.585/14" (é de 2015).
-- **Regulamento do Tesouro Direto (PDF):** pendente. O site também bloqueia o terminal. Pelo navegador, o arquivo
-  `REGULAMENTO_DO_TESOURO_DIRETO___11.10.2024.pdf` tinha 500.605 bytes e SHA-256
-  `9a192368200466ff1c5198e6ee89d34dfe51088e6d6c69209a3f1116d21270eb` em 02/10/2026 23:28:59 UTC
-  (`https://www.tesourodireto.com.br/documents/20117/0/REGULAMENTO_DO_TESOURO_DIRETO___11.10.2024.pdf/cb59ae6b-4c6a-f9ba-16c9-dd4ab44c12d5?version=1.0&t=1752002939555&download=true`).
-  Deve ser baixado manualmente e conferido contra esse hash antes de entrar na pasta.
+- **Regulamento do Tesouro Direto (PDF):** o site também bloqueia o terminal, e o navegador do app não grava
+  arquivos. O SHA-256 e o tamanho foram registrados primeiro pela leitura no navegador (02/10/2026 23:28:59 UTC);
+  o autor baixou o arquivo no próprio navegador às 23:39:59 UTC, e a cópia arquivada tem exatamente o mesmo
+  SHA-256 e tamanho.
