@@ -94,7 +94,8 @@ partir de feriados calculados (Páscoa por Meeus). 36 verificações no autotest
 720 e 1.080 dias ficam como estão, e a taxa do título de vencimento mais próximo é usada
 como aproximação, sob premissa declarada de curva plana. Consequência a registrar na
 metodologia: o RFL do Prefixado deixa de ser exato, porque o resgate ocorre antes do
-vencimento.
+vencimento — ou, em 135 dos 360 casos de Tesouro, depois dele, com reinvestimento
+implícito à mesma taxa (limitação declarada; ver seção 5 e o README do D1).
 
 **Granularidade mensal** do D1, com 1.200 registros, incluindo o CDB acima do teto do FGC.
 
@@ -193,6 +194,12 @@ específico (f).
 ferramenta de fetch, e o Tesouro Transparente não respondeu de jeito nenhum. Se seu
 ambiente bloquear, não contorne inventando número: peça o arquivo ao autor.
 
+**Push bloqueado pelo proxy da sessão.** Em ambiente com proxy de rede, o push só passa
+se o repositório estiver entre as fontes autorizadas da sessão. Se o proxy recusar
+("not in this session's authorized repository set"), **não desligue o proxy nem tente
+contorná-lo**: peça ao autor que adicione o repositório às fontes da sessão, ou gere um
+patch (`git format-patch`) para ele aplicar e enviar da máquina dele.
+
 ---
 
 ## 8. Pendências menores
@@ -201,3 +208,7 @@ ambiente bloquear, não contorne inventando número: peça o arquivo ao autor.
 - `apendices/apendice-a.tex` continua com o texto-modelo do template.
 - D2 tem 51 itens; o documento de alinhamento fala em "30 a 50".
 - Revisão item a item do D2 pelo autor, antes de qualquer uso.
+- URL de origem e data do download de `bibliografia/dados/bcb-depositos-prazo-ValoresNatDetentores.xls`,
+  marcadas como pendentes em `bibliografia/README.md` — a informar pelo autor.
+- Convenção de dias da provisão da custódia (adotada: dias úteis, base 252, porque o
+  regulamento não especifica) — o autor pode preferir dias corridos.
