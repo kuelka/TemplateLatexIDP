@@ -40,33 +40,53 @@ da tabela regressiva de IR (22,5% / 20% / 17,5% / 15%).
 | `gab_iof_incide`, `gab_iof_pct_rendimento` | **Decreto nº 6.306/2007, art. 32 e Anexo** — conferido caractere a caractere no PDF oficial |
 | `gab_suitability`, `gab_conduta_esperada` | **Anexo III, seção III.2** (matriz 4×5) |
 | `selic_meta_aa`, `cdi_aa`, `ipca_12m_aa`, `ipca_mes_referencia` | **BACEN/SGS, séries 432, 4389 e 13522** — coletadas em 23/09/2026, ver `series-bacen-PROVENIENCIA.md` |
-| `taxa_contratada_aa` | **vazia — pendente** |
-| `gab_rfl_brl` | **vazia — pendente** |
-| `fonte_gabarito_rfl` | **vazia — pendente** |
+| `taxa_contratada_aa` | `fechar-gabarito.py` — preenchida só no estrato `calculo_rfl` (600 casos) |
+| `gab_rfl_brl` | `fechar-gabarito.py`, via `rfl_referencia.py` — só no estrato `calculo_rfl` |
+| `fonte_gabarito_rfl` | `fechar-gabarito.py` — origem da taxa e estado da conferência contra simulador oficial |
 
 ## O que falta para fechar o gabarito
 
-Das séries de mercado, as do BACEN já estão coletadas e arquivadas (`series-bacen.csv`).
-Restam quatro itens, três deles decisões do autor:
+Resolvidos em 23/09 e 02/10/2026:
 
-1. **Taxas do Tesouro Prefixado e IPCA+** nas doze datas. O BACEN não publica taxas
-   contratadas do Tesouro Direto. A fonte é o Tesouro Transparente, arquivo
-   `precotaxatesourodireto.csv`; o recurso não tem datastore ativo, então não há consulta
-   filtrada — o arquivo completo precisa ser baixado e arquivado no repositório.
-2. **Ágio ou deságio do Tesouro Selic** sobre a meta. A LFT é negociada a "Selic + x%",
-   e esse `x` também vem do Tesouro Transparente. A meta isolada não fecha a taxa.
-3. **Percentual do CDI adotado para o CDB.** Não é dado público — é premissa
-   institucional, que precisa ser declarada explicitamente na metodologia.
-4. **Convenção de capitalização.** Os prazos do dataset estão em dias corridos, porque é
-   assim que IR e IOF incidem, mas a remuneração de renda fixa no Brasil capitaliza em
-   dias úteis (base 252). A conversão exige calendário de feriados até 2029, já que os
-   prazos de 1.080 dias a partir de 2026 terminam naquele ano. A regra de conversão é
-   decisão metodológica e precisa ser fixada antes de qualquer cálculo.
+- **Taxas do Tesouro Prefixado e IPCA+ e taxa de compra do Tesouro Selic** (positiva =
+  deságio, negativa = ágio) — extraídas do Tesouro
+  Transparente pelo `extrair-tesouro.py` (176.390 linhas lidas, 200 no recorte, SHA-256
+  do original registrado em `tesouro-PROVENIENCIA.txt`).
+- **Convenção de capitalização** — não é escolha: base 252 dias úteis para remuneração e
+  dias corridos para IR e IOF, convenção consolidada do mercado.
+- **Base do IR e custódia** — não é escolha: a base é o rendimento bruto líquido do IOF
+  (IN RFB nº 1.585/2015, art. 46, § 1º; MAFON, código 8053). A custódia da B3 (0,20% a.a.,
+  Tesouro Selic isento até R$ 10.000 por CPF) é deduzida do valor recebido, **fora** da
+  base do imposto.
+- **Base da custódia** — não é escolha: o Regulamento do Tesouro Direto manda calculá-la
+  "sobre o valor dos títulos" e provisioná-la diariamente, ou seja, sobre o valor
+  atualizado da posição, não sobre o valor aplicado (corrigido em 02/10/2026; alterou o
+  RFL de 145 casos de Prefixado e IPCA+, no máximo R$ 2,44). O regulamento não fixa a
+  contagem de dias da provisão; adotou-se a da remuneração (dias úteis, base 252).
 
-Fixados esses quatro pontos, falta ainda a **implementação de referência** do cálculo do
-RFL, **independente do módulo Python sob teste**, conferida por amostragem contra
-simuladores oficiais. O gabarito não pode ser produzido pelo próprio módulo que o
-experimento avalia — seria circular.
+**Gabarito do RFL fechado em 02/10/2026** pelo `fechar-gabarito.py`, para os 600 casos
+do estrato `calculo_rfl`. Para reproduzir: `python3 gerar-d1.py && python3 fechar-gabarito.py`.
+
+Premissas declaradas no cabeçalho do script:
+
+- **CDB a 94,0% do CDI.** As séries de taxa de CDB do BCB (28663 mensal; 40 diária PF)
+  estão suspensas desde 31/01/2024, e as Estatísticas de depósitos a prazo do BCB
+  (semestrais) publicam só estoques, sem taxa. Adotou-se a mediana dos oito últimos meses
+  oficiais (jun/2023–jan/2024; média 94,4%, faixa 91,5%–97,1%) — extrapolação declarada.
+- **Indexadores constantes** a partir da data de aplicação: Selic efetiva (SGS 1178),
+  CDI (SGS 4389) e IPCA em 12 meses (SGS 13522, última leitura publicada).
+- **Tesouro pela Rota A**, com a taxa de compra do vencimento mais próximo e curva plana.
+
+Conferência: um caso recalculado de forma independente do módulo (Rafael, CDB, 02/06/2025,
+360 dias) bateu no centavo (RFL R$ 211,68).
+
+Em aberto:
+
+- **Conferência amostral contra simulador oficial** (Tesouro Direto, calculadora ANBIMA),
+  registrada como PENDENTE em `fonte_gabarito_rfl`.
+- **CDB × carência para Marina e Antônio** (72 casos hoje classificados como A). As
+  Estatísticas de depósitos a prazo do BCB mostram que 65,3% (jun/2025) e 67,9% (dez/2025)
+  do estoque detido por pessoas físicas e jurídicas tem cláusula de resgate antecipado.
 
 ## Decisão sobre o horizonte (23/09/2026) — Rota A
 
@@ -77,13 +97,26 @@ declarada de curva plana. Consequência a registrar na metodologia: o RFL do Pre
 deixa de ser exato e passa a depender dessa premissa, porque o resgate ocorre antes do
 vencimento. Ver `COMO-EXTRAIR-TESOURO.md`, seção 3.
 
+**Limitação declarada (02/10/2026): título que vence antes do resgate.** A regra do
+vencimento mais próximo escolhe, em **135 dos 360 casos de Tesouro** do estrato
+`calculo_rfl` (37,5%; 69 de Tesouro Selic, 46 de Prefixado e 20 de IPCA+), um título que
+vence **antes** da data de resgate — `gap_dias` negativo em `tesouro-selecao.csv`, até
+495 dias. Nesses casos não há venda antecipada nem marcação a mercado: a curva plana
+equivale a supor que o valor recebido no vencimento é reinvestido à mesma taxa até o
+resgate, e o gabarito aplica a alíquota de IR do prazo do D1, não a do prazo efetivo até
+o vencimento (que pode cair em faixa diferente). O autor manteve a regra por decisão de
+método em 02/10/2026; a alternativa avaliada — vencimento mais próximo igual ou
+posterior ao resgate — eliminaria o reinvestimento, mas alteraria 66 das 180 seleções e
+elevaria o descasamento mediano de 121 para 209 dias (máximo de 495 para 992).
+
 ## Nota sobre o horizonte dos prazos
 
 Os prazos de 720 e 1.080 dias, a partir das datas finais da janela, terminam em 2028 e
 2029. O RFL desses casos não é, portanto, retorno **realizado**, e sim projeção sob
 premissa declarada na data de aplicação — que é o que um simulador oficial faz. Para o
-Prefixado a taxa é contratada e a projeção é exata; para Tesouro Selic, CDB e IPCA+ ela
-depende de premissa sobre a trajetória futura do indexador. Isso distingue o dataset D1
+Prefixado a taxa é contratada, mas pela Rota A a projeção depende da premissa de curva
+plana (seção anterior); para Tesouro Selic, CDB e IPCA+ ela depende também de premissa
+sobre a trajetória futura do indexador. Isso distingue o dataset D1
 do backtesting de doze meses descrito no Capítulo 4, que mede retorno realizado.
 
 ## Decisões que ficaram registradas aqui e ainda cabem ao orientador
@@ -93,11 +126,11 @@ do backtesting de doze meses descrito no Capítulo 4, que mede retorno realizado
    (acima do teto por conglomerado, abaixo do teto global de R$ 1.000.000 por CPF em
    quatro anos). É a mesma premissa sob a qual a célula foi classificada na matriz do
    Anexo III. Está marcado em `origem_valor`.
-2. **Perguntas de cálculo sobre produto inadequado.** Os 300 registros do estrato
-   `recusa_por_inadequacao` hoje não têm RFL esperado. Um cliente pode perguntar a
-   rentabilidade de um produto que lhe é inadequado, e há duas condutas defensáveis —
-   calcular e sinalizar a inadequação, ou recusar. A escolha altera o gabarito desses
-   registros.
+2. **Perguntas de cálculo sobre produto inadequado — decidido em 02/10/2026.** O sistema
+   não recomenda **nem informa a rentabilidade** de produto inadequado. Os 300 registros do
+   estrato `recusa_por_inadequacao` permanecem sem RFL esperado e testam a recusa. A opção
+   de calcular e sinalizar foi descartada por aumentar o volume de verificação em 300 casos.
+
 3. **Redundância do estrato de abstenção.** Os 300 registros da persona sem capacidade
    têm resposta invariante quanto a produto e prazo; variam só na data. Sustentam que a
    abstenção se mantém sob qualquer condição de mercado, mas podem ser reduzidos se o

@@ -132,7 +132,7 @@ MATRIZ = {
 CONDUTA = {
     "A":   "recomendar",
     "AR":  "recomendar com ressalva explicita",
-    "I":   "nao recomendar (vedacao do art. 6o, I, da Res. CVM no 30/2021)",
+    "I":   "nao recomendar nem informar rentabilidade (vedacao do art. 6o, I, da Res. CVM no 30/2021)",
     "N/A": "abster-se de recomendar por ausencia de capacidade de investimento",
 }
 

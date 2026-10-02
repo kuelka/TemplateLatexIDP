@@ -29,3 +29,4 @@ main.pdf
 .DS_Store
 Thumbs.db
 precotaxatesourodireto.csv
+__pycache__/

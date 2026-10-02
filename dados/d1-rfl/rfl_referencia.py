@@ -21,15 +21,28 @@ IR  : Lei no 11.033/2004, art. 1o -- 22,5% / 20% / 17,5% / 15%
 IOF : Decreto no 6.306/2007, art. 32 e Anexo -- sobre o RENDIMENTO, nunca sobre
       o principal, zerando a partir do 30o dia corrido
 
-PREMISSAS AINDA NAO DECLARADAS PELO AUTOR
------------------------------------------
-Estao expostas como PARAMETROS, sem valor default silencioso, justamente para
-nao serem decididas por omissao:
-  - convencao de capitalizacao ("252" ou "365")
-  - percentual do CDI adotado para o CDB
-  - taxa de custodia da B3
-A ordem de incidencia entre custodia e IR tambem e premissa: aqui a custodia e
-deduzida do montante bruto ANTES da apuracao da base tributavel.
+CONVENCOES FIXADAS (nao sao escolhas do autor -- sao regra de mercado ou lei)
+--------------------------------------------------------------------------
+Capitalizacao : base 252 dias uteis para a remuneracao; dias corridos para
+                IR e IOF. Convencao consolidada do mercado brasileiro.
+Base do IR    : diferenca positiva entre o valor da alienacao, LIQUIDO DO IOF,
+                e o valor da aplicacao -- IN RFB no 1.585/2015, art. 46, par. 1o;
+                confirmado no MAFON da Receita Federal, codigo 8053. Somente o
+                IOF e deduzido da base. A taxa de custodia NAO reduz a base do
+                imposto: e deduzida a parte, do valor recebido (Tesouro Direto,
+                Regras e Regulamento: "sera deduzida do valor que voce recebera").
+Custodia B3   : 0,20% a.a. "calculada sobre o valor dos titulos e provisionada
+                diariamente na posicao do investidor", cobranca pro rata;
+                Tesouro Selic isento ate R$ 10.000,00 por CPF, cobranca apenas
+                sobre o excedente (Tesouro Direto, Regras e Regulamento; B3,
+                Tarifas de Tesouro Direto). A base e o valor ATUALIZADO da
+                posicao, nao o valor aplicado. O regulamento nao fixa a
+                contagem de dias da provisao; adota-se a mesma da remuneracao
+                (dias uteis, base 252) -- convencao declarada.
+
+PREMISSA AINDA EM ABERTO
+------------------------
+  - percentual do CDI adotado para o CDB (parametro de quem chama este modulo)
 """
 
 import datetime as dt
@@ -59,7 +72,7 @@ def pascoa(ano):
 
 def feriados_nacionais(ano):
     p = pascoa(ano)
-    return {
+    f = {
         dt.date(ano, 1, 1):    "Confraternizacao Universal",
         p - dt.timedelta(48):  "Carnaval (segunda)",
         p - dt.timedelta(47):  "Carnaval (terca)",
@@ -71,9 +84,12 @@ def feriados_nacionais(ano):
         dt.date(ano, 10, 12):  "N. Sra. Aparecida",
         dt.date(ano, 11, 2):   "Finados",
         dt.date(ano, 11, 15):  "Proclamacao da Republica",
-        dt.date(ano, 11, 20):  "Consciencia Negra (Lei no 14.759/2023)",
         dt.date(ano, 12, 25):  "Natal",
     }
+    # Feriado nacional apenas a partir de 2024 (Lei no 14.759, de 21/12/2023).
+    if ano >= 2024:
+        f[dt.date(ano, 11, 20)] = "Consciencia Negra (Lei no 14.759/2023)"
+    return f
 
 
 _CACHE = {}
@@ -149,17 +165,26 @@ class ResultadoRFL:
 
 
 def calcular_rfl(valor_aplicado, taxa_aa, data_aplicacao, dias_corridos,
-                 convencao, taxa_custodia_aa=0.0):
+                 convencao="252", taxa_custodia_aa=0.0,
+                 valor_isento_custodia=0.0):
     """
     valor_aplicado : R$ aplicados
     taxa_aa        : taxa contratada em % a.a. na forma decimal (0.1475 = 14,75%)
     data_aplicacao : datetime.date
     dias_corridos  : prazo do caso do D1 (define IR e IOF)
-    convencao      : "252" (dias uteis, padrao do mercado brasileiro) ou
-                     "365" (dias corridos). PREMISSA DO AUTOR -- sem default.
-    taxa_custodia_aa : taxa de custodia da B3 em decimal. PREMISSA DO AUTOR.
+    convencao      : "252" (padrao de mercado, default). "365" existe apenas
+                     para os casos de teste fechados a mao.
+    taxa_custodia_aa : taxa de custodia da B3 em decimal (0.002 = 0,20% a.a.).
+    valor_isento_custodia : parcela da posicao isenta de custodia
+                     (Tesouro Selic: R$ 10.000,00 por CPF). Cobra-se so sobre
+                     o excedente do valor atualizado da posicao, dia a dia.
 
-    Ordem de incidencia adotada: capitalizacao -> custodia -> IOF -> IR.
+    Ordem: capitalizacao -> IOF sobre o rendimento -> IR sobre (rendimento - IOF)
+           -> custodia deduzida do valor recebido, FORA da base do IR.
+
+    Custodia: provisionada a cada periodo (dia util na convencao "252", dia
+    corrido na "365") sobre o valor atualizado da posicao no inicio do periodo,
+    V0 * (1 + taxa)^(k/base), descontada a parcela isenta.
     """
     if convencao not in ("252", "365"):
         raise ValueError('convencao deve ser "252" ou "365" -- premissa do autor')
@@ -168,15 +193,24 @@ def calcular_rfl(valor_aplicado, taxa_aa, data_aplicacao, dias_corridos,
     du = dias_uteis(data_aplicacao, data_resgate)
 
     if convencao == "252":
-        expoente = du / 252.0
+        periodos, base_ano = du, 252.0
     else:
-        expoente = dias_corridos / 365.0
+        periodos, base_ano = dias_corridos, 365.0
+    expoente = periodos / base_ano
 
     montante = valor_aplicado * (1.0 + taxa_aa) ** expoente
-    custodia = valor_aplicado * ((1.0 + taxa_custodia_aa) ** expoente - 1.0) \
-        if taxa_custodia_aa else 0.0
 
-    rendimento = montante - custodia - valor_aplicado
+    custodia = 0.0
+    if taxa_custodia_aa:
+        fator_dia = (1.0 + taxa_aa) ** (1.0 / base_ano)
+        custo_dia = (1.0 + taxa_custodia_aa) ** (1.0 / base_ano) - 1.0
+        for k in range(periodos):
+            posicao = valor_aplicado * fator_dia ** k
+            custodia += max(0.0, posicao - valor_isento_custodia) * custo_dia
+
+    # Base do IR: rendimento bruto liquido do IOF (IN RFB 1.585/2015, art. 46,
+    # par. 1o). A custodia NAO entra aqui.
+    rendimento = montante - valor_aplicado
     if rendimento < 0:
         rendimento = 0.0
 
@@ -185,7 +219,7 @@ def calcular_rfl(valor_aplicado, taxa_aa, data_aplicacao, dias_corridos,
     aliq = aliquota_ir(dias_corridos)
     ir = (rendimento - iof) * aliq
 
-    liquido = valor_aplicado + rendimento - iof - ir
+    liquido = valor_aplicado + rendimento - iof - ir - custodia
 
     return ResultadoRFL(
         valor_aplicado=valor_aplicado, dias_corridos=dias_corridos, dias_uteis=du,
@@ -256,6 +290,43 @@ def _autoteste():
     rend = 1000.0 * (1.10 ** (15 / 365.0)) - 1000.0
     checa("iof 15d valor", r2.iof, rend * 0.50, 1e-9)
     checa("ir apos iof", r2.ir, (rend - rend * 0.50) * 0.225, 1e-9)
+
+    # --- custodia NAO reduz a base do IR (IN RFB 1.585/2015, art. 46) ------
+    sem = calcular_rfl(1000.0, 0.10, dt.date(2025, 6, 2), 720, "365")
+    com = calcular_rfl(1000.0, 0.10, dt.date(2025, 6, 2), 720, "365",
+                       taxa_custodia_aa=0.002)
+    checa("IR igual com e sem custodia", com.ir, sem.ir, 1e-9)
+    checa("custodia sai do liquido", sem.valor_liquido - com.valor_liquido,
+          com.custodia, 1e-9)
+
+    # --- isencao de custodia do Tesouro Selic ate R$ 10.000 --------------
+    isento = calcular_rfl(5000.0, 0.10, dt.date(2025, 6, 2), 720, "365",
+                          taxa_custodia_aa=0.002, valor_isento_custodia=10000.0)
+    checa("Selic abaixo de 10 mil: custodia zero", isento.custodia, 0.0)
+    # taxa zero: a posicao nao cresce, e o excedente e sempre R$ 5.000
+    excede = calcular_rfl(15000.0, 0.0, dt.date(2025, 6, 2), 720, "365",
+                          taxa_custodia_aa=0.002, valor_isento_custodia=10000.0)
+    cheio = calcular_rfl(5000.0, 0.0, dt.date(2025, 6, 2), 720, "365",
+                         taxa_custodia_aa=0.002)
+    checa("Selic acima de 10 mil: custodia so no excedente", excede.custodia,
+          cheio.custodia, 1e-9)
+
+    # --- custodia sobre o valor ATUALIZADO, provisionada dia a dia ---------
+    # Conferencia em forma fechada (soma geometrica), independente do laco:
+    # sum_{k=0}^{n-1} V0 q^k c = V0 c (q^n - 1)/(q - 1), q = 1,10^(1/365).
+    pos = calcular_rfl(1000.0, 0.10, dt.date(2025, 6, 2), 720, "365",
+                       taxa_custodia_aa=0.002)
+    q = 1.10 ** (1 / 365.0)
+    c = 1.002 ** (1 / 365.0) - 1.0
+    checa("custodia em forma fechada", pos.custodia,
+          1000.0 * c * (q ** 720 - 1.0) / (q - 1.0), 1e-9)
+    plano = calcular_rfl(1000.0, 0.0, dt.date(2025, 6, 2), 720, "365",
+                         taxa_custodia_aa=0.002)
+    checa("custodia cresce com a posicao", int(pos.custodia > plano.custodia), 1)
+
+    # --- Consciencia Negra: feriado so a partir de 2024 --------------------
+    checa("20/11/2023 era dia util", int(eh_dia_util(dt.date(2023, 11, 20))), 1)
+    checa("20/11/2025 e feriado", int(eh_dia_util(dt.date(2025, 11, 20))), 0)
 
     # --- convencao invalida deve falhar -----------------------------------
     try:

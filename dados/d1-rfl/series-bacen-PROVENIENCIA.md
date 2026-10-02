@@ -7,6 +7,7 @@
 | Coluna | Série SGS | Descrição | Unidade |
 |---|---|---|---|
 | `selic_meta_aa` | **432** | Meta Selic definida pelo Copom | % a.a. |
+| `selic_over_aa` | **1178** | Taxa Selic efetiva anualizada, base 252 (coletada em 02/10/2026) | % a.a. |
 | `cdi_aa` | **4389** | Taxa CDI anualizada, base 252 | % a.a. |
 | `ipca_12m_aa` | **13522** | IPCA acumulado em 12 meses | % |
 
@@ -35,5 +36,14 @@ O BACEN **não publica** as taxas contratadas dos títulos do Tesouro Direto. As
 Tesouro Prefixado e Tesouro IPCA+ nas datas de aplicação vêm do Tesouro Transparente,
 arquivo `precotaxatesourodireto.csv` (recurso CKAN
 `796d2059-14e9-44e3-80c9-2d9e30b405c1`). O recurso **não tem datastore ativo**, o que
-impede consulta filtrada por data — só há o arquivo completo, que precisa ser baixado e
-arquivado no repositório.
+impede consulta filtrada por data — só há o arquivo completo, que precisa ser baixado.
+O arquivo completo fica fora do Git; no repositório ficam só os extratos e a
+proveniência (`tesouro-12datas.csv`, `tesouro-selecao.csv`, `tesouro-PROVENIENCIA.txt`).
+
+## Selic efetiva (série 1178), acrescentada em 02/10/2026
+
+Coletada pelo mesmo endpoint e conferida contra consulta bruta independente
+(28/03/2026 a 06/05/2026): 14,65% em 01/04/2026 e 14,40% a partir de 30/04/2026. A
+consulta bruta também não traz pregão em 03/04/2026 (Sexta-feira Santa), 21/04/2026
+(Tiradentes) e 01/05/2026 (Dia do Trabalho), confirmando de forma independente o
+calendário de feriados calculado em `rfl_referencia.py`.

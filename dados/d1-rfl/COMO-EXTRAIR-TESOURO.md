@@ -1,7 +1,7 @@
 # Como extrair as taxas do Tesouro para o dataset D1
 
-Roteiro para obter as taxas de Tesouro Prefixado e IPCA+ e o ágio/deságio do Tesouro
-Selic nas doze datas de aplicação do D1, sem versionar o arquivo histórico completo.
+Roteiro para obter as taxas de Tesouro Prefixado e IPCA+ e a taxa de compra (ágio ou
+deságio) do Tesouro Selic nas doze datas de aplicação do D1, sem versionar o arquivo histórico completo.
 
 ---
 
@@ -50,9 +50,10 @@ O script **imprime o cabeçalho que encontrar** e aborta com mensagem clara se f
 alguma coluna esperada. Se o layout divergir, ajuste o dicionário `COLUNAS` no topo do
 arquivo e rode de novo; nada mais precisa mudar.
 
-Ele foi testado contra um arquivo sintético que imita o layout, não contra o arquivo
-real — que não é acessível do ambiente onde foi escrito. Confira o cabeçalho impresso na
-primeira execução.
+Foi escrito e testado contra um arquivo sintético que imita o layout e, em 23/09/2026,
+rodado pelo autor sobre o arquivo real: 176.390 linhas lidas, 200 no recorte, 180
+seleções. Tamanho e SHA-256 do original estão em `tesouro-PROVENIENCIA.txt`. Numa nova
+execução, confira o cabeçalho impresso.
 
 **Títulos com juros semestrais ficam de fora de propósito.** As variantes NTN-F e NTN-B
 com cupom são descartadas: o escopo são os títulos de fluxo único, e incluí-las quebraria
@@ -85,40 +86,49 @@ do Prefixado **deixa de ser exato e passa a depender da premissa de curva plana*
 descasamento em dias entre vencimento e horizonte, que o extrator reporta, é a medida
 do tamanho dessa aproximação e deve ser informado junto com os resultados.
 
+**Limitação constatada em 02/10/2026.** O parágrafo acima descreve o caso em que o título
+vence depois do resgate. Mas a regra do vencimento mais próximo também escolhe títulos
+que vencem **antes** do resgate (`gap_dias` negativo): 135 dos 360 casos de Tesouro do
+estrato `calculo_rfl`, até 495 dias antes. Nesses casos não há marcação a mercado; a curva
+plana equivale a supor reinvestimento à mesma taxa entre o vencimento e o resgate, com a
+alíquota de IR do prazo do D1. O autor manteve a regra e declarou a limitação (ver
+`README.md`). A alternativa avaliada — vencimento mais próximo igual ou posterior ao
+resgate — mudaria 66 das 180 seleções e elevaria o descasamento mediano de 121 para 209
+dias.
+
 A rota descartada era ancorar os prazos nos vencimentos realmente ofertados, o que
 devolveria exatidão ao Prefixado por carregamento até o vencimento, mas faria os prazos
 deixarem de cair nas fronteiras de IR e IOF.
 
 O Tesouro Selic escapa parcialmente do problema, porque é pós-fixado e o que interessa
-dele é o ágio ou deságio sobre a Selic, não a taxa de carregamento até o vencimento.
+dele é a taxa de compra sobre a Selic, não a taxa de carregamento até o vencimento.
 
 ---
 
-## 4. Premissas a declarar
+## 4. Premissas — resolvidas em 02/10/2026
 
-Depois da extração, faltam três declarações para o gabarito do RFL poder ser calculado.
+As três premissas que esta seção listava como abertas estão resolvidas; o registro
+completo está no `README.md` e no cabeçalho do `fechar-gabarito.py`.
 
-**Percentual do CDI para o CDB.** Não é dado público. Ou se adota 100% do CDI como
-referência neutra, simples e transparente, ou se levantam as taxas praticadas pelos
-bancos públicos no varejo e se ancora nelas, o que é mais forte mas exige fonte citável.
+**Percentual do CDI para o CDB.** 94,0% do CDI: mediana dos oito últimos meses oficiais
+do BCB (jun/2023–jan/2024, séries 28663 e 4391), porque as séries de taxa de CDB estão
+suspensas desde 31/01/2024. Extrapolação declarada.
 
-**Convenção de capitalização.** Os prazos do D1 estão em dias corridos, porque é assim
-que IR e IOF incidem, mas renda fixa no Brasil remunera em dias úteis, base 252. O
-cálculo precisa das duas contagens, e a conversão exige o calendário de feriados da
-ANBIMA **até 2029** — os prazos de 1.080 dias partindo de 2026 terminam lá. Essa é a
-premissa com maior consequência: se ela divergir entre o módulo Python do objetivo (c) e
-a implementação de referência do gabarito, a taxa de erro medida pelo experimento vira
+**Convenção de capitalização.** Não é escolha: base 252 dias úteis para a remuneração e
+dias corridos para IR e IOF. Os feriados até 2029 são calculados em `rfl_referencia.py`
+(Páscoa por Meeus). Continua valendo a advertência: se a convenção divergir entre o
+módulo Python do objetivo (c) e a implementação de referência, a taxa de erro medida vira
 artefato da divergência, não evidência sobre a H1.
 
-**Ágio ou deságio do Tesouro Selic.** Sai do próprio extrato, na coluna de taxa de
-compra. Só precisa ser declarado como tal.
+**Taxa de compra do Tesouro Selic.** Sai do próprio extrato, na coluna de taxa de compra,
+e entra no cálculo como `(1 + Selic efetiva) × (1 + taxa) − 1`. Taxa positiva significa
+PU abaixo do valor nominal atualizado — **deságio**; negativa é **ágio**.
 
 ---
 
 ## 5. Depois
 
-Com os três extratos versionados e as premissas declaradas, o que falta é a
-**implementação de referência** do cálculo do RFL — obrigatoriamente independente do
-módulo Python sob teste, conferida por amostragem contra simuladores oficiais. Ela
-preenche as colunas `taxa_contratada_aa`, `gab_rfl_brl` e `fonte_gabarito_rfl` do
-`d1-casos.csv`.
+Feito em 02/10/2026: com os três extratos versionados, o `fechar-gabarito.py` chama a
+**implementação de referência** (`rfl_referencia.py`) — independente do módulo Python
+sob teste — e preenche `taxa_contratada_aa`, `gab_rfl_brl` e `fonte_gabarito_rfl` nos
+600 casos de `calculo_rfl`. Falta a conferência amostral contra simulador oficial.

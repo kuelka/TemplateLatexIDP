@@ -517,6 +517,16 @@ citação no corpo do texto do Anexo III.
   Reservas) e a quase totalidade dos demais dados dos 4 perfis. Dois
   erros de transcrição de etnia foram encontrados e corrigidos (ver
   nota de verificação no próprio arquivo).
+- `dados/bcb-depositos-prazo-ValoresNatDetentores.xls`: Banco Central do Brasil,
+  *Estatísticas de depósitos a prazo*, planilha `ValoresNatDetentores.xls` (estoque por
+  natureza do detentor, com e sem cláusula de resgate antecipado), 41 abas semestrais de
+  30/06/2006 a 30/06/2026, só estoques, sem taxa. Fonte dos 65,3% (30/06/2025) e 67,9%
+  (31/12/2025) do estoque de "Pessoas físicas/jurídicas" emitido com cláusula de resgate
+  antecipado, citados em `dados/d1-rfl/README.md` (pendência CDB × carência). Atenção: o
+  cabeçalho das abas diz "R$ milhões", mas os valores estão em reais — só os percentuais
+  são usados. 439.296 bytes; SHA-256
+  `4d0520c643c1efc8bc2cad9144b8c05deffbbc33bd6cd5223725b97a22450f5c`. Recebido do autor
+  em 02/10/2026. **URL de origem e data do download: pendentes, a informar pelo autor.**
 
 ## Corpus normativo da base RAG regulatória (objetivo d, ainda não construída)
 

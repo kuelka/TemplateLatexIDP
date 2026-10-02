@@ -4,7 +4,8 @@ Documento para quem for continuar a parte de **implementação** desta pesquisa 
 acompanhado o histórico. Leia inteiro antes de escrever a primeira linha.
 
 Repositório: `https://github.com/kuelka/TemplateLatexIDP`
-Estado de referência: commit `1a402fd`, 23/09/2026, 53 páginas, compilação sem erros.
+Estado de referência: 02/10/2026, gabarito do D1 fechado; texto com 53 páginas,
+compilação sem erros (nenhum `.tex` alterado desde o commit `1a402fd`).
 
 ---
 
@@ -32,8 +33,9 @@ Estão em `AGENTS.md` / `CLAUDE.md` na raiz. As que mais importam:
    deixe `% TODO: referencia pendente` e avise.
 3. **Nunca invente número.** Todo dado numérico tem origem marcada e rastreável até
    fonte primária. Se não achar, diga que não achou.
-4. **Commit e push só quando o autor pedir.** Nunca autentique no GitHub. Se ele
-   oferecer token ou senha, recuse e oriente a revogar.
+4. **Commit e push só quando o autor pedir.** Para o push, use apenas um token que o
+   próprio autor forneça, para aquele único push, sem gravá-lo em arquivo nem na
+   configuração do Git; ao terminar, oriente-o a revogar o token. Nunca peça senha.
 5. Compile após editar `.tex`/`.bib` e leia o log: `pdflatex main.tex && biber main &&
    pdflatex main.tex && pdflatex main.tex`. Zero ocorrências de `!` no log.
 6. Não altere `idpthesis.cls`. Não redigite dados de `metadados.tex`.
@@ -64,9 +66,12 @@ reproduz o CSV byte a byte.
 
 Já preenchido: alíquota de IR, incidência e percentual de IOF, classificação de
 suitability e conduta esperada, e as séries do BACEN (Selic meta 432, CDI 4389, IPCA
-13522) para as doze datas.
+13522) para as doze datas. A Selic efetiva (1178) está em `series-bacen.csv` e é usada
+só no fechamento do gabarito do Tesouro Selic.
 
-Ainda vazio: `taxa_contratada_aa`, `gab_rfl_brl`, `fonte_gabarito_rfl`.
+Gabarito do RFL (`taxa_contratada_aa`, `gab_rfl_brl`, `fonte_gabarito_rfl`) preenchido
+em 02/10/2026 pelo `fechar-gabarito.py`, só nos 600 casos de `calculo_rfl`. Reproduzível
+byte a byte com `python3 gerar-d1.py && python3 fechar-gabarito.py`.
 
 Estratos: 600 `calculo_rfl`, 300 `recusa_por_inadequacao`, 300 `controle_abstencao`.
 **Só os 600 primeiros exercem o cálculo** — é sobre eles que a comparação do experimento
@@ -78,7 +83,8 @@ ordinária e 12 de vigência (D2b). Pendente de revisão item a item pelo autor.
 
 ### Implementação de referência (`dados/d1-rfl/rfl_referencia.py`)
 Calcula o RFL a partir de tabelas tributárias verificadas, com contagem de dias úteis a
-partir de feriados calculados (Páscoa por Meeus). 28 verificações no autoteste.
+partir de feriados calculados (Páscoa por Meeus). 36 verificações no autoteste
+(`python3 rfl_referencia.py`).
 
 ---
 
@@ -94,31 +100,43 @@ vencimento.
 
 ---
 
-## 5. Premissas que o AUTOR ainda precisa declarar
+## 5. Premissas — estado em 02/10/2026
 
-Não as escolha por ele. Elas estão como parâmetros obrigatórios em `rfl_referencia.py`.
+**Fixadas (não são escolha; são convenção de mercado ou lei):**
 
-1. **Convenção de capitalização**: `"252"` (dias úteis, padrão do mercado) ou `"365"`.
-   É a de maior consequência — se divergir entre o módulo do objetivo (c) e a
-   implementação de referência, a taxa de erro medida vira artefato da divergência, não
-   evidência sobre a H1.
-2. **Percentual do CDI** adotado para o CDB. Não é dado público.
-3. **Taxa de custódia da B3** e sua ordem de incidência. Hoje o módulo deduz do montante
-   bruto antes de apurar a base tributável. O Tesouro Selic é isento até certo valor.
-4. **Conduta esperada quando o cliente pergunta a rentabilidade de produto inadequado**:
-   calcular e sinalizar, ou recusar? Define o gabarito de 300 dos 1.200 registros.
+- Capitalização em base 252 dias úteis; IR e IOF em dias corridos.
+- Base do IR = rendimento bruto líquido do IOF (IN RFB nº 1.585/2015, art. 46, § 1º).
+  A custódia da B3 **não** reduz a base: sai do valor recebido. 0,20% a.a. sobre o valor
+  **atualizado** da posição, provisionada dia a dia (não sobre o valor aplicado); Tesouro
+  Selic isento até R$ 10.000 por CPF.
+
+**Decididas pelo autor:**
+
+- CDB a 94,0% do CDI: mediana dos oito últimos meses oficiais do BCB (jun/2023–jan/2024),
+  porque as séries de taxa de CDB estão suspensas desde jan/2024. Extrapolação declarada.
+
+- Produto inadequado: o sistema **não recomenda nem informa rentabilidade**. Os 300 casos de
+  recusa ficam sem RFL.
+- Prazo × vencimento do Tesouro: Rota A (seção 4), **mantida** em 02/10/2026 mesmo
+  sabendo que em 135 dos 360 casos de Tesouro o título vence antes do resgate (limitação
+  declarada no README do D1). Não troque a regra de seleção sem decisão do autor.
+
+**Em aberto — não decida pelo autor:**
+
+1. **CDB × carência para Marina e Antônio** (72 casos): restringir a célula por prazo,
+   redefinir o produto como CDB de liquidez diária, ou abrir a matriz por prazo.
 
 ---
 
 ## 6. Próximas tarefas, em ordem
 
-**(a) Extrair as taxas do Tesouro.** O autor baixa o `precotaxatesourodireto.csv` e roda
-`dados/d1-rfl/extrair-tesouro.py`. Ver `dados/d1-rfl/COMO-EXTRAIR-TESOURO.md`. O script
-foi testado só contra arquivo sintético — confira o cabeçalho impresso na primeira
-execução.
+**(a) Extrair as taxas do Tesouro. FEITO em 23/09/2026.** O autor baixou o
+`precotaxatesourodireto.csv` e rodou `dados/d1-rfl/extrair-tesouro.py` sobre o arquivo
+real (176.390 linhas; tamanho e SHA-256 em `tesouro-PROVENIENCIA.txt`). Ver
+`dados/d1-rfl/COMO-EXTRAIR-TESOURO.md`.
 
-**(b) Fechar o gabarito do D1.** Rodar `rfl_referencia.py` sobre os 600 casos de cálculo,
-preenchendo as três colunas vazias. *Critério de aceite*: uma amostra conferida contra
+**(b) Fechar o gabarito do D1. FEITO em 02/10/2026** pelo `fechar-gabarito.py`. Falta só
+a conferência amostral contra simulador oficial. *Critério de aceite*: uma amostra conferida contra
 simulador oficial (Tesouro Direto, calculadora ANBIMA), com o resultado da conferência
 registrado em `fonte_gabarito_rfl`.
 
@@ -140,6 +158,14 @@ mesmo LLM sem acesso ao módulo Python, mesma bateria de perguntas.
 **Circularidade do gabarito.** O gabarito do D1 **não pode** sair do módulo que o
 experimento avalia. São duas implementações independentes que se conferem, ambas
 ancoradas em simulador oficial.
+
+**Ágio × deságio no Tesouro Selic.** Na LFT, taxa de compra positiva significa PU abaixo
+do valor nominal atualizado — **deságio**. Negativa é ágio. O rótulo estava invertido e
+foi corrigido em 02/10/2026; os números não mudaram.
+
+**Custódia sobre o valor aplicado.** A B3 calcula a taxa sobre o valor atualizado da
+posição, provisionada dia a dia. A primeira versão cobrava sobre o valor aplicado e
+subestimava a custódia em até R$ 2,44 por caso (corrigido em 02/10/2026).
 
 **Fronteira do IR no dia 360.** A faixa de 20% vai até o 360º dia inclusive; 361 já é
 17,5%. Um caso de 365 dias paga 17,5%, não 20% — esse erro passou e foi pego pelo
