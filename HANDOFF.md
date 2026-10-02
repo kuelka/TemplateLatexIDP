@@ -125,7 +125,8 @@ implícito à mesma taxa (limitação declarada; ver seção 5 e o README do D1)
 **Em aberto — não decida pelo autor:**
 
 1. **CDB × carência para Marina e Antônio** (72 casos): restringir a célula por prazo,
-   redefinir o produto como CDB de liquidez diária, ou abrir a matriz por prazo.
+   redefinir o produto como CDB com cláusula de resgate antecipado (termo do BCB, que não
+   equivale a liquidez diária), ou abrir a matriz por prazo.
 
 ---
 
