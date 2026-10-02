@@ -1,0 +1,162 @@
+Quais são as taxas
+ No Tesouro Direto, há duas taxas existentes. Uma é cobrada pela sua Instituição Financeira e outra, cobrada pela B3, referentes aos serviços prestados.
+1. Como ocorre a cobrança da taxa de custódia?
+A taxa de custódia de 0,2% ao ano é calculada sobre o valor dos títulos e provisionada diariamente na posição do investidor a partir da liquidação da operação de compra, em D+1. Essa taxa é cobrada de forma pro rata para os títulos Tesouro Selic, Tesouro IPCA e Tesouro Prefixado, sendo cobrada nos seguintes casos:
+ Na venda antecipada: Você comprou um título Tesouro Selic e decide vendê-lo antes da data de vencimento. Nesse caso, a taxa de custódia acumulada até o dia da venda será deduzida do valor que você receberá.
+ No vencimento da posição: Você comprou um título Tesouro Prefixado 2031. Se você mantiver o título até essa data, a taxa de custódia acumulada será deduzida do valor que você receberá no vencimento.
+ Nos eventos de custódia (pagamento de juros): Você comprou um título Tesouro IPCA 2035 com juros semestrais. A cada pagamento de juros, a taxa de custódia acumulada até aquela data será deduzida dos juros que você receberá.
+Importante: Para o Tesouro Selic, não haverá taxa de custódia para valores até R$ 10.000,00 por CPF. Acima desse valor, a taxa será cobrada apenas sobre o excedente.
+2. Taxa cobrada pela Instituição Financeira:
+A taxa cobrada pela Instituição Financeira é livremente acordada com o investidor. O Tesouro Direto disponibiliza em seu site um ranking com as taxas cobradas por cada Instituição (Clique aqui para ver o ranking com as taxas cobradas por cada instituição), você pode utilizar essas informações para verificar com seu banco ou corretora o que está sendo cobrado.
+A taxa pode ser anual, modalidade mais comum, ou por operação. Para esclarecimentos quanto ao seu pagamento, contate sua Instituição Financeira.
+ 3. Taxa diferenciada para Tesouro Educa+ e Tesouro RendA+:
+A taxa de custódia será cobrada apenas nos resgates antecipados ou nos recebimentos mensais. Se você mantiver o título até o vencimento e o valor recebido estiver dentro do limite de isenção, não haverá cobrança da taxa.
+Tesouro Educa+:
+Tabela de Cobrança da Taxa de Custódia B3 sobre a venda antecipada: 
+Para investidores que mantiverem seus títulos até a data de vencimento, a isenção vale para rendas mensais de até 4 salários-mínimos. Valores que ultrapassem esse limite pagarão uma taxa de 0,10% a.a. sobre o excedente.
+  Tesouro RendA+:
+Tabela de Cobrança da Taxa de Custódia B3 sobre a venda antecipada: 
+Para investidores que mantiverem seus títulos até a data de vencimento, a isenção vale para rendas mensais de até 6 salários-mínimos. Valores que ultrapassem esse limite pagarão uma taxa de 0,10% a.a. sobre o excedente.
+ 2. Quais são os Requisitos básicos?
+ Para adquirir títulos públicos no Tesouro Direto, você só precisa ter um Cadastro de Pessoa Física (CPF) e uma conta em uma instituição financeira habilitada ao Tesouro Direto.
+ 3. Como investir em Títulos Públicos no Tesouro Direto?
+ Para adquirir títulos públicos no Tesouro Direto, você precisa ter uma conta em alguma Instituição Financeira habilitada, seja um banco ou uma corretora. A abertura da sua conta no Tesouro Direto pode ser realizada através do cadastro rápido do TD ou pela sua Corretora ou Banco. Entre em contato com a Instituição escolhida e forneça as informações e os documentos solicitados. Hoje, você nem precisa sair de casa para isso, a maioria das corretoras faz esse processo totalmente online!
+Com a conta feita, você receberá uma senha provisória enviada pela B3 para o e-mail informado no cadastro da sua ultima conta aberta em uma corretora. No primeiro acesso, o sistema vai pedir uma nova senha que deve conter entre 8 e 16 dígitos, com letras, números e caracteres especiais como! @ # $ % / * - + ?
+O login é o seu CPF. Não a compartilhe com ninguém, ok?
+Essa senha permite o acesso à área exclusiva do site do Tesouro Direto, na qual são realizadas as operações de investimento e resgate, assim como consultas a saldos, extratos etc.
+Se quiser alterar suas informações cadastrais, você precisa pedir a alteração para sua Instituição Financeira e apresentar a documentação solicitada. O endereço de e-mail e a senha podem ser alterados por você mesmo, diretamente na plataforma do Tesouro Direto.
+Dependendo da política do seu banco ou corretora, os investimentos só poderão ser feitos em seus respectivos sites, mas o acesso à área exclusiva do site do Tesouro Direto continua disponível para consultas complementares. Invista utilizando o PIX, a Carteira TD ou transfira o dinheiro para a Instituição Financeira escolhida.
+ 4. Qual é o horário de funcionamento?
+ As aplicações e os resgates podem ser feitos nos dias úteis, em horário comercial, das 9h30 às 18h, com os preços e taxas operados no momento da transação.
+Das 18h às 5h, nos finais de semana ou feriado, os preços e taxas exibidos no site do Tesouro Direto são apenas para referência. Você pode realizar investimentos e resgates, mas serão considerados os preços e taxas de abertura do mercado do próximo dia útil.
+Nos dias úteis, das 5h às 9h30, o sistema fica em manutenção.
+Para consultas complementares, você pode acessar a qualquer momento o site do Tesouro Direto.
+Vale lembrar que, para sua maior segurança, os investimentos e resgates podem ser suspensos ao longo do dia, garantindo que os preços e taxas dos títulos estejam sempre alinhados com os parâmetros de mercado.
+ 5. Como funciona o Período de suspensão?
+ A partir do dia 17/08/2018, a Secretaria do Tesouro Nacional (STN) passou a permitir a solicitação de investimentos e/ou resgates durante os períodos de suspensão do mercado.
+Essas operações devem ser feitas diretamente na área exclusiva do site do Tesouro Direto, clique aqui para acessar o Portal do Investidor.
+Os preços e as taxas dos títulos negociados no Tesouro Direto são baseados nas taxas negociadas no mercado secundário de títulos públicos e geralmente atualizados três vezes ao dia.
+É importante saber que, em momentos de maior volatilidade no mercado, as taxas negociadas podem se afastar de forma significativa das taxas de referência do Tesouro Direto. Nessas situações, os preços dos títulos para investimento e resgate podem se tornar incompatíveis com as condições vigentes do mercado.
+Para preservar o correto funcionamento do Tesouro Direto e assegurar a adequada formação de preços, a Secretaria do Tesouro Nacional pode suspender temporariamente as negociações, com o objetivo de atualizar preços e taxas dos títulos aos níveis compatíveis com o mercado.
+As solicitações de investimento e resgate realizadas durante o período de suspensão serão processadas no momento da reabertura do Tesouro Direto, utilizando os novos preços e taxas divulgados pela STN, respeitado o valor financeiro informado pelo investidor no ato da solicitação.
+ 6. Quais são os Títulos Públicos disponíveis?
+ O objetivo do Tesouro Direto é disponibilizar títulos públicos para pessoas físicas com condições tão vantajosas quanto às que as Instituições Financeiras têm nos leilões tradicionais do Tesouro Nacional. Para isso, são ofertados os seguintes títulos:
+Títulos Prefixados
+Você sabe exatamente a rentabilidade que irá receber na data de vencimento. Para cada unidade de título, o valor bruto a ser recebido no vencimento é de R$1.000,00.
+Por terem rentabilidade predefinida, seu rendimento é nominal. Isso significa que é necessário descontar a inflação para obter o rendimento real da aplicação.
+Nessa modalidade, há dois títulos disponíveis:
+ Tesouro Prefixado (LTN)
+ Títulos com rentabilidade definida (taxa fixa) no momento da compra.
+ Forma de pagamento: no vencimento.
+ Com esse título, você receberá o valor investido acrescido da rentabilidade na data de vencimento ou de resgate.
+ Tesouro Prefixado com juros semestrais (NTN-F)
+ Títulos com rentabilidade prefixada, acrescida de juros definidos no momento da compra.
+ Forma de Pagamento: semestralmente (juros) e no vencimento (principal).
+ Esse título faz pagamento de juros a cada seis meses. Isso significa que você recebe o rendimento ao longo do período da aplicação.
+ Títulos Pós-Fixados:
+ O valor recebido na data de vencimento depende da taxa básica de juros (Selic) ou da inflação (IPCA). Assim, a rentabilidade da aplicação é composta por uma taxa predefinida no momento da compra do título mais a variação de uma dessas duas taxas (chamadas também de indexadores)
+ Nessa modalidade, há três títulos disponíveis:
+ Tesouro Selic (LFT):
+ Títulos com rentabilidade diária vinculada à taxa de juros básica da economia (taxa Selic).
+ Forma de pagamento: no vencimento.
+ Tesouro IPCA+ com Juros Semestrais (NTN-B):
+ Título com rentabilidade vinculada à variação do IPCA mais os juros definidos no momento da compra.
+ Forma de Pagamento: semestralmente (juros) e no vencimento (principal).
+ Tesouro IPCA+ (NTN-B Principal):
+ Título com rentabilidade ligada à variação do IPCA mais os juros definidos no momento da compra. Não há pagamento de cupom de juros semestral.
+ Forma de Pagamento: no vencimento.
+ Esse título também oferece rentabilidade real, mas faz o pagamento de uma só vez, no final da aplicação.
+ Tesouro Educa+ (NTN-B1):
+ Título com rentabilidade ligada à variação do IPCA mais os juros definidos no momento da compra. O objetivo deste título é acumular recursos para proporcionar uma renda mensal para financiar a educação, como o pagamento de mensalidades universitárias.
+ Forma de Pagamento: Renda mensal.
+ Esse título oferece rentabilidade real, corrigida pela inflação (IPCA), garantindo a preservação do poder de compra ao longo do tempo. Após o período de acumulação, o título começa a pagar uma renda mensal por um período de 5 anos, ajudando a cobrir os custos educacionais.
+ Tesouro RendA+ (NTN-B1):
+ Título com rentabilidade ligada à variação do IPCA mais os juros definidos no momento da compra. O objetivo deste título é acumular recursos para proporcionar uma renda extra durante a aposentadoria.
+ Forma de Pagamento: Renda mensal.
+ Esse título oferece rentabilidade real, corrigida pela inflação (IPCA), garantindo a preservação do poder de compra ao longo do tempo. Após o período de acumulação, o título começa a pagar uma renda mensal por um período de 20 anos, complementando a aposentadoria do investidor.
+ 7. Quanto custa investir e resgatar?
+ O preço de investimento dos títulos públicos é calculado com base nas taxas praticadas pelo mercado na data de liquidação da compra.
+Quando você resgata antecipadamente um título público, o preço é calculado pelo Tesouro Nacional com a aplicação de uma outra taxa, chamada de spread, sobre o preço de compra no caso de resgate antecipado.
+Os preços de compra e venda estão disponíveis na Tabela de Preços e Taxas dos Títulos. O Tesouro Nacional pode alterar o preço dos títulos ofertados a qualquer momento.
+Se você estiver comprando títulos no momento da alteração dos preços, receberá uma notificação com os preços atualizados, e poderá confirmar ou cancelar a operação.
+ 8. Quais são as modalidades de investimento do Tesouro Direto?
+ Após o cadastro, há três formas de investir no Tesouro Direto:
+ Diretamente no site/app do Tesouro Direto: você acessa o Portal do Investidor e negocia seus títulos públicos;
+ Diretamente no site/app da sua Instituição Financeira: se a Instituição Financeira for um agente integrado, ou seja, tem seu site integrado ao do Tesouro Direto, você poderá investir e resgatar títulos públicos pelo site da mesma, em tempo real e com os mesmo preços e taxas do Tesouro Direto;
+ A sua Instituição Financeira faz por você: nesse caso, você autoriza a sua Instituição a negociar os títulos públicos em seu nome.
+Não se esqueça de procurar a sua Instituição Financeira para saber quais opções ela disponibiliza!
+ 9. Quais são os limites de aplicação e de resgate?
+ As aplicações tradicionais no Tesouro Direto devem ser múltiplas de 0,01 título ou 1% (um por cento) do valor de um título.
+Na hora de investir, você pode optar por informar o valor financeiro ou a quantidade de títulos que pretende adquirir. Caso informe o valor, o sistema do Tesouro Direto ajusta automaticamente para o valor mais próximo que represente uma quantidade de títulos múltipla de 0,01, já descontando as taxas de serviços cobradas. Você pode confirmar a compra ou alterar novamente os valores informados até chegar ao valor que você quer investir. 
+O limite máximo de investimento por pessoa é de R$ 2.000.000,00 (dois milhões de reais) por mês. Esse limite deve ser considerado para a carteira de títulos adquirida pela pessoa durante o mês, e não para cada título separadamente. Nos meses de vencimento e pagamento de juros de títulos adquiridos anteriormente no Tesouro Direto e que ainda estejam em sua carteira, você pode investir em mais títulos, utilizando seu limite de R$ 2.000.000,00, acrescido do valor de resgate e dos juros dos títulos. Esse limite é flexibilizado se você escolher reaplicar os seus recursos, fazendo um reinvestimento (aqui, você só poderá escolher um único tipo de título para aplicar e poderá fazê-lo integral ou parcialmente até 1 dia antes do vencimento do título, em caso de reinvestimento de resgate, ou do pagamento do próximo cupom, em caso de reinvestimento de cupom) ou compra tradicional dentro do mês de vencimento das suas aplicações anteriores.
+Exemplo:
+Você possui o Tesouro Prefixado (LTN) no valor de R$ 100.000,00, com data de vencimento em 01/01/2014. Desta forma, durante o mês de janeiro (entre os dias 01 e 31), o limite máximo disponível para você será de R$ 2.100.000,00, equivalente ao limite máximo padrão de R$ 2.000.000,00 somado ao valor bruto resgatado de R$ 100.000,00. Vale destacar que, no mês seguinte, o seu limite de investimento volta a ser de R$ 2.000.000,00, independentemente de você ter utilizado ou não todo o seu acréscimo no mês anterior.
+No Tesouro Direto, não há limite para o estoque de títulos. Isso significa que você pode investir o montante que quiser, desde que respeitado o limite mensal de compra.
+No entanto, por questões operacionais, quatro dias úteis antes do pagamento de juros semestrais, o Tesouro Nacional retira os papéis que oferecem esse fluxo de pagamento da lista de títulos disponíveis para investimento. E dois dias úteis antes do pagamento dos juros periódicos/amortização ou do vencimento do papel, a opção de resgate desses mesmos títulos fica suspensa
+ 10. Como investir?
+ Ao investir em um título público, você tem a opção de definir o valor da aplicação ou a quantidade de títulos que deseja. O próprio sistema ajusta o valor ou a quantidade de forma que seja respeitado o fracionamento dos títulos.
+Exemplos:
+Investimento por Valor Financeiro
+Em 25/11/2011, você quis investir R$ 500,00 de Tesouro Prefixado (LTN) com vencimento em 01/01/2015.
+ Preço unitário do Tesouro Prefixado (LTN) em 25/11/2011: R$ 730,48
+ Aplicação desejada: R$ 500,00
+ Preço da fração de 0,2 título: R$ 146,096
+ Fração de títulos equivalente a R$ 500,00: 0,68 título, o que não é viável.
+ Aplicação ajustada p/ menos: R$ 438,29 (equivale a 0,60 de Tesouro Prefixado (LTN)
+Investimento por Quantidade de Título Públicos
+Em 25/11/2011, você quis investir em 1,2 Tesouro Prefixado (LTN) com vencimento em 01/01/2015.
+ Preço unitário do Tesouro Prefixado (LTN) em 25/11/2011: R$ 730,48
+ Aplicação desejada: 1,2 Tesouro Prefixado (LTN)
+ Preço da fração de 0,2 título: R$ 146,096
+ Aplicação ajustada para compra de 1,2 Tesouro Prefixado (LTN): R$ 876,58
+ 11. Como pagar pelas aplicações?
+ Após escolher a sua modalidade de investimento, você só precisa escolher os títulos e confirmar a aplicação. Mas preste atenção: depois de confirmada, não há como cancelá-la.
+Atualmente é possível investir utilizando três modalidades: Através de recursos na instituição financeira, através do PIX ou da Carteira TD.
+No método de pagamento da aplicação efetuado na sua Instituição Financeira você deve disponibilizar os recursos suficientes, no valor total da operação em sua conta investimento. Entre em contato com ela para saber os dados para o depósito do dinheiro, prazos e regras.
+O método de pagamento utilizando o PIX é rápido e prátivo. Disponível no Portal do Tesouro Direto, os clientes das instituições integradas ao Cadastro Rápido só precisam ler um QR code e utilizar uma conta corrente de mesma titularidade para concluir a aplicação.
+Para ter acesso à este método, você pode abrir sua conta através do Cadastro Rápido e investir utilizando o PIX, tudo sem sair da plataforma do Tesouro Direto.
+Se, após a confirmação da aplicação, o pagamento não for efetuado, você receberá uma advertência da Central de Custódia da B3, por e-mail. Na segunda ocorrência de não pagamento, você ficará suspenso por 15 (quinze) dias, ou seja, não poderá fazer nenhuma aplicação no Tesouro Direto durante esse período. Se houver outra reincidência, o tempo de suspensão é de 30 (trinta) dias. A partir da quarta reincidência, a suspensão é de 60 (sessenta) dias.
+Lembre-se, escolhendo o método de pagamento PIX você nao é suspenso nos cenários citados acima.
+Se você permanecer 60 (sessenta) dias sem ocorrência de não pagamento, após a advertência ou o término da suspensão, você deixa de ser considerado reincidente.
+O não recebimento da advertência em virtude de eventos alheios à B3 e à STN não te isenta das penalidades previstas, já que é sua responsabilidade verificar a efetivação do investimento.
+Para utilizar o método "Carteira TD" você deverá possuir saldo que pode ser adicionado através de ativações de Gift Cards ou, na tela de extrato da carteira, você tem a opção de "adicionar saldo". Lembre-se de conferir as regras e regulamentos do Gift Card para realizar os procedimentos.
+Quem está impedido de realizar novas aplicações no Tesouro Direto pode, apenas, fazer consultas e solicitar à sua Instituição Financeira movimentações de seus títulos já adquiridos.
+ 12. Qual é o Prazo de Liquidação?
+ A liquidação é a última etapa do processo de investimento e de resgate, na qual acontece a transferência da propriedade do título e o pagamento/recebimento de todo o dinheiro envolvido.
+Liquidação do Investimento
+O investimento no Tesouro Direto estará registrado em seu CPF e disponível no seu extrato após a liquidação no mercado, conforme a seguinte regra:
+ Aplicação realizada em dias úteis (de 0h00 às 18h00): a partir das 18h do 1º dia útil após a solicitação de aplicação;
+ Aplicação realizada em dias úteis (de 18h00 às 0h00), finais de semana ou feriados: a partir das 18h do 2º dia útil;
+Durante o período entre a data da solicitação de aplicação e a data em que os títulos aparecem no seu extrato, você pode consultar o estágio de liquidação do investimento por meio de consultas de protocolos na área exclusiva do site do Tesouro Direto. Enquanto o investimento não é finalizado/liquidado, o seu extrato exibe o status "Em liquidação".
+Liquidação do Resgate
+O dinheiro do resgate de seu investimento ficará disponível na Instituição Financeira conforme a seguinte regra:
+ Resgate realizado em dias úteis (de 9h30 às 13h00): a partir das 13h do mesmo dia de resgate;
+ Resgate realizado em dias úteis (de 13h00 às 18h00): a partir das 13h do 1º dia útil após a solicitação de resgate;
+ Agendamento de resgate (de 18h00 às 5h00, finais de semana e feriados): a partir das 13h do 1º dia útil.
+Pagamento de cupom de juros e resgate no vencimento
+O valor referente ao pagamento de cupom de juros e ao resgate do título, por causa do seu vencimento, só fica disponível na sua Instituição Financeira a partir das 13h do mesmo dia de seu pagamento. A data e o horário de depósito em sua conta dependem do funcionamento da sua Instituição Financeira.
+ 13. Como resgatar?
+ O Tesouro Nacional garante liquidez diária aos seus títulos públicos adquiridos no Tesouro Direto. Isso significa que você pode resgatar os seus investimentos a qualquer momento. Das 9h30 às 18h, nos dias úteis, os resgates serão processados com os preços e taxas disponíveis no momento da transação. Das 18h às 5h e aos finais de semana e/ou feriados, os resgates serão liquidados com os preços e taxas de abertura do dia útil seguinte. 
+Para beneficiar o investidor, o Tesouro Direto usa o modelo PEPS (primeiro a entrar, primeiro a sair) sendo assim paga-se a menor alíquota possível dentro do seu estoque de títulos.
+Para os títulos que pagam juros semestrais – Tesouro IPCA+ com Juros Semestrais (NTN-B), Tesouro IGPM+ com Juros Semestrais (NTN-C) e Tesouro Prefixado com Juros Semestrais (NTN-F) – a opção de resgate será suspensa 2 (dois) dias úteis antes do pagamento desses fluxos periódicos.
+Vale lembrar que os títulos públicos são recomprados pelo Tesouro Nacional aos preços de mercado na data da transação.
+Se você permanecer com os títulos até a data de vencimento, receberá o valor da rentabilidade definida no momento da compra, independentemente das variações de preço do título ao longo da aplicação. Entretanto, se você fizer o resgate antecipado, o Tesouro Nacional recompra o título com base no valor de mercado. Ou seja, o retorno da aplicação poderá ser diferente do acordado no momento da compra, dependendo do preço do título no momento do resgate.
+ 14. E como fica o Imposto de Renda?
+ Os impostos cobrados sobre as operações realizadas no Tesouro Direto são os mesmos que incidem sobre as operações de renda fixa, como fundos de investimento e CDBs: o Imposto Sobre Operações Financeiras (IOF), para resgates da aplicação em menos de 30 dias, e o Imposto de Renda (IR), com alíquota regressiva a depender do prazo do investimento, da seguinte maneira:
+ i. 22,5% para aplicações com prazo de até 180 dias;
+ ii. 20% para aplicações com prazo de 181 dias até 360 dias;
+ iii. 17,5% para aplicações com prazo de 361 dias até 720 dias;
+ iv. 15% para aplicações com prazo acima de 721 dias.
+Há incidência de impostos sobre os rendimentos financeiros obtidos no resgate antecipado, no pagamento de cupom de juros (O IOF não incide sobre os cupons de juros; somente o IR) e no vencimento dos títulos.
+Os dias para efeito de incidência de imposto de renda são contados a partir da data de liquidação. Portanto, com relação aos cupons de juros, serão aplicadas as alíquotas do Imposto de Renda previstas, com o prazo contado a partir da data de início da aplicação.
+ 15. Como funciona a Contagem do prazo de aplicações financeiras para fins de apuração do Imposto sobre a renda retido na fonte – IRRF?
+ Em 2018, o Tesouro Nacional informou que a contagem do prazo de aplicações financeiras para fins de apuração do imposto sobre a renda retido na fonte previsto no artigo 1º da Lei nº 11.033/04 e no artigo 46 da Instrução Normativa RFB nº 1.585/14 (“IRRF”), incidente sobre os rendimentos produzidos pelos títulos público do Tesouro Direto, deve ser realizada considerando as datas de liquidação das operações de investimento e resgate.
+ 16. Onde consultar Saldos e Extratos?
+ Você pode consultar saldos e extratos sobre os seus títulos públicos a qualquer momento. Basta acessar a área exclusiva do site do Tesouro Direto, clicar na opção CONSULTAR do MENU SUPERIOR e selecionar o item EXTRATO CONSOLIDADO. O extrato/saldo reflete o preço de mercado dos títulos. Desta forma, se houver queda nos preços negociados no mercado, o saldo cai e, se houver valorização do título, o saldo aumenta. O valor do título é atualizado considerando essas variações e de acordo com o valor que ele é negociado no mercado secundário naquele momento (esse procedimento é conhecido como marcação a mercado).
+Entre a data de investimento e de vencimento, o preço do título pode variar em função das condições do mercado e das expectativas quanto ao comportamento das taxas de juros futuras. Um aumento na taxa de juros de mercado em relação à taxa que foi aplicada provoca uma queda no preço do título, já uma diminuição na taxa de juros tem o efeito contrário.
+Essa é a mesma mecânica dos fundos de investimento, que fazem a marcação a mercado de seus ativos com base na determinação da Comissão de Valores Mobiliários (CVM), órgão regulador do mercado de valores mobiliários.
+Se você ficar com os títulos até a data de vencimento, receberá o valor correspondente à rentabilidade definida no momento do investimento, independentemente das variações de preço do título ao longo da aplicação. No caso de resgate antecipado, o Tesouro Nacional recompra o título com base em seu valor de mercado. Ou seja, o retorno do investimento poderá ser diferente do acordado no momento da aquisição, dependendo do preço do título no momento em que você decidir resgatá-lo.
+ Regulamento do Tesouro Direto
+ Baixe o arquivo PDF para ter acesso ao regulamento do programa
+ Baixar PDF
+ Footer

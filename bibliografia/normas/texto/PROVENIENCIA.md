@@ -22,6 +22,9 @@ direto. "Data do servidor" é o cabeçalho HTTP `Date` da resposta (UTC).
 | `resolucao-cmn-4893-2021-bcb-api.json` | Res. CMN nº 4.893/2021 | ficha e texto (campo Texto, HTML), já com as alterações da Res. CMN nº 5.274/2025; redações anteriores tachadas (<s>) | `https://www.bcb.gov.br/api/conteudo/app/normativos/exibenormativo?p1=Resolu%C3%A7%C3%A3o%20CMN&p2=4893` | 02/10/2026 23:08:36 | 113528 | `41df2464fb41227d559a3e3f7bf6271d2689fb8be9cbbf43a46b0a5ad587eb1d` |
 | `resolucao-cmn-4968-2021-bcb-api.json` | Res. CMN nº 4.968/2021 | ficha e texto (campo Texto, HTML); redações anteriores tachadas (<s>) | `https://www.bcb.gov.br/api/conteudo/app/normativos/exibenormativo?p1=Resolu%C3%A7%C3%A3o%20CMN&p2=4968` | 02/10/2026 23:08:36 | 38120 | `b557b7cb6adfef961f8755e3d1de5b2a5628e25f34c225c9e927bacb17493cce` |
 | `resolucao-cmn-5274-2025-bcb-api.json` | Res. CMN nº 5.274/2025 | ficha e texto (campo Texto, HTML) | `https://www.bcb.gov.br/api/conteudo/app/normativos/exibenormativo?p1=Resolu%C3%A7%C3%A3o%20CMN&p2=5274` | 02/10/2026 23:08:37 | 44194 | `393b1516f3544dacdb3d133c695e3fcf1fae2ad497340183428ac92fcb0d99ee` |
+| `in-rfb-1585-2015-receita-api.json` | IN RFB nº 1.585/2015 | texto em segmentos, cada um com os marcadores `tachado`, `original` e `compilado`; vigente; publicada no DOU de 02/09/2015 | `https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/67494/visao/multivigente` | 02/10/2026 23:30:14 | 522239 | `c46bb0274f3f10a606163e9ab8ca418b4a7c5be3c6e5176e58bfbe0aae39dd22` |
+| `ato-declaratorio-cn-67-2025-mpv-1303.htm` | Ato Declaratório do Presidente da Mesa do Congresso Nacional nº 67/2025 | declara encerrado em 08/10/2025 o prazo de vigência da MP nº 1.303/2025 (DOU de 15/10/2025) | `https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/congresso/adc-67-mpv1.303.htm` | 02/10/2026 23:29:06 | 4595 | `f25cbd46fdfe5c02c9fffd14f5a7c3d7f69c94bedc308d6f89be7dac2222dc21` |
+| `tesouro-direto-regras-e-regulamento-texto.txt` | Tesouro Direto, página "Regras e Regulamento" | **texto extraído**, não o arquivo original (ver observação) | `https://www.tesourodireto.com.br/sobre-o-tesouro/regras-e-regulamento` | 02/10/2026 23:28:59 | 25646 | `94b4a293909c3a365c9e6c56b1fbc3e89266bbded16ad545ebba0fa42beceea4` |
 
 ## Observações
 
@@ -34,3 +37,20 @@ direto. "Data do servidor" é o cabeçalho HTTP `Date` da resposta (UTC).
   anteriores marcadas por `<s>` e as notas "Redação dada pela...". O campo `Atualizacoes` lista as normas que alteraram cada uma.
 - **Res. CVM nº 30/2021 e Res. CMN nº 4.557/2017:** os PDFs arquivados já têm texto; não foram baixados de novo.
 - A conferência destes textos contra os PDFs arquivados e contra os itens do D2 é o passo seguinte.
+- **Corpus ampliado (decisão do autor, 02/10/2026):** entram a IN RFB nº 1.585/2015, o Regulamento e a página de
+  Regras do Tesouro Direto e o Ato Declaratório CN nº 67/2025. A IN foi localizada pelo id 67494 do sistema de
+  normas da Receita (o endereço antigo `normas.receita.fazenda.gov.br/sijut2consulta/link.action` redireciona por
+  JavaScript para o aplicativo `normasinternet2`, que entrega o texto pela API registrada acima).
+- **Tesouro Direto, página de Regras:** o site bloqueia o terminal (erro 403, proteção contra robôs) e não houve
+  contorno. A página foi obtida pelo navegador. A resposta HTML original tinha 216.649 bytes e SHA-256
+  `b9c5a08ffb24fc5c9d5aaa6ad25f4585afc9b4e163465e0cccbc2d4d27f00bc0`, mas não pôde ser gravada em disco. O arquivo
+  arquivado é o texto dessa resposta, extraído no navegador (DOMParser; sem `script`, `style` e `noscript`;
+  espaços e linhas em branco normalizados; do título "Quais são as taxas" até antes do rodapé). O SHA-256 da tabela
+  foi calculado no navegador e conferido na cópia local, que inclui 47 espaços não separáveis (U+00A0).
+  O texto da página contém duas imprecisões: diz "15% para aplicações com prazo acima de 721 dias" (a Lei nº
+  11.033/2004 e a IN nº 1.585/2015 dizem acima de 720) e cita a "Instrução Normativa RFB nº 1.585/14" (é de 2015).
+- **Regulamento do Tesouro Direto (PDF):** pendente. O site também bloqueia o terminal. Pelo navegador, o arquivo
+  `REGULAMENTO_DO_TESOURO_DIRETO___11.10.2024.pdf` tinha 500.605 bytes e SHA-256
+  `9a192368200466ff1c5198e6ee89d34dfe51088e6d6c69209a3f1116d21270eb` em 02/10/2026 23:28:59 UTC
+  (`https://www.tesourodireto.com.br/documents/20117/0/REGULAMENTO_DO_TESOURO_DIRETO___11.10.2024.pdf/cb59ae6b-4c6a-f9ba-16c9-dd4ab44c12d5?version=1.0&t=1752002939555&download=true`).
+  Deve ser baixado manualmente e conferido contra esse hash antes de entrar na pasta.
