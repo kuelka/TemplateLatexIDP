@@ -1,0 +1,17 @@
+{
+  "fonte": "BCB/SGS, serie 12 (CDI diario, % ao dia): https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?formato=json&dataInicial=01/06/2025&dataFinal=02/10/2026",
+  "consulta": "2026-10-02, JSON bruto lido no navegador",
+  "observacoes": 338,
+  "primeira_data": "2025-06-02",
+  "ultima_data": "2026-10-01",
+  "nota": "Taxa constante por trechos; cada par [inicio do trecho, taxa] vale ate o inicio do trecho seguinte. 20/11/2025 nao consta da serie (feriado).",
+  "trechos": [
+    ["2025-06-02", 0.054266],
+    ["2025-06-20", 0.055131],
+    ["2026-03-19", 0.054266],
+    ["2026-04-30", 0.053400],
+    ["2026-06-18", 0.052531],
+    ["2026-08-06", 0.051660],
+    ["2026-09-17", 0.050788]
+  ]
+}

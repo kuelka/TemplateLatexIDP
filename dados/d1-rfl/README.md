@@ -86,8 +86,9 @@ Em aberto:
   a calculadora avançada do Tesouro Direto, em 132 dos 360 casos (ver
   `conferencia-tesouro/CONFERENCIA.md`): a aritmética bate e as diferenças têm origem
   identificada. Falta a decisão do autor sobre contar o prazo pela aplicação ou pela
-  liquidação (seção 5 daquele arquivo). Por isso `fonte_gabarito_rfl` segue PENDENTE. O CDB
-  não tem simulador oficial equivalente.
+  liquidação (seção 5 daquele arquivo). Por isso `fonte_gabarito_rfl` segue PENDENTE. A
+  mecânica do CDB foi conferida contra a Calculadora do Cidadão do BCB, com CDI realizado
+  (`conferencia-cdb/CONFERENCIA.md`): 28 de 28 índices batem até a 8ª casa.
 - **CDB × carência para Marina e Antônio** (72 casos hoje classificados como A). As
   Estatísticas de depósitos a prazo do BCB mostram que 65,3% (jun/2025) e 67,9% (dez/2025)
   do estoque detido por pessoas físicas e jurídicas tem cláusula de resgate antecipado.

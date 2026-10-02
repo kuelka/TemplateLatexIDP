@@ -36,7 +36,8 @@ Rota A. A taxa da instituição financeira é zero.
 
 As datas de aplicação vão de 02/06/2025 a 04/05/2026. Ficam sem cobertura o IPCA+ de 15,
 180 e 360 dias (todos usam a NTN-B Principal de 15/08/2026, já vencida) e os 135 casos em
-que o título vence antes do resgate. O CDB não tem simulador oficial equivalente.
+que o título vence antes do resgate. O CDB foi conferido à parte, contra a Calculadora do
+Cidadão do BCB (`../conferencia-cdb/CONFERENCIA.md`).
 
 ## 3. O que bate
 
