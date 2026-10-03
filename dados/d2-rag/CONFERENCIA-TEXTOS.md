@@ -124,3 +124,8 @@ arquivada é a versão 13 do BCB (24/11/2025), a mais recente (ver `bibliografia
 |---|---|---|
 | D2-038 | Corrigir | Critérios do art. 2º, § 1º e escopo S1 a S4; dispositivo "art. 2º, § 1º" |
 | D2b-051 | Corrigir | Ementa da 4.745/2019; 5.222 e 5.226 em vigor; 5.207 a partir de 1º/01/2027 |
+
+**Fonte do D2b-051.** A versão 13 do PDF não menciona a Res. CMN nº 5.207/2025. A parte do gabarito sobre ela se
+apoia na ficha da 4.557 na API do BCB (campo `Atualizacoes`) e no texto da própria 5.207, arquivados em 03/10/2026
+como anexos da 4.557 em `bibliografia/normas/texto/`. O `arquivo_fonte` do CSV continua apontando o PDF da 4.557,
+que identifica o documento.

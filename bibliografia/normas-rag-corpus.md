@@ -60,6 +60,14 @@ a base dá precedência à norma sobre o material de divulgação.
 PDF arquivado em 12/08/2026 (`bibliografia/normas/resolucao-cmn-4557-2017-gerenciamento-riscos-capital.pdf`, 46 páginas). É a **versão 13** do BCB, só com a redação vigente (sufixo `_L`), publicada em 24/11/2025, com SHA-256 idêntico ao do arquivo servido pelo BCB em 03/10/2026. Incorpora as Resoluções CMN nº 5.222/2025 (dispositivos com efeitos a partir de 1º/09/2025) e nº 5.226/2025 (a partir de 1º/12/2025). **Não incorpora** a Resolução CMN nº 5.207/2025, que altera o art. 25 **a partir de 1º/01/2027** (campo `Atualizacoes` da ficha do BCB): caso de vigência futura para os metadados da base. (Correção de 03/10/2026: esta nota dizia "alterações até a Resolução CMN nº 5.194/2024" e apontava a versão 4.) Link oficial:
 - https://normativos.bcb.gov.br/Lists/Normativos/Attachments/50344/Res_4557_v13_L.pdf
 
+**Anexo: Res. CMN nº 5.207/2025 (decisão do autor, 03/10/2026).** Entra como fonte complementar da 4.557, sem contar como
+documento próprio: o corpus continua com 14 documentos. O art. 2º dá nova redação ao art. 25, parágrafo único, inciso I
+(acrescenta os spreads de crédito ao risco de mercado da carteira de negociação), a partir de 1º/01/2027 (art. 4º).
+A base guarda a redação vigente e a futura como trechos separados, cada um com sua data de início de vigência, e a
+recuperação escolhe pela data da consulta. Arquivos: `texto/resolucao-cmn-5207-2025-bcb-api.json` e a ficha da 4.557
+(`texto/resolucao-cmn-4557-2017-bcb-api.json`), cujo campo `Atualizacoes` registra a alteração. Nenhum item do D2
+mede o estado "ainda não vigente" (decisão do autor): o filtro por data é testado na implementação, fora das métricas.
+
 ## 3. Resolução CMN nº 4.968/2021 (controles internos) ✅ PDF arquivado
 
 **Ementa:** Regulamenta os sistemas de controles internos das instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.

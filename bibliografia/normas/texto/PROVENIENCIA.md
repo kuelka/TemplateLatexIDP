@@ -26,6 +26,8 @@ direto. "Data do servidor" é o cabeçalho HTTP `Date` da resposta (UTC).
 | `ato-declaratorio-cn-67-2025-mpv-1303.htm` | Ato Declaratório do Presidente da Mesa do Congresso Nacional nº 67/2025 | declara encerrado em 08/10/2025 o prazo de vigência da MP nº 1.303/2025 (DOU de 15/10/2025) | `https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/congresso/adc-67-mpv1.303.htm` | 02/10/2026 23:29:06 | 4595 | `f25cbd46fdfe5c02c9fffd14f5a7c3d7f69c94bedc308d6f89be7dac2222dc21` |
 | `tesouro-direto-regras-e-regulamento-texto.txt` | Tesouro Direto, página "Regras e Regulamento" | **texto extraído**, não o arquivo original (ver observação) | `https://www.tesourodireto.com.br/sobre-o-tesouro/regras-e-regulamento` | 02/10/2026 23:28:59 | 25646 | `94b4a293909c3a365c9e6c56b1fbc3e89266bbded16ad545ebba0fa42beceea4` |
 | `regulamento-tesouro-direto-2024-10-11.pdf` | Regulamento do Tesouro Direto (versão de 11/10/2024) | PDF com camada de texto, 45 páginas; itens 137 a 139 tratam da taxa de custódia e da isenção do Tesouro Selic até R$ 10.000,00 | `https://www.tesourodireto.com.br/documents/20117/0/REGULAMENTO_DO_TESOURO_DIRETO___11.10.2024.pdf/cb59ae6b-4c6a-f9ba-16c9-dd4ab44c12d5?version=1.0&t=1752002939555&download=true` | 02/10/2026 23:28:59 (leitura no navegador); baixado pelo autor às 23:39:59 | 500605 | `9a192368200466ff1c5198e6ee89d34dfe51088e6d6c69209a3f1116d21270eb` |
+| `resolucao-cmn-4557-2017-bcb-api.json` | Res. CMN nº 4.557/2017 | ficha e texto (campo Texto, HTML); o campo `Atualizacoes` lista as alterações com a data de efeito, inclusive a Res. CMN nº 5.207/2025 (art. 25, a partir de 1º/01/2027) | `https://www.bcb.gov.br/api/conteudo/app/normativos/exibenormativo?p1=Resolu%C3%A7%C3%A3o&p2=4557` | 03/10/2026 15:05:27 | 89602 | `c941eb890d9d70a2d13362251dadfdc384403c50571920e84b25ca3c149e7f88` |
+| `resolucao-cmn-5207-2025-bcb-api.json` | Res. CMN nº 5.207/2025 (anexo da 4.557) | ficha e texto (campo Texto, HTML); o art. 2º dá nova redação ao art. 25, parágrafo único, inciso I, da 4.557, e o art. 4º fixa a vigência em 1º/01/2027; DOU de 06/05/2025 | `https://www.bcb.gov.br/api/conteudo/app/normativos/exibenormativo?p1=Resolu%C3%A7%C3%A3o%20CMN&p2=5207` | 03/10/2026 15:05:26 | 11642 | `c25de0c7d387dfb87c288657ca26e077f61b39d5f81b02b47ecf2c60b77e9395` |
 
 ## Observações
 
@@ -37,6 +39,12 @@ direto. "Data do servidor" é o cabeçalho HTTP `Date` da resposta (UTC).
 - **BCB, demais resoluções:** a resposta da API é JSON; o texto está no campo `Texto` (HTML), com as redações
   anteriores marcadas por `<s>` e as notas "Redação dada pela...". O campo `Atualizacoes` lista as normas que alteraram cada uma.
 - **Res. CVM nº 30/2021 e Res. CMN nº 4.557/2017:** os PDFs arquivados já têm texto; não foram baixados de novo.
+  Em 03/10/2026 entrou a ficha da 4.557 na API do BCB, por causa do campo `Atualizacoes`: é a única fonte arquivada
+  que registra a Res. CMN nº 5.207/2025, ausente da versão 13 do PDF.
+- **Res. CMN nº 5.207/2025 (decisão do autor, 03/10/2026):** entra como anexo da 4.557, não como 15º documento.
+  A base guarda as duas redações do art. 25, parágrafo único, inciso I, cada uma com sua data de início de
+  vigência, e a recuperação escolhe pela data da consulta (opção B do passo 5). A nova redação acrescenta os
+  spreads de crédito ao risco de mercado da carteira de negociação.
 - A conferência destes textos contra os PDFs arquivados e contra os itens do D2 é o passo seguinte.
 - **Corpus ampliado (decisão do autor, 02/10/2026):** entram a IN RFB nº 1.585/2015, o Regulamento e a página de
   Regras do Tesouro Direto e o Ato Declaratório CN nº 67/2025. A IN foi localizada pelo id 67494 do sistema de

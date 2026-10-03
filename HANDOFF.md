@@ -120,6 +120,11 @@ implícito à mesma taxa (limitação declarada; ver seção 5 e o README do D1)
   perguntas com a redação vigente recuperada antes da revogada. k operacional provisório: 5.
 - Corpus de 14 documentos, pelo critério de que toda regra aplicada pelo agente precisa da
   norma que a sustenta. Precedência: norma > Regulamento do TD > página de Regras do TD.
+- Vigência futura (03/10/2026, opção B): a base guarda a redação vigente e a futura como trechos
+  separados, cada um com data de início de vigência, e a recuperação escolhe pela data da consulta.
+  Único caso hoje: Res. CMN nº 5.207/2025 (art. 25 da 4.557, a partir de 1º/01/2027), arquivada
+  como anexo da 4.557; o corpus continua com 14 documentos e o D2 com 51 itens (nenhum mede o
+  estado "ainda não vigente").
 - A ANBIMA saiu das descrições da base RAG (objetivo d, figura e referencial), porque não
   tem documento no corpus; continua como fonte de dados.
 
