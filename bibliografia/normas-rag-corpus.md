@@ -45,7 +45,7 @@
 
 **Ementa:** Altera a Resolução CMN nº 4.893/2021, atualizando o arcabouço de segurança cibernética.
 
-**Verificação: PDF oficial obtido e conferido diretamente** (`bibliografia/normas/resolucao-cmn-5274-2025-altera-4893.pdf`). Publicada em 18/12/2025, em vigor na data de publicação; prazo de adequação até **1º de março de 2026** (Art. 2º).
+**Verificação: PDF oficial obtido e conferido diretamente** (`bibliografia/normas/resolucao-cmn-5274-2025-altera-4893.pdf`). Datada de 18/12/2025 e publicada no DOU de 22/12/2025, em vigor na data de publicação (correção de 02/10/2026: a data de publicação vem do campo `DOU` da ficha do BCB); prazo de adequação até **1º de março de 2026** (Art. 2º).
 
 **Achado que substitui a estimativa anterior por dado exato**: o novo Art. 3º, §2º da Resolução 4.893/2021 (redação dada pela 5.274/2025) lista, com precisão, os **14 procedimentos e controles mínimos obrigatórios** de segurança cibernética:
 

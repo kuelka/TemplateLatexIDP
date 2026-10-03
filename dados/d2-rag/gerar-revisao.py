@@ -36,11 +36,18 @@ def celulas(linha):
 
 
 # Linhas das duas tabelas da conferencia, indexadas pelo id do item
-ressalvas, conferem = {}, {}
+# A secao "Decisoes do autor" registra o que ja foi decidido e aplicado no CSV
+ressalvas, conferem, decididos = {}, {}, {}
+secao_decisoes = False
 for linha in CONF.read_text(encoding="utf-8").splitlines():
+    if linha.startswith("## "):
+        secao_decisoes = linha.startswith("## Decisões do autor")
     if not re.match(r"\| D2b?-\d{3} \|", linha):
         continue
     c = [x.replace("**", "") for x in celulas(linha)]
+    if secao_decisoes:
+        decididos[c[0]] = f"Decidido em 02/10/2026 e aplicado no d2-perguntas.csv: {c[1]}. {c[2]}"
+        continue
     if len(c) == 4 and c[1] in ("Erro de fato", "Ressalva"):
         ressalvas[c[0]] = (c[1], c[2], c[3])
     else:
@@ -102,7 +109,8 @@ for it in itens:
         sit, nota, corr = "Confere", conferem[it["id"]], ""
     else:
         sit, nota, corr = "Fora da conferência", "", ""
-    ws.append([it[k] for k in cab[:9]] + [sit, nota, corr, "", "", "", ""])
+    dec, obs = ("Manter com ajuste", decididos[it["id"]]) if it["id"] in decididos else ("", "")
+    ws.append([it[k] for k in cab[:9]] + [sit, nota, corr, dec, "", "", obs])
 
 azul = PatternFill("solid", fgColor="DDEBF7")
 for j, w in enumerate(larg, 1):

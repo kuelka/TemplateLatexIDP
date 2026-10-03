@@ -5,8 +5,7 @@
 vigente: página `compilado` do Planalto; texto do BCB sem os trechos tachados; Regulamento do FGC v19 `_L`.
 
 **Resultado:** 19 itens conferem sem ressalva, 3 conferem com ressalva de redação e 1 tem erro de fato
-(D2b-048, data de publicação). Nenhum gabarito foi alterado: as correções propostas abaixo aguardam a revisão
-item a item do autor.
+(D2b-048, data de publicação). As 4 correções foram decididas pelo autor em 02/10/2026 e aplicadas (ver "Decisões do autor" ao final).
 
 ## Itens com ressalva ou erro
 
@@ -52,3 +51,27 @@ item a item do autor.
 - **Comparação com os PDFs arquivados:** como estes não têm texto, a comparação possível é indireta. Os gabaritos
   do D2 foram redigidos a partir deles, e todos os dispositivos citados aparecem com o mesmo conteúdo nos textos
   novos. A única divergência (D2b-048) é de data de publicação, não de texto.
+
+## Decisões do autor (02/10/2026)
+
+| Item | Decisão | Gabarito aplicado (resumo) |
+|---|---|---|
+| D2b-048 | Corrigir | Resolução de 18/12/2025, publicada no DOU de 22/12/2025, em vigor na publicação; prazo até 1º/03/2026. Corrigido também em `bibliografia/normas-rag-corpus.md`, item 6 |
+| D2b-050 | Corrigir | Retirado o trecho que descrevia o escopo dos decretos de 2025 |
+| D2-032 | Opção b (só o texto da lei) | Texto do art. 1º, sem a inferência sobre bancos públicos; `dispositivo` passa a "art. 1o" |
+| D2-036 | Completar | Os três incisos do art. 2º, § 1º |
+
+**Verificação de vigência antes de aplicar (02/10/2026).** As correções usam os textos baixados nesta data
+(ver `bibliografia/normas/texto/PROVENIENCIA.md`), e a vigência de cada dispositivo foi conferida:
+
+- **Res. CMN nº 5.274/2025:** ficha do BCB com `Revogado: False` e `Atualizacoes` vazio (não foi alterada);
+  DOU de 22/12/2025; arts. 2º e 3º como citados.
+- **Res. CMN nº 4.893/2021, art. 2º, § 1º:** `Atualizacoes` lista só a Res. CMN nº 5.117/2024 (art. 1º, par. único) e a
+  Res. CMN nº 5.274/2025 (arts. 3º, 3º-A, 8º, 22-A, 22-B, 23 e 24); o art. 2º mantém a redação original.
+- **Decreto nº 6.306/2007, art. 32 e Anexo:** no texto com redações anteriores, os Decretos nº 12.466, 12.467 e 12.499,
+  de 2025, aparecem só nos arts. 2, 7, 8, 15-B, 15-C, 20, 22, 32-D e 45; nenhum no art. 32 nem no Anexo, cuja tabela
+  vai de 96% (dia 1) a 0 (dia 30). O art. 32-D (FIDC) é artigo novo do 12.499, sustado pelo Decreto Legislativo nº 176/2025.
+  Busca na web por decretos de 2026 que alterem o 6.306 não encontrou nenhum.
+- **Lei nº 15.263/2025, art. 1º:** página do Planalto sem notas de alteração; busca na web não encontrou lei posterior
+  que a altere.
+
