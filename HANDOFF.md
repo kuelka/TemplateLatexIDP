@@ -4,8 +4,10 @@ Documento para quem for continuar a parte de **implementação** desta pesquisa 
 acompanhado o histórico. Leia inteiro antes de escrever a primeira linha.
 
 Repositório: `https://github.com/kuelka/TemplateLatexIDP`
-Estado de referência: 02/10/2026, gabarito do D1 fechado; texto com 53 páginas,
-compilação sem erros (nenhum `.tex` alterado desde o commit `1a402fd`).
+Estado de referência: 02/10/2026, gabarito do D1 fechado e decisões de desenho do D2 tomadas;
+compilação sem erros no GitHub Actions (não há LaTeX instalado na máquina do autor). Em
+02/10/2026 mudaram `01-introducao.tex`, `02-referencial-teorico.tex`, `04-metodologia.tex` e
+`05-resultados.tex` (ver seção 4).
 
 ---
 
@@ -33,9 +35,10 @@ Estão em `AGENTS.md` / `CLAUDE.md` na raiz. As que mais importam:
    deixe `% TODO: referencia pendente` e avise.
 3. **Nunca invente número.** Todo dado numérico tem origem marcada e rastreável até
    fonte primária. Se não achar, diga que não achou.
-4. **Commit e push só quando o autor pedir.** Para o push, use apenas um token que o
-   próprio autor forneça, para aquele único push, sem gravá-lo em arquivo nem na
-   configuração do Git; ao terminar, oriente-o a revogar o token. Nunca peça senha.
+4. **Commit e push:** desde 02/10/2026 o autor delega ao assistente os commits e pushes
+   deste repositório, pela credencial já configurada na máquina dele. Nunca peça, aceite
+   ou grave token ou senha. Force push e qualquer ação destrutiva continuam exigindo
+   confirmação.
 5. Compile após editar `.tex`/`.bib` e leia o log: `pdflatex main.tex && biber main &&
    pdflatex main.tex && pdflatex main.tex`. Zero ocorrências de `!` no log.
 6. Não altere `idpthesis.cls`. Não redigite dados de `metadados.tex`.
@@ -53,11 +56,15 @@ empírica. 68 referências em `referencias.bib`, todas efetivamente citadas pelo
 vez — mas não uma vez cada: a distribuição é desigual (por exemplo, `anbima2025`
 aparece 9 vezes e `ibge2019pof` 5 vezes), então não trate isso como um a um.
 
-### Corpus normativo (`bibliografia/normas/`)
-Dez PDFs oficiais arquivados e conferidos contra texto oficial: Res. CVM nº 30/2021
-(suitability, texto consolidado); Res. CMN nº 4.222/2013 (FGC); 4.557/2017; 4.879/2020;
-4.893/2021; 4.968/2021; 5.274/2025; Lei nº 11.033/2004 (IR); Decreto nº 6.306/2007
-(IOF); Lei nº 15.263/2025 (linguagem simples).
+### Corpus normativo (`bibliografia/normas-rag-corpus.md`)
+14 documentos em três grupos, todos com texto legível por programa (decisão do autor,
+02/10/2026). Dez têm PDF oficial arquivado em `bibliografia/normas/`: Res. CVM nº 30/2021;
+Res. CMN nº 4.222/2013 (FGC), 4.557/2017, 4.879/2020, 4.893/2021, 4.968/2021 e 5.274/2025;
+Lei nº 11.033/2004 (IR); Decreto nº 6.306/2007 (IOF); Lei nº 15.263/2025. Como 8 desses
+PDFs não têm camada de texto, o texto legível das mesmas normas está em
+`bibliografia/normas/texto/`, com procedência em `PROVENIENCIA.md`, junto com os 4 que
+entraram em 02/10/2026: IN RFB nº 1.585/2015, Regulamento e página de Regras do Tesouro
+Direto e Ato Declaratório CN nº 67/2025.
 
 ### Dataset D1 — cálculo (`dados/d1-rfl/`)
 1.200 casos: 12 datas (1º dia útil de cada mês, jun/2025–mai/2026) × 4 personas ×
@@ -79,7 +86,10 @@ Estratos: 600 `calculo_rfl`, 300 `recusa_por_inadequacao`, 300 `controle_abstenc
 
 ### Dataset D2 — normativo (`dados/d2-rag/`)
 51 itens gabaritados, cada um com dispositivo e PDF de origem: 39 de recuperação
-ordinária e 12 de vigência (D2b). Pendente de revisão item a item pelo autor.
+ordinária e 12 de vigência (D2b). 23 itens conferidos contra o texto legível em 02/10/2026
+(`CONFERENCIA-TEXTOS.md`), com 4 correções decididas pelo autor e aplicadas. Falta a
+revisão do autor nos 28 itens da Res. CVM nº 30/2021 e da Res. CMN nº 4.557/2017
+(planilha `revisao-autor.xlsx`).
 
 ### Implementação de referência (`dados/d1-rfl/rfl_referencia.py`)
 Calcula o RFL a partir de tabelas tributárias verificadas, com contagem de dias úteis a
@@ -98,6 +108,16 @@ vencimento — ou, em 135 dos 360 casos de Tesouro, depois dele, com reinvestime
 implícito à mesma taxa (limitação declarada; ver seção 5 e o README do D1).
 
 **Granularidade mensal** do D1, com 1.200 registros, incluindo o CDB acima do teto do FGC.
+
+**Desenho do D2 e da base RAG (02/10/2026).**
+- Nenhum item excluído: a metodologia passou de "30 a 50 perguntas" para 39 perguntas mais
+  um subconjunto adicional de 12 de vigência.
+- Métricas: recall@k com k = 1, 3, 5 e 10 e MRR no lugar da precisão; no D2b, proporção de
+  perguntas com a redação vigente recuperada antes da revogada. k operacional provisório: 5.
+- Corpus de 14 documentos, pelo critério de que toda regra aplicada pelo agente precisa da
+  norma que a sustenta. Precedência: norma > Regulamento do TD > página de Regras do TD.
+- A ANBIMA saiu das descrições da base RAG (objetivo d, figura e referencial), porque não
+  tem documento no corpus; continua como fonte de dados.
 
 ---
 
@@ -217,7 +237,8 @@ patch (`git format-patch`) para ele aplicar e enviar da máquina dele.
 - `apendices/apendice-a.tex` continua com o texto-modelo do template.
 - ~~D2 tem 51 itens; o documento de alinhamento fala em "30 a 50".~~ Resolvido em 02/10/2026: metodologia
   ajustada para 39 + 12 e sem a ANBIMA no conjunto de teste.
-- Revisão item a item do D2 pelo autor, antes de qualquer uso.
+- Revisão do autor nos 28 itens do D2 fora da conferência (Res. CVM nº 30/2021 e Res. CMN
+  nº 4.557/2017).
 - URL de origem e data do download de `bibliografia/dados/bcb-depositos-prazo-ValoresNatDetentores.xls`,
   marcadas como pendentes em `bibliografia/README.md` — a informar pelo autor.
 - Convenção de dias da provisão da custódia (adotada: dias úteis, base 252, porque o

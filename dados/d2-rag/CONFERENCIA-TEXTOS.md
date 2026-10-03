@@ -46,8 +46,9 @@ vigente: página `compilado` do Planalto; texto do BCB sem os trechos tachados; 
   os arts. 2º-A e 2º-B (contribuição adicional das associadas), não os dispositivos citados pelo D2
   (art. 2º, §§ 2º a 4º).
 - **D2b-049:** o Ato Declaratório nº 67/2025 é a prova primária da caducidade da MP. Consultado em 02/10/2026 em
-  `https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/congresso/adc-67-mpv1.303.htm`, mas não arquivado.
-  Se a base RAG precisar sustentar esse item, ele deve entrar no corpus.
+  `https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/congresso/adc-67-mpv1.303.htm` e, depois desta
+  conferência, arquivado em `bibliografia/normas/texto/` e incluído no corpus (grupo C de
+  `bibliografia/normas-rag-corpus.md`).
 - **Comparação com os PDFs arquivados:** como estes não têm texto, a comparação possível é indireta. Os gabaritos
   do D2 foram redigidos a partir deles, e todos os dispositivos citados aparecem com o mesmo conteúdo nos textos
   novos. A única divergência (D2b-048) é de data de publicação, não de texto.
