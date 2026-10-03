@@ -153,7 +153,7 @@ conferida contra a Calculadora do Cidadão do BCB com CDI realizado (28 período
 por *function calling*. *Critério de aceite*: reproduz o gabarito dentro do limiar de
 tolerância. **Não pode importar `rfl_referencia.py`, nem o contrário.**
 
-**(d) Construir a base RAG** — objetivo (d), sobre o corpus de dez normas, com metadados
+**(d) Construir a base RAG** — objetivo (d), sobre o corpus de 14 documentos (`bibliografia/normas-rag-corpus.md`), com metadados
 de vigência. *Critério de aceite*: recall@k (k = 1, 3, 5 e 10) e MRR medidos no D2, e, no D2b, a
 proporção de perguntas com a redação vigente recuperada antes da revogada (decisão do
 autor, 02/10/2026). k operacional provisório: 5, a confirmar pela curva de recall.

@@ -1,8 +1,43 @@
 # Corpus Normativo do Objetivo (d) — Base de Conhecimento Regulatória (RAG)
 
-**Data do levantamento:** 09-11/08/2026
+**Data do levantamento:** 09-11/08/2026 (grupo A); ampliado em 02/10/2026 (grupos B e C)
 **Uso previsto:** objetivo específico (d) — construção da base RAG regulatória, Capítulo 5.3 (ainda `[PENDENTE]`).
-**Status:** **6 de 6 documentos com conteúdo verificado; 6 de 6 com PDF oficial arquivado em `bibliografia/normas/`**. Corpus normativo do objetivo (d) fechado quanto ao conteúdo e à coleção de PDFs. Ainda não incorporado ao corpo da dissertação.
+**Status:** **14 documentos**, todos com texto legível por programa (ver `bibliografia/normas/texto/PROVENIENCIA.md`;
+a Res. CVM nº 30/2021 e a Res. CMN nº 4.557/2017 já têm camada de texto no PDF arquivado). Composição confirmada pelo
+autor em 02/10/2026. Ainda não incorporado ao corpo da dissertação.
+
+## Composição e justificativa
+
+Critério de inclusão (decisão do autor, 02/10/2026): **toda regra que o agente aplica ou comunica precisa ter, no corpus,
+a norma que a sustenta.** Retirar um documento deixaria uma resposta do agente sem fundamento documental rastreável.
+
+| Grupo | Documento | Regra que sustenta | Itens no D2 |
+|---|---|---|---|
+| A | Res. CVM nº 30/2021 | dever de adequação ao perfil do cliente (suitability) | sim |
+| A | Res. CMN nº 4.557/2017 | gerenciamento de riscos e de capital da instituição que opera o agente | sim |
+| A | Res. CMN nº 4.968/2021 | controles internos | sim |
+| A | Res. CMN nº 4.879/2020 | auditoria interna | sim |
+| A | Res. CMN nº 4.893/2021 | política de segurança cibernética | sim |
+| A | Res. CMN nº 5.274/2025 | alteração da 4.893/2021 (14 controles mínimos) | sim |
+| B | Lei nº 11.033/2004 | tabela regressiva do IR | sim |
+| B | Decreto nº 6.306/2007 | IOF regressivo até 30 dias (art. 32 e Anexo) | sim |
+| B | Lei nº 15.263/2025 | linguagem simples na comunicação com o cidadão | sim |
+| B | Res. CMN nº 4.222/2013 (Regulamento do FGC) | garantia do FGC no CDB | sim |
+| C | IN RFB nº 1.585/2015 | base do IR = rendimento bruto líquido de IOF (art. 46, § 1º) | não |
+| C | Regulamento do Tesouro Direto (versão de 11/10/2024) | taxa de custódia e isenção do Tesouro Selic até R$ 10.000,00 (itens 137 a 139) | não |
+| C | Página "Regras e Regulamento" do Tesouro Direto | regras do TD na forma divulgada ao investidor | não |
+| C | Ato Declaratório CN nº 67/2025 | MP nº 1.303/2025 com vigência encerrada em 08/10/2025 | sim (D2b-049) |
+
+- **Grupo A:** o corpus original do objetivo (d), detalhado nos itens 1 a 6 abaixo.
+- **Grupo B:** já tinham PDF arquivado em `bibliografia/normas/` e itens no D2, mas não constavam desta lista. As tabelas
+  de IR e IOF estão conferidas em `bibliografia/base-legal-rfl.md`.
+- **Grupo C:** entraram em 02/10/2026 (seção 7 abaixo).
+
+**Precedência (para os metadados do passo 5).** Lei, decreto, instrução normativa e resoluções prevalecem sobre o
+Regulamento do TD, e este sobre a página de Regras do TD. A página fica no corpus por ser a fonte que o investidor de fato
+lê, mas contém dois erros conhecidos: diz "15% para aplicações com prazo acima de 721 dias" (a Lei nº 11.033/2004 e a
+IN nº 1.585/2015 dizem acima de 720) e cita a "Instrução Normativa RFB nº 1.585/14" (é de 2015). Isso permite testar se
+a base dá precedência à norma sobre o material de divulgação.
 
 ---
 
@@ -20,7 +55,7 @@
 
 **Verificação: texto integral obtido e conferido (45 páginas, todos os capítulos)** via fetch direto do PDF oficial. Confirma estrutura por segmento prudencial (S1-S5), RAS (Declaração de Apetite por Riscos), programa de testes de estresse, gerenciamento de risco de crédito/mercado/liquidez/operacional/social/ambiental/climático, governança (CRO, comitê de riscos).
 
-**Pendente**: PDF não arquivado localmente (conteúdo já verificado via fetch, não via upload). Link oficial funcional:
+PDF arquivado em 12/08/2026 (`bibliografia/normas/resolucao-cmn-4557-2017-gerenciamento-riscos-capital.pdf`, versão consolidada com alterações até a Resolução CMN nº 5.194/2024, 46 páginas). Link oficial:
 - https://normativos.bcb.gov.br/Lists/Normativos/Attachments/50344/Res_4557_v4_P.pdf
 
 ## 3. Resolução CMN nº 4.968/2021 (controles internos) ✅ PDF arquivado
@@ -72,6 +107,27 @@ Publicada em conjunto com a Resolução BCB nº 538/2025 (mesmo tema, para insti
 
 ---
 
+## 7. Grupo C — documentos incluídos em 02/10/2026
+
+Todos baixados das fontes oficiais em 02/10/2026; URL, data do servidor, tamanho e SHA-256 em
+`bibliografia/normas/texto/PROVENIENCIA.md`.
+
+- **IN RFB nº 1.585/2015** (`in-rfb-1585-2015-receita-api.json`): publicada no DOU de 02/09/2015, vigente. Sustenta a
+  base do IR sobre o rendimento bruto deduzido do IOF (art. 46, § 1º), usada no gabarito do D1.
+- **Regulamento do Tesouro Direto, versão de 11/10/2024** (`regulamento-tesouro-direto-2024-10-11.pdf`, 45 páginas,
+  com camada de texto): itens 137 a 139, taxa de custódia de 0,20% a.a. e isenção do Tesouro Selic até R$ 10.000,00.
+- **Página "Regras e Regulamento" do Tesouro Direto** (`tesouro-direto-regras-e-regulamento-texto.txt`): texto extraído
+  no navegador, porque o site bloqueia o terminal. Precedência inferior, pelos dois erros descritos acima.
+- **Ato Declaratório do Presidente da Mesa do Congresso Nacional nº 67/2025** (`ato-declaratorio-cn-67-2025-mpv-1303.htm`):
+  DOU de 15/10/2025; declara encerrado em 08/10/2025 o prazo de vigência da MP nº 1.303/2025. Prova primária de que a
+  alteração da tabela do IR não entrou em vigor (item D2b-049).
+
+---
+
 ## Nota metodológica sobre profundidade de verificação
 
-**Corpus fechado.** 6 de 6 documentos com conteúdo verificado diretamente contra o próprio texto oficial, e 6 de 6 com PDF arquivado em `bibliografia/normas/` (CVM 30/2021, CMN 4.557/2017, 4.968/2021, 4.879/2020, 4.893/2021, 5.274/2025 -- a CMN 4.557/2017 arquivada em 12/08/2026, versão consolidada com alterações até a Resolução CMN nº 5.194/2024, 46 páginas).
+**Corpus fechado em 14 documentos.** Grupo A: 6 de 6 com conteúdo verificado diretamente contra o texto oficial e PDF
+arquivado em `bibliografia/normas/` (CVM 30/2021, CMN 4.557/2017, 4.968/2021, 4.879/2020, 4.893/2021, 5.274/2025).
+Grupo B: 4 de 4 com PDF arquivado e texto legível em `bibliografia/normas/texto/`. Grupo C: 4 de 4 com texto legível
+em `bibliografia/normas/texto/`. A conferência dos 23 itens do D2 cujas fontes não tinham camada de texto está em
+`dados/d2-rag/CONFERENCIA-TEXTOS.md`, com a verificação de vigência de 02/10/2026.
