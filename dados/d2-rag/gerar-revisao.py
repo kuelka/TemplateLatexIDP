@@ -172,8 +172,14 @@ decisoes = [
         "Registrar data e resultado quando ocorrer.",
     ),
 ]
+# Decisoes ja tomadas pelo autor (preenchem escolha_autor)
+ESCOLHAS = {
+    "DEC-1": "b) 02/10/2026: nenhum item excluído; metodologia ajustada para 39 perguntas "
+    "mais subconjunto adicional de 12 de vigência, sem citar a ANBIMA (sem item no D2).",
+    "DEC-3": "02/10/2026: as 4 correções aplicadas (ver aba Itens e CONFERENCIA-TEXTOS.md).",
+}
 for d in decisoes:
-    ws.append(list(d) + ["", ""])
+    ws.append(list(d) + [ESCOLHAS.get(d[0], ""), ""])
 for j, w in enumerate([8, 30, 60, 55, 30, 35], 1):
     ws.column_dimensions[ws.cell(1, j).column_letter].width = w
 for row in ws.iter_rows():

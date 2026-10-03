@@ -214,7 +214,8 @@ patch (`git format-patch`) para ele aplicar e enviar da máquina dele.
 
 - Legenda da matriz do Anexo III ainda marcada "(a confirmar com o orientador)".
 - `apendices/apendice-a.tex` continua com o texto-modelo do template.
-- D2 tem 51 itens; o documento de alinhamento fala em "30 a 50".
+- ~~D2 tem 51 itens; o documento de alinhamento fala em "30 a 50".~~ Resolvido em 02/10/2026: metodologia
+  ajustada para 39 + 12 e sem a ANBIMA no conjunto de teste.
 - Revisão item a item do D2 pelo autor, antes de qualquer uso.
 - URL de origem e data do download de `bibliografia/dados/bcb-depositos-prazo-ValoresNatDetentores.xls`,
   marcadas como pendentes em `bibliografia/README.md` — a informar pelo autor.

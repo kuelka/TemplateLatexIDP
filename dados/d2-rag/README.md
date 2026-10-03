@@ -58,7 +58,8 @@ tenderá a responder que a tabela regressiva do IR foi substituída por alíquot
    Planilha de apoio: `revisao-autor.xlsx` (gerada por `gerar-revisao.py`), com o
    resultado da conferência de 02/10/2026 por item e as colunas de decisão em branco.
 2. **Validação da redação com o orientador.**
-3. **Dimensionamento.** O desenho registrado no documento de alinhamento de 21/08/2026
-   fala em "30 a 50 perguntas"; este conjunto tem 51. Ou se exclui um item, ou se ajusta
-   a redação do texto.
+3. ~~**Dimensionamento.**~~ Resolvido em 02/10/2026 (decisão do autor): nenhum item
+   excluído; o texto da metodologia passou de "30 a 50 perguntas" para 39 perguntas mais
+   um subconjunto adicional de 12 sobre vigência, e deixou de citar a ANBIMA, que não tem
+   item no D2.
 4. **Definição do k** de recall@k, ainda não fixada na metodologia.
