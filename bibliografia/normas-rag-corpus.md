@@ -47,16 +47,18 @@ a base dá precedência à norma sobre o material de divulgação.
 
 **Verificação: PDF oficial obtido e conferido diretamente, documento completo** (`bibliografia/normas/resolucao-cvm-30-2021-suitability.pdf` — texto consolidado com as alterações das Resoluções CVM nº 162/22 e 179/23). Confirma: Capítulos I a X, Art. 1º a 18, Anexos A e B (declarações de investidor profissional/qualificado) — sequência completa, sem lacuna. Entrada em vigor 1º/06/2021; revogação da Instrução CVM 539/2013 (Art. 17); infração grave por descumprimento dos Arts. 6º/7º (Art. 16); normas complementares por entidades autorreguladoras (Art. 15).
 
+**Vigência conferida em 03/10/2026:** o consolidado publicado pela CVM (`resol030consolid.pdf`, última modificação no servidor em 02/06/2023) é idêntico ao PDF arquivado (mesmo SHA-256), com as alterações das Resoluções CVM nº 162/2022 e 179/2023. **Risco a monitorar até a defesa:** a agenda regulatória da CVM para 2026 prevê a revisão das regras de suitability; em 03/10/2026 não foi encontrada audiência pública nem resolução que altere a norma.
+
 ---
 
 ## 2. Resolução CMN nº 4.557/2017 (gerenciamento de riscos e capital)
 
 **Ementa:** Dispõe sobre a estrutura de gerenciamento de riscos, a estrutura de gerenciamento de capital e a política de divulgação de informações (redação dada pela Resolução nº 4.745/2019).
 
-**Verificação: texto integral obtido e conferido (45 páginas, todos os capítulos)** via fetch direto do PDF oficial. Confirma estrutura por segmento prudencial (S1-S5), RAS (Declaração de Apetite por Riscos), programa de testes de estresse, gerenciamento de risco de crédito/mercado/liquidez/operacional/social/ambiental/climático, governança (CRO, comitê de riscos).
+**Verificação: texto integral obtido e conferido (46 páginas, todos os capítulos)** via fetch direto do PDF oficial. Confirma aplicação às instituições dos segmentos S1 a S4 (art. 2º; o capítulo do S5, arts. 61 a 64, foi revogado pela Res. CMN nº 5.049/2022 a partir de 1º/01/2023 — correção de 03/10/2026, esta nota dizia S1-S5), RAS (Declaração de Apetite por Riscos), programa de testes de estresse, gerenciamento de risco de crédito/mercado/liquidez/operacional/social/ambiental/climático, governança (CRO, comitê de riscos).
 
-PDF arquivado em 12/08/2026 (`bibliografia/normas/resolucao-cmn-4557-2017-gerenciamento-riscos-capital.pdf`, versão consolidada com alterações até a Resolução CMN nº 5.194/2024, 46 páginas). Link oficial:
-- https://normativos.bcb.gov.br/Lists/Normativos/Attachments/50344/Res_4557_v4_P.pdf
+PDF arquivado em 12/08/2026 (`bibliografia/normas/resolucao-cmn-4557-2017-gerenciamento-riscos-capital.pdf`, 46 páginas). É a **versão 13** do BCB, só com a redação vigente (sufixo `_L`), publicada em 24/11/2025, com SHA-256 idêntico ao do arquivo servido pelo BCB em 03/10/2026. Incorpora as Resoluções CMN nº 5.222/2025 (dispositivos com efeitos a partir de 1º/09/2025) e nº 5.226/2025 (a partir de 1º/12/2025). **Não incorpora** a Resolução CMN nº 5.207/2025, que altera o art. 25 **a partir de 1º/01/2027** (campo `Atualizacoes` da ficha do BCB): caso de vigência futura para os metadados da base. (Correção de 03/10/2026: esta nota dizia "alterações até a Resolução CMN nº 5.194/2024" e apontava a versão 4.) Link oficial:
+- https://normativos.bcb.gov.br/Lists/Normativos/Attachments/50344/Res_4557_v13_L.pdf
 
 ## 3. Resolução CMN nº 4.968/2021 (controles internos) ✅ PDF arquivado
 

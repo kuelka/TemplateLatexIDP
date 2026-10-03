@@ -76,3 +76,51 @@ vigente: página `compilado` do Planalto; texto do BCB sem os trechos tachados; 
 - **Lei nº 15.263/2025, art. 1º:** página do Planalto sem notas de alteração; busca na web não encontrou lei posterior
   que a altere.
 
+## Conferência dos 28 itens restantes (03/10/2026)
+
+**Escopo:** os 26 itens da Res. CVM nº 30/2021 e os 2 da Res. CMN nº 4.557/2017, cuja fonte é PDF com camada de
+texto e que ficaram fora da conferência de 02/10/2026. **Fonte:** texto extraído desses PDFs, depois de confirmar que
+são a versão vigente: o consolidado da CVM 30 arquivado é idêntico ao publicado pela CVM em 03/10/2026, e a 4.557
+arquivada é a versão 13 do BCB (24/11/2025), a mais recente (ver `bibliografia/normas-rag-corpus.md`, itens 1 e 2).
+**Resultado:** 26 itens conferem; 2 tinham erro de fato por texto desatualizado e foram corrigidos por decisão do autor.
+
+| Item | Situação | O que o texto oficial diz | Correção proposta |
+|---|---|---|---|
+| D2-038 | Erro de fato | O art. 2º aplica a resolução aos segmentos S1 a S4; o capítulo do S5 (arts. 61 a 64) foi revogado pela Res. CMN nº 5.049/2022 a partir de 1º/01/2023. O gabarito dizia "S1 a S5", e o dispositivo era "estrutura geral" | Dispositivo "art. 2º, § 1º"; gabarito com os critérios do § 1º (compatibilidade, proporcionalidade e adequação ao perfil de riscos) e o escopo S1 a S4 |
+| D2b-051 | Erro de fato | A versão 13 incorpora as Res. CMN nº 5.222/2025 e 5.226/2025, não "alterações até a 5.194/2024"; a Res. CMN nº 5.207/2025 altera o art. 25 a partir de 1º/01/2027 | Ementa com redação da 4.745/2019; 5.222 e 5.226 em vigor; 5.207 com efeitos a partir de 1º/01/2027 |
+
+| Item | Dispositivo | Fonte | Evidência no texto vigente |
+|---|---|---|---|
+| D2-001 | CVM 30, art. 2º | consolidado CVM | Integrantes do sistema de distribuição e consultores não podem recomendar sem verificar a adequação ao perfil |
+| D2-002 | CVM 30, art. 3º, caput | consolidado CVM | Incisos I a III: objetivos, situação financeira e conhecimento do cliente |
+| D2-003 | CVM 30, art. 3º, § 1º | consolidado CVM | Período do investimento, preferências quanto à assunção de riscos e finalidades |
+| D2-004 | CVM 30, art. 3º, § 2º | consolidado CVM | Receitas regulares, patrimônio e necessidade futura de recursos |
+| D2-005 | CVM 30, art. 3º, § 3º | consolidado CVM | Familiaridade; natureza, volume, frequência e período das operações; formação e experiência |
+| D2-006 | CVM 30, art. 3º, § 4º | consolidado CVM | O inciso III do § 3º não se aplica a cliente pessoa jurídica |
+| D2-007 | CVM 30, art. 3º, § 5º | consolidado CVM | Custos diretos e indiretos; abster-se de recomendar custos excessivos e inadequados ao perfil |
+| D2-008 | CVM 30, art. 4º | consolidado CVM | Classificar o cliente em categorias de perfil de risco previamente estabelecidas |
+| D2-009 | CVM 30, art. 5º, par. único | consolidado CVM | Riscos, perfil dos emissores e prestadores, garantias e prazos de carência |
+| D2-010 | CVM 30, art. 6º | consolidado CVM | Vedação nas hipóteses dos incisos I a III |
+| D2-011 | CVM 30, art. 7º | consolidado CVM | Alerta com as causas da divergência e declaração expressa, antes da primeira operação com a categoria |
+| D2-012 | CVM 30, art. 7º, par. único | consolidado CVM | Dispensa quando o cliente implementa recomendações de consultor autorizado pela CVM |
+| D2-013 | CVM 30, art. 8º, § 1º | consolidado CVM | Nomeação ou substituição do diretor informada à CVM em 7 dias úteis |
+| D2-014 | CVM 30, art. 8º, § 2º | consolidado CVM | Relatório até o último dia útil de abril, relativo ao ano civil anterior |
+| D2-015 | CVM 30, art. 9º, I | consolidado CVM | Critérios da norma de PLDFT, com intervalo máximo de 5 anos |
+| D2-016 | CVM 30, art. 9º, II | consolidado CVM | Nova classificação dos produtos em intervalos não superiores a 24 meses |
+| D2-017 | CVM 30, art. 10 | consolidado CVM | Incisos I a IV; o inciso I exceciona as pessoas naturais do art. 11, IV e do art. 12, II e III |
+| D2-018 | CVM 30, art. 11, IV | consolidado CVM | Aplicações superiores a R$ 10.000.000,00, com atestado por escrito (Anexo A) |
+| D2-019 | CVM 30, art. 12, II | consolidado CVM | Aplicações superiores a R$ 1.000.000,00, com atestado por escrito (Anexo B) |
+| D2-020 | CVM 30, art. 14 | consolidado CVM | Mínimo de 5 anos da última recomendação ou operação, ou prazo superior determinado pela CVM |
+| D2-021 | CVM 30, art. 16 | consolidado CVM | Infração grave (art. 11, § 3º, da Lei nº 6.385/1976) a inobservância dos arts. 6º e 7º |
+| D2-022 | CVM 30, art. 18 | consolidado CVM | Em vigor em 1º/06/2021 |
+| D2b-040 | CVM 30, art. 11, VII | consolidado CVM | Três redações empilhadas; a vigente, da Res. CVM nº 179/2023, diz "assessores de investimento" |
+| D2b-041 | CVM 30, art. 12, III | consolidado CVM | Redação da Res. CVM nº 179/2023: "assessores de investimento" |
+| D2b-042 | CVM 30, art. 11, IX | consolidado CVM | Fundos patrimoniais, inciso incluído pela Res. CVM nº 162/2022 |
+| D2b-043 | CVM 30, art. 17 | consolidado CVM | Revoga a Instrução CVM nº 539/2013 |
+
+## Decisões do autor (03/10/2026)
+
+| Item | Decisão | Gabarito aplicado (resumo) |
+|---|---|---|
+| D2-038 | Corrigir | Critérios do art. 2º, § 1º e escopo S1 a S4; dispositivo "art. 2º, § 1º" |
+| D2b-051 | Corrigir | Ementa da 4.745/2019; 5.222 e 5.226 em vigor; 5.207 a partir de 1º/01/2027 |

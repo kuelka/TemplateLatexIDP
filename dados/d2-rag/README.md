@@ -53,10 +53,11 @@ tenderá a responder que a tabela regressiva do IR foi substituída por alíquot
 
 ## Pendências
 
-1. **Revisão item a item pelo autor**, antes de qualquer uso — as perguntas são proposta
-   de redação, não versão final.
-   Planilha de apoio: `revisao-autor.xlsx` (gerada por `gerar-revisao.py`), com o
-   resultado da conferência de 02/10/2026 por item e as colunas de decisão em branco.
+1. ~~**Revisão item a item pelo autor.**~~ Resolvido em 03/10/2026: os 51 itens foram
+   conferidos contra o texto vigente (23 em 02/10/2026 e os 28 da Res. CVM nº 30/2021 e da
+   Res. CMN nº 4.557/2017 em 03/10/2026), com 6 correções decididas pelo autor e aplicadas
+   (`CONFERENCIA-TEXTOS.md`). Planilha de apoio: `revisao-autor.xlsx` (gerada por
+   `gerar-revisao.py`), com o resultado da conferência e as decisões por item.
 2. **Validação da redação com o orientador.**
 3. ~~**Dimensionamento.**~~ Resolvido em 02/10/2026 (decisão do autor): nenhum item
    excluído; o texto da metodologia passou de "30 a 50 perguntas" para 39 perguntas mais

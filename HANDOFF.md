@@ -4,7 +4,7 @@ Documento para quem for continuar a parte de **implementação** desta pesquisa 
 acompanhado o histórico. Leia inteiro antes de escrever a primeira linha.
 
 Repositório: `https://github.com/kuelka/TemplateLatexIDP`
-Estado de referência: 02/10/2026, gabarito do D1 fechado e decisões de desenho do D2 tomadas;
+Estado de referência: 03/10/2026, gabarito do D1 fechado, decisões de desenho do D2 tomadas e os 51 itens do D2 conferidos;
 compilação sem erros no GitHub Actions (não há LaTeX instalado na máquina do autor). Em
 02/10/2026 mudaram `01-introducao.tex`, `02-referencial-teorico.tex`, `04-metodologia.tex` e
 `05-resultados.tex` (ver seção 4).
@@ -86,10 +86,14 @@ Estratos: 600 `calculo_rfl`, 300 `recusa_por_inadequacao`, 300 `controle_abstenc
 
 ### Dataset D2 — normativo (`dados/d2-rag/`)
 51 itens gabaritados, cada um com dispositivo e PDF de origem: 39 de recuperação
-ordinária e 12 de vigência (D2b). 23 itens conferidos contra o texto legível em 02/10/2026
-(`CONFERENCIA-TEXTOS.md`), com 4 correções decididas pelo autor e aplicadas. Falta a
-revisão do autor nos 28 itens da Res. CVM nº 30/2021 e da Res. CMN nº 4.557/2017
-(planilha `revisao-autor.xlsx`).
+ordinária e 12 de vigência (D2b). Os 51 itens estão conferidos contra o texto vigente
+(`CONFERENCIA-TEXTOS.md`): 23 em 02/10/2026, com 4 correções, e os 28 da Res. CVM nº 30/2021
+e da Res. CMN nº 4.557/2017 em 03/10/2026, com 2 correções (D2-038: a 4.557 se aplica de S1
+a S4; D2b-051: a versão 13 incorpora as Res. CMN nº 5.222 e 5.226/2025, e a 5.207/2025 só
+produz efeitos em 1º/01/2027). Todas decididas pelo autor e aplicadas (planilha
+`revisao-autor.xlsx`). Vigência conferida em 03/10/2026: CVM 30 idêntica ao consolidado da
+CVM (revisão do suitability na agenda regulatória de 2026, a monitorar); 4.557 arquivada é a
+versão 13 do BCB, a mais recente.
 
 ### Implementação de referência (`dados/d1-rfl/rfl_referencia.py`)
 Calcula o RFL a partir de tabelas tributárias verificadas, com contagem de dias úteis a
@@ -237,8 +241,9 @@ patch (`git format-patch`) para ele aplicar e enviar da máquina dele.
 - `apendices/apendice-a.tex` continua com o texto-modelo do template.
 - ~~D2 tem 51 itens; o documento de alinhamento fala em "30 a 50".~~ Resolvido em 02/10/2026: metodologia
   ajustada para 39 + 12 e sem a ANBIMA no conjunto de teste.
-- Revisão do autor nos 28 itens do D2 fora da conferência (Res. CVM nº 30/2021 e Res. CMN
-  nº 4.557/2017).
+- ~~Revisão do autor nos 28 itens do D2 fora da conferência.~~ Feita em 03/10/2026 (2 correções).
+- Monitorar até a defesa a revisão da Res. CVM nº 30/2021 (agenda regulatória de 2026 da CVM) e
+  a entrada em vigor da Res. CMN nº 5.207/2025 em 1º/01/2027.
 - URL de origem e data do download de `bibliografia/dados/bcb-depositos-prazo-ValoresNatDetentores.xls`,
   marcadas como pendentes em `bibliografia/README.md` — a informar pelo autor.
 - Convenção de dias da provisão da custódia (adotada: dias úteis, base 252, porque o

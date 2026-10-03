@@ -38,21 +38,23 @@ def celulas(linha):
 # Linhas das duas tabelas da conferencia, indexadas pelo id do item
 # A secao "Decisoes do autor" registra o que ja foi decidido e aplicado no CSV
 ressalvas, conferem, decididos = {}, {}, {}
-secao_decisoes = False
+secao_decisoes, data_decisao = False, ""
 for linha in CONF.read_text(encoding="utf-8").splitlines():
     if linha.startswith("## "):
         secao_decisoes = linha.startswith("## Decisões do autor")
+        if secao_decisoes:
+            data_decisao = re.search(r"\((\d{2}/\d{2}/\d{4})\)", linha).group(1)
     if not re.match(r"\| D2b?-\d{3} \|", linha):
         continue
     c = [x.replace("**", "") for x in celulas(linha)]
     if secao_decisoes:
-        decididos[c[0]] = f"Decidido em 02/10/2026 e aplicado no d2-perguntas.csv: {c[1]}. {c[2]}"
+        decididos[c[0]] = f"Decidido em {data_decisao} e aplicado no d2-perguntas.csv: {c[1]}. {c[2]}"
         continue
     if len(c) == 4 and c[1] in ("Erro de fato", "Ressalva"):
         ressalvas[c[0]] = (c[1], c[2], c[3])
     else:
         conferem[c[0]] = f"{c[1]} — {c[2]}: {c[3]}"
-assert len(ressalvas) == 4 and len(conferem) == 19, (len(ressalvas), len(conferem))
+assert len(ressalvas) == 6 and len(conferem) == 45, (len(ressalvas), len(conferem))
 
 DECISOES_ITEM = ["Manter", "Manter com ajuste", "Reescrever", "Excluir"]
 COR = {
@@ -79,11 +81,9 @@ texto = [
     "  observacoes_autor — livre.",
     "",
     "Coluna situacao_conferencia:",
-    "  Erro de fato / Ressalva / Confere — resultado da conferência de 02/10/2026 contra o texto legível",
-    "  (ver CONFERENCIA-TEXTOS.md);",
-    "  Fora da conferência — itens cuja fonte é PDF com camada de texto (Res. CVM 30/2021 e Res. CMN",
-    "  4.557/2017), que não entraram naquela conferência. A revisão do autor é a primeira leitura deles",
-    "  depois da geração.",
+    "  Erro de fato / Ressalva / Confere — resultado da conferência contra o texto vigente",
+    "  (ver CONFERENCIA-TEXTOS.md): 23 itens em 02/10/2026 e os 28 restantes (Res. CVM 30/2021 e",
+    "  Res. CMN 4.557/2017) em 03/10/2026. Os 51 itens estão conferidos.",
     "",
     "Aba Decisoes: questões de desenho do D2 que são do autor. A coluna escolha_autor fica em branco.",
 ]
@@ -179,7 +179,9 @@ ESCOLHAS = {
     "DEC-2": "c) 02/10/2026: recall@k com k = 1, 3, 5 e 10 e MRR no lugar da precisão; "
     "no D2b, proporção com a redação vigente antes da revogada; k operacional provisório 5, "
     "a confirmar pela curva de recall.",
-    "DEC-3": "02/10/2026: as 4 correções aplicadas (ver aba Itens e CONFERENCIA-TEXTOS.md).",
+    "DEC-3": "02/10/2026: as 4 correções aplicadas; em 03/10/2026, mais 2 (D2-038 e D2b-051) "
+    "na conferência dos 28 itens restantes (ver aba Itens e CONFERENCIA-TEXTOS.md).",
+    "DEC-4": "02/10/2026: corpus de 14 documentos confirmado; normas-rag-corpus.md e texto atualizados.",
 }
 for d in decisoes:
     ws.append(list(d) + [ESCOLHAS.get(d[0], ""), ""])

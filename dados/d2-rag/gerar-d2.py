@@ -167,9 +167,9 @@ ITENS = [
 ("D2","governanca",N_4893,"art. 2o, § 2o",
  "Um conglomerado prudencial pode adotar uma unica politica de seguranca cibernetica para todas as suas instituicoes?",
  "Sim. A norma admite politica unica por conglomerado prudencial ou sistema cooperativo.",F_4893,"avancado"),
-("D2","governanca",N_4557,"estrutura geral",
+("D2","governanca",N_4557,"art. 2o, § 1o",
  "A estrutura de gerenciamento de riscos e proporcional ao porte da instituicao?",
- "Sim. A norma organiza as exigencias por segmento prudencial (S1 a S5) e exige a Declaracao de Apetite por Riscos (RAS) e programa de testes de estresse.",F_4557,"intermediario"),
+ "Sim. As estruturas de gerenciamento devem ser compativeis com o modelo de negocio, a natureza das operacoes e a complexidade dos produtos, servicos, atividades e processos da instituicao; proporcionais a dimensao e a relevancia da exposicao aos riscos; e adequadas ao perfil de riscos e a importancia sistemica da instituicao. A resolucao se aplica as instituicoes dos segmentos S1 a S4.",F_4557,"intermediario"),
 ("D2","governanca",N_5274,"art. 3o, § 2o, XIV",
  "O monitoramento de informacoes na Deep Web e na Dark Web e exigencia expressa da regulamentacao de seguranca cibernetica?",
  "Sim. O inciso XIV exige acoes de inteligencia no ambiente cibernetico, incluindo o monitoramento de informacoes de interesse da instituicao na internet, na Deep Web e na Dark Web, alem de grupos privados de comunicacao.",F_5274,"avancado"),
@@ -209,7 +209,7 @@ ITENS = [
  "Nao. O art. 32 e o Anexo do Decreto no 6.306/2007 nao foram alterados pelos Decretos no 12.466, 12.467 e 12.499, de 2025.",F_IOF,"avancado"),
 ("D2b","vigencia",N_4557,"redacao vigente",
  "A ementa da Resolucao CMN no 4.557/2017 esta na redacao original?",
- "Nao. A ementa tem redacao dada pela Resolucao no 4.745/2019, e o texto consolidado incorpora alteracoes ate a Resolucao CMN no 5.194/2024.",F_4557,"avancado"),
+ "Nao. A ementa tem redacao dada pela Resolucao no 4.745/2019. Entre as alteracoes de 2025, as Resolucoes CMN no 5.222 e 5.226 ja estao em vigor, e a no 5.207 produz efeitos a partir de 1o/01/2027.",F_4557,"avancado"),
 ]
 
 if __name__ == "__main__":
