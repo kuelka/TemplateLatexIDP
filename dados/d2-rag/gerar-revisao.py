@@ -176,6 +176,9 @@ decisoes = [
 ESCOLHAS = {
     "DEC-1": "b) 02/10/2026: nenhum item excluído; metodologia ajustada para 39 perguntas "
     "mais subconjunto adicional de 12 de vigência, sem citar a ANBIMA (sem item no D2).",
+    "DEC-2": "c) 02/10/2026: recall@k com k = 1, 3, 5 e 10 e MRR no lugar da precisão; "
+    "no D2b, proporção com a redação vigente antes da revogada; k operacional provisório 5, "
+    "a confirmar pela curva de recall.",
     "DEC-3": "02/10/2026: as 4 correções aplicadas (ver aba Itens e CONFERENCIA-TEXTOS.md).",
 }
 for d in decisoes:

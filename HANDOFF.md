@@ -154,8 +154,9 @@ por *function calling*. *Critério de aceite*: reproduz o gabarito dentro do lim
 tolerância. **Não pode importar `rfl_referencia.py`, nem o contrário.**
 
 **(d) Construir a base RAG** — objetivo (d), sobre o corpus de dez normas, com metadados
-de vigência. *Critério de aceite*: recall@k e precisão medidos no D2, com o D2b
-demonstrando priorização da redação vigente.
+de vigência. *Critério de aceite*: recall@k (k = 1, 3, 5 e 10) e MRR medidos no D2, e, no D2b, a
+proporção de perguntas com a redação vigente recuperada antes da revogada (decisão do
+autor, 02/10/2026). k operacional provisório: 5, a confirmar pela curva de recall.
 
 **(e) Montar o agente e rodar o experimento de ablação**: arquitetura completa versus o
 mesmo LLM sem acesso ao módulo Python, mesma bateria de perguntas.

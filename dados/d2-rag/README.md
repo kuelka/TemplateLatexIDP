@@ -62,4 +62,9 @@ tenderá a responder que a tabela regressiva do IR foi substituída por alíquot
    excluído; o texto da metodologia passou de "30 a 50 perguntas" para 39 perguntas mais
    um subconjunto adicional de 12 sobre vigência, e deixou de citar a ANBIMA, que não tem
    item no D2.
-4. **Definição do k** de recall@k, ainda não fixada na metodologia.
+4. ~~**Definição do k**~~ Resolvido em 02/10/2026 (decisão do autor): recall@k com
+   k = 1, 3, 5 e 10, lado a lado, e MRR no lugar da precisão (com um dispositivo correto
+   por pergunta, a precisão@k fica limitada a 1/k). No D2b, a métrica é a proporção de
+   perguntas em que a redação vigente é recuperada antes de qualquer redação revogada do
+   mesmo dispositivo. O k operacional do agente (provisório: 5) será confirmado pela
+   curva de recall.

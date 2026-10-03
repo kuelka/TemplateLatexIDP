@@ -291,12 +291,19 @@ meio de um conjunto de teste de 39 perguntas sobre normativos da CVM e
 do CMN e sobre a legisla\c{c}\~ao federal de tributa\c{c}\~ao dos
 investimentos e de linguagem simples, com respostas gabaritadas
 manualmente, permitindo
-calcular recall@k e precis\~ao da recupera\c{c}\~ao documental antes da
-integra\c{c}\~ao da base ao agente. Adicionalmente, o mecanismo de
+calcular o recall@k da recupera\c{c}\~ao documental, com $k = 1, 3, 5$ e
+$10$, e o \textit{mean reciprocal rank} (MRR), antes da
+integra\c{c}\~ao da base ao agente. Como cada pergunta tem, em regra, um
+\'unico dispositivo correto, a precis\~ao@k ficaria limitada a $1/k$; o
+MRR a substitui, medindo a posi\c{c}\~ao do primeiro trecho correto. O
+n\'umero de trechos entregue ao agente ser\'a fixado a partir da curva
+de recall. Adicionalmente, o mecanismo de
 metadados de vig\^encia descrito no objetivo espec\'ifico d ser\'a testado
 com um subconjunto adicional de 12 perguntas envolvendo dispositivos normativos
 revogados ou alterados, verificando se o sistema prioriza corretamente a
-norma vigente.
+norma vigente, medido pela propor\c{c}\~ao de perguntas em que o trecho
+com a reda\c{c}\~ao vigente \'e recuperado antes de qualquer trecho com
+reda\c{c}\~ao revogada do mesmo dispositivo.
 
 Complementarmente, a avalia\c{c}\~ao da etapa de gera\c{c}\~ao seguir\'a o
 desenho multidimensional proposto por \textcite{wang2025omnieval} para RAG
